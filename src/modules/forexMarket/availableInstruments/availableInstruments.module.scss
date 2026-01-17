@@ -1,0 +1,61 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.availableInstruments {
+    background: #F1F1F1;
+    padding: 110px 0;
+
+    @include respond-to("sm") {
+        padding: 60px 0;
+    }
+
+    .title {
+        padding: 0 0 32px 0;
+
+        @include respond-to("sm") {
+            padding: 0 0 30px 0;
+        }
+
+        h2 {
+            font-size: 48px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 105%;
+            @include heading-semibold;
+            background: var(--Hero-Text, linear-gradient(93deg, #252525 0%, #4E4E4E 24.34%, #4E4E4E 52.49%, #4E4E4E 71.46%, #252525 99.25%));
+            background-clip: text;
+            -webkit-background-clip: text;
+            text-align: center;
+            -webkit-text-fill-color: transparent;
+            margin: 0 0 8px 0;
+
+            @include respond-to("sm") {
+                @include heading-30;
+            }
+
+            span {
+                background: var(--Primary, linear-gradient(90deg, #E8BC33 10%, #B07A09 100%));
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+
+        p {
+            color: var(--Dark-Body, #747474);
+            text-align: center;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 17px;
+            @include font-normal;
+            max-width: 738px;
+            margin: 0 auto;
+
+            @include respond-to("sm") {
+                @include font16;
+            }
+        }
+    }
+}

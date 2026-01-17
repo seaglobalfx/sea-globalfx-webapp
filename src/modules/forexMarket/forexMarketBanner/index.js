@@ -1,0 +1,100 @@
+'use client'
+import React from 'react';
+import { motion } from 'framer-motion';
+
+const HeroImage = '/assets/images/forex-banner.png';
+const UserIcon = '/assets/icons/user.svg';
+const DemoIcon = '/assets/icons/demo.svg';
+
+/* Animations */
+const fadeUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.6, ease: 'easeOut' }
+    }
+};
+
+const stagger = {
+    visible: {
+        transition: {
+            staggerChildren: 0.15
+        }
+    }
+};
+
+const imageAnim = {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: {
+        opacity: 1,
+        scale: 1,
+        transition: { duration: 0.8, ease: 'easeOut' }
+    }
+};
+
+export default function ForexMarketBanner() {
+    return (
+        <div className='common-banner'>
+            <div className='left-alignment'>
+                <div className='grid'>
+
+                    {/* LEFT CONTENT */}
+                    <div className='grid-items'>
+                        <motion.div
+                            variants={stagger}
+                            initial="hidden"
+                            animate="visible"
+                        >
+                            <motion.div
+                                className='tag-line'
+                                variants={fadeUp}
+                            >
+                                <button>
+                                    Tight spreads • Fast execution • Deep liquidity
+                                </button>
+                            </motion.div>
+
+                            <motion.h1 variants={fadeUp}>
+                                Trade the World’s Most Liquid <span>Financial</span> Market
+                            </motion.h1>
+
+                            <motion.p variants={fadeUp}>
+                                Access global Forex markets through Sea Global’s secure trading infrastructure, offering
+                                transparent pricing, fast execution, and reliable liquidity across market conditions.
+                            </motion.p>
+
+                            <motion.div
+                                className='two-button-alignment'
+                                variants={fadeUp}
+                            >
+                                <button className='orange'>
+                                    <img src={UserIcon} alt='UserIcon' />
+                                    Open Account
+                                </button>
+
+                                <button className='black'>
+                                    <img src={DemoIcon} alt='DemoIcon' />
+                                    Try Demo
+                                </button>
+                            </motion.div>
+                        </motion.div>
+                    </div>
+
+                    {/* RIGHT IMAGE */}
+                    <div className='grid-items'>
+                        <motion.div
+                            className='image'
+                            variants={imageAnim}
+                            initial="hidden"
+                            animate="visible"
+                        >
+                            <img src={HeroImage} alt='HeroImage' />
+                        </motion.div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    );
+}

@@ -1,0 +1,101 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.textContent {
+    padding: 100px 0;
+
+    @include respond-to("sm") {
+        padding: 60px 0 100px 0;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0px;
+
+        @include respond-to("sm") {
+            grid-template-columns: 1fr;
+        }
+
+        .items:last-child {
+            border: none;
+        }
+
+        .items {
+            padding: 20px 20px 30px 20px;
+            border-right: 1px solid #CDCDCD;
+
+            @include respond-to("sm") {
+                border-right: none;
+                border-bottom: 1px solid #CDCDCD;
+                padding: 24px 0;
+            }
+
+            h3 {
+                font-family: "GC arturm Demo";
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 105%;
+                background: var(--Hero-Text, linear-gradient(93deg, #252525 0%, #4E4E4E 24.34%, #4E4E4E 52.49%, #4E4E4E 71.46%, #252525 99.25%));
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin: 0 0 8px 0;
+                @include heading-semibold;
+                text-align: center;
+
+                @include respond-to("sm") {
+                    font-size: 20px;
+                }
+            }
+
+            p {
+                color: var(--Dark-Body, #747474);
+                text-align: center;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 105%;
+                @include font-normal;
+
+                @include respond-to("sm") {
+                    @include font16;
+                }
+            }
+
+            ul {
+                margin: 0;
+                padding: 0 0 0 20px;
+
+                li {
+                    color: var(--Dark-Body, #747474);
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 105%;
+                    @include font-normal;
+
+                    @include respond-to("sm") {
+                        @include font16;
+                    }
+                }
+            }
+
+            h4 {
+                text-align: center;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 105%;
+                background: var(--Primary, linear-gradient(90deg, #E8BC33 10%, #B07A09 100%));
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                @include font-medium;
+                margin: 0 0 4px 0;
+            }
+        }
+    }
+}

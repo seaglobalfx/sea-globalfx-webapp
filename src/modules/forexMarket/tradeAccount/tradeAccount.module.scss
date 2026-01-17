@@ -1,0 +1,156 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.tradeAccount {
+    background: #F1F1F1;
+    padding: 150px 0 0 0;
+    position: relative;
+
+    h2 {
+        text-align: center;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 105%;
+        text-transform: capitalize;
+        @include heading-semibold;
+        background: var(--Hero-Text, linear-gradient(93deg, #252525 0%, #4E4E4E 24.34%, #4E4E4E 52.49%, #4E4E4E 71.46%, #252525 99.25%));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        @include respond-to("sm") {
+            @include heading-30;
+        }
+
+        span {
+            background: var(--Primary, linear-gradient(90deg, #E8BC33 10%, #B07A09 100%));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+
+    p {
+        margin: 16px auto 24px auto;
+        color: #828282;
+        text-align: center;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 17px;
+        max-width: 600px;
+
+        @include respond-to("sm") {
+            @include font16;
+            margin: 8px auto 16px auto;
+        }
+    }
+
+    .iconTextAlignment {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 0 100px 0;
+        gap: 40px;
+
+        @include respond-to("sm") {
+            gap: 16px;
+            justify-content: space-between;
+            padding: 0 0 40px 0;
+        }
+
+        .iconCenter {
+            @include respond-to("sm") {
+                justify-content: center;
+                display: flex;
+            }
+        }
+
+        img {
+            @include respond-to("sm") {
+                max-width: 40px;
+                margin: 0 auto;
+            }
+        }
+
+        span {
+            display: block;
+            color: #828282;
+            text-align: center;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 105%;
+            @include font-medium;
+            padding: 16px 0 0 0;
+
+            @include respond-to("sm") {
+                font-size: 14px;
+                padding: 10px 0 0 0;
+            }
+        }
+    }
+
+    .starImage {
+        position: absolute;
+        top: 5%;
+        left: 0;
+
+        @include respond-to("sm") {
+            top: 2%;
+        }
+
+        img {
+            max-width: 350px;
+            display: block;
+
+            @include respond-to("md") {
+                max-width: 150px;
+            }
+
+            @include respond-to("sm") {
+                max-width: 100px;
+            }
+        }
+    }
+
+    .mobileImage {
+        position: absolute;
+        top: 12%;
+        left: 5%;
+        z-index: 9;
+
+        @include respond-to("md") {
+            display: none;
+        }
+
+        img {
+            max-width: 350px;
+        }
+    }
+
+    .thinkpadImage {
+        position: absolute;
+        top: -11%;
+        right: 0;
+
+        @include respond-to("md") {
+            top: -6%;
+        }
+
+        img {
+            display: block;
+            max-width: 480px;
+
+            @include respond-to("xl") {
+                max-width: 420px;
+            }
+
+            @include respond-to("md") {
+                max-width: 240px;
+            }
+        }
+    }
+}

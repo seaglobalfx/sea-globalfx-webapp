@@ -1,0 +1,82 @@
+@font-face {
+    font-family: "Euclid-bold";
+    src: url("/assets/font/Euclid\ Circular\ A\ Bold.ttf");
+}
+
+@font-face {
+    font-family: "Euclid-Medium";
+    src: url("/assets/font/Euclid\ Circular\ A\ Medium.ttf");
+}
+
+@font-face {
+    font-family: "Euclid-Regular";
+    src: url("/assets/font/Euclid\ Circular\ A\ Regular.ttf");
+}
+
+@font-face {
+    font-family: "Euclid-SemiBold";
+    src: url("/assets/font/Euclid\ Circular\ A\ SemiBold.ttf");
+}
+
+@font-face {
+    font-family: "Euclid-SemiBold";
+    src: url("/assets/font/Euclid\ Circular\ A\ SemiBold.ttf");
+}
+
+@font-face {
+    font-family: "GCarturmDemo-Medium";
+    src: url("/assets/font/GCarturmDemo-Medium-BF6902ecb472b48.ttf");
+}
+
+@font-face {
+    font-family: "GCarturmDemo-Regular";
+    src: url("/assets/font/GCarturmDemo-Regular-BF6902ecb4ad10b.ttf");
+}
+
+@font-face {
+    font-family: "GCarturmDemo-SemiBold";
+    src: url("/assets/font/GCarturmDemo-SemiBold-BF6902ecb4c3120.ttf");
+}
+
+@mixin font-normal {
+    font-family: "Euclid-Regular";
+}
+
+@mixin font-medium {
+    font-family: "Euclid-Medium";
+}
+
+@mixin font-semibold {
+    font-family: "Euclid-SemiBold";
+}
+
+@mixin font-bold {
+    font-family: "Euclid-bold";
+}
+
+@mixin heading-medium {
+    font-family: "GCarturmDemo-Medium";
+}
+
+@mixin heading-normal {
+    font-family: "GCarturmDemo-Regular";
+}
+
+@mixin heading-semibold {
+    font-family: "GCarturmDemo-SemiBold";
+}
+
+@mixin heading-30 {
+    font-size: 30px;
+    line-height: 40px;
+}
+
+@mixin font16 {
+    font-size: 16px;
+    line-height: 22px;
+}
+
+@mixin font18 {
+    font-size: 18px;
+    line-height: 26px;
+}

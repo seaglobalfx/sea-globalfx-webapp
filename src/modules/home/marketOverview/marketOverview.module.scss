@@ -1,0 +1,157 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.marketOverview {
+    padding: 120px 0;
+    background: #141414;
+    overflow: hidden;
+    position: relative;
+
+    @include respond-to("sm") {
+        padding: 60px 0;
+    }
+
+    &::before {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        content: '';
+        border-radius: 352px;
+        background: #D9D9D9;
+        width: 198px;
+        height: 252px;
+        filter: blur(250px);
+    }
+
+    .dolorImage {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: 99;
+
+        @include respond-to("sm") {
+            display: none;
+        }
+
+        img {
+            max-width: 260px;
+            display: block;
+            position: relative;
+            z-index: 99;
+        }
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+
+        @include respond-to("md") {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include respond-to("sm") {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 20px;
+        }
+
+        .items {
+            display: flex;
+            align-items: center;
+
+            @include respond-to("sm") {
+                justify-content: center;
+            }
+
+            h2 {
+                font-size: 48px;
+                font-style: normal;
+                font-weight: 600;
+                color: #fff;
+                line-height: 105%;
+                @include heading-semibold;
+
+                @include respond-to("sm") {
+                    @include heading-30;
+                    margin: 0 0 10px 0;
+                    text-align: center;
+                }
+
+
+                span {
+                    background: var(--Primary, linear-gradient(90deg, #E8BC33 10%, #B07A09 100%));
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+
+                }
+            }
+        }
+
+        .griditems {
+            position: relative;
+            border-radius: 24px;
+            padding: 16px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.00) 100%);
+            height: 100%;
+            transition: .3s ease-in-out;
+
+            &:hover {
+                transform: translateY(-5px) !important;
+            }
+
+            a {
+                display: block;
+                height: 100%;
+
+            }
+
+            .image {
+                img {
+                    display: block;
+                    width: 100%;
+                }
+            }
+
+            .details {
+                padding: 16px 0 0 0;
+
+                h4 {
+                    color: #F5F5F5;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 105%;
+                    @include heading-medium;
+                    margin: 0 0 8px 0;
+                }
+
+                p {
+                    color: var(--Dark-Body, #747474);
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 300;
+                    line-height: 105%;
+                    @include font-normal;
+                }
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                border-radius: 24px;
+                padding: 1px;
+                background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+                -webkit-mask:
+                    linear-gradient(#fff 0 0) content-box,
+                    linear-gradient(#fff 0 0);
+                -webkit-mask-composite: xor;
+                mask-composite: exclude;
+                pointer-events: none;
+                transition: .3s ease-in-out;
+            }
+        }
+    }
+}

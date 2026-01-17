@@ -1,0 +1,105 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.featuredSection {
+    padding-left: max(20px, (100vw - 1240px) / 2);
+
+    @include respond-to("sm") {
+        padding-left: 20px;
+    }
+
+    .flexbox {
+        display: flex;
+        gap: 40px;
+
+        @include respond-to("md") {
+            display: block;
+        }
+
+        .items:first-child {
+            width: 480px;
+
+            @include respond-to("md") {
+                width: 100%;
+            }
+        }
+
+
+        .text {
+            p {
+                color: var(--Dark-Body, #747474);
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 105%;
+                @include font-normal;
+
+                @include respond-to("sm") {
+                    @include font16;
+                }
+            }
+
+            h2 {
+                font-size: 48px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 105%;
+                @include heading-semibold;
+                background: var(--Hero-Text, linear-gradient(93deg, #252525 0%, #4E4E4E 24.34%, #4E4E4E 52.49%, #4E4E4E 71.46%, #252525 99.25%));
+                background-clip: text;
+                -webkit-background-clip: text;
+                margin: 0 0 8px 0;
+                -webkit-text-fill-color: transparent;
+
+                @include respond-to("sm") {
+                    @include heading-30;
+                }
+
+                span {
+                    background: var(--Primary, linear-gradient(90deg, #E8BC33 10%, #B07A09 100%));
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+            }
+        }
+
+        .items:last-child {
+            width: calc(100% - 480px);
+            position: relative;
+
+            @include respond-to("md") {
+                width: 100%;
+                padding: 40px 0 0 0;
+            }
+
+            &::before {
+                position: absolute;
+                width: 215px;
+                height: 100%;
+                background: linear-gradient(270deg, rgba(241, 241, 241, 0.00) 0%, #F1F1F1 100%);
+                top: 0;
+                left: 0;
+                content: '';
+                z-index: 9;
+            }
+        }
+    }
+
+    .lightbox {
+        padding: 16px;
+        border-radius: 8.096px;
+        border: 0.675px solid rgba (204, 204, 204, 0.00);
+        background: rgba(0, 0, 0, 0.05);
+        margin-right: 10px;
+
+        img {
+            display: block;
+        }
+    }
+
+    .spacer {
+        padding: 10px 0 0 0;
+    }
+}

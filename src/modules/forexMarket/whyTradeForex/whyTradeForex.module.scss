@@ -1,0 +1,158 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.whyTradeForex {
+    padding: 110px 0 78px;
+    background-color: #141414;
+    position: relative;
+
+    @include respond-to("sm") {
+        padding: 60px 0;
+    }
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '';
+        width: 158px;
+        height: 252px;
+        border-radius: 352px;
+        background: #D9D9D9;
+        filter: blur(250px);
+    }
+
+
+    .grid {
+        display: grid;
+        grid-template-columns: 466px 1fr;
+        position: relative;
+        gap: 30px;
+        align-items: center;
+
+        @include respond-to("md") {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+
+        .griditems {
+            .darkbox {
+                border-radius: 24px 24px 0 0;
+                padding: 8px 17px 27px 17px;
+                background: linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.00) 100%);
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0;
+
+                @include respond-to("sm") {
+                    padding: 16px;
+                    grid-template-columns: 1fr;
+                    gap: 0;
+                }
+
+                .items:nth-child(3),
+                .items:last-child {
+                    border-right: none;
+                }
+
+                .items {
+                    position: relative;
+
+                    .content {
+                        padding: 22px 16px 16px 16px;
+
+                        @include respond-to("sm") {
+                            padding: 24px 0;
+                            border-bottom: 1px solid #747474;
+                        }
+                    }
+
+                    border-right: 1px solid #747474;
+
+                    @include respond-to("sm") {
+                        border-right: none;
+                    }
+
+                    .line {
+                        width: calc(100% - 32px);
+                        margin: 0 auto;
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        height: 1px;
+                        background-color: #747474;
+
+                        @include respond-to("sm") {
+                            display: none;
+                        }
+                    }
+
+                    p {
+                        color: var(--Dark-Body, #747474);
+                        font-size: 15px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 105%;
+                        @include font-normal;
+                    }
+
+                    h3 {
+                        margin: 14px 0;
+                        color: #FFF;
+                        font-size: 20px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: 105%;
+                        @include font-medium;
+                    }
+                }
+            }
+
+            .text {
+                p {
+                    max-width: 466px;
+                    color: #828282;
+                    font-family: "Euclid Circular A";
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 105%;
+                    /* 16.8px */
+                    @include font-normal;
+
+                    @include respond-to("sm") {
+                        @include font16;
+                    }
+                }
+            }
+
+            h2 {
+                font-size: 48px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 105%;
+                @include heading-semibold;
+                background: linear-gradient(93deg, #FFF 0%, #F1F1F1 24.34%, #DDD 52.49%, #F1F1F1 71.46%, #FFF 99.25%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin: 0 0 20px 0;
+
+                @include respond-to("sm") {
+                    @include heading-30;
+                    margin: 0 0 10px 0;
+                }
+
+                span {
+                    background: var(--Primary, linear-gradient(90deg, #E8BC33 10%, #B07A09 100%));
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+            }
+        }
+    }
+}

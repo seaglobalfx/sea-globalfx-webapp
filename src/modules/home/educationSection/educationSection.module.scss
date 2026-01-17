@@ -1,0 +1,176 @@
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+@use '../../../scss/main.scss' as *;
+
+.educationSection {
+    border-radius: 32px;
+    padding: 0 72px;
+    background: #141414;
+
+    @include respond-to("sm") {
+        border-radius: 16px;
+        padding: 0 0;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 548px 1fr;
+        gap: 18px;
+
+        @include respond-to("sm") {
+            grid-template-columns: 1fr;
+            display: block;
+        }
+
+        .griditems:last-child {
+            display: grid;
+            gap: 16px;
+            grid-template-columns: repeat(2, 1fr);
+
+            @include respond-to("sm") {
+                display: none;
+            }
+
+            .height {
+                height: 400px;
+                overflow: hidden;
+            }
+
+
+        }
+
+        .mobileShow {
+            display: none;
+
+            @include respond-to("sm") {
+                display: block;
+            }
+        }
+
+        .allbox {
+            @include respond-to("sm") {
+                display: flex;
+                gap: 16px;
+                padding: 0 0 40px 0;
+            }
+
+            .box {
+                position: relative;
+                border-radius: 24px;
+                margin: 0 0 16px 0;
+                overflow: hidden;
+                background: rgba(255, 255, 255, 0.10);
+                padding: 24px 16px;
+                height: 154px;
+
+                @include respond-to("sm") {
+                    min-width: 180px;
+                    max-width: 180px;
+                    width: 180px;
+                    padding: 20px 14px;
+                    margin: 0;
+                    height: 140px;
+                }
+
+
+                h3 {
+                    color: #FFF;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 500;
+                    margin: 0 0 30px 0;
+                    line-height: 105%;
+                    @include font-medium;
+                    max-width: 110px;
+
+                    @include respond-to("sm") {
+                        @include font18;
+                        margin: 0 0 16px 0;
+                    }
+                }
+
+                .bottomIcon {
+                    position: absolute;
+                    bottom: 10px;
+                    right: 0;
+
+                    img {
+                        max-width: 93px;
+                        display: block;
+
+                        @include respond-to("sm") {
+                            max-width: 60px;
+                        }
+                    }
+                }
+
+                .icon {
+                    img {
+                        display: block;
+                        cursor: pointer;
+                    }
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    border-radius: 24px;
+                    padding: 1px;
+                    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+                    -webkit-mask:
+                        linear-gradient(#fff 0 0) content-box,
+                        linear-gradient(#fff 0 0);
+                    -webkit-mask-composite: xor;
+                    mask-composite: exclude;
+                    pointer-events: none;
+                    transition: .3s ease-in-out;
+                }
+            }
+        }
+
+        .text {
+            padding: 96px 0;
+
+            @include respond-to("sm") {
+                padding: 40px 20px;
+            }
+
+            p {
+                color: var(--Dark-Body, #747474);
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 105%;
+                @include font-normal;
+
+                @include respond-to("sm") {
+                    @include font16;
+                }
+            }
+
+            h2 {
+                color: #fff;
+                font-size: 48px;
+                font-style: normal;
+                font-weight: 600;
+                margin: 0 0 24px 0;
+                line-height: 105%;
+                @include heading-semibold;
+
+                @include respond-to("sm") {
+                    @include heading-30;
+                    margin: 0 0 16px 0;
+                }
+
+                span {
+                    display: block;
+                    background: var(--Primary, linear-gradient(90deg, #E8BC33 10%, #B07A09 100%));
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+            }
+        }
+    }
+}

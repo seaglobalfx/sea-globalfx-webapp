@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  padding: 0;
+  /* user-select: none; */
+  overflow-x: hidden;
+  font-family: "Euclid-Regular";
+}
+
+html {
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  user-drag: none;
+  -webkit-user-drag: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container-md {
+  max-width: calc(1340px + 40px);
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.container-xs {
+  max-width: calc(1240px + 40px);
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.container-xs2 {
+  max-width: calc(1200px + 40px);
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.container-sm {
+  max-width: calc(1294px + 40px);
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.container-xs2 {
+  max-width: calc(1089px + 40px);
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.w-full-size {
+  width: 100% !important;
+  font-family: "GCarturmDemo-Medium";
+}
