@@ -224,3 +224,160 @@
         }
     }
 }
+
+.mobileHeader {
+    background-color: #141414;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+
+    &.hide {
+        transform: translateX(100%);
+        transition: .3s ease-in-out;
+    }
+
+    &.show {
+        transform: translateX(0%);
+        transition: .3s ease-in-out;
+    }
+
+    .headerFooter {
+        padding: 20px;
+        border-top: 1px solid #5b5b5b;
+
+        a {
+            background: var(--Primary, linear-gradient(90deg, #E8BC33 10%, #B07A09 100%));
+            display: block;
+            border: none;
+            padding: 16px;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-radius: 48px;
+            color: #FFF;
+            font-size: 16px;
+            font-style: normal;
+            cursor: pointer;
+            font-weight: 600;
+            line-height: normal;
+            @include font-semibold;
+            transition: .3s ease-in-out;
+        }
+
+    }
+
+    .headerBody {
+        padding: 40px 20px;
+        height: calc(100dvh - 160px);
+        overflow: auto;
+
+        .submenu {
+            .space {
+                padding-bottom: 40px;
+                padding-left: 20px;
+            }
+
+            &.hide {
+                max-height: 0px;
+                overflow: hidden;
+                transition: .3s ease-in-out;
+            }
+
+            &.show {
+                max-height: 100vh;
+                overflow: hidden;
+                transition: .3s ease-in-out;
+            }
+
+            a {
+                padding: 0 0 20px 0;
+                opacity: .5;
+                display: block;
+                font-size: 18px;
+                @include font-medium;
+                color: #fff;
+                transition: .3s ease-in-out;
+
+                &.active {
+                    opacity: 1;
+                }
+            }
+
+            a:last-child {
+                padding: 0;
+            }
+        }
+
+        .menuIconAlignment {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 0 40px 0;
+
+            a {
+                display: block;
+                font-size: 26px;
+                @include font-medium;
+                color: #fff;
+            }
+
+            .icon {
+                display: flex;
+                align-items: center;
+
+                &.rotate {
+                    svg {
+                        transform: rotate(180deg);
+                    }
+                }
+
+                svg {
+                    cursor: pointer;
+                    width: 26px;
+                    height: 26px;
+                    transition: .3s ease-in-out;
+
+                    path {
+                        fill: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    .smallHeader {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 20px;
+        border-bottom: 1px solid #5b5b5b;
+
+
+        .close {
+            display: flex;
+            align-items: center;
+
+            svg {
+                width: 22px;
+                height: 22px;
+                cursor: pointer;
+
+                path {
+                    fill: #fff;
+                }
+            }
+        }
+
+        .logo {
+            img {
+                display: block;
+                cursor: pointer;
+                max-width: 160px;
+            }
+        }
+    }
+}

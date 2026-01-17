@@ -3,6 +3,12 @@ import styles from './featuredSection.module.scss';
 import Marquee from 'react-fast-marquee';
 const Logoipsum = '/assets/icons/logoipsum.svg';
 const Logoipsum1 = '/assets/icons/logoipsum1.svg';
+const Yahoo = '/assets/icons/Yahoo.svg';
+const Fox = '/assets/icons/Fox.svg';
+const CNN = '/assets/icons/CNN.svg';
+const Google = '/assets/icons/google.svg';
+const Abc = '/assets/icons/abc.svg';
+const Scranton = '/assets/icons/scranton.webp';
 export default function FeaturedSection() {
     return (
         <div className={styles.featuredSection}>
@@ -20,39 +26,120 @@ export default function FeaturedSection() {
                 </div>
                 <div className={styles.items}>
                     <Marquee speed={30}>
-                        {
-                            [...Array(10)].map(() => {
-                                return (
-                                    <div className={styles.lightbox}>
-                                        <img src={Logoipsum} alt='Logoipsum' />
-                                    </div>
-                                )
-                            })
-                        }
+                        <div className={styles.lightbox}>
+                            <img src={Yahoo} alt='Yahoo' />
+                        </div>
+                        <div className={styles.lightbox}>
+                            <img src={Fox} alt='Fox' />
+                        </div>
+                        <div className={styles.lightbox}>
+                            <img src={CNN} alt='CNN' />
+                        </div>
+                        <div className={styles.lightbox}>
+                            <img src={Google} alt='Google' />
+                        </div>
+                        <div className={styles.lightbox}>
+                            <img src={Scranton} alt='Scranton' />
+                        </div>
+                        <div className={styles.lightbox}>
+                            <img src={Abc} alt='Abc' />
+                        </div>
+                        <div className={styles.lightbox}>
+                            <img src={Yahoo} alt='Yahoo' />
+                        </div>
+                        <div className={styles.lightbox}>
+                            <img src={Fox} alt='Fox' />
+                        </div>
+                        <div className={styles.lightbox}>
+                            <img src={CNN} alt='CNN' />
+                        </div>
+                        <div className={styles.lightbox}>
+                            <img src={Google} alt='Google' />
+                        </div>
+                        <div className={styles.lightbox}>
+                            <img src={Scranton} alt='Scranton' />
+                        </div>
+                        <div className={styles.lightbox}>
+                            <img src={Abc} alt='Abc' />
+                        </div>
                     </Marquee>
                     <div className={styles.spacer}></div>
                     <Marquee speed={30} direction='right'>
-                        {
-                            [...Array(10)].map(() => {
-                                return (
-                                    <div className={styles.lightbox}>
-                                        <img src={Logoipsum1} alt='Logoipsum1' />
-                                    </div>
-                                )
-                            })
-                        }
+                        <div className={styles.lightbox}>
+                            <img src={Yahoo} alt='Yahoo' />
+                        </div>
+                        <div className={styles.lightbox}>
+                            <img src={Fox} alt='Fox' />
+                        </div>
+                        <div className={styles.lightbox}>
+                            <img src={CNN} alt='CNN' />
+                        </div>
+                        <div className={styles.lightbox}>
+                            <img src={Google} alt='Google' />
+                        </div>
+                        <div className={styles.lightbox}>
+                            <img src={Scranton} alt='Scranton' />
+                        </div>
+                        <div className={styles.lightbox}>
+                            <img src={Abc} alt='Abc' />
+                        </div>
+                        <div className={styles.lightbox}>
+                            <img src={Yahoo} alt='Yahoo' />
+                        </div>
+                        <div className={styles.lightbox}>
+                            <img src={Fox} alt='Fox' />
+                        </div>
+                        <div className={styles.lightbox}>
+                            <img src={CNN} alt='CNN' />
+                        </div>
+                        <div className={styles.lightbox}>
+                            <img src={Google} alt='Google' />
+                        </div>
+                        <div className={styles.lightbox}>
+                            <img src={Scranton} alt='Scranton' />
+                        </div>
+                        <div className={styles.lightbox}>
+                            <img src={Abc} alt='Abc' />
+                        </div>
                     </Marquee>
                     <div className={styles.spacer}></div>
                     <Marquee speed={30} >
-                        {
-                            [...Array(10)].map(() => {
-                                return (
-                                    <div className={styles.lightbox}>
-                                        <img src={Logoipsum} alt='Logoipsum' />
-                                    </div>
-                                )
-                            })
-                        }
+                        <div className={styles.lightbox}>
+                            <img src={Yahoo} alt='Yahoo' />
+                        </div>
+                        <div className={styles.lightbox}>
+                            <img src={Fox} alt='Fox' />
+                        </div>
+                        <div className={styles.lightbox}>
+                            <img src={CNN} alt='CNN' />
+                        </div>
+                        <div className={styles.lightbox}>
+                            <img src={Google} alt='Google' />
+                        </div>
+                        <div className={styles.lightbox}>
+                            <img src={Scranton} alt='Scranton' />
+                        </div>
+                        <div className={styles.lightbox}>
+                            <img src={Abc} alt='Abc' />
+                        </div>
+                        <div className={styles.lightbox}>
+                            <img src={Yahoo} alt='Yahoo' />
+                        </div>
+                        <div className={styles.lightbox}>
+                            <img src={Fox} alt='Fox' />
+                        </div>
+                        <div className={styles.lightbox}>
+                            <img src={CNN} alt='CNN' />
+                        </div>
+                        <div className={styles.lightbox}>
+                            <img src={Google} alt='Google' />
+                        </div>
+                        <div className={styles.lightbox}>
+                            <img src={Scranton} alt='Scranton' />
+                        </div>
+                        <div className={styles.lightbox}>
+                            <img src={Abc} alt='Abc' />
+                        </div>
                     </Marquee>
                 </div>
             </div>

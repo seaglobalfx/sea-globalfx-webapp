@@ -88,14 +88,23 @@
     }
 
     .lightbox {
-        padding: 16px;
         border-radius: 8.096px;
+        height: 52px;
         border: 0.675px solid rgba (204, 204, 204, 0.00);
         background: rgba(0, 0, 0, 0.05);
         margin-right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 152px;
+        width: 152px;
+        min-width: 152px;
 
         img {
             display: block;
+            object-fit: contain;
+            width: 70%;
+            height: 50%;
         }
     }
 
