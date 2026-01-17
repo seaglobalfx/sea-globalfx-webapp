@@ -112,6 +112,11 @@
                         font-weight: 600;
                         line-height: normal;
                         @include font-semibold;
+                        transition: .3s ease-in-out;
+
+                        &:hover {
+                            transform: scale(1.05) !important;
+                        }
 
                         @include respond-to("sm") {
                             font-size: 14px;
@@ -125,10 +130,20 @@
 
                         &.orange {
                             background: var(--Primary, linear-gradient(90deg, #E8BC33 10%, #B07A09 100%));
+
+                            &:hover {
+                                background-position: 100% 50%;
+                                background: var(--Primary, linear-gradient(90deg, #B07A09 10%, #E8BC33 100%));
+
+                            }
                         }
 
                         &.black {
                             background: #252525;
+
+                            &:hover {
+                                opacity: .9 !important;
+                            }
                         }
                     }
                 }
