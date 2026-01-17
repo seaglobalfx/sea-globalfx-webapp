@@ -95,7 +95,7 @@ export default function Herobanner() {
                     >
                         <div className={styles.image}>
                             {/* <img src={HeroImage} alt='HeroImage' /> */}
-                            <video src={Video} alt="Video" loop muted autoPlay playsInline></video>
+                            <video src={Video} alt="Video" loop muted autoPlay playsInline preload="auto"></video>
                         </div>
                     </motion.div>
 
