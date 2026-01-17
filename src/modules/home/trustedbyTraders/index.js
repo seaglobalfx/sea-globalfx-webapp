@@ -9,6 +9,7 @@ import 'swiper/css/navigation';
 
 import { Autoplay, EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Image from 'next/image';
 const QuoteIcon = '/assets/icons/quote.svg';
 const Meena = '/assets/images/meena.webp';
 const Kevin = '/assets/images/Kevin.webp';
@@ -139,8 +140,8 @@ export default function TrustedbyTraders() {
                 modules={[EffectCoverflow, Pagination, Autoplay, Navigation]}
                 className="mySwiper"
                 breakpoints={{
-                    320: { slidesPerView: 1.3, spaceBetween: 20 },
-                    480: { slidesPerView: 1.3, spaceBetween: 30 },
+                    320: { slidesPerView: 1.2, spaceBetween: 20 },
+                    480: { slidesPerView: 1.2, spaceBetween: 20 },
                     640: { slidesPerView: 1.1, spaceBetween: 40 },
                     768: { slidesPerView: 1.5, spaceBetween: 50 },
                     1024: { slidesPerView: 3.1, spaceBetween: 80 },
@@ -160,7 +161,7 @@ export default function TrustedbyTraders() {
                                     <div className={styles.profile}>
                                         <div className={styles.profileImage}>
                                             {item.profileImage && (
-                                                <img src={item.profileImage} alt={item.name} />
+                                                <Image width={60} height={60} src={item.profileImage} alt={item.name} />
                                             )}
                                         </div>
 
