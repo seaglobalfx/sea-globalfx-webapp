@@ -98,12 +98,16 @@
 
         .griditems {
             height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transform-style: preserve-3d;
+            will-change: transform;
 
             .box {
                 border-radius: 24px;
                 background: linear-gradient(180deg, #FFF 41.83%, rgba(255, 255, 255, 0.00) 100%);
                 position: relative;
                 height: 100%;
+
 
                 .buttongrid {
                     display: flex;
@@ -117,6 +121,10 @@
                         transform: translateY(-50%);
 
                         svg {
+                            max-width: 155px;
+                        }
+
+                        svg {
                             @include respond-to("sm") {
                                 max-width: 130px;
                             }
@@ -128,6 +136,10 @@
                         top: 55%;
                         right: 0;
                         transform: translateY(-50%);
+
+                        svg {
+                            max-width: 155px;
+                        }
 
                         svg {
                             @include respond-to("sm") {
@@ -248,6 +260,8 @@
                     background: var(--Hero-Text, linear-gradient(93deg, #252525 0%, #4E4E4E 24.34%, #4E4E4E 52.49%, #4E4E4E 71.46%, #252525 99.25%));
                     padding: 24px;
                     border-radius: 24px 24px 0 0;
+                    transition: transform 0.3s ease;
+                    will-change: transform;
 
                     @include respond-to("sm") {
                         padding: 16px;

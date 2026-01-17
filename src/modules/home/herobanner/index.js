@@ -7,6 +7,7 @@ import styles from './herobanner.module.scss';
 const HeroImage = '/assets/images/hero-img.png';
 const UserIcon = '/assets/icons/user.svg';
 const DemoIcon = '/assets/icons/demo.svg';
+const Video = '/assets/video/video.mp4';
 
 /* Animations */
 const container = {
@@ -69,15 +70,18 @@ export default function Herobanner() {
                                 className={styles.twoButtonalignment}
                                 variants={container}
                             >
-                                <motion.button className={styles.orange} variants={fadeUp}>
-                                    <img src={UserIcon} alt='UserIcon' />
-                                    Open Account
-                                </motion.button>
-
-                                <motion.button className={styles.black} variants={fadeUp}>
-                                    <img src={DemoIcon} alt='DemoIcon' />
-                                    Try Demo
-                                </motion.button>
+                                <a href='https://client.seaglobalfx.com/?tab=register' target='_blank'>
+                                    <motion.button className={styles.orange} variants={fadeUp}>
+                                        <img src={UserIcon} alt='UserIcon' />
+                                        Open Account
+                                    </motion.button>
+                                </a>
+                                <a target='_blank' href='https://client.seaglobalfx.com/'>
+                                    <motion.button className={styles.black} variants={fadeUp}>
+                                        <img src={DemoIcon} alt='DemoIcon' />
+                                        Try Demo
+                                    </motion.button>
+                                </a>
                             </motion.div>
                         </div>
                     </motion.div>
@@ -90,7 +94,8 @@ export default function Herobanner() {
                         animate="visible"
                     >
                         <div className={styles.image}>
-                            <img src={HeroImage} alt='HeroImage' />
+                            {/* <img src={HeroImage} alt='HeroImage' /> */}
+                            <video src={Video} alt="Video" loop muted autoPlay playsInline></video>
                         </div>
                     </motion.div>
 

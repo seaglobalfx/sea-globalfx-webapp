@@ -21,15 +21,18 @@ export default function StartTrading({ subText, fullwidth, sizexl1 }) {
                             <div
                                 className={styles.twoButtonalignment}
                             >
-                                <button className={styles.orange} >
-                                    <img src={UserIcon} alt='UserIcon' />
-                                    Open Account
-                                </button>
-
-                                <button className={styles.black} >
-                                    <img src={DemoIcon} alt='DemoIcon' />
-                                    Try Demo
-                                </button>
+                                <a href='https://client.seaglobalfx.com/?tab=register' target='_blank'>
+                                    <button className={styles.orange} >
+                                        <img src={UserIcon} alt='UserIcon' />
+                                        Open Account
+                                    </button>
+                                </a>
+                                <a target='_blank' href='https://client.seaglobalfx.com/'>
+                                    <button className={styles.black} >
+                                        <img src={DemoIcon} alt='DemoIcon' />
+                                        Try Demo
+                                    </button>
+                                </a>
                             </div>
                         </div>
                         <div className={styles.griditems}>

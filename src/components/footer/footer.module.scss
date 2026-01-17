@@ -110,6 +110,10 @@
                 align-items: center;
                 gap: 8px;
 
+                a {
+                    display: block;
+                }
+
                 .round {
                     width: 35px;
                     height: 35px;
@@ -121,7 +125,11 @@
                     transition: .3s ease-in-out;
 
                     &:hover {
-                        background-color: #0C0C0C;
+                        background-color: #fff;
+
+                        img {
+                            filter: invert(1);
+                        }
                     }
                 }
             }

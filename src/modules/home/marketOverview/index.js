@@ -68,7 +68,44 @@ export default function MarketOverview() {
                         { img: CryptoImage, link: '/crypto', title: 'Crypto', text: 'Participate in the digital asset market with cryptocurrencies, available for trading in real-time.' },
                         { img: ETFsImage, link: '/crypto', title: 'ETFs', text: 'Gain diversified exposure through Exchange-Traded Funds, combining multiple assets.' },
                     ].map((item, index) => (
-                        <motion.div className={styles.griditems} variants={fadeUp} key={index}>
+                        <motion.div className={styles.griditems}
+                            onMouseMove={(e) => {
+                                const card = e.currentTarget;
+                                const image = card.querySelector(`.${styles.image}`);
+                                const rect = card.getBoundingClientRect();
+                                const x = e.clientX - rect.left;
+                                const y = e.clientY - rect.top;
+                                const xPos = x / rect.width;
+                                const yPos = y / rect.height;
+                                const rotateY = (xPos - 0.5) * 20;
+                                const rotateX = (0.5 - yPos) * 20;
+
+                                // Card tilt
+                                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                                card.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.3)';
+
+                                // Image parallax movement
+                                if (image) {
+                                    const translateX = (xPos - 0.5) * 20; // adjust strength
+                                    const translateY = (yPos - 0.5) * 20;
+                                    image.style.transform = `translate(${translateX}px, ${translateY}px) scale(1.05)`;
+                                }
+                            }}
+                            onMouseLeave={(e) => {
+                                const card = e.currentTarget;
+                                const image = card.querySelector(`.${styles.image}`);
+
+                                // Reset card
+                                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+                                card.style.boxShadow = 'none';
+
+                                // Reset image
+                                if (image) {
+                                    image.style.transform = 'translate(0px, 0px) scale(1)';
+                                }
+                            }}
+
+                            variants={fadeUp} key={index}>
                             <Link href={item.link}>
                                 <div className={styles.image}>
                                     <img src={item.img} alt={item.title} />

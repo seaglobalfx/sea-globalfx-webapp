@@ -9,39 +9,39 @@ const DownIcon = '/assets/icons/down.svg';
 
 const faqLeft = [
     {
-        q: 'Is this broker regulated?',
-        a: 'Sea Global is incorporated under the laws of [Jurisdiction] with the registration number listed above.',
+        q: 'How Do I Open an Account with Sea Global FX?',
+        a: 'You can open an account by completing our online registration form and verifying your identity. Once approved, you can fund your account and start trading.',
     },
     {
-        q: 'How secure are my funds?',
-        a: 'Client funds are kept in segregated accounts with top-tier banks.',
+        q: 'Are Funding and Withdrawal Requests Processed Immediately?',
+        a: 'Funding is usually instant, while withdrawals are processed as quickly as possible and may take a short time depending on the payment method used.',
     },
     {
-        q: 'What platforms do you support?',
-        a: 'We support Web, Android, iOS, and desktop trading platforms.',
+        q: 'What Is Forex Trading?',
+        a: 'Forex trading involves buying one currency and selling another to profit from changes in their exchange rates. For example, if you believe the Euro will rise against the US Dollar, you buy EUR/USD. If the Euro’s value increases, you can sell it later at a higher price and make a profit.',
     },
     {
-        q: 'Is customer support available?',
-        a: 'Yes, 24/7 multilingual customer support is available.',
+        q: 'Is MetaTrader 5 Good for Beginners?',
+        a: 'Yes. MetaTrader 5 is user-friendly, widely used, and offers helpful tools for both beginners and experienced traders.',
     },
 ];
 
 const faqRight = [
     {
-        q: 'Are there any hidden fees?',
-        a: 'No hidden fees. All charges are clearly disclosed.',
+        q: 'Why is risk management important?',
+        a: 'Risk management helps protect your trading capital by controlling how much you risk on each trade. It involves setting limits like stop-loss orders and proper position sizing, which can reduce losses and support more consistent, disciplined trading decisions over time.',
     },
     {
-        q: 'How fast are withdrawals?',
-        a: 'Withdrawals are processed within 24–48 hours.',
+        q: 'What is the biggest mistake new traders make?',
+        a: 'The biggest mistake new traders make is risking too much on a single trade. This often comes from overconfidence or emotional decisions, and it can quickly lead to large losses.',
     },
     {
-        q: 'Do you offer demo accounts?',
-        a: 'Yes, free demo accounts are available for practice.',
+        q: 'Is trading suitable for everyone?',
+        a: 'Trading involves risk and may not be suitable for everyone. It’s important to understand the risks and trade responsibly.',
     },
     {
-        q: 'Which countries are supported?',
-        a: 'We support traders from most countries worldwide.',
+        q: 'What is trading psychology?',
+        a: 'Trading psychology refers to how a trader manages emotions such as fear, greed, and stress. Maintaining emotional control helps traders stay disciplined, follow their strategy, and make rational decisions instead of impulsive ones.',
     },
 ];
 

@@ -71,15 +71,18 @@ export default function IndicesMarketBanner() {
                                 className='two-button-alignment'
                                 variants={fadeUp}
                             >
-                                <button className='orange'>
-                                    <img src={UserIcon} alt='UserIcon' />
-                                    Open Account
-                                </button>
-
-                                <button className='black'>
-                                    <img src={DemoIcon} alt='DemoIcon' />
-                                    Try Demo
-                                </button>
+                                <a href='https://client.seaglobalfx.com/?tab=register' target='_blank'>
+                                    <button className='orange'>
+                                        <img src={UserIcon} alt='UserIcon' />
+                                        Open Account
+                                    </button>
+                                </a>
+                                <a target='_blank' href='https://client.seaglobalfx.com/'>
+                                    <button className='black'>
+                                        <img src={DemoIcon} alt='DemoIcon' />
+                                        Try Demo
+                                    </button>
+                                </a>
                             </motion.div>
                         </motion.div>
                     </div>

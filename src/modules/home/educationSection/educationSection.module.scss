@@ -45,13 +45,24 @@
             @include respond-to("sm") {
                 display: block;
             }
+
+
         }
 
         .allbox {
             @include respond-to("sm") {
-                display: flex;
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
                 gap: 16px;
-                padding: 0 0 40px 0;
+                padding: 0 20px 40px 20px;
+            }
+
+            &.topSection {
+                margin-top: -85px;
+            }
+
+            &.secAligment {
+                margin-top: -10px;
             }
 
             .box {
@@ -63,10 +74,20 @@
                 padding: 24px 16px;
                 height: 154px;
 
+                &:hover {
+                    &::before {
+                        background: linear-gradient(260deg, rgba(255, 255, 255, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+
+                    }
+
+                    .icon {
+                        img {
+                            transform: rotate(40deg);
+                        }
+                    }
+                }
+
                 @include respond-to("sm") {
-                    min-width: 180px;
-                    max-width: 180px;
-                    width: 180px;
                     padding: 20px 14px;
                     margin: 0;
                     height: 140px;
@@ -94,6 +115,10 @@
                     bottom: 10px;
                     right: 0;
 
+                    @include respond-to("sm") {
+                        right: 20px;
+                    }
+
                     img {
                         max-width: 93px;
                         display: block;
@@ -108,6 +133,7 @@
                     img {
                         display: block;
                         cursor: pointer;
+                        transition: .3s ease-in-out;
                     }
                 }
 

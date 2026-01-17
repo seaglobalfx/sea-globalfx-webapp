@@ -77,6 +77,16 @@
             background: #F1F1F1;
             padding: 24px 24px 10px 24px;
             position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transform-style: preserve-3d;
+            transform: perspective(1000px) rotateX(0) rotateY(0);
+
+            &:hover {
+                &::before {
+                    background: linear-gradient(240deg, rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+
+                }
+            }
 
             @include respond-to("sm") {
                 padding: 24px 24px 0 24px;
@@ -176,6 +186,13 @@
             line-height: normal;
             @include font-semibold;
             color: #fff;
+            transition: .3s ease-in-out;
+
+            &:hover {
+                transform: scale(1.05);
+                background: var(--Primary, linear-gradient(90deg, #B07A09 10%, #E8BC33 100%));
+
+            }
 
             img {
                 display: block;

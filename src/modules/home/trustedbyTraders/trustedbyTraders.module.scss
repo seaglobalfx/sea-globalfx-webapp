@@ -84,6 +84,12 @@
         overflow: hidden;
         transition: .3s ease-in-out;
 
+        &:hover {
+            &::before {
+                background: linear-gradient(280deg, rgba(0, 0, 0, 0.2) 0%, rgba(102, 102, 102, 0) 100%);
+            }
+        }
+
         @include respond-to("sm") {
             padding: 14px;
             border-radius: 12px;

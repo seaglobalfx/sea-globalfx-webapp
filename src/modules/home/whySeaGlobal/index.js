@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import styles from './whySeaGlobal.module.scss';
 
 const SeaGlobalImage = '/assets/images/sea.png';
+const CoinImage = '/assets/images/coin.png';
 
 const fadeUp = {
     hidden: { opacity: 0, y: 40 },
@@ -36,8 +37,33 @@ export default function WhySeaGlobal() {
                         variants={fadeUp}
                         transition={{ duration: 0.6, ease: 'easeOut' }}
                     >
-                        <div className={styles.image}>
-                            <img src={SeaGlobalImage} alt="SeaGlobalImage" />
+                        <div className={styles.widthBox}>
+                            <div className={styles.mainImage}>
+                                <div
+                                    className={styles.image}
+                                >
+                                    <img src={SeaGlobalImage} alt="SeaGlobalImage" />
+                                </div>
+
+                                <motion.div
+                                    className={styles.coinImage}
+
+                                >
+                                    <motion.img
+                                        animate={{
+                                            y: [0, -20, 0],
+                                            x: [0, 10, 0],
+                                        }}
+                                        transition={{
+                                            duration: 5,
+                                            ease: 'linear',
+                                            repeat: Infinity,
+                                        }}
+                                        style={{ transformStyle: 'preserve-3d' }}
+                                        src={CoinImage} alt="CoinImage" />
+                                </motion.div>
+
+                            </div>
                         </div>
                     </motion.div>
 
@@ -80,6 +106,24 @@ export default function WhySeaGlobal() {
                                 }
                             ].map((item, index) => (
                                 <motion.div
+                                    onMouseMove={(e) => {
+                                        const card = e.currentTarget;
+                                        const rect = card.getBoundingClientRect();
+                                        const x = e.clientX - rect.left;
+                                        const y = e.clientY - rect.top;
+                                        const xPos = x / rect.width;
+                                        const yPos = y / rect.height;
+                                        const rotateY = (xPos - 0.5) * 20;
+                                        const rotateX = (0.5 - yPos) * 20;
+
+                                        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                                        card.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.3)';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        const card = e.currentTarget;
+                                        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+                                        card.style.boxShadow = 'none';
+                                    }}
                                     key={index}
                                     className={styles.items}
                                     variants={fadeUp}

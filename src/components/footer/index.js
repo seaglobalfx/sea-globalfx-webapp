@@ -1,4 +1,4 @@
-import React from 'react'
+'use client'
 import styles from './footer.module.scss';
 const FooterLogo = '/assets/logo/footer-logo.svg';
 const FacebookIcon = '/assets/icons/facebook.svg';
@@ -6,13 +6,16 @@ const TwitterIcon = '/assets/icons/twitter.svg';
 const InstagramIcon = '/assets/icons/instagram.svg';
 const LinkdinIcon = '/assets/icons/linkdin.svg';
 export default function Footer() {
+    const scrollup = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
     return (
         <>
             <footer className={styles.footer}>
                 <div className='container-xs'>
                     <div className={styles.footerGrid}>
                         <div className={styles.left}>
-                            <div className={styles.footerLogo}>
+                            <div className={styles.footerLogo} onClick={scrollup}>
                                 <img src={FooterLogo} alt='FooterLogo' />
                             </div>
                             <p>
@@ -48,26 +51,24 @@ export default function Footer() {
                                 <div className={styles.line}></div>
                                 <p>
                                     Registered Address:
-                                    [Insert Registered Address],
-                                    [City, Country]
+                                    1st Floor, The Sotheby Building,, Rodney Bay, Gros-Islet, Castries, Saint Lucia – 838
                                 </p>
                                 <p>
-                                    Physical Address:
-                                    [Insert Office Address],
-                                    [City, Country]
+                                    Physical Address:<br />
+                                    1st Floor, The Sotheby Building,, Rodney Bay, Gros-Islet, Castries, Saint Lucia – 838
                                 </p>
                                 <p>
                                     Registration Number:
-                                    [Insert Registration Number]
+                                    2025- 00352
                                 </p>
-                                <p>
+                                <a href='mailto:support@seaglobalfx.com'>
                                     Email:
-                                    support@seaglobal.com
-                                </p>
-                                <p>
+                                    support@seaglobalfx.com
+                                </a>
+                                <a href='callto:+971 58 261 9955'>
                                     Phone: <br />
-                                    [Insert Contact Number]
-                                </p>
+                                    +971 58 261 9955
+                                </a>
 
                             </div>
                             <div>
@@ -115,28 +116,17 @@ export default function Footer() {
                     </div>
                     <div className={styles.textstyle}>
                         <p>
-                            Legal Notice: <br />Sea Global is incorporated under the laws of [Jurisdiction] with the registration number listed above.
-                            Company details and legal documentation are available upon request.
+                            Risk warning <br />
+                            Trading in Foreign Exchange and Contracts for Difference carries a high level of risk to your capital and unexpected price movements. A key risk of leveraged trading is that if a market moves against your position, you can incur additional liabilities far in excess of your initial margin deposit. Only speculate with money you can afford to lose. The products listed on this website may not be suitable for all customers; therefore, ensure you fully understand the risks involved and seek independent financial advice if necessary.
                         </p>
                         <p>
-                            Risk Warning <br />
-                            Trading Forex, CFDs, and other leveraged financial instruments involves a high level of risk and may not be suitable for all investors. You may lose more than your initial investment. Before engaging in trading
-                            activities, ensure you fully understand the risks involved and consider your financial situation and risk
-                            tolerance.
+                            Restricted Countries
+                            <br />
+                            Sea Global Ltd. does not provide services to residents of the United States, Canada, North Korea, and Cuba, or any other sanctioned jurisdiction where such services would be contrary to local law or regulation.
                         </p>
                         <p>
-                            Legal Disclaimer <br />
-                            The information provided on this website is for general informational purposes only and does not constitute
-                            financial, investment, or legal advice. Sea Global does not guarantee the accuracy, completeness, or
-                            timeliness of the information provided and shall not be held liable for any losses arising from reliance on this
-                            content. Please review our Terms & Conditions and Risk Disclosure before using our services.
-                        </p>
-                        <p>
-                            Restricted Jurisdictions <br />
-                            Sea Global does not offer services to residents or citizens of certain jurisdictions due to local laws and
-                            regulatory restrictions. These may include, but are not limited to, the United States, sanctioned countries,
-                            and other restricted regions. Users are responsible for ensuring compliance with local regulations before
-                            opening an account.
+                            Disclaimer <br />
+                            Sea Global Ltd. operates solely as an execution service and does not offer advisory services. Occasionally, Sea Global Ltd. may release general market insights; however, such communications should not be interpreted as advice, an invitation, or an endorsement for any financial instrument. Sea Global Ltd. bears no liability for the application of this content or any outcomes thereof. The completeness of this information is not guaranteed, and reliance upon it is at the sole discretion and risk of the user.
                         </p>
                     </div>
                 </div>

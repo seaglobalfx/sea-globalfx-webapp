@@ -3,9 +3,13 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import styles from './educationSection.module.scss';
 import Marquee from 'react-fast-marquee';
+import classNames from 'classnames';
 
 const RotateArrow = '/assets/icons/rotate-arrow.svg';
 const MarketIcon = '/assets/icons/market.svg';
+const CalculatorsIcon = '/assets/icons/Calculators.svg';
+const AnalysisIcon = '/assets/icons/Analysis.svg';
+const EconomicIcon = '/assets/icons/Economic.svg';
 
 const scrollUp = {
     animate: {
@@ -47,28 +51,63 @@ export default function EducationSection() {
                         </p>
                     </div>
                     <div className={styles.mobileShow}>
-                        <Marquee>
-                            <div className={styles.allbox}>
-                                {[...Array(20)].map((_, i) => (
-                                    <motion.div
-                                        className={styles.box}
-                                        key={i}
-                                        whileHover={{ scale: 1.03 }}
-                                        transition={{ duration: 0.2 }}
-                                    >
-                                        <h3>Know Your Markets</h3>
+                        <div className={styles.allbox}>
+                            <motion.div
+                                className={styles.box}
+                            >
+                                <h3>Know Your Markets</h3>
 
-                                        <div className={styles.icon}>
-                                            <img src={RotateArrow} alt="RotateArrow" />
-                                        </div>
+                                <div className={styles.icon}>
+                                    <img src={RotateArrow} alt="RotateArrow" />
+                                </div>
 
-                                        <div className={styles.bottomIcon}>
-                                            <img src={MarketIcon} alt="MarketIcon" />
-                                        </div>
-                                    </motion.div>
-                                ))}
-                            </div>
-                        </Marquee>
+                                <div className={styles.bottomIcon}>
+                                    <img src={MarketIcon} alt="MarketIcon" />
+                                </div>
+                            </motion.div>
+                            <motion.div
+                                className={styles.box}
+
+                            >
+                                <h3>Trading Calculators</h3>
+
+                                <div className={styles.icon}>
+                                    <img src={RotateArrow} alt="RotateArrow" />
+                                </div>
+
+                                <div className={styles.bottomIcon}>
+                                    <img src={CalculatorsIcon} alt="CalculatorsIcon" />
+                                </div>
+                            </motion.div>
+                            <motion.div
+                                className={styles.box}
+                            >
+                                <h3>Market Analysis</h3>
+
+                                <div className={styles.icon}>
+                                    <img src={RotateArrow} alt="RotateArrow" />
+                                </div>
+
+                                <div className={styles.bottomIcon}>
+                                    <img src={AnalysisIcon} alt="AnalysisIcon" />
+                                </div>
+                            </motion.div>
+                            <motion.div
+                                className={styles.box}
+                            >
+                                <h3>Economic
+                                    Calendar</h3>
+
+                                <div className={styles.icon}>
+                                    <img src={RotateArrow} alt="RotateArrow" />
+                                </div>
+
+                                <div className={styles.bottomIcon}>
+                                    <img src={EconomicIcon} alt="EconomicIcon" />
+                                </div>
+                            </motion.div>
+                        </div>
+
                     </div>
                 </div>
 
@@ -78,58 +117,80 @@ export default function EducationSection() {
                     {/* Column 1 */}
                     <div className={styles.height}>
                         <motion.div
-                            className={styles.allbox}
-                            variants={scrollUp}
-                            animate="animate"
-                            style={{ willChange: 'transform' }}
+                            className={classNames(styles.allbox, styles.topSection)}
                         >
-                            {[...Array(20)].map((_, i) => (
-                                <motion.div
-                                    className={styles.box}
-                                    key={i}
-                                    whileHover={{ scale: 1.03 }}
-                                    transition={{ duration: 0.2 }}
-                                >
-                                    <h3>Know Your Markets</h3>
+                            <motion.div
+                                className={styles.box}
+                            >
+                            </motion.div>
+                            <motion.div
+                                className={styles.box}
+                            >
+                                <h3>Know Your Markets</h3>
 
-                                    <div className={styles.icon}>
-                                        <img src={RotateArrow} alt="RotateArrow" />
-                                    </div>
+                                <div className={styles.icon}>
+                                    <img src={RotateArrow} alt="RotateArrow" />
+                                </div>
 
-                                    <div className={styles.bottomIcon}>
-                                        <img src={MarketIcon} alt="MarketIcon" />
-                                    </div>
-                                </motion.div>
-                            ))}
+                                <div className={styles.bottomIcon}>
+                                    <img src={MarketIcon} alt="MarketIcon" />
+                                </div>
+                            </motion.div>
+                            <motion.div
+                                className={styles.box}
+
+                            >
+                                <h3>Trading Calculators</h3>
+
+                                <div className={styles.icon}>
+                                    <img src={RotateArrow} alt="RotateArrow" />
+                                </div>
+
+                                <div className={styles.bottomIcon}>
+                                    <img src={CalculatorsIcon} alt="CalculatorsIcon" />
+                                </div>
+                            </motion.div>
                         </motion.div>
                     </div>
 
                     {/* Column 2 */}
                     <div className={styles.height}>
                         <motion.div
-                            className={styles.allbox}
-                            variants={scrollDown}
-                            animate="animate"
-                            style={{ willChange: 'transform' }}
+                            className={classNames(styles.allbox, styles.secAligment)}
+
                         >
-                            {[...Array(20)].map((_, i) => (
-                                <motion.div
-                                    className={styles.box}
-                                    key={i}
-                                    whileHover={{ scale: 1.03 }}
-                                    transition={{ duration: 0.2 }}
-                                >
-                                    <h3>Know Your Markets</h3>
+                            <motion.div
+                                className={styles.box}
+                            >
+                                <h3>Market Analysis</h3>
 
-                                    <div className={styles.icon}>
-                                        <img src={RotateArrow} alt="RotateArrow" />
-                                    </div>
+                                <div className={styles.icon}>
+                                    <img src={RotateArrow} alt="RotateArrow" />
+                                </div>
 
-                                    <div className={styles.bottomIcon}>
-                                        <img src={MarketIcon} alt="MarketIcon" />
-                                    </div>
-                                </motion.div>
-                            ))}
+                                <div className={styles.bottomIcon}>
+                                    <img src={AnalysisIcon} alt="AnalysisIcon" />
+                                </div>
+                            </motion.div>
+                            <motion.div
+                                className={styles.box}
+                            >
+                                <h3>Economic
+                                    Calendar</h3>
+
+                                <div className={styles.icon}>
+                                    <img src={RotateArrow} alt="RotateArrow" />
+                                </div>
+
+                                <div className={styles.bottomIcon}>
+                                    <img src={EconomicIcon} alt="EconomicIcon" />
+                                </div>
+                            </motion.div>
+                            <motion.div
+                                className={styles.box}
+                            >
+
+                            </motion.div>
                         </motion.div>
                     </div>
 

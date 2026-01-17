@@ -75,23 +75,26 @@ export default function CryptoBanner() {
                                 whileInView="visible"
                                 viewport={{ once: true }}
                             >
-                                <motion.button
-                                    className='orange'
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.97 }}
-                                >
-                                    <img src={UserIcon} alt='UserIcon' />
-                                    Open Account
-                                </motion.button>
-
-                                <motion.button
-                                    className='black'
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.97 }}
-                                >
-                                    <img src={DemoIcon} alt='DemoIcon' />
-                                    Try Demo
-                                </motion.button>
+                                <a href='https://client.seaglobalfx.com/?tab=register' target='_blank'>
+                                    <motion.button
+                                        className='orange'
+                                        whileHover={{ scale: 1.05 }}
+                                        whileTap={{ scale: 0.97 }}
+                                    >
+                                        <img src={UserIcon} alt='UserIcon' />
+                                        Open Account
+                                    </motion.button>
+                                </a>
+                                <a target='_blank' href='https://client.seaglobalfx.com/'>
+                                    <motion.button
+                                        className='black'
+                                        whileHover={{ scale: 1.05 }}
+                                        whileTap={{ scale: 0.97 }}
+                                    >
+                                        <img src={DemoIcon} alt='DemoIcon' />
+                                        Try Demo
+                                    </motion.button>
+                                </a>
                             </motion.div>
                         </div>
                     </div>

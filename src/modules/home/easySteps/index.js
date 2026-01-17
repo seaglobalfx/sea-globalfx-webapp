@@ -60,7 +60,26 @@ export default function EasySteps() {
                     whileInView="show"
                     viewport={{ once: true }}
                 >
-                    <motion.div className={styles.griditems} variants={itemVariants}>
+                    <motion.div
+                        onMouseMove={(e) => {
+                            const card = e.currentTarget;
+                            const rect = card.getBoundingClientRect();
+                            const x = e.clientX - rect.left;
+                            const y = e.clientY - rect.top;
+                            const xPos = x / rect.width;
+                            const yPos = y / rect.height;
+                            const rotateY = (xPos - 0.5) * 20;
+                            const rotateX = (0.5 - yPos) * 20;
+
+                            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                            card.style.boxShadow = 'none';
+                        }}
+                        onMouseLeave={(e) => {
+                            const card = e.currentTarget;
+                            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+                            card.style.boxShadow = 'none';
+                        }}
+                        className={styles.griditems} variants={itemVariants}>
                         <div className={styles.counter}>1</div>
                         <h3>SignUp</h3>
                         <p>Create your account in minutes</p>
@@ -69,7 +88,26 @@ export default function EasySteps() {
                         </div>
                     </motion.div>
 
-                    <motion.div className={styles.griditems} variants={itemVariants}>
+                    <motion.div
+                        onMouseMove={(e) => {
+                            const card = e.currentTarget;
+                            const rect = card.getBoundingClientRect();
+                            const x = e.clientX - rect.left;
+                            const y = e.clientY - rect.top;
+                            const xPos = x / rect.width;
+                            const yPos = y / rect.height;
+                            const rotateY = (xPos - 0.5) * 20;
+                            const rotateX = (0.5 - yPos) * 20;
+
+                            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                            card.style.boxShadow = 'none';
+                        }}
+                        onMouseLeave={(e) => {
+                            const card = e.currentTarget;
+                            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+                            card.style.boxShadow = 'none';
+                        }}
+                        className={styles.griditems} variants={itemVariants}>
                         <div className={styles.counter}>2</div>
                         <h3>KYC Verification</h3>
                         <p>Fast & secure identity verification</p>
@@ -78,7 +116,26 @@ export default function EasySteps() {
                         </div>
                     </motion.div>
 
-                    <motion.div className={styles.griditems} variants={itemVariants}>
+                    <motion.div
+                        onMouseMove={(e) => {
+                            const card = e.currentTarget;
+                            const rect = card.getBoundingClientRect();
+                            const x = e.clientX - rect.left;
+                            const y = e.clientY - rect.top;
+                            const xPos = x / rect.width;
+                            const yPos = y / rect.height;
+                            const rotateY = (xPos - 0.5) * 20;
+                            const rotateX = (0.5 - yPos) * 20;
+
+                            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                            card.style.boxShadow = 'none';
+                        }}
+                        onMouseLeave={(e) => {
+                            const card = e.currentTarget;
+                            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+                            card.style.boxShadow = 'none';
+                        }}
+                        className={styles.griditems} variants={itemVariants}>
                         <div className={styles.counter}>3</div>
                         <h3>Fund Account</h3>
                         <p>Add funds securely to start trading</p>
@@ -87,7 +144,26 @@ export default function EasySteps() {
                         </div>
                     </motion.div>
 
-                    <motion.div className={styles.griditems} variants={itemVariants}>
+                    <motion.div
+                        onMouseMove={(e) => {
+                            const card = e.currentTarget;
+                            const rect = card.getBoundingClientRect();
+                            const x = e.clientX - rect.left;
+                            const y = e.clientY - rect.top;
+                            const xPos = x / rect.width;
+                            const yPos = y / rect.height;
+                            const rotateY = (xPos - 0.5) * 20;
+                            const rotateX = (0.5 - yPos) * 20;
+
+                            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                            card.style.boxShadow = 'none';
+                        }}
+                        onMouseLeave={(e) => {
+                            const card = e.currentTarget;
+                            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+                            card.style.boxShadow = 'none';
+                        }}
+                        className={styles.griditems} variants={itemVariants}>
                         <div className={styles.counter}>4</div>
                         <h3>Start Trading</h3>
                         <p>Access global markets instantly</p>
@@ -97,10 +173,12 @@ export default function EasySteps() {
                     </motion.div>
                 </motion.div>
                 <div className={styles.buttonCenter}>
-                    <button>
-                        <img src={UserIcon} alt='UserIcon' />
-                        Open Account
-                    </button>
+                    <a href='https://client.seaglobalfx.com/?tab=register' target='_blank'>
+                        <button>
+                            <img src={UserIcon} alt='UserIcon' />
+                            Open Account
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>

@@ -24,20 +24,48 @@
             gap: 40px;
         }
 
-        .image {
-            @include respond-to("md") {
+        .widthBox {
+            max-width: 386px;
+            width: 100%;
+        }
+
+        .mainImage {
+            display: flex;
+            align-items: flex-end;
+            height: 100%;
+            position: relative;
+
+            .coinImage {
+                position: absolute;
+                top: -67%;
+                left: 54%;
                 display: flex;
                 justify-content: center;
+                transform: translateX(-50%);
+                width: 100%;
+
+                img {
+                    max-width: 247px;
+                    display: block;
+                }
             }
 
-            img {
-                display: block;
+            .image {
+                display: flex;
+                align-items: flex-end;
+                height: 100%;
 
-                @include respond-to("sm") {
-                    width: 100%;
+                img {
+                    display: block;
+
+                    @include respond-to("sm") {
+                        width: 100%;
+                    }
                 }
             }
         }
+
+
 
         .griditems:first-child {
             @include respond-to("sm") {
@@ -53,7 +81,7 @@
                 padding: 0 0 100px 0;
 
                 @include respond-to("sm") {
-                    padding: 0;
+                    padding: 0 0 220px 0;
                     grid-template-columns: repeat(1, 1fr);
                     gap: 20px;
                 }
@@ -63,6 +91,16 @@
                     background: linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.00) 100%);
                     padding: 34px 24px 24px 24px;
                     position: relative;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    transform-style: preserve-3d;
+                    transform: perspective(1000px) rotateX(0) rotateY(0);
+
+                    &:hover {
+                        &::before {
+                            background: linear-gradient(320deg, rgba(255, 255, 255, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+
+                        }
+                    }
 
                     h3 {
                         color: #F5F5F5;
