@@ -46,9 +46,11 @@
                 align-items: flex-end;
                 height: 100%;
 
-                video {
+                video,
+                img {
                     display: block;
                     width: 100%;
+                    pointer-events: none;
 
                     @include respond-to("md") {
                         max-width: 60%;

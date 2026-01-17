@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './herobanner.module.scss';
 
-const HeroImage = '/assets/images/hero-img.png';
+const HeroImage = '/assets/images/hero-coin.gif';
 const UserIcon = '/assets/icons/user.svg';
 const DemoIcon = '/assets/icons/demo.svg';
 const Video = '/assets/video/video.mp4';
@@ -94,8 +94,8 @@ export default function Herobanner() {
                         animate="visible"
                     >
                         <div className={styles.image}>
-                            {/* <img src={HeroImage} alt='HeroImage' /> */}
-                            <video src={Video} alt="Video" loop muted autoPlay playsInline preload="auto"></video>
+                            <img src={HeroImage} alt='HeroImage' />
+                            {/* <video src={Video} loop muted autoPlay playsInline></video> */}
                         </div>
                     </motion.div>
 
