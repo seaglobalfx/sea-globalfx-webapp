@@ -1,0 +1,154 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.compareTrading {
+    background: #F1F1F1;
+    padding: 110px 0;
+
+    @include respond-to("sm") {
+        padding: 60px 0;
+    }
+
+    :global(.container-xs) {
+        @include respond-to("sm") {
+            padding: 0;
+        }
+    }
+
+    .title {
+        padding: 0 0 32px 0;
+
+        @include respond-to("sm") {
+            padding: 0 20px 30px 20px;
+        }
+
+        h2 {
+            font-size: 48px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 105%;
+            @include heading-semibold;
+            background: var(--Hero-Text, linear-gradient(93deg, #252525 0%, #4E4E4E 24.34%, #4E4E4E 52.49%, #4E4E4E 71.46%, #252525 99.25%));
+            background-clip: text;
+            -webkit-background-clip: text;
+            text-align: center;
+            -webkit-text-fill-color: transparent;
+
+            @include respond-to("sm") {
+                @include heading-30;
+            }
+
+            span {
+                background: var(--Primary, linear-gradient(90deg, #E8BC33 10%, #B07A09 100%));
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+
+        @include respond-to("md") {
+            display: flex;
+            scrollbar-width: none;
+            overflow: auto;
+            padding: 0 20px;
+        }
+
+        .griditems {
+            @include respond-to("md") {
+                width: 290px;
+                max-width: 290px;
+                min-width: 290px;
+            }
+        }
+
+        .secBox {
+            border-radius: 24px;
+            background: #FFF;
+
+            @include respond-to("sm") {
+                border-radius: 12px;
+            }
+
+            .header {
+                background: var(--Hero-Text, linear-gradient(93deg, #252525 0%, #4E4E4E 24.34%, #4E4E4E 52.49%, #4E4E4E 71.46%, #252525 99.25%));
+                padding: 34px 0;
+                border-radius: 24px 24px 0 0;
+
+                @include respond-to("sm") {
+                    padding: 24px 0;
+                    border-radius: 12px 12px 0 0;
+
+                }
+
+                h3 {
+                    color: #F1F1F1;
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 105%;
+                    text-transform: capitalize;
+                    @include font-semibold;
+                    text-align: center;
+
+                    @include respond-to("sm") {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+
+        .griditems:nth-child(3) {
+            &.secBox {
+                .header {
+                    background: var(--Primary, linear-gradient(90deg, #E8BC33 10%, #B07A09 100%));
+                }
+            }
+        }
+
+        .griditems {
+            .allListalignment {
+                padding: 0 20px;
+
+                .list {
+                    height: 93px;
+                    border-bottom: 1px solid #C7C7C7;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    @include respond-to("sm") {
+                        height: 70px;
+                    }
+
+                    &:last-child {
+                        border-bottom: none;
+                    }
+
+                    span {
+                        display: block;
+                        color: #252525;
+                        font-size: 24px;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: 105%;
+                        text-align: center;
+                        text-transform: capitalize;
+                        @include font-semibold;
+
+                        @include respond-to("sm") {
+                            font-size: 20px;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
