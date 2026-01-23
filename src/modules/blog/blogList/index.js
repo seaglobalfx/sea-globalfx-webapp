@@ -55,7 +55,7 @@ export default function BlogList() {
           <div className={styles.button}>
             <button onClick={() => setDropdown(!dropdown)}>
               {selectedCategory === "all" ? "All Categories" : selectedCategory}
-              <img src={DownIcon} alt="DownIcon" />
+              <img className={classNames(dropdown ? styles.rotate : "")} src={DownIcon} alt="DownIcon" />
             </button>
             <div className={classNames(styles.dropdown, dropdown ? styles.show : styles.hide)}>
               <div className={styles.sapcing}>

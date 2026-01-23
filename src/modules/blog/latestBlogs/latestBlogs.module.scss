@@ -68,10 +68,18 @@
 
                     span {
                         display: block;
+                        cursor: pointer;
                         font-size: 16px;
                         padding: 0 0 16px 0;
                         color: #fff;
                         @include font-medium;
+                        opacity: .7;
+                        @include font-medium;
+                        transition: .3s ease-in-out;
+
+                        &:hover {
+                            opacity: 1;
+                        }
 
                         &:last-child {
                             padding: 0;
@@ -95,6 +103,14 @@
                 @include font-medium;
                 color: #E8BC33;
                 line-height: normal;
+
+                img {
+                    transition: .3s ease-in-out;
+                }
+
+                .rotate {
+                    transform: rotate(180deg);
+                }
             }
         }
 

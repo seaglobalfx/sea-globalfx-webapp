@@ -22,7 +22,21 @@
         .text {
             padding: 0 0 36px 0;
 
-            h2 {
+            h1 {
+                color: #252525;
+                font-size: 30px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 150%;
+                @include font-medium;
+                margin: 0 0 12px 0;
+            }
+
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
                 color: #252525;
                 font-size: 20px;
                 font-style: normal;
@@ -39,6 +53,14 @@
                 font-weight: 400;
                 line-height: 150%;
                 @include font-normal;
+                margin: 0 0 20px 0;
+
+                a {
+                    background: var(--Primary, linear-gradient(90deg, #e8bc33 10%, #b07a09 100%));
+                    -webkit-text-fill-color: #0000;
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                }
             }
         }
 
