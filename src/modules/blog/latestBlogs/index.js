@@ -72,10 +72,10 @@ export default function LatestBlogs({ allBlog, paginationInfo, currentPage, setC
                     <img src={`${IMAGE_URL}${blog.coverImage?.url}`} alt="BlogImage" />
                   </div>
                   <div className={styles.details}>
-                    <h3>{blog.title}</h3>
+                    <h3>{blog?.title}</h3>
                     <div className={styles.textAlignment}>
-                      <span>{blog.author?.name}</span>
-                      <span>. {moment(blog.publishedAt).format("D MMMM YYYY")}</span>
+                      <span>{blog?.author?.name}</span>
+                      <span>. {moment(blog?.publishedAt).format("DD MMMM YYYY")}</span>
                     </div>
                   </div>
                 </div>
