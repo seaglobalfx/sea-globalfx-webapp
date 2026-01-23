@@ -5,10 +5,19 @@
 .tableofContents {
     padding: 72px 0;
 
+    @include respond-to("sm") {
+        padding: 60px 0;
+    }
+
     .grid {
         display: grid;
         grid-template-columns: 300px 1fr;
         gap: 42px;
+
+        @include respond-to("sm") {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
 
         .text {
             padding: 0 0 36px 0;

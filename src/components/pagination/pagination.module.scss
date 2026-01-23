@@ -26,6 +26,12 @@
         transition: .3s ease-in-out;
         cursor: pointer;
 
+        @include respond-to("sm") {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+        }
+
         &:hover {
             border: 0.75px solid var(--Primary, #E8BC33);
             color: #030303;
@@ -48,5 +54,11 @@
         line-height: normal;
         align-items: center;
         justify-content: center;
+
+        @include respond-to("sm") {
+            width: 40px;
+            height: 40px;
+            font-size: 14px;
+        }
     }
 }

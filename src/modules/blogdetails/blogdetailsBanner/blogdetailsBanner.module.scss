@@ -5,11 +5,20 @@
 .blogdetailsBanner {
     padding: 120px 0 0 0;
 
+
+    @include respond-to("sm") {
+        padding: 100px 0 0 0;
+    }
+
     .image {
         img {
             display: block;
             border-radius: 24px;
             width: 100%;
+
+            @include respond-to("sm") {
+                border-radius: 8px;
+            }
         }
     }
 
@@ -21,6 +30,10 @@
 
     .mainDetails {
         padding: 16px 0 50px 0;
+
+        @include respond-to("sm") {
+            padding: 16px 0 30px 0;
+        }
 
         .subtextAlignment {
             display: flex;
@@ -48,6 +61,11 @@
             font-weight: 600;
             line-height: 140%;
             @include heading-semibold;
+
+            @include respond-to("sm") {
+                font-size: 22px;
+                margin: 0 0 12px 0;
+            }
         }
     }
 }

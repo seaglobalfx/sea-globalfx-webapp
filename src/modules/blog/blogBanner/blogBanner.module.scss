@@ -1,0 +1,138 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.blogBannerSectionlignment {
+    padding: 120px 0 48px 0;
+
+    @include respond-to("sm") {
+        padding: 100px 0 60px 0;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+
+        @include respond-to("md") {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        @include respond-to("sm") {
+            gap: 20px;
+        }
+
+        .mainCard {
+            position: relative;
+
+            .layer {
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #000 100%);
+                height: 213px;
+                width: 100%;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                border-radius: 0 0 20px 20px;
+
+            }
+
+
+
+            .image {
+                height: 500px;
+                width: 100%;
+
+                @include respond-to("sm") {
+                    height: 238px;
+                }
+
+                img {
+                    border-radius: 20px;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+
+                    @include respond-to("sm") {
+                        border-radius: 12px;
+                    }
+                }
+            }
+        }
+
+        .contentAlignment {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9;
+
+            .contentAlignmentSpacing {
+                padding: 24px;
+
+                @include respond-to("sm") {
+                    padding: 16px;
+                }
+
+                h3 {
+                    color: #D9D9D9;
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 105%;
+                    margin: 0 0 13px 0;
+                    @include font-medium;
+
+                    @include respond-to("sm") {
+                        font-size: 20px;
+                    }
+                }
+
+                .textContent {
+                    display: flex;
+                    align-items: center;
+                    gap: 16px;
+
+                    span {
+                        display: block;
+                        color: #F5F5F5;
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 105%;
+                        @include font-normal;
+                    }
+                }
+            }
+        }
+
+        .griditems {
+            .twoColGrid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+
+                @include respond-to("sm") {
+                    grid-template-columns: 1fr;
+                    gap: 10px;
+                }
+
+                .mainCard:first-child {
+                    grid-column: span 2;
+
+                    @include respond-to("sm") {
+                        grid-column: auto;
+                    }
+
+                }
+
+                .mainCard {
+                    .image {
+                        height: 238px;
+                    }
+                }
+
+
+            }
+        }
+    }
+}

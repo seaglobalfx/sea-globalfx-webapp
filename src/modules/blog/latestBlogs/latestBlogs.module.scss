@@ -12,6 +12,12 @@
         justify-content: space-between;
         position: relative;
 
+        @include respond-to("sm") {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
         .line {
             width: 100%;
             height: 2px;
@@ -19,6 +25,10 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
+
+            @include respond-to("sm") {
+                display: none;
+            }
         }
 
         .button {
@@ -26,6 +36,11 @@
             padding-left: 20px;
             position: relative;
             z-index: 9;
+
+            @include respond-to("sm") {
+                padding-left: 0px;
+                max-width: 200px;
+            }
 
             .dropdown {
                 position: absolute;
@@ -89,6 +104,10 @@
             position: relative;
             z-index: 9;
 
+            @include respond-to("sm") {
+                padding-right: 0;
+            }
+
             h2 {
                 font-size: 34.444px;
                 font-style: normal;
@@ -99,6 +118,10 @@
                 background-clip: text;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
+
+                @include respond-to("sm") {
+                    @include heading-30;
+                }
 
                 span {
                     background: var(--Primary, linear-gradient(90deg, #E8BC33 10%, #B07A09 100%));
