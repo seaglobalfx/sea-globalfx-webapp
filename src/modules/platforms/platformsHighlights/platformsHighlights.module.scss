@@ -6,11 +6,20 @@
     background: #141414;
     padding: 100px 0;
 
+    @include respond-to("sm") {
+        padding: 60px 0 0 0;
+    }
+
     .grid {
         display: grid;
         grid-template-columns: 664px 1fr;
         gap: 70px;
         align-items: center;
+
+        @include respond-to("md") {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
 
         .image {
             img {
@@ -26,7 +35,7 @@
             padding: 0 0 100px 0;
 
             @include respond-to("sm") {
-                padding: 0 0 220px 0;
+                padding: 0 0 140px 0;
                 grid-template-columns: repeat(1, 1fr);
                 gap: 20px;
             }

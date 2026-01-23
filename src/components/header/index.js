@@ -71,9 +71,9 @@ export default function Header() {
                                     </motion.div>
                                 </div>
                                 <Link className={pathname === "/accounts" ? styles.active : ""} href="/accounts" aria-label='Accounts'>Accounts</Link>
-                                <a className={styles.menuSpacing} aria-label='Platforms'>Platforms</a>
+                                <Link href="/platforms" className={classNames(styles.menuSpacing, pathname === "/platforms" ? styles.active : "")} aria-label='Platforms'>Platforms</Link>
                                 <Link href="/blog" className={classNames(styles.menuSpacing, pathname === "/blog" ? styles.active : "")} aria-label='Blogs'>Blogs</Link>
-                                <a className={styles.menuSpacing} aria-label='Company'>Company</a>
+                                <Link href="/company" className={classNames(styles.menuSpacing, pathname === "/company" ? styles.active : "")} aria-label='Company'>Company</Link>
                             </div>
                             <div className={styles.button}>
                                 <a href='https://client.seaglobalfx.com/' target='_blank'>
@@ -128,24 +128,24 @@ export default function Header() {
                         </div>
                     </div>
                     <div className={styles.menuIconAlignment} onClick={() => setHeaderOpen(false)}>
-                        <a>
+                        <Link href="/accounts">
                             Accounts
-                        </a>
+                        </Link>
                     </div>
                     <div className={styles.menuIconAlignment} onClick={() => setHeaderOpen(false)}>
-                        <a>
+                        <Link href="/platforms">
                             Platforms
-                        </a>
+                        </Link>
                     </div>
                     <div className={styles.menuIconAlignment} onClick={() => setHeaderOpen(false)}>
-                        <a>
+                        <Link href="/blog">
                             Blogs
-                        </a>
+                        </Link>
                     </div>
                     <div className={styles.menuIconAlignment} onClick={() => setHeaderOpen(false)}>
-                        <a>
+                        <Link href="/company">
                             Company
-                        </a>
+                        </Link>
                     </div>
                 </div>
                 <div className={styles.headerFooter} onClick={() => setHeaderOpen(false)}>

@@ -6,11 +6,20 @@
     padding: 100px 0;
     background: #F1F1F1;
 
+    @include respond-to("sm") {
+        padding: 60px 0;
+    }
+
     iframe {
         width: 100%;
         display: block;
+        border-end-end-radius: 12px;
         height: 700px;
         border: none;
         outline: none;
+
+        @include respond-to("sm") {
+            height: 300px;
+        }
     }
 }

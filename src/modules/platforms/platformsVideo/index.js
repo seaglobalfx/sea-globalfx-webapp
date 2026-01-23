@@ -8,7 +8,7 @@ export default function PlatformsVideo() {
                     src="https://www.youtube.com/embed/9Scs-J-MH0I?autoplay=1&mute=1&loop=1&playlist=9Scs-J-MH0I&playsinline=1"
                     title="YouTube video player"
                     allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    referrerpolicy="strict-origin-when-cross-origin"
+                    referrerPolicy="strict-origin-when-cross-origin"
                     allowfullscreen>
                 </iframe>
             </div>
