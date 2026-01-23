@@ -5,7 +5,6 @@ import React, { useEffect, useRef, memo } from 'react';
 
 function CommoditiesTableData() {
   const pathname = usePathname();
-  console.log("saplspas", pathname)
   const container = useRef();
 
   useEffect(

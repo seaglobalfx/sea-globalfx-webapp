@@ -32,10 +32,21 @@
             font-size: 16px;
         }
 
-        &:hover {
+        &:hover,
+        &.active {
             border: 0.75px solid var(--Primary, #E8BC33);
             color: #030303;
             background: var(--Primary, linear-gradient(90deg, #E8BC33 10%, #B07A09 100%));
+        }
+
+        &.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            &:hover {
+                background: none;
+                border: 0.75px solid var(--Gray, #BCBCBC);
+                color: var(--Gray, #BCBCBC);
+            }
         }
     }
 
@@ -59,6 +70,12 @@
             width: 40px;
             height: 40px;
             font-size: 14px;
+        }
+
+        &.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
         }
     }
 }

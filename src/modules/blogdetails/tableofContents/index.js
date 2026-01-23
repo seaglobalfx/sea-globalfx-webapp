@@ -1,159 +1,102 @@
-import React from 'react'
-import styles from './tableofContents.module.scss';
-export default function TableofContents() {
-    return (
-        <div className={styles.tableofContents}>
-            <div className='container-xs'>
-                <div className={styles.grid}>
-                    <div className={styles.griditems}>
-                        <div className={styles.box}>
-                            <div className={styles.boxHeader}>
-                                <h2>Table of Contents</h2>
-                            </div>
-                            <div className={styles.list}>
-                                <ol>
-                                    <li>Introduction to the Forex Market</li>
-                                    <li>How Currency Pairs Work</li>
-                                    <li>Understanding Market Sessions</li>
-                                    <li>Basic Types of Analysis</li>
-                                    <li>Why Risk Management Matters</li>
-                                    <li>Common Beginner Mistakes</li>
-                                    <li>Building a Trading Routine</li>
-                                    <li>Final Thoughts for New Traders</li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={styles.griditems}>
-                        <div className={styles.text}>
-                            <h2>
-                                Forex trading masterclass for absolute beginners, and market enthusiasts
-                            </h2>
-                            <p>
-                                The foreign exchange market—commonly known as forex—is the world’s largest financial market, where currencies are bought and sold every second of the day. Unlike traditional stock markets, forex operates globally and remains open 24 hours, five days a week. This accessibility makes it appealing to new learners, but it also means understanding how the market functions is essential before taking any steps. In this guide, we break
-                                down the basics in simple language to help beginners build a strong foundation.
-                            </p>
-                        </div>
-                        <div className={styles.text}>
-                            <h2>
-                                Forex trading masterclass for absolute beginners, and market enthusiasts
-                            </h2>
-                            <p>
-                                The foreign exchange market—commonly known as forex—is the world’s largest financial market, where currencies are bought and sold every second of the day. Unlike traditional stock markets, forex operates globally and remains open 24 hours, five days a week. This accessibility makes it appealing to new learners, but it also means understanding how the market functions is essential before taking any steps. In this guide, we break
-                                down the basics in simple language to help beginners build a strong foundation.
-                            </p>
-                        </div>
-                        <div className={styles.text}>
-                            <h2>
-                                Forex trading masterclass for absolute beginners, and market enthusiasts
-                            </h2>
-                            <p>
-                                The foreign exchange market—commonly known as forex—is the world’s largest financial market, where currencies are bought and sold every second of the day. Unlike traditional stock markets, forex operates globally and remains open 24 hours, five days a week. This accessibility makes it appealing to new learners, but it also means understanding how the market functions is essential before taking any steps. In this guide, we break
-                                down the basics in simple language to help beginners build a strong foundation.
-                            </p>
-                        </div>
-                        <div className={styles.text}>
-                            <h2>
-                                Forex trading masterclass for absolute beginners, and market enthusiasts
-                            </h2>
-                            <p>
-                                The foreign exchange market—commonly known as forex—is the world’s largest financial market, where currencies are bought and sold every second of the day. Unlike traditional stock markets, forex operates globally and remains open 24 hours, five days a week. This accessibility makes it appealing to new learners, but it also means understanding how the market functions is essential before taking any steps. In this guide, we break
-                                down the basics in simple language to help beginners build a strong foundation.
-                            </p>
-                        </div>
-                        <div className={styles.text}>
-                            <h2>
-                                Forex trading masterclass for absolute beginners, and market enthusiasts
-                            </h2>
-                            <p>
-                                The foreign exchange market—commonly known as forex—is the world’s largest financial market, where currencies are bought and sold every second of the day. Unlike traditional stock markets, forex operates globally and remains open 24 hours, five days a week. This accessibility makes it appealing to new learners, but it also means understanding how the market functions is essential before taking any steps. In this guide, we break
-                                down the basics in simple language to help beginners build a strong foundation.
-                            </p>
-                        </div>
-                        <div className={styles.text}>
-                            <h2>
-                                Forex trading masterclass for absolute beginners, and market enthusiasts
-                            </h2>
-                            <p>
-                                The foreign exchange market—commonly known as forex—is the world’s largest financial market, where currencies are bought and sold every second of the day. Unlike traditional stock markets, forex operates globally and remains open 24 hours, five days a week. This accessibility makes it appealing to new learners, but it also means understanding how the market functions is essential before taking any steps. In this guide, we break
-                                down the basics in simple language to help beginners build a strong foundation.
-                            </p>
-                        </div>
-                        <div className={styles.text}>
-                            <h2>
-                                Forex trading masterclass for absolute beginners, and market enthusiasts
-                            </h2>
-                            <p>
-                                The foreign exchange market—commonly known as forex—is the world’s largest financial market, where currencies are bought and sold every second of the day. Unlike traditional stock markets, forex operates globally and remains open 24 hours, five days a week. This accessibility makes it appealing to new learners, but it also means understanding how the market functions is essential before taking any steps. In this guide, we break
-                                down the basics in simple language to help beginners build a strong foundation.
-                            </p>
-                        </div>
-                        <div className={styles.text}>
-                            <h2>
-                                Forex trading masterclass for absolute beginners, and market enthusiasts
-                            </h2>
-                            <p>
-                                The foreign exchange market—commonly known as forex—is the world’s largest financial market, where currencies are bought and sold every second of the day. Unlike traditional stock markets, forex operates globally and remains open 24 hours, five days a week. This accessibility makes it appealing to new learners, but it also means understanding how the market functions is essential before taking any steps. In this guide, we break
-                                down the basics in simple language to help beginners build a strong foundation.
-                            </p>
-                        </div>
-                        <div className={styles.text}>
-                            <h2>
-                                Forex trading masterclass for absolute beginners, and market enthusiasts
-                            </h2>
-                            <p>
-                                The foreign exchange market—commonly known as forex—is the world’s largest financial market, where currencies are bought and sold every second of the day. Unlike traditional stock markets, forex operates globally and remains open 24 hours, five days a week. This accessibility makes it appealing to new learners, but it also means understanding how the market functions is essential before taking any steps. In this guide, we break
-                                down the basics in simple language to help beginners build a strong foundation.
-                            </p>
-                        </div>
-                        <div className={styles.text}>
-                            <h2>
-                                Forex trading masterclass for absolute beginners, and market enthusiasts
-                            </h2>
-                            <p>
-                                The foreign exchange market—commonly known as forex—is the world’s largest financial market, where currencies are bought and sold every second of the day. Unlike traditional stock markets, forex operates globally and remains open 24 hours, five days a week. This accessibility makes it appealing to new learners, but it also means understanding how the market functions is essential before taking any steps. In this guide, we break
-                                down the basics in simple language to help beginners build a strong foundation.
-                            </p>
-                        </div>
-                        <div className={styles.text}>
-                            <h2>
-                                Forex trading masterclass for absolute beginners, and market enthusiasts
-                            </h2>
-                            <p>
-                                The foreign exchange market—commonly known as forex—is the world’s largest financial market, where currencies are bought and sold every second of the day. Unlike traditional stock markets, forex operates globally and remains open 24 hours, five days a week. This accessibility makes it appealing to new learners, but it also means understanding how the market functions is essential before taking any steps. In this guide, we break
-                                down the basics in simple language to help beginners build a strong foundation.
-                            </p>
-                        </div>
-                        <div className={styles.text}>
-                            <h2>
-                                Forex trading masterclass for absolute beginners, and market enthusiasts
-                            </h2>
-                            <p>
-                                The foreign exchange market—commonly known as forex—is the world’s largest financial market, where currencies are bought and sold every second of the day. Unlike traditional stock markets, forex operates globally and remains open 24 hours, five days a week. This accessibility makes it appealing to new learners, but it also means understanding how the market functions is essential before taking any steps. In this guide, we break
-                                down the basics in simple language to help beginners build a strong foundation.
-                            </p>
-                        </div>
-                        <div className={styles.text}>
-                            <h2>
-                                Forex trading masterclass for absolute beginners, and market enthusiasts
-                            </h2>
-                            <p>
-                                The foreign exchange market—commonly known as forex—is the world’s largest financial market, where currencies are bought and sold every second of the day. Unlike traditional stock markets, forex operates globally and remains open 24 hours, five days a week. This accessibility makes it appealing to new learners, but it also means understanding how the market functions is essential before taking any steps. In this guide, we break
-                                down the basics in simple language to help beginners build a strong foundation.
-                            </p>
-                        </div>
-                        <div className={styles.text}>
-                            <h2>
-                                Forex trading masterclass for absolute beginners, and market enthusiasts
-                            </h2>
-                            <p>
-                                The foreign exchange market—commonly known as forex—is the world’s largest financial market, where currencies are bought and sold every second of the day. Unlike traditional stock markets, forex operates globally and remains open 24 hours, five days a week. This accessibility makes it appealing to new learners, but it also means understanding how the market functions is essential before taking any steps. In this guide, we break
-                                down the basics in simple language to help beginners build a strong foundation.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+"use client";
+import { marked } from "marked";
+import { useEffect, useState } from "react";
+
+import React from "react";
+import styles from "./tableofContents.module.scss";
+export default function TableofContents({ blogDetail }) {
+  const [activeContent, setActiveContent] = useState("");
+
+  const collectHeadings = () => {
+    const newHeadings = [];
+    const renderer = {
+      heading({ text, depth }) {
+        const slugID = text?.trim()?.toLowerCase()?.replace(/\s+/g, "-")?.trim();
+        newHeadings.push({ text, depth, slugID });
+        return `<h${depth} dir="auto" title="${text}" id="${slugID}">${text}</h${depth}>\n`;
+      },
+      table(header, body) {
+        return `<div class='blogtable'><table><thead>${header}</thead><tbody>${body}</tbody></table></div>`;
+      },
+    };
+    marked.use({ renderer });
+    marked(blogDetail?.blogContent || "");
+    return newHeadings;
+  };
+
+  const handleScroll = (e, slugID) => {
+    if (e) e.preventDefault();
+    const element = document.getElementById(slugID);
+    if (element) {
+      const headerHeight = 110;
+      window.scrollTo({
+        top: element.offsetTop - headerHeight,
+        behavior: "smooth",
+      });
+    }
+  };
+  const handleWindowScroll = () => {
+    const scrollPosition = window.scrollY;
+    const headings = collectHeadings().filter((heading) => heading.depth === 1 || heading.depth === 2);
+    for (const heading of headings) {
+      const element = document.getElementById(heading.slugID);
+      if (element) {
+        const headerHeight = 110;
+        const elementTop = element.offsetTop - headerHeight;
+        const elementBottom = elementTop + element.clientHeight;
+        if (scrollPosition >= elementTop && scrollPosition < elementBottom) {
+          setActiveContent(heading.slugID);
+          break;
+        }
+      }
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleWindowScroll);
+    return () => {
+      window.removeEventListener("scroll", handleWindowScroll);
+    };
+  }, []);
+  return (
+    <div className={styles.tableofContents}>
+      <div className="container-xs">
+        <div className={styles.grid}>
+          <div className={styles.griditems}>
+            <div className={styles.box}>
+              <div className={styles.boxHeader}>
+                <h2>Table of Contents</h2>
+              </div>
+              <div className={styles.list}>
+                <ol>
+                  {collectHeadings()?.map(
+                    (heading, i) =>
+                      (heading.depth === 1 || heading.depth === 2) && (
+                        <li
+                          key={i}
+                          onClick={(e) => handleScroll(e, heading.slugID)}
+                          className={activeContent === heading?.slugID ? styles.active : ""}
+                          dangerouslySetInnerHTML={{
+                            __html: marked(heading?.text || ""),
+                          }}
+                        ></li>
+                      ),
+                  )}
+                </ol>
+              </div>
             </div>
+          </div>
+          <div className={styles.griditems}>
+            {blogDetail?.blogContent && (
+              <div
+                className={styles.text}
+                dangerouslySetInnerHTML={{
+                  __html: marked(blogDetail?.blogContent || ""),
+                }}
+              ></div>
+            )}
+          </div>
         </div>
-    )
-} 
+      </div>
+    </div>
+  );
+}
