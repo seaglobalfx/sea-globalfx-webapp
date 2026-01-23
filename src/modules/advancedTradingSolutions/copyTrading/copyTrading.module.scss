@@ -1,0 +1,171 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.pammTrading {
+    padding: 110px 0 0 0;
+    background: #141414;
+    position: relative;
+
+    @include respond-to("sm") {
+        padding: 60px 0 0 0;
+    }
+
+    .layerBlack {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        img {
+            width: 100%;
+            display: block;
+        }
+    }
+
+    .grid {
+        position: relative;
+        display: grid;
+        gap: 60px;
+        grid-template-columns: 559px 1fr;
+        align-items: flex-end;
+
+        @include respond-to("md") {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .griditems:first-child {
+            @include respond-to("md") {
+                order: 2;
+            }
+        }
+
+        .image {
+            @include respond-to("sm") {
+                display: flex;
+                justify-content: center;
+            }
+
+            img {
+                width: 100%;
+                display: block;
+
+                @include respond-to("md") {
+                    max-width: 60%;
+                }
+
+                @include respond-to("sm") {
+                    max-width: 90%;
+                }
+            }
+        }
+
+        .text {
+            padding: 0 0 32px 0;
+
+            h2 {
+                font-size: 48px;
+                font-style: normal;
+                font-weight: 600;
+                background: linear-gradient(93deg, #FFF 0%, #F1F1F1 24.34%, #DDD 52.49%, #F1F1F1 71.46%, #FFF 99.25%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                @include heading-semibold;
+                margin: 0 0 8px 0;
+                line-height: 105%;
+
+                @include respond-to("sm") {
+                    @include heading-30;
+                }
+
+                span {
+                    background: var(--Primary, linear-gradient(90deg, #E8BC33 10%, #B07A09 100%));
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+            }
+
+            p {
+                color: var(--Dark-Body, #747474);
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 105%;
+                @include font-normal;
+                max-width: 626px;
+
+                @include respond-to("sm") {
+                    @include font16;
+                }
+
+
+            }
+
+
+        }
+
+        .cardGrid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 520px;
+            padding: 0 0 110px 0;
+
+            @include respond-to("md") {
+                padding: 0;
+            }
+
+            @include respond-to("sm") {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .items {
+                position: relative;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                transform-style: preserve-3d;
+                padding: 28px;
+                transform: perspective(1000px) rotateX(0) rotateY(0);
+
+                h3 {
+                    color: #F5F5F5;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 105%;
+                    @include heading-normal;
+
+                    @include respond-to("sm") {
+                        @include font18;
+                    }
+                }
+
+                &:hover {
+                    &::before {
+                        background: linear-gradient(320deg, rgba(255, 255, 255, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+
+                    }
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    border-radius: 24px;
+                    padding: 1px;
+                    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+                    -webkit-mask:
+                        linear-gradient(#fff 0 0) content-box,
+                        linear-gradient(#fff 0 0);
+                    -webkit-mask-composite: xor;
+                    mask-composite: exclude;
+                    pointer-events: none;
+                    transition: .3s ease-in-out;
+                }
+            }
+        }
+    }
+}

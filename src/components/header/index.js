@@ -74,6 +74,7 @@ export default function Header() {
                                 <Link href="/platforms" className={classNames(styles.menuSpacing, pathname === "/platforms" ? styles.active : "")} aria-label='Platforms'>Platforms</Link>
                                 <Link href="/blog" className={classNames(styles.menuSpacing, pathname === "/blog" ? styles.active : "")} aria-label='Blogs'>Blogs</Link>
                                 <Link href="/company" className={classNames(styles.menuSpacing, pathname === "/company" ? styles.active : "")} aria-label='Company'>Company</Link>
+                                <Link href="/advanced-trading-solutions" className={classNames(styles.menuSpacing, pathname === "/advanced-trading-solutions" ? styles.active : "")} aria-label='advanced-trading-solutions'>Trading Solutions</Link>
                             </div>
                             <div className={styles.button}>
                                 <a href='https://client.seaglobalfx.com/' target='_blank'>
@@ -145,6 +146,11 @@ export default function Header() {
                     <div className={styles.menuIconAlignment} onClick={() => setHeaderOpen(false)}>
                         <Link href="/company">
                             Company
+                        </Link>
+                    </div>
+                    <div className={styles.menuIconAlignment} onClick={() => setHeaderOpen(false)}>
+                        <Link href="/advanced-trading-solutions">
+                            Trading Solutions
                         </Link>
                     </div>
                 </div>
