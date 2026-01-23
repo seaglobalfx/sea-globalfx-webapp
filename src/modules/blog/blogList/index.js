@@ -70,17 +70,15 @@ export default function BlogList() {
                   </span>
                 )}
                 {data?.categories?.map((category) => (
-                  <>
-                    <span
-                      key={category.documentId}
-                      onClick={() => {
-                        setSelectedCategory(category.name);
-                        setDropdown(false);
-                      }}
-                    >
-                      {category.name}
-                    </span>
-                  </>
+                  <span
+                    key={category.documentId}
+                    onClick={() => {
+                      setSelectedCategory(category.name);
+                      setDropdown(false);
+                    }}
+                  >
+                    {category.name}
+                  </span>
                 ))}
               </div>
             </div>

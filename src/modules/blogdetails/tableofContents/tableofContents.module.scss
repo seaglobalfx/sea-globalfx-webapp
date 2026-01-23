@@ -86,6 +86,14 @@
                         font-weight: 400;
                         line-height: 150%;
                         @include font-medium;
+                        cursor: pointer;
+                        transition: .3s ease-in-out;
+                        opacity: .7;
+
+                        &:hover {
+                            opacity: 1;
+                            text-decoration-line: underline;
+                        }
 
                         &:last-child {
                             padding: 0;
