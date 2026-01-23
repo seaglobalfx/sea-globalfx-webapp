@@ -6,16 +6,47 @@
     background: #141414;
     padding: 110px 0;
 
+    @include respond-to("sm") {
+        padding: 60px 0 0 0;
+    }
+
+    :global(.container-xs6) {
+        @include respond-to("sm") {
+            padding: 0;
+        }
+    }
+
     .grid {
         display: grid;
         grid-template-columns: 386px 1fr;
         gap: 32px;
 
+        @include respond-to("md") {
+            grid-template-columns: 1fr;
+            gap: 60px;
+        }
+
+        .griditems:first-child {
+            @include respond-to("sm") {
+                padding: 0 20px;
+            }
+        }
 
         .box {
             border-radius: 20px;
             background: rgba(255, 255, 255, 0.04);
             padding: 30px;
+
+            @include respond-to("md") {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            @include respond-to("sm") {
+                max-width: 100%;
+                border-radius: 0px;
+                padding: 30px 20px 60px 20px;
+            }
 
             h3 {
                 color: #FFF;
@@ -179,6 +210,10 @@
             gap: 24px;
             padding: 40px 0 0 0;
 
+            @include respond-to("sm") {
+                padding: 30px 0 0 0;
+            }
+
             p {
                 color: #FFF;
                 font-size: 24px;
@@ -203,6 +238,10 @@
         .title {
             padding: 0 0 40px 0;
 
+            @include respond-to("sm") {
+                padding: 0 0 30px 0;
+            }
+
             h2 {
                 color: #F1F1F1;
                 font-size: 40px;
@@ -210,6 +249,10 @@
                 font-weight: 500;
                 line-height: 140%;
                 @include heading-medium;
+
+                @include respond-to("sm") {
+                    @include heading-30;
+                }
 
                 span {
                     background: var(--Primary, linear-gradient(90deg, #E8BC33 10%, #B07A09 100%));

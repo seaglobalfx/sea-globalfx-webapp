@@ -7,6 +7,10 @@
     position: relative;
     padding: 110px 0 0 0;
 
+    @include respond-to("sm") {
+        padding: 60px 0 0 0;
+    }
+
     .blacklayer {
         width: 100%;
         position: absolute;
@@ -26,10 +30,34 @@
         grid-template-columns: 450px 1fr;
         align-items: flex-end;
 
+        @include respond-to("md") {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .griditems:first-child {
+            @include respond-to("md") {
+                order: 2;
+            }
+        }
+
         .image {
+            @include respond-to("sm") {
+                display: flex;
+                justify-content: center;
+            }
+
             img {
-                display: block;
                 width: 100%;
+                display: block;
+
+                @include respond-to("md") {
+                    max-width: 60%;
+                }
+
+                @include respond-to("sm") {
+                    max-width: 90%;
+                }
             }
         }
 
@@ -39,8 +67,12 @@
             gap: 24px;
             padding: 0 0 90px 0;
 
+            @include respond-to("md") {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 0;
+            }
+
             @include respond-to("sm") {
-                padding: 0 0 220px 0;
                 grid-template-columns: repeat(1, 1fr);
                 gap: 20px;
             }
@@ -118,11 +150,19 @@
                 -webkit-text-fill-color: transparent;
                 margin: 0 0 8px 0;
 
+                @include respond-to("sm") {
+                    @include heading-30;
+                }
+
                 span {
                     background: var(--Primary, linear-gradient(90deg, #E8BC33 10%, #B07A09 100%));
                     background-clip: text;
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
+
+                    @include respond-to("sm") {
+                        display: block;
+                    }
                 }
             }
 
@@ -133,6 +173,10 @@
                 font-weight: 400;
                 line-height: 105%;
                 @include font-normal;
+
+                @include respond-to("sm") {
+                    @include font16;
+                }
             }
         }
     }

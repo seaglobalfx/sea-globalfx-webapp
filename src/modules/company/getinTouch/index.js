@@ -89,7 +89,7 @@ export default function GetinTouch() {
                             <div className={styles.socialIcon}>
                                 {[
                                     { icon: FacebookIcon, link: 'https://www.facebook.com/people/Sea-Global-FX/61586171626639/' },
-                                    { icon: InstagramIcon, link: 'https://www.instagram.com' },
+                                    { icon: InstagramIcon, link: 'https://www.instagram.com/seaglobalfx/' },
                                     { icon: TwitterIcon, link: 'https://x.com/seaglobalfx' },
                                 ].map((item, index) => (
                                     <a

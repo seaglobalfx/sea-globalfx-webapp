@@ -75,11 +75,12 @@ export default function Footer() {
                             <div>
                                 <h3>Quick Links</h3>
                                 <div className={styles.line}></div>
-                                <a>Markets</a>
-                                <a>Platforms</a>
-                                <a>Pricing</a>
-                                <a>Education</a>
-                                <a>Company</a>
+                                <Link href="/accounts">Accounts</Link>
+                                <Link href="/platforms">Platforms</Link>
+                                <Link href="/blog">Blogs</Link>
+                                <Link href="/company">Company</Link>
+                                <Link href="/advanced-trading-solutions">Trading Solutions
+                                </Link>
                             </div>
                             <div>
                                 <h3>Support</h3>

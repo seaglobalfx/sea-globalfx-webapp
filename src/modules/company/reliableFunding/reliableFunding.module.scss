@@ -5,16 +5,38 @@
 .reliableFundingAlignment {
     padding: 110px 0;
 
+    @include respond-to("sm") {
+        padding: 60px 0;
+    }
+
     .grid {
         display: grid;
         grid-template-columns: 700px 1fr;
         gap: 20px;
         align-items: center;
 
+        @include respond-to("md") {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
         .image {
+            @include respond-to("sm") {
+                display: flex;
+                justify-content: center;
+            }
+
             img {
-                display: block;
                 width: 100%;
+                display: block;
+
+                @include respond-to("md") {
+                    max-width: 60%;
+                }
+
+                @include respond-to("sm") {
+                    max-width: 90%;
+                }
             }
         }
 
@@ -23,6 +45,10 @@
             grid-template-columns: repeat(2, 1fr);
             gap: 0 24px;
             max-width: 500px;
+
+            @include respond-to("sm") {
+                grid-template-columns: 1fr;
+            }
 
             .cardGridItems {
                 border-radius: 24px;
@@ -39,6 +65,10 @@
                     @include font-normal;
                     margin: 0 0 12px 0;
                     max-width: 190px;
+
+                    @include respond-to("sm") {
+                        max-width: 100%;
+                    }
                 }
 
                 p {
