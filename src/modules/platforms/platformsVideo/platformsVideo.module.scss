@@ -1,0 +1,16 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.platformsVideoPageAlignment {
+    padding: 100px 0;
+    background: #F1F1F1;
+
+    iframe {
+        width: 100%;
+        display: block;
+        height: 700px;
+        border: none;
+        outline: none;
+    }
+}

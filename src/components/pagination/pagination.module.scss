@@ -1,0 +1,52 @@
+@use '../../scss/main.scss' as *;
+@use '../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../scss/font/font.scss' as *;
+
+.paginationAlignment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    .round {
+        border-radius: 42px;
+        border: 0.75px solid var(--Gray, #BCBCBC);
+        width: 48px;
+        height: 48px;
+        display: flex;
+        color: var(--Gray, #BCBCBC);
+        text-align: center;
+        font-size: 18px;
+        font-style: normal;
+        @include font-semibold;
+        font-weight: 700;
+        line-height: normal;
+        align-items: center;
+        justify-content: center;
+        transition: .3s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+            border: 0.75px solid var(--Primary, #E8BC33);
+            color: #030303;
+            background: var(--Primary, linear-gradient(90deg, #E8BC33 10%, #B07A09 100%));
+        }
+    }
+
+    .text {
+        border-radius: 42px;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        color: var(--Gray, #fff);
+        text-align: center;
+        cursor: pointer;
+        font-size: 15px;
+        font-style: normal;
+        @include font-semibold;
+        font-weight: 700;
+        line-height: normal;
+        align-items: center;
+        justify-content: center;
+    }
+}

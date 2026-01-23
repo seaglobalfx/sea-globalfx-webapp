@@ -2,8 +2,10 @@ body {
   margin: 0;
   padding: 0;
   /* user-select: none; */
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   font-family: "Euclid-Regular";
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 html {
@@ -64,6 +66,12 @@ a {
 
 .container-xs2 {
   max-width: calc(1089px + 40px);
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.container-xs6 {
+  max-width: calc(970px + 40px);
   padding: 0 20px;
   margin: 0 auto;
 }

@@ -72,7 +72,7 @@ export default function Header() {
                                 </div>
                                 <Link className={pathname === "/accounts" ? styles.active : ""} href="/accounts" aria-label='Accounts'>Accounts</Link>
                                 <a className={styles.menuSpacing} aria-label='Platforms'>Platforms</a>
-                                <a className={styles.menuSpacing} aria-label='Blogs'>Blogs</a>
+                                <Link href="/blog" className={classNames(styles.menuSpacing, pathname === "/blog" ? styles.active : "")} aria-label='Blogs'>Blogs</Link>
                                 <a className={styles.menuSpacing} aria-label='Company'>Company</a>
                             </div>
                             <div className={styles.button}>

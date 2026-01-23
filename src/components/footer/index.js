@@ -1,4 +1,5 @@
 'use client'
+import Link from 'next/link';
 import styles from './footer.module.scss';
 const FooterLogo = '/assets/logo/footer-logo.svg';
 const FacebookIcon = '/assets/icons/facebook.svg';
@@ -83,8 +84,8 @@ export default function Footer() {
                             <div>
                                 <h3>Support</h3>
                                 <div className={styles.line}></div>
-                                <a>Terms of Service</a>
-                                <a>Privacy Policy</a>
+                                <Link href="/terms-and-conditions">Terms of Service</Link>
+                                <Link href="/privacy-policy">Privacy Policy</Link>
                                 <a>Telegram Group</a>
                                 <a>Refund Policy</a>
 

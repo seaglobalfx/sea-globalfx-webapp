@@ -1,0 +1,185 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.latestBlogsPageAlignment {
+    background: #141414;
+    padding: 60px 0;
+    border-bottom: 1px solid #353535;
+
+    .headerAlignment {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+
+        .line {
+            width: 100%;
+            height: 2px;
+            background: #FFF;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .button {
+            background: #141414;
+            padding-left: 20px;
+            position: relative;
+            z-index: 9;
+
+            .dropdown {
+                position: absolute;
+                width: 100%;
+                border-radius: 12px;
+                background-color: #111111;
+
+                &.hide {
+                    max-height: 0px;
+                    overflow: hidden;
+                    transition: .3s ease-in-out;
+                }
+
+                &.show {
+                    max-height: 100vh;
+                    overflow: hidden;
+                    transition: .3s ease-in-out;
+                }
+
+                .sapcing {
+                    background-color: #111111;
+                    border: 1px solid #383838;
+                    border-radius: 12px;
+                    padding: 16px;
+
+                    span {
+                        display: block;
+                        font-size: 16px;
+                        padding: 0 0 16px 0;
+                        color: #fff;
+                        @include font-medium;
+
+                        &:last-child {
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+
+            button {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                gap: 7px;
+                background-color: transparent;
+                font-size: 17.728px;
+                border-radius: 36.934px;
+                border: 1.722px solid var(--Primary, #E8BC33);
+                padding: 10px 25px;
+                font-style: normal;
+                font-weight: 500;
+                @include font-medium;
+                color: #E8BC33;
+                line-height: normal;
+            }
+        }
+
+        .text {
+            background: #141414;
+            padding-right: 20px;
+            position: relative;
+            z-index: 9;
+
+            h2 {
+                font-size: 34.444px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 140%;
+                @include heading-semibold;
+                background: linear-gradient(93deg, #FFF 0%, #F1F1F1 24.34%, #DDD 52.49%, #F1F1F1 71.46%, #FFF 99.25%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+
+                span {
+                    background: var(--Primary, linear-gradient(90deg, #E8BC33 10%, #B07A09 100%));
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-size: 34.444px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 140%;
+                }
+            }
+        }
+    }
+
+    .blogAllCardGrid {
+        padding: 44px 0 0 0;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+
+        @include respond-to("md") {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .card {
+            .details {
+                padding: 17px 0 0 0;
+
+                h3 {
+                    color: #FFF;
+                    font-size: 17.222px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    @include font-medium;
+                    margin: 0 0 6px 0;
+                }
+
+                .textAlignment {
+                    display: flex;
+                    align-items: center;
+                    gap: 14px;
+
+                    span {
+                        display: block;
+                        color: #B6B6B6;
+                        font-size: 13.778px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: normal;
+                        @include font-medium;
+                    }
+
+                    ul {
+                        margin: 0;
+                        padding: 0 0 0 15px;
+
+                        li {
+                            display: block;
+                            color: #B6B6B6;
+                            font-size: 13.778px;
+                            font-style: normal;
+                            font-weight: 500;
+                            line-height: normal;
+                            @include font-medium;
+                        }
+                    }
+                }
+            }
+
+            .cardImage {
+                img {
+                    width: 100%;
+                    height: 166px;
+                    display: block;
+                    object-fit: cover;
+                    border-radius: 12px;
+                }
+            }
+        }
+    }
+}

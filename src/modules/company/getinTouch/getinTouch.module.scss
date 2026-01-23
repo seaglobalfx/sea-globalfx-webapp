@@ -1,0 +1,223 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.getinTouchAlignment {
+    background: #141414;
+    padding: 110px 0;
+
+    .grid {
+        display: grid;
+        grid-template-columns: 386px 1fr;
+        gap: 32px;
+
+
+        .box {
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.04);
+            padding: 30px;
+
+            h3 {
+                color: #FFF;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 32px;
+                margin: 0 0 18px 0;
+                @include font-medium;
+            }
+
+            .sendMessage {
+                button {
+                    border: none;
+                    cursor: pointer;
+                    border-radius: 32.168px;
+                    background: var(--Primary, linear-gradient(90deg, #E8BC33 10%, #B07A09 100%));
+                    padding: 9px 21px;
+                    color: #000;
+                    font-size: 15.441px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                    @include font-bold;
+                    cursor: pointer;
+                    transition: .3s ease-in-out;
+
+                    &:hover {
+                        background: var(--Primary, linear-gradient(90deg, #B07A09 10%, #E8BC33 100%));
+                        transform: scale(1.05);
+                    }
+                }
+            }
+
+            .checkboxText {
+                display: flex;
+                align-items: center;
+                padding: 0 0 20px 0;
+                gap: 12px;
+
+                input[type="checkbox"] {
+                    width: 16px;
+                    height: 16px;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                p {
+                    color: var(--Text-Colors-500, #808080);
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 20px;
+                    @include font-normal;
+
+                    span {
+                        background: var(--Primary, linear-gradient(90deg, #E8BC33 10%, #B07A09 100%));
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        @include font-medium;
+                    }
+                }
+            }
+
+            .input {
+                padding: 0 0 16px 0;
+
+                input {
+                    width: 100%;
+                    padding: 0 16px;
+                    border-radius: 8px;
+                    border: 1px solid var(--Text-Colors-200, #D6D6D6);
+                    background: var(--Text-Colors-25, #FCFCFC);
+                    height: 48px;
+                    color: var(--Text-Colors-500, #141414);
+                    @include font-normal;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 24px;
+                    outline: none;
+                    transition: .3s ease-in-out;
+
+                    &:focus {
+                        border: 1px solid #E8BC33;
+                    }
+                }
+
+                textarea {
+                    width: 100%;
+                    padding: 12px 16px;
+                    border-radius: 8px;
+                    border: 1px solid var(--Text-Colors-200, #D6D6D6);
+                    background: var(--Text-Colors-25, #FCFCFC);
+                    height: 140px;
+                    color: var(--Text-Colors-500, #141414);
+                    @include font-normal;
+                    resize: none;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 24px;
+                    outline: none;
+                    transition: .3s ease-in-out;
+
+                    &:focus {
+                        border: 1px solid #E8BC33;
+                    }
+                }
+
+                ::placeholder {
+                    @include font-normal;
+                    color: #808080;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 24px;
+                }
+            }
+        }
+
+        .allGridAlignment {
+            border-bottom: 1px solid #fff;
+
+            .roundGrid {
+                display: grid;
+                grid-template-columns: 44px 1fr;
+                gap: 16px;
+                padding: 0 0 32px 0;
+
+                img {
+                    display: block;
+                }
+
+                p {
+                    color: #FFF;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 30px;
+                    margin: 0 0 4px 0;
+                    @include font-medium;
+                }
+
+                span {
+                    display: block;
+                    color: rgba(255, 255, 255, 0.70);
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 24px;
+                    @include font-normal;
+                }
+            }
+        }
+
+        .socialMediaAlignment {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            padding: 40px 0 0 0;
+
+            p {
+                color: #FFF;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 32px;
+                @include font-medium;
+            }
+
+            .socialIcon {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+
+                img {
+                    display: block;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .title {
+            padding: 0 0 40px 0;
+
+            h2 {
+                color: #F1F1F1;
+                font-size: 40px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 140%;
+                @include heading-medium;
+
+                span {
+                    background: var(--Primary, linear-gradient(90deg, #E8BC33 10%, #B07A09 100%));
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+            }
+        }
+    }
+}

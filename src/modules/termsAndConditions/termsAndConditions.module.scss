@@ -1,0 +1,67 @@
+@use '../../scss/main.scss' as *;
+@use '../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../scss/font/font.scss' as *;
+
+
+.privacyPolicyBanner {
+    background: #F1F1F1;
+    padding: 160px 0 88px 0;
+
+    @include respond-to("sm") {
+        padding: 120px 0 60px 0;
+    }
+
+    h1 {
+        font-size: 56px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 105%;
+        text-transform: capitalize;
+        background: var(--Hero-Text, linear-gradient(93deg, #252525 0%, #4E4E4E 24.34%, #4E4E4E 52.49%, #4E4E4E 71.46%, #252525 99.25%));
+        background-clip: text;
+        text-align: center;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        @include heading-semibold;
+
+        @include respond-to("sm") {
+            @include heading-30;
+        }
+    }
+}
+
+.pageContentAlignment {
+    padding: 110px 0;
+
+    @include respond-to("sm") {
+        padding: 60px 0;
+    }
+
+    p {
+        color: #474747;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin: 0 0 10px 0;
+        @include font-normal;
+
+        @include respond-to("sm") {
+            font-size: 16px;
+        }
+    }
+
+    .spacer {
+        padding: 20px 0 0 0;
+    }
+
+    h2 {
+        color: var(--Black-Body, #252525);
+        font-size: 20px;
+        font-style: normal;
+        margin: 0 0 20px 0;
+        font-weight: 600;
+        line-height: 105%;
+        @include font-medium;
+    }
+}
