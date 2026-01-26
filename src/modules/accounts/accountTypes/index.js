@@ -63,8 +63,8 @@ export default function AccountTypes() {
                         title: 'Pro',
                         arrow: BlackArrow,
                         description: 'A straightforward account with no separate commission, designed for ease of use and cost transparency.',
-                        deposit: '$10',
-                        spread: '20 Cents',
+                        deposit: '$1,000',
+                        spread: 'From 20 Cents',
                         leverage: '50 to 500',
                     }, {
                         title: 'Standard',
@@ -78,9 +78,9 @@ export default function AccountTypes() {
                         title: 'Plus',
                         arrow: Arrow,
                         description: 'Designed for active traders who prioritize pricing efficiency and execution quality. For cost-focused traders using raw pricing',
-                        deposit: '$1000',
-                        spread: '30 Cents',
-                        leverage: '2000',
+                        deposit: '$100',
+                        spread: 'From 30 Cents',
+                        leverage: '50-500',
 
                     }].map((item, index) => (
                         <motion.div className={styles.griditems}
@@ -132,8 +132,8 @@ export default function AccountTypes() {
 
                                     <div className={styles.allTextStyle}>
                                         <div className={styles.text}><p>Minimum Deposit:</p><span>{item.deposit}</span></div>
-                                        <div className={styles.text}><p>Spread:</p><span>{item.spread}</span></div>
                                         <div className={styles.text}><p>Commission:</p><span>$0</span></div>
+                                        <div className={styles.text}><p>Spread:</p><span>{item.spread}</span></div>
                                         <div className={styles.text}><p>Leverage:</p><span>{item.leverage}</span></div>
                                         <div className={styles.text}><p>Currencies</p><span>USD</span></div>
                                     </div>
