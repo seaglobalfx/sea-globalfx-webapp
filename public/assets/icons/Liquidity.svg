@@ -6,24 +6,24 @@
 <path d="M6 8C7.65685 8 9 6.65685 9 5C9 3.34315 7.65685 2 6 2C4.34315 2 3 3.34315 3 5C3 6.65685 4.34315 8 6 8Z" stroke="url(#paint4_linear_4144_6360)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 <defs>
 <linearGradient id="paint0_linear_4144_6360" x1="3" y1="14" x2="15" y2="14" gradientUnits="userSpaceOnUse">
-<stop offset="0.1" stop-color="#E8BC33"/>
-<stop offset="1" stop-color="#B07A09"/>
+<stop offset="0.1" stopColor="#E8BC33"/>
+<stop offset="1" stopColor="#B07A09"/>
 </linearGradient>
 <linearGradient id="paint1_linear_4144_6360" x1="7" y1="15.4716" x2="22.0269" y2="15.4716" gradientUnits="userSpaceOnUse">
-<stop offset="0.1" stop-color="#E8BC33"/>
-<stop offset="1" stop-color="#B07A09"/>
+<stop offset="0.1" stopColor="#E8BC33"/>
+<stop offset="1" stopColor="#B07A09"/>
 </linearGradient>
 <linearGradient id="paint2_linear_4144_6360" x1="2" y1="19" x2="8" y2="19" gradientUnits="userSpaceOnUse">
-<stop offset="0.1" stop-color="#E8BC33"/>
-<stop offset="1" stop-color="#B07A09"/>
+<stop offset="0.1" stopColor="#E8BC33"/>
+<stop offset="1" stopColor="#B07A09"/>
 </linearGradient>
 <linearGradient id="paint3_linear_4144_6360" x1="13.1" y1="8.99998" x2="18.9" y2="8.99998" gradientUnits="userSpaceOnUse">
-<stop offset="0.1" stop-color="#E8BC33"/>
-<stop offset="1" stop-color="#B07A09"/>
+<stop offset="0.1" stopColor="#E8BC33"/>
+<stop offset="1" stopColor="#B07A09"/>
 </linearGradient>
 <linearGradient id="paint4_linear_4144_6360" x1="3" y1="5" x2="9" y2="5" gradientUnits="userSpaceOnUse">
-<stop offset="0.1" stop-color="#E8BC33"/>
-<stop offset="1" stop-color="#B07A09"/>
+<stop offset="0.1" stopColor="#E8BC33"/>
+<stop offset="1" stopColor="#B07A09"/>
 </linearGradient>
 </defs>
 </svg>

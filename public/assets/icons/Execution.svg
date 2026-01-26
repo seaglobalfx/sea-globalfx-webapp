@@ -3,12 +3,12 @@
 <path d="M2 5.99994C2.00008 5.60444 2.11743 5.21784 2.3372 4.88902C2.55697 4.5602 2.86929 4.30392 3.23469 4.15258C3.60009 4.00124 4.00216 3.96164 4.39006 4.03877C4.77797 4.11591 5.1343 4.30632 5.414 4.58594L11.414 10.5859C11.7889 10.961 11.9996 11.4696 11.9996 11.9999C11.9996 12.5303 11.7889 13.0389 11.414 13.4139L5.414 19.4139C5.1343 19.6936 4.77797 19.884 4.39006 19.9611C4.00216 20.0382 3.60009 19.9986 3.23469 19.8473C2.86929 19.696 2.55697 19.4397 2.3372 19.1109C2.11743 18.782 2.00008 18.3954 2 17.9999V5.99994Z" stroke="url(#paint1_linear_4144_6383)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 <defs>
 <linearGradient id="paint0_linear_4144_6383" x1="12" y1="11.9999" x2="21.9996" y2="11.9999" gradientUnits="userSpaceOnUse">
-<stop offset="0.1" stop-color="#E8BC33"/>
-<stop offset="1" stop-color="#B07A09"/>
+<stop offset="0.1" stopColor="#E8BC33"/>
+<stop offset="1" stopColor="#B07A09"/>
 </linearGradient>
 <linearGradient id="paint1_linear_4144_6383" x1="2" y1="11.9999" x2="11.9996" y2="11.9999" gradientUnits="userSpaceOnUse">
-<stop offset="0.1" stop-color="#E8BC33"/>
-<stop offset="1" stop-color="#B07A09"/>
+<stop offset="0.1" stopColor="#E8BC33"/>
+<stop offset="1" stopColor="#B07A09"/>
 </linearGradient>
 </defs>
 </svg>
