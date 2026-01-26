@@ -28,6 +28,10 @@
         gap: 20px;
         height: 100dvh;
 
+        @include respond-to("xl") {
+            grid-template-columns: 1fr 560px;
+        }
+
         @include respond-to("md") {
             height: auto;
             grid-template-columns: 1fr;

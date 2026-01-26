@@ -29,6 +29,10 @@
             gap: 20px;
             height: 100dvh;
 
+            @include respond-to("xl") {
+                grid-template-columns: 1fr 470px;
+            }
+
             &.account-grid {
                 @include respond-to("xl") {
                     grid-template-columns: 1fr 520px;
