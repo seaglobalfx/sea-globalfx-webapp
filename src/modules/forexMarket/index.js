@@ -10,7 +10,12 @@ export default function ForexMarket() {
   return (
     <div>
       <ForexMarketBanner />
-      <tv-ticker-tape symbols='FX:EURUSD,BITSTAMP:BTCUSD,BITSTAMP:ETHUSD,CMCMARKETS:GOLD,OANDA:EURUSD,OANDA:GBPUSD,OANDA:USDJPY,OANDA:GBPJPY,OANDA:AUDUSD,OANDA:USDCAD' theme="dark"></tv-ticker-tape>
+      <div className='tagline-remove'>
+        <tv-ticker-tape
+          symbols="FX:EURUSD,BITSTAMP:BTCUSD,BITSTAMP:ETHUSD,CMCMARKETS:GOLD,OANDA:EURUSD,OANDA:GBPUSD,OANDA:USDJPY,OANDA:GBPJPY,OANDA:AUDUSD,OANDA:USDCAD"
+          theme="dark"
+        />
+      </div>
       <WhyTradeForex />
       <AvailableInstruments
         title="forex-market"

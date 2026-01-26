@@ -8,10 +8,16 @@ import OneMarket from './oneMarket'
 import MarketOverview from './marketOverview'
 
 export default function HomePage() {
+
     return (
         <div>
             <Herobanner />
-            <tv-ticker-tape symbols='FX:EURUSD,BITSTAMP:BTCUSD,BITSTAMP:ETHUSD,CMCMARKETS:GOLD,OANDA:EURUSD,OANDA:GBPUSD,OANDA:USDJPY,OANDA:GBPJPY,OANDA:AUDUSD,OANDA:USDCAD' theme="dark"></tv-ticker-tape>
+            <div className='tagline-remove'>
+                <tv-ticker-tape
+                    symbols="FX:EURUSD,BITSTAMP:BTCUSD,BITSTAMP:ETHUSD,CMCMARKETS:GOLD,OANDA:EURUSD,OANDA:GBPUSD,OANDA:USDJPY,OANDA:GBPJPY,OANDA:AUDUSD,OANDA:USDCAD"
+                    theme="dark"
+                />
+            </div>
             <WhySeaGlobal />
             <OneMarket />
             <MarketOverview />

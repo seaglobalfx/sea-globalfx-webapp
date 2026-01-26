@@ -27,6 +27,7 @@ const stagger = {
 
 export default function AvailableInstruments({ details, title }) {
     function scriptlod() {
+        console.log("apslapslalspa", title)
         switch (title) {
             case 'forex-market':
                 return (

@@ -11,7 +11,12 @@ export default function Stocks() {
     return (
         <div>
             <StocksBanner />
-            <tv-ticker-tape symbols='FX:EURUSD,BITSTAMP:BTCUSD,BITSTAMP:ETHUSD,CMCMARKETS:GOLD,OANDA:EURUSD,OANDA:GBPUSD,OANDA:USDJPY,OANDA:GBPJPY,OANDA:AUDUSD,OANDA:USDCAD' theme="dark"></tv-ticker-tape>
+            <div className='tagline-remove'>
+                <tv-ticker-tape
+                    symbols="FX:EURUSD,BITSTAMP:BTCUSD,BITSTAMP:ETHUSD,CMCMARKETS:GOLD,OANDA:EURUSD,OANDA:GBPUSD,OANDA:USDJPY,OANDA:GBPJPY,OANDA:AUDUSD,OANDA:USDCAD"
+                    theme="dark"
+                />
+            </div>
             <StocksTrade />
             <AvailableInstruments title='stocks' details='Trade a carefully selected range of global Stock CFDs, offering liquidity, transparency, and access to leading
 publicly listed companies. Sea Global provides exposure to major equities across key global markets,

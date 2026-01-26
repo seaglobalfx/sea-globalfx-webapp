@@ -11,7 +11,12 @@ export default function Commodities() {
     return (
         <div>
             <CommoditiesBanner />
-            <tv-ticker-tape symbols='FX:EURUSD,BITSTAMP:BTCUSD,BITSTAMP:ETHUSD,CMCMARKETS:GOLD,OANDA:EURUSD,OANDA:GBPUSD,OANDA:USDJPY,OANDA:GBPJPY,OANDA:AUDUSD,OANDA:USDCAD' theme="dark"></tv-ticker-tape>
+            <div className='tagline-remove'>
+                <tv-ticker-tape
+                    symbols="FX:EURUSD,BITSTAMP:BTCUSD,BITSTAMP:ETHUSD,CMCMARKETS:GOLD,OANDA:EURUSD,OANDA:GBPUSD,OANDA:USDJPY,OANDA:GBPJPY,OANDA:AUDUSD,OANDA:USDCAD"
+                    theme="dark"
+                />
+            </div>
             <CommoditiesTrade />
             <AvailableInstruments title='commodities' details='Trade a carefully selected range of instruments within this market, offering liquidity, transparency, and global
 exposure. Sea Global provides access to popular and actively traded instruments designed to support diverse

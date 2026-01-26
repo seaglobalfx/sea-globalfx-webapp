@@ -86,3 +86,8 @@ a {
   width: 100% !important;
   font-family: "GCarturmDemo-Medium";
 }
+
+.tagline-remove {
+  height: 83px;
+  overflow: hidden;
+}
