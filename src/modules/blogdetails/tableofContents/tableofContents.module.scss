@@ -98,6 +98,11 @@
                         &:last-child {
                             padding: 0;
                         }
+
+                        &.active {
+                            opacity: 1;
+                            text-decoration-line: underline;
+                        }
                     }
                 }
             }
