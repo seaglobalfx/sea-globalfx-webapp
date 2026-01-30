@@ -2,6 +2,7 @@ import "./globals.css";
 import "../scss/main.scss";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import FloatingWhatsapp from "@/components/floatingWhatsapp";
 import "swiper/css";
 import ApolloClientProvider from "@/components/ApolloClientProvider";
 export const metadata = {
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
           <Header />
           {children}
           <Footer />
+          <FloatingWhatsapp />
         </ApolloClientProvider>
       </body>
     </html>

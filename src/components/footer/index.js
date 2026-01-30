@@ -24,7 +24,7 @@ export default function Footer() {
                                 Assets, supported by secure infrastructure and transparent trading conditions.
                             </p>
                             <div className={styles.social}>
-                                <a href='https://www.facebook.com/people/Sea-Global-FX/61586171626639/' target='_blank'>
+                                <a href='https://www.facebook.com/profile.php?id=61586171626639' target='_blank'>
                                     <div className={styles.round}>
                                         <img src={FacebookIcon} alt='FacebookIcon' />
                                     </div>
@@ -34,14 +34,14 @@ export default function Footer() {
                                         <img src={TwitterIcon} alt='TwitterIcon' />
                                     </div>
                                 </a>
-                                <a target='_blank' href='https://www.instagram.com/seaglobalfx/'>
+                                <a target='_blank' href='https://www.instagram.com/seaglobalfxofficial/'>
                                     <div className={styles.round}>
                                         <img src={InstagramIcon} alt='InstagramIcon' />
                                     </div>
                                 </a>
-                                <div className={styles.round}>
+                                {/* <div className={styles.round}>
                                     <img src={LinkdinIcon} alt='LinkdinIcon' />
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                         <div className={styles.footerMenu}>
