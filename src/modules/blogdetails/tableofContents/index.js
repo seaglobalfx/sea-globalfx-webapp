@@ -35,6 +35,7 @@ export default function TableofContents({ blogDetail }) {
       });
     }
   };
+
   const handleWindowScroll = () => {
     const scrollPosition = window.scrollY;
     const headings = collectHeadings().filter((heading) => heading.depth === 1 || heading.depth === 2);
@@ -51,6 +52,7 @@ export default function TableofContents({ blogDetail }) {
       }
     }
   };
+  
   useEffect(() => {
     window.addEventListener("scroll", handleWindowScroll);
     return () => {
