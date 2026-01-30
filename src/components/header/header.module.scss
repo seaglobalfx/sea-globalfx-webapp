@@ -216,6 +216,7 @@
             img {
                 display: block;
                 cursor: pointer;
+                max-width: 198px;
 
                 @include respond-to("sm") {
                     max-width: 160px;
