@@ -45,6 +45,8 @@ export default function Header() {
                         </div>
                         <div className={styles.menu}>
                             <div className={styles.menuItems}>
+                                <Link href="/" className={classNames(styles.menuSpacing, pathname === "/" ? styles.active : "")} aria-label='Platforms'>Home</Link>
+
                                 <div
                                     className={styles.dropdownMenu}
                                     onMouseEnter={() => setOpen(true)}
@@ -108,6 +110,11 @@ export default function Header() {
                     </div>
                 </div>
                 <div className={styles.headerBody}>
+                    <div className={styles.menuIconAlignment} onClick={() => setHeaderOpen(false)}>
+                        <Link className={pathname === "/" ? styles.active : ""} href="/" onClick={() => setHeaderOpen(false)}>
+                            Home
+                        </Link>
+                    </div>
                     <div className={styles.menuIconAlignment}>
                         <a>
                             Markets
