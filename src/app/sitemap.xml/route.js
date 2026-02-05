@@ -6,20 +6,20 @@ export async function GET() {
   const baseUrl = "https://seaglobalfx.com";
 
   const staticUrls = [
-    { path: "/", changefreq: "daily", priority: 1 },
-    { path: "/accounts", changefreq: "daily", priority: 1 },
-    { path: "/advanced-trading-solutions", changefreq: "daily", priority: 1 },
-    { path: "/commodities", changefreq: "daily", priority: 1 },
+    { path: "/", changefreq: "daily", priority: 1.0 },
+    { path: "/accounts", changefreq: "monthly", priority: 0.8 },
+    { path: "/advanced-trading-solutions", changefreq: "monthly", priority: 0.8 },
+    { path: "/commodities", changefreq: "weekly", priority: 0.9 },
     { path: "/company", changefreq: "daily", priority: 1 },
-    { path: "/crypto", changefreq: "daily", priority: 1 },
-    { path: "/etfs", changefreq: "daily", priority: 1 },
-    { path: "/forex-market", changefreq: "daily", priority: 1 },
-    { path: "/indices-market", changefreq: "daily", priority: 1 },
-    { path: "/platforms", changefreq: "daily", priority: 1 },
-    { path: "/stocks", changefreq: "daily", priority: 1 },
-    { path: "/privacy-policy", changefreq: "daily", priority: 1 },
-    { path: "/terms-and-conditions", changefreq: "daily", priority: 1 },
-    { path: "/blog", changefreq: "daily", priority: 1 },
+    { path: "/crypto", changefreq: "weekly", priority: 0.9 },
+    { path: "/etfs", changefreq: "weekly", priority: 0.9 },
+    { path: "/forex-market", changefreq: "weekly", priority: 0.9 },
+    { path: "/indices-market", changefreq: "weekly", priority: 0.9 },
+    { path: "/platforms", changefreq: "monthly", priority: 0.8 },
+    { path: "/stocks", changefreq: "weekly", priority: 0.9 },
+    { path: "/privacy-policy", changefreq: "yearly", priority: 0.3 },
+    { path: "/terms-and-conditions", changefreq: "yearly", priority: 0.3 },
+    { path: "/blog", changefreq: "weekly", priority: 0.7 },
   ];
   
   let blogUrls = [];

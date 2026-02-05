@@ -5,9 +5,11 @@ import Footer from "@/components/footer";
 import FloatingWhatsapp from "@/components/floatingWhatsapp";
 import "swiper/css";
 import ApolloClientProvider from "@/components/ApolloClientProvider";
+import PageSchema from "@/utils/PageSchema";
 export const metadata = {
   title: "SEA GLOBAL",
-  description: "Trade global markets with a trusted online forex broker. Sea Global FX offers low spreads, fast execution, MT4/MT5 platforms, and secure trading",
+  description:
+    "Trade global markets with a trusted online forex broker. Sea Global FX offers low spreads, fast execution, MT4/MT5 platforms, and secure trading",
 };
 
 export default function RootLayout({ children }) {
@@ -61,6 +63,72 @@ export default function RootLayout({ children }) {
         <noscript>
           <img height="1" width="1" style={{ display: "none" }} src="https://www.facebook.com/tr?id=4170972363233509&ev=PageView&noscript=1" />
         </noscript>
+        {/* Organization Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: `
+                {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "SEA Global FX",
+                "url": "https://seaglobalfx.com/",
+                "logo": "https://blog.seaglobalfx.com/uploads/image_12_66fa566a3b.png",
+                "email": "support@seaglobalfx.com",
+                "telephone": "+971582619955",
+                "identifier": {
+                  "@type": "PropertyValue",
+                  "propertyID": "Company Registration Number",
+                  "value": "2025-00352"
+                },
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "1st Floor, The Sotheby Building, Rodney Bay",
+                  "addressLocality": "Gros-Islet",
+                  "addressRegion": "Castries",
+                  "postalCode": "838",
+                  "addressCountry": "LC"
+                },
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "telephone": "+971582619955",
+                  "contactType": "customer support",
+                  "email": "support@seaglobalfx.com",
+                  "availableLanguage": "English"
+                },
+                "sameAs": [
+                  "https://www.facebook.com/profile.php?id=61586171626639",
+                  "https://x.com/seaglobalfx",
+                  "https://www.youtube.com/@seaglobalfx"
+                ]
+              }
+            `,
+          }}
+        />
+        <script
+        type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: `
+                {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "@id": "https://seaglobalfx.com/#website",
+              "url": "https://seaglobalfx.com/",
+              "name": "SEA Global FX",
+              "publisher": {
+                "@type": "Organization",
+                "@id": "https://seaglobalfx.com/#organization"
+              },
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://seaglobalfx.com/?s={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            }
+            `,
+          }}
+        />
+        <PageSchema />
       </head>
       <body>
         {/* <!-- Google Tag Manager (noscript) --> */}
