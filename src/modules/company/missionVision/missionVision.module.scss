@@ -1,0 +1,125 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.missionVision {
+    background: #141414;
+    position: relative;
+    padding: 100px 0;
+
+    @include respond-to("sm") {
+        padding: 60px 0;
+    }
+
+    .blacklayer {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        img {
+            width: 100%;
+            display: block;
+        }
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 305px;
+        gap: 100px;
+
+        @include respond-to("md") {
+            grid-template-columns: 1fr;
+            gap: 60px;
+        }
+
+        .subGrid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+            position: relative;
+
+            @include respond-to("sm") {
+                grid-template-columns: 1fr;
+            }
+
+            .items {
+                border-radius: 24px;
+                background: linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.00) 100%);
+                padding: 34px 24px 24px 24px;
+                position: relative;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                transform-style: preserve-3d;
+                transform: perspective(1000px) rotateX(0) rotateY(0);
+
+                &:hover {
+                    &::before {
+                        background: linear-gradient(320deg, rgba(255, 255, 255, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+
+                    }
+                }
+
+
+                p {
+                    color: #F5F5F5;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 105%;
+                    @include font-normal;
+
+                    @include respond-to("sm") {
+                        @include font16;
+                    }
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    border-radius: 24px;
+                    padding: 1px;
+                    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+                    -webkit-mask:
+                        linear-gradient(#fff 0 0) content-box,
+                        linear-gradient(#fff 0 0);
+                    -webkit-mask-composite: xor;
+                    mask-composite: exclude;
+                    pointer-events: none;
+                    transition: .3s ease-in-out;
+                }
+            }
+
+            h3 {
+                font-size: 48px;
+                font-weight: 600;
+                @include heading-semibold;
+                line-height: 105%;
+                background: linear-gradient(93deg, #FFF 0%, #F1F1F1 24.34%, #DDD 52.49%, #F1F1F1 71.46%, #FFF 99.25%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                margin: 0 0 24px 0;
+                -webkit-text-fill-color: transparent;
+
+                @include respond-to("sm") {
+                    @include heading-30;
+                    margin: 0 0 20px 0;
+                }
+
+                span {
+                    background: var(--Primary, linear-gradient(90deg, #E8BC33 10%, #B07A09 100%));
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+            }
+        }
+
+        .image {
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+}

@@ -5,6 +5,7 @@
 .professionalTrading {
     background-color: #F1F1F1;
     padding: 110px 0;
+    border-bottom: 1px solid #99999954;
 
     @include respond-to("sm") {
         padding: 60px 0;

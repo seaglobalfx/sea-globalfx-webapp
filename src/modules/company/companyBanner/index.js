@@ -60,12 +60,12 @@ export default function CompanyBanner() {
                                 className="full-width"
                                 variants={fadeUp}
                             >
-                                Dedicated support whenever you <span> need </span> it
+                                A Trusted Global Trading  <span> Partner </span>
                             </motion.h1>
 
                             <motion.p variants={fadeUp}>
-                                Get the assistance you need with Sea Global’s dedicated support team, available to help with platform
-                                questions, account inquiries, and general assistance—whenever you need it.
+                                Sea Global FX is a global trading
+                                broker focused on delivering a transparent, secure, and professionally managed trading environment.
                             </motion.p>
 
                             <motion.div

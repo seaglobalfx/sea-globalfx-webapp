@@ -192,6 +192,18 @@ const schemaArray = [
     },
   },
   {
+    Path: "/aboutus",
+    Data: {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://seaglobalfx.com/" },
+        { "@type": "ListItem", position: 2, name: "Company", item: "https://seaglobalfx.com/contact-us" },
+        { "@type": "ListItem", position: 3, name: "About Us", item: "https://seaglobalfx.com/contact-us" },
+      ],
+    },
+  },
+  {
     Path: "/advanced-trading-solutions",
     Data: {
       "@context": "https://schema.org",

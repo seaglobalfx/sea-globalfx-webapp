@@ -18,7 +18,9 @@
 
     .grid {
         display: grid;
-        grid-template-columns: 386px 1fr;
+        max-width: 930px;
+        margin: 0 auto;
+        grid-template-columns: 350px 1fr;
         gap: 32px;
 
         @include respond-to("md") {
@@ -29,6 +31,29 @@
         .griditems:first-child {
             @include respond-to("sm") {
                 padding: 0 20px;
+            }
+        }
+
+        .listCard {
+            .list {
+                padding: 24px;
+                border-radius: 24px;
+                background: #1D1D1D;
+                margin: 0 0 16px 0;
+
+                &:last-child {
+                    margin: 0;
+                }
+
+                p {
+                    color: #FFF;
+                    text-align: center;
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 32px;
+                    @include font-normal;
+                }
             }
         }
 

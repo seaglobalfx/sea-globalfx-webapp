@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const HeroImage = '/assets/images/advanced-trading.png';
+const HeroImage = '/assets/images/contact-banner.png';
 const UserIcon = '/assets/icons/user.svg';
 const DemoIcon = '/assets/icons/demo.svg';
 
@@ -34,11 +34,13 @@ const imageAnim = {
 };
 
 
-export default function AdvancedTradingSolutionsBanner() {
+export default function ContactBanner() {
     return (
         <div className='common-banner'>
             <div className='left-alignment'>
                 <div className='grid'>
+
+                    {/* LEFT CONTENT */}
                     <div className='grid-items'>
                         <motion.div
                             variants={stagger}
@@ -58,11 +60,12 @@ export default function AdvancedTradingSolutionsBanner() {
                                 className="full-width"
                                 variants={fadeUp}
                             >
-                                Smart Trading Solutions for Every <span>Strategy </span>
+                                We’re here to support <br /> you at <span> every </span> step
                             </motion.h1>
 
                             <motion.p variants={fadeUp}>
-                                Choose how you trade or invest with professional-grade solutions built for control, transparency, and growth.
+                                At Paradise Global Markets, open communication and reliable support are part of how we work. Whether you have a question about your account, need platform assistance, or
+                                want to explore partnership opportunities, our team is here to help.
                             </motion.p>
 
                             <motion.div
@@ -84,6 +87,8 @@ export default function AdvancedTradingSolutionsBanner() {
                             </motion.div>
                         </motion.div>
                     </div>
+
+                    {/* RIGHT IMAGE */}
                     <div className='grid-items'>
                         <motion.div
                             className='image'

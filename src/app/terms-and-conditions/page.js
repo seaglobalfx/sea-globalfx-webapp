@@ -1,4 +1,5 @@
 import TermsAndConditions from '@/modules/termsAndConditions'
+import { SITE_URL } from '@/utils/config';
 import React from 'react'
 
 export const metadata = {
@@ -11,9 +12,9 @@ export const metadata = {
 };
 
 export default function page() {
-    return (
-        <div>
-            <TermsAndConditions />
-        </div>
-    )
+  return (
+    <div>
+      <TermsAndConditions />
+    </div>
+  )
 }

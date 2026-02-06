@@ -15,8 +15,6 @@ export default function MamTrading() {
 
             <div className="container-xs">
                 <div className={styles.grid}>
-
-                    {/* LEFT CONTENT */}
                     <div className={styles.griditems}>
                         <motion.div
                             className={styles.text}

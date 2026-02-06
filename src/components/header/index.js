@@ -75,8 +75,9 @@ export default function Header() {
                                 <Link className={pathname === "/accounts" ? styles.active : ""} href="/accounts" aria-label='Accounts'>Accounts</Link>
                                 <Link href="/platforms" className={classNames(styles.menuSpacing, pathname === "/platforms" ? styles.active : "")} aria-label='Platforms'>Platforms</Link>
                                 <Link href="/blog" className={classNames(styles.menuSpacing, pathname === "/blog" ? styles.active : "")} aria-label='Blogs'>Blogs</Link>
-                                <Link href="/company" className={classNames(styles.menuSpacing, pathname === "/company" ? styles.active : "")} aria-label='Company'>Company</Link>
+                                <Link href="/about-us" className={classNames(styles.menuSpacing, pathname === "/about-us" ? styles.active : "")} aria-label='About Us'>About Us</Link>
                                 <Link href="/advanced-trading-solutions" className={classNames(styles.menuSpacing, pathname === "/advanced-trading-solutions" ? styles.active : "")} aria-label='advanced-trading-solutions'>Trading Solutions</Link>
+                                <Link href="/contact-us" className={classNames(styles.menuSpacing, pathname === "/contact-us" ? styles.active : "")} aria-label='contact-us'>Contact Us</Link>
                             </div>
                             <div className={styles.button}>
                                 <a href='https://client.seaglobalfx.com/' target='_blank'>
@@ -151,13 +152,18 @@ export default function Header() {
                         </Link>
                     </div>
                     <div className={styles.menuIconAlignment} onClick={() => setHeaderOpen(false)}>
-                        <Link href="/company">
-                            Company
+                        <Link href="/about-us">
+                            About Us
                         </Link>
                     </div>
                     <div className={styles.menuIconAlignment} onClick={() => setHeaderOpen(false)}>
                         <Link href="/advanced-trading-solutions">
                             Trading Solutions
+                        </Link>
+                    </div>
+                    <div className={styles.menuIconAlignment} onClick={() => setHeaderOpen(false)}>
+                        <Link href="/contact-us">
+                            Contact Us
                         </Link>
                     </div>
                 </div>

@@ -1,4 +1,5 @@
 import AdvancedTradingSolutions from '@/modules/advancedTradingSolutions'
+import { SITE_URL } from '@/utils/config';
 import React from 'react'
 
 export const metadata = {
@@ -11,9 +12,7 @@ export const metadata = {
 };
 
 export default function page() {
-    return (
-        <div>
-            <AdvancedTradingSolutions />
-        </div>
-    )
+  return (
+    <AdvancedTradingSolutions />
+  )
 }

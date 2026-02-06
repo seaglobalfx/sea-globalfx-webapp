@@ -1,4 +1,5 @@
 import Blog from "@/modules/blog";
+import { SITE_URL } from "@/utils/config";
 import React from "react";
 
 export const metadata = {

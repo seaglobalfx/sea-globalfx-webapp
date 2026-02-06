@@ -1,0 +1,115 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.officeandRegistration {
+    padding: 100px 0 0 0;
+    position: relative;
+
+    @include respond-to("sm") {
+        padding: 60px 0 0 0;
+    }
+
+    .rightImage {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+        @include respond-to("sm") {
+            position: inherit;
+        }
+
+        img {
+            max-width: 760px;
+            display: block;
+
+            @include respond-to("sm") {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+    }
+
+    .text {
+        max-width: 560px;
+
+        @include respond-to("sm") {
+            max-width: 100%;
+        }
+
+        h2 {
+            font-size: 40px;
+            font-style: normal;
+            @include heading-medium;
+            line-height: 140%;
+            background: var(--Hero-Text, linear-gradient(93deg, #252525 0%, #4E4E4E 24.34%, #4E4E4E 52.49%, #4E4E4E 71.46%, #252525 99.25%));
+            background-clip: text;
+            margin: 0 0 27px 0;
+            font-weight: 500;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            @include respond-to("sm") {
+                @include heading-30;
+                margin: 0 0 40px 0;
+            }
+
+            span {
+                background: var(--Primary, linear-gradient(90deg, #E8BC33 10%, #B07A09 100%));
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+
+        .outlineImage {
+            img {
+                display: block;
+
+                @include respond-to("sm") {
+                    display: none;
+                }
+            }
+        }
+
+        .allTextAlignment {
+            padding: 0 0 40px 0;
+
+            .text {
+                padding: 0 0 27px 0;
+
+                @include respond-to("sm") {
+                    padding: 0 0 16px 0;
+                }
+
+                &:last-child {
+                    padding: 0;
+                }
+
+                h3 {
+                    color: var(--Dark-Body, #747474);
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 100%;
+                    @include font-semibold;
+                    margin: 0 0 16px 0;
+                }
+
+                p {
+                    color: var(--Dark-Body, #747474);
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 100%;
+                    max-width: 450px;
+                    @include font-normal;
+
+                    @include respond-to("sm") {
+                        @include font16;
+                    }
+                }
+            }
+        }
+    }
+}

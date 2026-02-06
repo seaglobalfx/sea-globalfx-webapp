@@ -78,7 +78,7 @@ export default function Footer() {
                                 <Link href="/accounts">Accounts</Link>
                                 <Link href="/platforms">Platforms</Link>
                                 <Link href="/blog">Blogs</Link>
-                                <Link href="/company">Company</Link>
+                                <Link href="/about-us">About Us</Link>
                                 <Link href="/advanced-trading-solutions">Trading Solutions
                                 </Link>
                             </div>
