@@ -6,6 +6,7 @@ import FloatingWhatsapp from "@/components/floatingWhatsapp";
 import "swiper/css";
 import ApolloClientProvider from "@/components/ApolloClientProvider";
 import PageSchema from "@/utils/PageSchema";
+import { Toaster } from "sonner";
 export const metadata = {
   title: "SEA GLOBAL",
   description:
@@ -106,7 +107,7 @@ export default function RootLayout({ children }) {
           }}
         />
         <script
-        type="application/ld+json"
+          type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: `
                 {
@@ -145,6 +146,7 @@ export default function RootLayout({ children }) {
           {children}
           <Footer />
           <FloatingWhatsapp />
+          <Toaster />
         </ApolloClientProvider>
       </body>
     </html>
