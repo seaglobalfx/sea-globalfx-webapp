@@ -1,0 +1,160 @@
+@use "../../../scss/main.scss" as *;
+@use "../../../scss/breakpoints/breakpoints.scss" as *;
+@use "../../../scss/font/font.scss" as *;
+
+.startTrading {
+    background: #F1F1F1;
+    padding: 100px 0 0 0;
+
+    :global(.container-xs) {
+        @include respond-to("sm") {
+            padding: 0;
+        }
+    }
+
+    .box {
+        position: relative;
+        border-radius: 32px;
+        background: #141414;
+
+        @include respond-to("sm") {
+            border-radius: 0px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 512px;
+            gap: 20px;
+
+            @include respond-to("md") {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            @include respond-to("sm") {
+                gap: 0;
+            }
+
+            .griditems:first-child {
+                padding: 120px 0 120px 72px;
+
+                @include respond-to("md") {
+                    padding: 60px 40px 0 40px;
+                }
+
+                @include respond-to("sm") {
+                    padding: 60px 20px 40px 20px;
+                }
+
+                .twoButtonalignment {
+                    display: flex;
+                    align-items: center;
+                    gap: 16px;
+
+                    @include respond-to("sm") {
+                        justify-content: center;
+                    }
+
+                    button {
+                        border: none;
+                        padding: 4px 16px 4px 4px;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        border-radius: 48px;
+                        color: #fff;
+                        font-size: 16px;
+                        font-style: normal;
+                        cursor: pointer;
+                        font-weight: 600;
+                        line-height: normal;
+                        @include font-semibold;
+
+                        @include respond-to("sm") {
+                            font-size: 14px;
+                        }
+
+                        img {
+                            @include respond-to("sm") {
+                                max-width: 35px;
+                            }
+                        }
+
+                        &.orange {
+                            background: var(--Primary,
+                                    linear-gradient(90deg, #e8bc33 10%, #b07a09 100%));
+                        }
+
+                        &.black {
+                            background: #252525;
+                        }
+                    }
+                }
+
+                h6 {
+                    color: var(--Dark-Body, #747474);
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 105%;
+                    @include font-normal;
+                    max-width: 548px;
+                    margin: 0 0 16px 0;
+
+                    @include respond-to("sm") {
+                        @include font16;
+                    }
+                }
+
+                h3 {
+                    color: #fff;
+                    font-size: 48px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 105%;
+                    @include heading-semibold;
+                    margin: 0 0 8px 0;
+
+                    @include respond-to("sm") {
+                        @include heading-30;
+                    }
+
+                    &.fullwidthstyle {
+                        max-width: 548px;
+                    }
+
+                    &.fullwidthstyleLg {
+                        max-width: 458px;
+                    }
+
+                    span {
+                        background: var(--Primary,
+                                linear-gradient(90deg, #e8bc33 10%, #b07a09 100%));
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }
+                }
+            }
+
+            .griditems {
+                height: 100%;
+
+                .image {
+                    height: 100%;
+
+                    img {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 0 32px 32px 0;
+
+                        @include respond-to("md") {
+                            height: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

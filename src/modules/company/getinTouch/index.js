@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import styles from './getinTouch.module.scss'
 import { motion } from 'framer-motion'
 import { toast } from 'sonner'
+import { useMutation } from '@apollo/client'
+import { CreateContactUs } from '@/graphql/query/createContactUs'
 
 export default function GetinTouch() {
     const [formData, setFormData] = useState({
@@ -17,13 +19,10 @@ export default function GetinTouch() {
 
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target
-
         setFormData({
             ...formData,
             [name]: type === 'checkbox' ? checked : value,
         })
-
-        // clear error on change
         setErrors({
             ...errors,
             [name]: '',
@@ -32,76 +31,61 @@ export default function GetinTouch() {
 
     const validate = () => {
         let newErrors = {}
-
         if (!formData.name.trim()) {
             newErrors.name = 'Name is required'
         }
-
         if (!formData.email.trim()) {
             newErrors.email = 'Email is required'
-        } else if (
-            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)
-        ) {
+        } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)) {
             newErrors.email = 'Enter a valid email address'
         }
-
         if (!formData.message.trim()) {
             newErrors.message = 'Message is required'
         }
-
         if (!formData.agree) {
             newErrors.agree = 'You must accept the privacy policy'
         }
-
         setErrors(newErrors)
         return Object.keys(newErrors).length === 0
     }
 
+    const [createUser] = useMutation(CreateContactUs, {
+        onCompleted: (res) => {
+            toast.success('Thanks for reaching out! Your message has been sent.')
+            setFormData({
+                name: '',
+                email: '',
+                message: '',
+                agree: false,
+            })
+            setLoading(false)
+        },
+        onError: (error) => {
+            toast.error('Failed to send message. Please try again.')
+            setLoading(false)
+        },
+    });
+
     const handleSubmit = async (e) => {
         e.preventDefault()
-
-        if (validate()) {
-            setLoading(true)
-            try {
-                const strapiUrl = process.env.NEXT_PUBLIC_STRAPI_URL
-                const strapiToken = process.env.NEXT_PUBLIC_STRAPI_TOKEN
-
-                const response = await fetch(`${strapiUrl}/api/contactuses`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${strapiToken}`,
+        if (!validate()) return
+        setLoading(true)
+        try {
+            await createUser({
+                variables: {
+                    data: {
+                        userName: formData.name,
+                        email: formData.email,
+                        message: formData.message,
+                        publishedAt: new Date().toISOString(),
                     },
-                    body: JSON.stringify({
-                        data: {
-                            username: formData.name,
-                            email: formData.email,
-                            message: formData.message,
-                        }
-                    })
-                })
-
-                if (response.ok) {
-                    const data = await response.json()
-                    console.log('Form submitted successfully:', data)
-                    toast.success('Message sent successfully!')
-
-                    // reset form
-                    setFormData({
-                        name: '',
-                        email: '',
-                        message: '',
-                        agree: false,
-                    })
-                } else {
-                    toast.error('Failed to send message. Please try again.')
-                }
-            } catch (error) {
-                console.error('Error submitting form:', error)
-                toast.error('An error occurred. Please try again.')
-            } finally {
-                setLoading(false)
-            }
+                },
+            })
+        } catch (error) {
+            console.error(error)
+            toast.error('Something went wrong. Please try again later.')
+        } finally {
+            setLoading(false)
         }
     }
 

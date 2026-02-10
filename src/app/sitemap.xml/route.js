@@ -10,8 +10,8 @@ export async function GET() {
     { path: "/accounts", changefreq: "monthly", priority: 0.8 },
     { path: "/advanced-trading-solutions", changefreq: "monthly", priority: 0.8 },
     { path: "/commodities", changefreq: "weekly", priority: 0.9 },
-    { path: "/about-us", changefreq: "daily", priority: 1 },
-    { path: "/contact-us", changefreq: "daily", priority: 0.9 },
+    { path: "/about-us", changefreq: "yearly", priority: 0.6 },
+    { path: "/contact-us", changefreq: "weekly", priority: 0.7 },
     { path: "/crypto", changefreq: "weekly", priority: 0.9 },
     { path: "/etfs", changefreq: "weekly", priority: 0.9 },
     { path: "/forex-market", changefreq: "weekly", priority: 0.9 },
@@ -21,6 +21,7 @@ export async function GET() {
     { path: "/privacy-policy", changefreq: "yearly", priority: 0.3 },
     { path: "/terms-and-conditions", changefreq: "yearly", priority: 0.3 },
     { path: "/blog", changefreq: "weekly", priority: 0.7 },
+    { path: "/partners", changefreq: "weekly", priority: 0.9 },
   ];
 
   let blogUrls = [];

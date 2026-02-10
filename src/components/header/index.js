@@ -73,10 +73,52 @@ export default function Header() {
                                     </motion.div>
                                 </div>
                                 <Link className={pathname === "/accounts" ? styles.active : ""} href="/accounts" aria-label='Accounts'>Accounts</Link>
-                                <Link href="/platforms" className={classNames(styles.menuSpacing, pathname === "/platforms" ? styles.active : "")} aria-label='Platforms'>Platforms</Link>
-                                <Link href="/blog" className={classNames(styles.menuSpacing, pathname === "/blog" ? styles.active : "")} aria-label='Blogs'>Blogs</Link>
-                                <Link href="/about-us" className={classNames(styles.menuSpacing, pathname === "/about-us" ? styles.active : "")} aria-label='About Us'>About Us</Link>
-                                <Link href="/advanced-trading-solutions" className={classNames(styles.menuSpacing, pathname === "/advanced-trading-solutions" ? styles.active : "")} aria-label='advanced-trading-solutions'>Trading Solutions</Link>
+                                {/* <Link href="/platforms" className={classNames(styles.menuSpacing, pathname === "/platforms" ? styles.active : "")} aria-label='Platforms'>Platforms</Link> */}
+                                <div
+                                    className={styles.dropdownMenu}
+                                    onMouseEnter={() => setOpen(true)}
+                                    onMouseLeave={() => setOpen(false)}
+                                >
+                                    <a className={styles.menuSpacing} aria-label="Trade">
+                                        Trade
+                                    </a>
+
+                                    <motion.div
+                                        className={classNames(styles.dropdown, styles.dropdownSizeLg)}
+                                        variants={dropdownVariants}
+                                        initial="hidden"
+                                        animate={open ? 'visible' : 'hidden'}
+                                    >
+                                        <div className={styles.dropdownSpacing}>
+                                            <Link className={pathname === "/platforms" ? styles.active : ""} href="/platforms" onClick={() => setOpen(false)}>Platforms</Link>
+                                            <Link className={pathname === "/advanced-trading-solutions" ? styles.active : ""} href="/advanced-trading-solutions" onClick={() => setOpen(false)}>Trading Solutions</Link>
+
+                                        </div>
+                                    </motion.div>
+                                </div>
+                                <Link href="/partners" className={classNames(styles.menuSpacing, pathname === "/partners" ? styles.active : "")} aria-label='partners'>Partners</Link>
+                                <div
+                                    className={styles.dropdownMenu}
+                                    onMouseEnter={() => setOpen(true)}
+                                    onMouseLeave={() => setOpen(false)}
+                                >
+                                    <a className={styles.menuSpacing} aria-label="Company">
+                                        Company
+                                    </a>
+
+                                    <motion.div
+                                        className={classNames(styles.dropdown, styles.dropdownSizeLg)}
+                                        variants={dropdownVariants}
+                                        initial="hidden"
+                                        animate={open ? 'visible' : 'hidden'}
+                                    >
+                                        <div className={styles.dropdownSpacing}>
+                                            <Link className={pathname === "/about-us" ? styles.active : ""} href="/about-us" onClick={() => setOpen(false)}>About Us</Link>
+                                            <Link className={pathname === "/contact-us" ? styles.active : ""} href="/contact-us" onClick={() => setOpen(false)}>Contact Us</Link>
+
+                                        </div>
+                                    </motion.div>
+                                </div>
                                 <Link href="/contact-us" className={classNames(styles.menuSpacing, pathname === "/contact-us" ? styles.active : "")} aria-label='contact-us'>Contact Us</Link>
                             </div>
                             <div className={styles.button}>
@@ -146,9 +188,15 @@ export default function Header() {
                             Platforms
                         </Link>
                     </div>
+
                     <div className={styles.menuIconAlignment} onClick={() => setHeaderOpen(false)}>
                         <Link href="/blog">
                             Blogs
+                        </Link>
+                    </div>
+                    <div className={styles.menuIconAlignment} onClick={() => setHeaderOpen(false)}>
+                        <Link href="/partners">
+                            Partners
                         </Link>
                     </div>
                     <div className={styles.menuIconAlignment} onClick={() => setHeaderOpen(false)}>

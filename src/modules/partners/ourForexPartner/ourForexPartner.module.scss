@@ -1,0 +1,246 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.ourForexPartner {
+    padding: 100px 0;
+    background-color: #F1F1F1;
+    position: relative;
+
+    @include respond-to("sm") {
+        padding: 60px 0;
+    }
+
+    .leftlayer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+
+        @include respond-to("md") {
+            display: none;
+        }
+
+        img {
+            display: block;
+            height: 100%;
+        }
+    }
+
+    .rightLayer {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+
+        @include respond-to("md") {
+            display: none;
+        }
+
+        img {
+            display: block;
+            height: 100%;
+        }
+    }
+
+    .title {
+        padding: 0 0 32px 0;
+        position: relative;
+
+        @include respond-to("sm") {
+            padding: 0 0 30px 0;
+        }
+
+        h2 {
+            text-align: center;
+            background: var(--Hero-Text, linear-gradient(93deg, #252525 0%, #4E4E4E 24.34%, #4E4E4E 52.49%, #4E4E4E 71.46%, #252525 99.25%));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 48px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 105%;
+            @include heading-semibold;
+
+            @include respond-to("sm") {
+                @include heading-30;
+            }
+
+            span {
+                background: var(--Primary, linear-gradient(90deg, #E8BC33 10%, #B07A09 100%));
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+    }
+
+    .box {
+        border-radius: 24px;
+        background: linear-gradient(180deg, #FFF 52.4%, rgba(255, 255, 255, 0.00) 100%);
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 24px;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+            -webkit-mask:
+                linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            transition: .3s ease-in-out;
+        }
+
+        .boxheader {
+            background: var(--Hero-Text, linear-gradient(93deg, #252525 0%, #4E4E4E 24.34%, #4E4E4E 52.49%, #4E4E4E 71.46%, #252525 99.25%));
+            padding: 24px;
+            border-radius: 24px 24px 0 0;
+
+            @include respond-to("sm") {
+                padding: 16px;
+            }
+
+            h3 {
+                color: #FFF;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 105%;
+                @include heading-semibold;
+                text-align: center;
+
+                @include respond-to("sm") {
+                    font-size: 18px;
+                    line-height: normal;
+                }
+            }
+        }
+
+        .boxBody {
+            padding: 40px;
+
+            @include respond-to("sm") {
+                padding: 16px;
+            }
+
+            .buttongrid {
+                display: flex;
+                justify-content: center;
+                position: relative;
+                max-width: 410px;
+                margin: 0 auto;
+
+                .left {
+                    position: absolute;
+                    top: 55%;
+                    left: 0;
+                    transform: translateY(-50%);
+
+                    svg {
+                        max-width: 155px;
+                    }
+
+                    svg {
+                        @include respond-to("sm") {
+                            max-width: 130px;
+                        }
+                    }
+                }
+
+                .right {
+                    position: absolute;
+                    top: 55%;
+                    right: 0;
+                    transform: translateY(-50%);
+
+                    svg {
+                        max-width: 155px;
+                    }
+
+                    svg {
+                        @include respond-to("sm") {
+                            max-width: 130px;
+                        }
+                    }
+                }
+
+                button {
+                    border: none;
+                    padding: 4px 16px 4px 4px;
+                    color: #FFF;
+                    justify-content: center;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    font-size: 16px;
+                    font-style: normal;
+                    border-radius: 48px;
+                    background: #252525;
+                    font-weight: 600;
+                    line-height: normal;
+                    @include font-semibold;
+                }
+            }
+
+            .content {
+                display: grid;
+                grid-template-columns: 1fr 1px 1fr;
+                gap: 30px;
+                padding: 0 0 40px 0;
+
+                @include respond-to("sm") {
+                    grid-template-columns: 1fr;
+                    gap: 20px;
+                }
+
+                p {
+                    color: var(--Dark-Body, #747474);
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 105%;
+                    margin: 0 0 24px 0;
+                    @include font-normal;
+                }
+
+                ul {
+                    margin: 0;
+                    padding: 0 0 0 20px;
+
+                    li {
+                        color: var(--Dark-Body, #747474);
+                        font-size: 18px;
+                        padding: 0 0 10px 0;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 105%;
+                        @include font-normal;
+
+                        &:last-child {
+                            padding: 0;
+                        }
+                    }
+                }
+
+                .line {
+                    background: #828282;
+                    width: 100%;
+                    height: 100%;
+
+                    @include respond-to("sm") {
+                        height: 1px;
+                    }
+                }
+            }
+        }
+    }
+
+}
