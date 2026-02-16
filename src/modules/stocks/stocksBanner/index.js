@@ -55,12 +55,12 @@ export default function StocksBanner() {
                                 </button>
                             </motion.div>
 
-                            <motion.h1
+                            <motion.h2
                                 className="full-width-lg"
                                 variants={fadeUp}
                             >
                                 Trade global shares without owning the <span>underlying</span> asset
-                            </motion.h1>
+                            </motion.h2>
 
                             <motion.p variants={fadeUp}>
                                 Access global stock markets through Sea Global’s secure trading infrastructure, offering

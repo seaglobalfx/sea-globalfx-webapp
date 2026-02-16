@@ -119,6 +119,8 @@ export default function Header() {
                                         </div>
                                     </motion.div>
                                 </div>
+                                <Link href="/blog" className={classNames(styles.menuSpacing, pathname === "/blog" ? styles.active : "")} aria-label='partners'>Blogs</Link>
+
                                 <Link href="/contact-us" className={classNames(styles.menuSpacing, pathname === "/contact-us" ? styles.active : "")} aria-label='contact-us'>Contact Us</Link>
                             </div>
                             <div className={styles.button}>

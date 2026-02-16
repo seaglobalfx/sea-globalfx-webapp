@@ -48,7 +48,7 @@ export default function CryptoBanner() {
                                 </button>
                             </motion.div>
 
-                            <motion.h1
+                            <motion.h2
                                 variants={fadeUp}
                                 initial="hidden"
                                 whileInView="visible"
@@ -56,7 +56,7 @@ export default function CryptoBanner() {
                             >
                                 Trade Digital Assets <br />
                                 Across Global <span>Crypto</span> Markets
-                            </motion.h1>
+                            </motion.h2>
 
                             <motion.p
                                 variants={fadeUp}

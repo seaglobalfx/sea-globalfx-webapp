@@ -46,9 +46,9 @@ export default function EtfsBanner() {
                                 </button>
                             </div>
 
-                            <h1 className="">
+                            <h2 className="">
                                 Gain diversified exposure through a single instrument
-                            </h1>
+                            </h2>
 
                             <p>
                                 Access global Forex markets through Sea Global’s secure trading infrastructure, offering

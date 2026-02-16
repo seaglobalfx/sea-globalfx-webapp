@@ -55,12 +55,12 @@ export default function CommoditiesBanner() {
                                 </button>
                             </motion.div>
 
-                            <motion.h1
+                            <motion.h2
                                 className="full-width"
                                 variants={fadeUp}
                             >
                                 Trade Metals and Energy Markets <span>Worldwide</span>
-                            </motion.h1>
+                            </motion.h2>
 
                             <motion.p variants={fadeUp}>
                                 Access global commodities markets through Sea Global’s secure trading infrastructure, offering

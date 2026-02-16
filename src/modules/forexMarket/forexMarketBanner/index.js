@@ -55,9 +55,9 @@ export default function ForexMarketBanner() {
                                 </button>
                             </motion.div>
 
-                            <motion.h1 variants={fadeUp}>
+                            <motion.h2 variants={fadeUp}>
                                 Trade the World’s Most Liquid <span>Financial</span> Market
-                            </motion.h1>
+                            </motion.h2>
 
                             <motion.p variants={fadeUp}>
                                 Access global Forex markets through Sea Global’s secure trading infrastructure, offering

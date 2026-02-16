@@ -45,14 +45,14 @@ export default function WhyTradeForex() {
 
                     {/* LEFT CONTENT */}
                     <div className={styles.griditems}>
-                        <motion.h2
+                        <motion.h1
                             variants={fadeUp}
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
                         >
                             Why Trade Forex with <span> Sea Global</span>
-                        </motion.h2>
+                        </motion.h1>
 
                         <motion.div
                             className={styles.text}

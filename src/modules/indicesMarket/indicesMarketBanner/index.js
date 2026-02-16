@@ -55,12 +55,12 @@ export default function IndicesMarketBanner() {
                                 </button>
                             </motion.div>
 
-                            <motion.h1
+                            <motion.h2
                                 className="full-width"
                                 variants={fadeUp}
                             >
                                 Trade Global Stock Markets with <span> Broad </span> Exposure
-                            </motion.h1>
+                            </motion.h2>
 
                             <motion.p variants={fadeUp}>
                                 Access global Indices markets through Sea Global’s secure trading infrastructure, offering
