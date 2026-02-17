@@ -5,7 +5,7 @@ import React from 'react'
 export const metadata = {
   title: "All You Need to Know About Sea Global FX | Global Forex & CFD Broker",
   description:
-    "ExplorWhat is Sea Global FX? Sea Global FX is a global forex and CFD broker providing traders worldwide with secure market access, advanced trading platforms, and professional support.",
+    "Explore What is Sea Global FX? Sea Global FX is a global forex and CFD broker providing traders worldwide with secure market access, advanced trading platforms, and professional support.",
   alternates: {
     canonical: `${SITE_URL}/about-us`,
   },
@@ -13,9 +13,9 @@ export const metadata = {
 
 
 export default function page() {
-    return (
-        <div>
-            <Company />
-        </div>
-    )
+  return (
+    <div>
+      <Company />
+    </div>
+  )
 }
