@@ -22,6 +22,7 @@ export async function GET() {
     { path: "/terms-and-conditions", changefreq: "yearly", priority: 0.3 },
     { path: "/blog", changefreq: "weekly", priority: 0.7 },
     { path: "/partners", changefreq: "weekly", priority: 0.9 },
+    { path: "/trade-to-win", changefreq: "daily", priority: 1.0 },
   ];
 
   let blogUrls = [];

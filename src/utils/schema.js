@@ -215,6 +215,29 @@ const schemaArray = [
       ],
     },
   },
+  {
+    Path: "/trade-to-win",
+    Data:
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://seaglobalfx.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Trade to Win",
+          "item": "https://seaglobalfx.com/trade-to-win/"
+        }
+      ]
+    }
+
+  },
 ];
 
 export const schemaMap = new Map(

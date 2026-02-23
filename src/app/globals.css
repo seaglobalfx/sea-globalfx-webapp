@@ -88,6 +88,13 @@ a {
   margin: 0 auto;
 }
 
+.container-xs9 {
+  max-width: calc(1105px + 40px);
+  padding: 0 20px;
+  position: relative;
+  margin: 0 auto;
+}
+
 .w-full-size {
   width: 100% !important;
   font-family: "GCarturmDemo-Medium";

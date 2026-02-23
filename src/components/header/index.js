@@ -45,7 +45,7 @@ export default function Header() {
                         </div>
                         <div className={styles.menu}>
                             <div className={styles.menuItems}>
-                                <Link href="/" className={classNames(styles.menuSpacing, pathname === "/" ? styles.active : "")} aria-label='Platforms'>Home</Link>
+                                {/* <Link href="/" className={classNames(styles.menuSpacing, pathname === "/" ? styles.active : "")} aria-label='Platforms'>Home</Link> */}
 
                                 <div
                                     className={styles.dropdownMenu}
@@ -92,6 +92,7 @@ export default function Header() {
                                         <div className={styles.dropdownSpacing}>
                                             <Link className={pathname === "/platforms" ? styles.active : ""} href="/platforms" onClick={() => setOpen(false)}>Platforms</Link>
                                             <Link className={pathname === "/advanced-trading-solutions" ? styles.active : ""} href="/advanced-trading-solutions" onClick={() => setOpen(false)}>Trading Solutions</Link>
+                                            <Link className={pathname === "/trade-to-win" ? styles.active : ""} href="/trade-to-win" onClick={() => setOpen(false)}>Trade and Achieve</Link>
 
                                         </div>
                                     </motion.div>
@@ -155,11 +156,11 @@ export default function Header() {
                     </div>
                 </div>
                 <div className={styles.headerBody}>
-                    <div className={styles.menuIconAlignment} onClick={() => setHeaderOpen(false)}>
+                    {/* <div className={styles.menuIconAlignment} onClick={() => setHeaderOpen(false)}>
                         <Link className={pathname === "/" ? styles.active : ""} href="/" onClick={() => setHeaderOpen(false)}>
                             Home
                         </Link>
-                    </div>
+                    </div> */}
                     <div className={styles.menuIconAlignment}>
                         <a>
                             Markets
@@ -210,6 +211,9 @@ export default function Header() {
                         <Link href="/advanced-trading-solutions">
                             Trading Solutions
                         </Link>
+                    </div>
+                    <div className={styles.menuIconAlignment} onClick={() => setHeaderOpen(false)}>
+                        <Link className={pathname === "/trade-to-win" ? styles.active : ""} href="/trade-to-win" onClick={() => setOpen(false)}>Trade and Achieve</Link>
                     </div>
                     <div className={styles.menuIconAlignment} onClick={() => setHeaderOpen(false)}>
                         <Link href="/contact-us">
