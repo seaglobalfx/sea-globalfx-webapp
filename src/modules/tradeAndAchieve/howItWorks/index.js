@@ -43,7 +43,7 @@ export default function HowItWorks() {
                     viewport={{ once: true }}
                 >
                     <h2>
-                        How PAMM Trading <span>Works</span>
+                        How It <span>Works</span>
                     </h2>
 
                 </motion.div>

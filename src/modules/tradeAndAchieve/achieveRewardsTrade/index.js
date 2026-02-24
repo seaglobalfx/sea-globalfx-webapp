@@ -18,7 +18,7 @@ const rewardsArr = [
     { image: GiftPack, title: "50 LOTS", subtitle: "Gift Pack" },
     { image: Headphones, title: "100 LOTS", subtitle: "Headphones" },
     { image: Watch, title: "250 LOTS", subtitle: "Smart watch" },
-    { image: Tablet, title: "500 LOTS", subtitle: "Smart watch" },
+    { image: Tablet, title: "500 LOTS", subtitle: "Tablet" },
     { image: Gaming, title: "1,000 LOTS", subtitle: "Gaming Console" },
     { image: Smartphone, title: "2,000 LOTS", subtitle: "Smartphone" },
     { image: Sports, title: "5,000 LOTS", subtitle: "Sports Bike" },
