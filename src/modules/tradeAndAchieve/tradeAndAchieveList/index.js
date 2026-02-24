@@ -10,60 +10,32 @@ export default function TradeAndAchieveList() {
         <div className={styles.tradeAndAchieveList}>
             <div className='container-xs'>
                 <div className={styles.grid}>
-                    <div className={styles.griditems}>
-                        <CheckIcon />
-                        <h3>
-                            Volume-Based
-                        </h3>
-                        <p>
-                            Rewards tied to a lot of volume.
-                        </p>
-                    </div>
-                    <div className={styles.griditems}>
-                        <CheckIcon />
-                        <h3>
-                            All Clients Eligible
-                        </h3>
-                        <p>
-                            New and existing traders.
-                        </p>
-                    </div>
-                    <div className={styles.griditems}>
-                        <CheckIcon />
-                        <h3>
-                            No Limits
-                        </h3>
-                        <p>
-                            Progress without restriction.
-                        </p>
-                    </div>
-                    <div className={styles.griditems}>
-                        <CheckIcon />
-                        <h3>
-                            Closed Trades Only
-                        </h3>
-                        <p>
-                            Volume from completed trades.
-                        </p>
-                    </div>
-                    <div className={styles.griditems}>
-                        <CheckIcon />
-                        <h3>
-                            Transparent Conditions
-                        </h3>
-                        <p>
-                            Clear pricing. Fast execution.
-                        </p>
-                    </div>
-                    <div className={styles.griditems}>
-                        <CheckIcon />
-                        <h3>
-                            Performance Focused
-                        </h3>
-                        <p>
-                            Built for active traders.
-                        </p>
-                    </div>
+                    {[
+                        { title: "Volume-Based", desc: "Rewards tied to a lot of volume." },
+                        { title: "All Clients Eligible", desc: "New and existing traders." },
+                        { title: "No Limits", desc: "Progress without restriction." },
+                        { title: "Closed Trades Only", desc: "Volume from completed trades." },
+                        { title: "Transparent Conditions", desc: "Clear pricing. Fast execution." },
+                        { title: "Performance Focused", desc: "Built for active traders." },
+                    ].map((item, index) => (
+                        <motion.div
+                            key={index}
+                            className={styles.griditems}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            whileHover={{
+                                scale: 1.05,
+                                y: -5,
+                                transition: { duration: 0.2 }
+                            }}
+                        >
+                            <CheckIcon />
+                            <h3>{item.title}</h3>
+                            <p>{item.desc}</p>
+                        </motion.div>
+                    ))}
                 </div>
                 <div className={styles.teramBox}>
                     <div className={styles.boxheaderAlignment} onClick={() => setIsOpen(!isOpen)} style={{ cursor: 'pointer' }}>
