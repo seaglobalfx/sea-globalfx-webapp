@@ -58,13 +58,14 @@ export default function TradeAndAchieveHerobanner() {
                                 </motion.div>
 
                                 <motion.h2 variants={fadeUp}>
-                                    Trade with <span> discipline. </span>
-                                    Accumulate volume.
-                                    Unlock milestone <span>rewards.</span>
+                                    Trade to Win 2026 – Volume-Based Trading <span> Rewards Campaign </span>
                                 </motion.h2>
 
                                 <motion.p variants={fadeUp}>
-                                    Designed for active traders who aim higher
+                                    Trade the trends that move the markets.
+                                    Accumulate volume.
+                                    Unlock milestone rewards.
+
                                 </motion.p>
 
                                 <motion.div

@@ -34,7 +34,7 @@ export default function AchieveRewardsTrade() {
             <div className='container-xs9'>
                 <div className={styles.title}>
                     <h2>
-                        Achieve Rewards with  <span> Every </span> Trade
+                        Win Rewards with <span> Every</span> Trade
                     </h2>
                     <p>
                         Sea Global FX rewards trading performance. Trade eligible instruments. Accumulate closed lot volume. Unlock

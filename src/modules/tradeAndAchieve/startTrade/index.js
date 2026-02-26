@@ -13,7 +13,7 @@ export default function StartTrade() {
                         <div className={styles.griditems}>
                             <h3 >
                                 Start Trading. <br />
-                                Start   <span> Achieving.</span>
+                                Start   <span> Winning.</span>
                             </h3>
                             <h6>
                                 Choose the trading platform that matches your experience level and strategy, and access global markets with Sea Global’s reliable trading infrastructure.
