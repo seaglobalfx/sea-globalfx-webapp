@@ -6,6 +6,10 @@
     background: #F1F1F1;
     padding: 100px 0 0 0;
 
+    @include respond-to("sm") {
+        padding: 60px 0 0 0;
+    }
+
     :global(.container-xs) {
         @include respond-to("sm") {
             padding: 0;
