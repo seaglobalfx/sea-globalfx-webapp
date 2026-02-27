@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { toast } from 'sonner'
 import { useMutation } from '@apollo/client'
 import { CreateContactUs } from '@/graphql/query/createContactUs'
+import Link from 'next/link'
 
 export default function GetinTouch() {
     const [formData, setFormData] = useState({
@@ -175,7 +176,7 @@ export default function GetinTouch() {
                                     onChange={handleChange}
                                 />
                                 <p>
-                                    You agree to our friendly <span>Privacy policy.</span>
+                                    You agree to our friendly <Link href="/privacy-policy">Privacy policy.</Link>
                                 </p>
                             </div>
                             {errors.agree && <p className={styles.error}>{errors.agree}</p>}

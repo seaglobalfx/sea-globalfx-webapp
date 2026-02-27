@@ -132,7 +132,7 @@
                     line-height: 20px;
                     @include font-normal;
 
-                    span {
+                    a {
                         background: var(--Primary, linear-gradient(90deg, #E8BC33 10%, #B07A09 100%));
                         background-clip: text;
                         -webkit-background-clip: text;
