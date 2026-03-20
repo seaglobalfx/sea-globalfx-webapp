@@ -9,7 +9,7 @@ export default function BlogBanner({ featuredBlogs }) {
 
   const mainBlog = featuredBlogs[0];
   const sideBlogs = featuredBlogs.slice(1, 4);
-
+  console.log("featuredBlogs+++++++++++++++++++++++", featuredBlogs)
   return (
     <div className={styles.blogBannerSectionlignment}>
       <div className="container-xs">

@@ -65,6 +65,7 @@ export default function LatestBlogs({ allBlog, paginationInfo, currentPage, setC
         </div>
         <div className={styles.blogAllCardGrid}>
           {allBlog?.map((blog, i) => {
+            console.log("blog", blog)
             return (
               <Link href={`/blog/${blog.slug}`} key={i}>
                 <div className={styles.card} key={i}>
@@ -75,7 +76,7 @@ export default function LatestBlogs({ allBlog, paginationInfo, currentPage, setC
                     <h3>{blog?.title}</h3>
                     <div className={styles.textAlignment}>
                       <span>{blog?.author?.name}</span>
-                      <span>. {moment(blog?.publishedAt).format("DD MMMM YYYY")}</span>
+                      <span>. {moment(blog?.createdAt).format("DD MMMM YYYY")}</span>
                     </div>
                   </div>
                 </div>
