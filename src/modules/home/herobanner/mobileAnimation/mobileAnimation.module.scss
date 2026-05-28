@@ -11,7 +11,35 @@
     align-items: center;
     gap: 30px;
 
-    
+    .leftside {
+        position: absolute;
+        bottom: 15%;
+        left: -50%;
+        max-width: 212px;
+        z-index: 9;
+        display: block;
+
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    .rightside {
+        position: absolute;
+        top: 17%;
+        right: -50%;
+        max-width: 212px;
+        z-index: 9;
+        display: block;
+
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+
+
 
     .mobileFramer {
         position: relative;

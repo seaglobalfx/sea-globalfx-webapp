@@ -8,6 +8,9 @@ import OneMarket from './oneMarket'
 import MarketOverview from './marketOverview'
 import OverviewSection from './overviewSection'
 import OpenAccount from './openAccount'
+import MarketPlatform from './marketPlatform'
+import TypeAccount from './typeAccount'
+import ClientSection from './clientSection'
 
 export default function HomePage() {
 
@@ -17,6 +20,9 @@ export default function HomePage() {
             {/* <WhySeaGlobal /> */}
             {/* <OverviewSection /> */}
             {/* <MarketOverview /> */}
+            <MarketPlatform />
+            <TypeAccount />
+            <ClientSection />
             <OpenAccount />
             <AccountType />
 

@@ -85,7 +85,7 @@ export default function Herobanner() {
                                         </motion.button>
                                     </a>
                                 </motion.div>
-                                
+
                             </div>
                         </motion.div>
 

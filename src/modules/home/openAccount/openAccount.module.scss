@@ -49,7 +49,7 @@
 
         .stickySection {
             position: sticky;
-            top: 0;
+            top: 120px;
 
             p {
                 @include font-normal;

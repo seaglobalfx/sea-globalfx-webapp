@@ -48,14 +48,10 @@ const MARKET_CARDS = [
 ];
 
 export default function InteractiveHero() {
-    const [isDesktop, setIsDesktop] = useState(false);
-    const [mounted, setMounted] = useState(false);
+    const [isDesktop, setIsDesktop] = useState(true);
 
     useEffect(() => {
-        setMounted(true);
-        const handleResize = () => {
-            setIsDesktop(window.innerWidth >= 1024);
-        };
+        const handleResize = () => setIsDesktop(window.innerWidth >= 1024);
         handleResize();
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
@@ -99,260 +95,260 @@ export default function InteractiveHero() {
     const nextSectionOpacity = useTransform(scrollYProgress, [0.75, 0.92], [0, 1]);
     const nextSectionY = useTransform(scrollYProgress, [0.75, 0.92], [40, 0]);
 
-    // Hydration check to prevent SSR-mismatch issues
-    if (!mounted) {
-        return (
-            <div ref={containerRef} style={{ minHeight: '100vh', background: '#fbfbfb' }} />
-        );
-    }
+    // 7. Derived pointer events (to avoid .get() during SSR)
+    const leftCardPointerEvents = useTransform(leftCardOpacity, opacity => opacity > 0.1 ? 'auto' : 'none');
+    const rightCardPointerEvents = useTransform(rightCardOpacity, opacity => opacity > 0.1 ? 'auto' : 'none');
+    const nextSectionPointerEvents = useTransform(nextSectionOpacity, opacity => opacity > 0.5 ? 'auto' : 'none');
 
-    if (!isDesktop) {
-        // Fallback for Mobile and Tablet (sequential layout with basic entry anims)
-        return (
-            <div className={styles.relative} ref={containerRef}>
-                <Herobanner />
-                <div className='bottom-alignment tagline-remove'>
-                    <tv-ticker-tape
-                        symbols="FX:EURUSD,BITSTAMP:BTCUSD,BITSTAMP:ETHUSD,CMCMARKETS:GOLD,OANDA:EURUSD,OANDA:GBPUSD,OANDA:USDJPY,OANDA:GBPJPY,OANDA:AUDUSD,OANDA:USDCAD"
-                        theme="dark"
-                    />
-                </div>
-                <MobileCardAnimation />
-            </div>
-        );
-    }
-
-
-    // High-end Desktop Sticky Scroll Animation
     return (
-        <div ref={containerRef} className={styles.scrollContainer}>
-            <div className={styles.stickyWrapper}>
-                {/* Background transition layers */}
-                <div className={styles.bgBase} />
-                <motion.div className={styles.bgOverlay} style={{ opacity: bgOverlayOpacity }} />
-                <div className="container-md h-full w-full-size">
-                    <div className={styles.contentContainer}>
-                        {/* HERO LEFT SIDE CONTENT */}
-                        <motion.div
-                            className={styles.grid}
-                            style={{ opacity: heroOpacity, y: heroY }}
-                        >
-                            <div className={styles.leftCol}>
-                                <div className={styles.tagline}>
-                                    <button>
-                                        Low spreads • Fast execution • Regulated
-                                    </button>
-                                </div>
+        <>
+            {/* MOBILE / TABLET VIEW */}
+            <div className={`${styles.relative} ${styles.mobileOnly}`}>
+                {!isDesktop && (
+                    <>
+                        <Herobanner />
+                        <div className='bottom-alignment tagline-remove'>
+                            <tv-ticker-tape
+                                symbols="FX:EURUSD,BITSTAMP:BTCUSD,BITSTAMP:ETHUSD,CMCMARKETS:GOLD,OANDA:EURUSD,OANDA:GBPUSD,OANDA:USDJPY,OANDA:GBPJPY,OANDA:AUDUSD,OANDA:USDCAD"
+                                theme="dark"
+                            />
+                        </div>
+                        <MobileCardAnimation />
+                    </>
+                )}
+            </div>
 
-                                <h1>
-                                    Institutional-Grade Trading for <span> Global </span> Markets
-                                </h1>
-
-                                <p>
-                                    Experience tight spreads with high-speed execution. Trade in a secure, fully
-                                    regulated trading environment.
-                                </p>
-
-                                <div className={styles.twoButtonalignment}>
-                                    <a href='https://client.seaglobalfx.com/?tab=register' target='_blank'>
-                                        <button className={styles.orange}>
-                                            <img src={UserIcon} alt='UserIcon' />
-                                            Open Account
+            {/* DESKTOP VIEW */}
+            <div ref={containerRef} className={`${styles.scrollContainer} ${styles.desktopOnly}`}>
+                <div className={styles.stickyWrapper}>
+                    {/* Background transition layers */}
+                    <div className={styles.bgBase} />
+                    <motion.div className={styles.bgOverlay} style={{ opacity: bgOverlayOpacity }} />
+                    <div className="container-md h-full w-full-size">
+                        <div className={styles.contentContainer}>
+                            {/* HERO LEFT SIDE CONTENT */}
+                            <motion.div
+                                className={styles.grid}
+                                style={{ opacity: heroOpacity, y: heroY }}
+                            >
+                                <div className={styles.leftCol}>
+                                    <div className={styles.tagline}>
+                                        <button>
+                                            Low spreads • Fast execution • Regulated
                                         </button>
-                                    </a>
-                                    <a target='_blank' href='https://client.seaglobalfx.com/'>
-                                        <button className={styles.black}>
-                                            <img src={DemoIcon} alt='DemoIcon' />
-                                            Try Demo
-                                        </button>
-                                    </a>
+                                    </div>
+
+                                    <h1>
+                                        Institutional-Grade Trading for <span> Global </span> Markets
+                                    </h1>
+
+                                    <p>
+                                        Experience tight spreads with high-speed execution. Trade in a secure, fully
+                                        regulated trading environment.
+                                    </p>
+
+                                    <div className={styles.twoButtonalignment}>
+                                        <a href='https://client.seaglobalfx.com/?tab=register' target='_blank'>
+                                            <button className={styles.orange}>
+                                                <img src={UserIcon} alt='UserIcon' />
+                                                Open Account
+                                            </button>
+                                        </a>
+                                        <a target='_blank' href='https://client.seaglobalfx.com/'>
+                                            <button className={styles.black}>
+                                                <img src={DemoIcon} alt='DemoIcon' />
+                                                Try Demo
+                                            </button>
+                                        </a>
+                                    </div>
+                                    <div className={styles.counterSection}>
+                                        <div>
+
+                                            <h5>
+                                                <CountUp
+                                                    start={0}
+                                                    end={4.8}
+                                                    decimals={1}
+                                                    duration={2}
+                                                    enableScrollSpy={true}
+                                                    scrollSpyOnce={true}
+                                                />
+                                                /5
+                                            </h5>
+                                            <h6>
+                                                Rating
+                                            </h6>
+                                        </div>
+                                        <div>
+                                            <h5>
+
+                                                <CountUp
+                                                    start={0}
+                                                    end={120}
+                                                    duration={2}
+                                                    enableScrollSpy={true}
+                                                    scrollSpyOnce={true}
+                                                />
+                                                +
+
+                                            </h5>
+                                            <h6>
+                                                Countries
+                                            </h6>
+                                        </div>
+                                        <div>
+
+                                            <h5>
+                                                <CountUp
+                                                    start={0}
+                                                    end={500}
+                                                    duration={2}
+                                                    enableScrollSpy={true}
+                                                    scrollSpyOnce={true}
+                                                />
+                                                M +
+                                            </h5>
+                                            <h6>
+                                                Total Trades
+                                            </h6>
+                                        </div>
+                                        <div>
+                                            <h5>
+                                                {`<`}
+                                                <CountUp
+                                                    start={0}
+                                                    end={15}
+                                                    duration={2}
+                                                    enableScrollSpy={true}
+                                                    scrollSpyOnce={true}
+                                                />
+                                                MS
+                                            </h5>
+                                            <h6>
+                                                Execution
+                                            </h6>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className={styles.counterSection}>
-                                    <div>
+                                <div /> {/* Right column is empty to maintain grid layout */}
+                            </motion.div>
 
-                                        <h5>
-                                            <CountUp
-                                                start={0}
-                                                end={4.8}
-                                                decimals={1}
-                                                duration={2}
-                                                enableScrollSpy={true}
-                                                scrollSpyOnce={true}
-                                            />
-                                            /5
-                                        </h5>
-                                        <h6>
-                                            Rating
-                                        </h6>
-                                    </div>
-                                    <div>
-                                        <h5>
-
-                                            <CountUp
-                                                start={0}
-                                                end={120}
-                                                duration={2}
-                                                enableScrollSpy={true}
-                                                scrollSpyOnce={true}
-                                            />
-                                            +
-
-                                        </h5>
-                                        <h6>
-                                            Countries
-                                        </h6>
-                                    </div>
-                                    <div>
-
-                                        <h5>
-                                            <CountUp
-                                                start={0}
-                                                end={500}
-                                                duration={2}
-                                                enableScrollSpy={true}
-                                                scrollSpyOnce={true}
-                                            />
-                                            M +
-                                        </h5>
-                                        <h6>
-                                            Total Trades
-                                        </h6>
-                                    </div>
-                                    <div>
-                                        <h5>
-                                            {`<`}
-                                            <CountUp
-                                                start={0}
-                                                end={15}
-                                                duration={2}
-                                                enableScrollSpy={true}
-                                                scrollSpyOnce={true}
-                                            />
-                                            MS
-                                        </h5>
-                                        <h6>
-                                            Execution
-                                        </h6>
-                                    </div>
-                                </div>
+                            {/* STICKY CENTERING MOBILE PHONE */}
+                            <div className={styles.phoneContainer}>
+                                <motion.div
+                                    style={{
+                                        x: phoneX,
+                                        y: phoneY,
+                                        scale: phoneScale,
+                                        opacity: phoneOpacity,
+                                        willChange: "transform, opacity",
+                                    }}
+                                >
+                                    <MobileAnimation scrollYProgress={scrollYProgress} />
+                                </motion.div>
                             </div>
-                            <div /> {/* Right column is empty to maintain grid layout */}
-                        </motion.div>
 
-                        {/* STICKY CENTERING MOBILE PHONE */}
-                        <div className={styles.phoneContainer}>
-                            <motion.div
-                                style={{
-                                    x: phoneX,
-                                    y: phoneY,
-                                    scale: phoneScale,
-                                    opacity: phoneOpacity,
-                                    willChange: "transform, opacity",
-                                }}
-                            >
-                                <MobileAnimation scrollYProgress={scrollYProgress} />
-                            </motion.div>
+                            {/* FOUR CARDS - 2 LEFT, 2 RIGHT */}
+                            <div className={styles.cardsContainer}>
+                                {/* LEFT COLUMN */}
+                                <motion.div
+                                    className={styles.cardColumn}
+                                    style={{
+                                        x: leftCardX,
+                                        opacity: leftCardOpacity,
+                                        pointerEvents: leftCardPointerEvents,
+                                        willChange: "transform, opacity"
+                                    }}
+                                >
+                                    <div className={styles.glassCard}>
+                                        <img src={LowSpeed} alt="LowSpeed" />
+                                        <h3>Low Spreads</h3>
+                                        <p>
+                                            Trade with tight, competitive spreads across major Forex pairs, indices, commodities, and crypto—designed to reduce trading costs and improve efficiency.
+                                        </p>
+                                    </div>
+                                    <div className={styles.glassCard}>
+                                        <img src={LowSpeed} alt="LowSpeed" />
+                                        <h3>Global Access</h3>
+                                        <p>
+                                            Access a wide range of global financial markets from a single platform, with deep liquidity and reliable pricing.
+                                        </p>
+                                    </div>
+                                </motion.div>
+
+                                {/* RIGHT COLUMN */}
+                                <motion.div
+                                    className={styles.cardColumn}
+                                    style={{
+                                        x: rightCardX,
+                                        opacity: rightCardOpacity,
+                                        pointerEvents: rightCardPointerEvents,
+                                        willChange: "transform, opacity"
+                                    }}
+                                >
+                                    <div className={styles.glassCard}>
+                                        <img src={LowSpeed} alt="LowSpeed" />
+                                        <h3>Fast Execution</h3>
+                                        <p>
+                                            Experience low-latency order execution powered by institutional-grade infrastructure, helping minimize slippage in fast-moving markets.
+                                        </p>
+                                    </div>
+                                    <div className={styles.glassCard}>
+                                        <img src={LowSpeed} alt="LowSpeed" />
+                                        <h3>24/7 Support</h3>
+                                        <p>
+                                            Our dedicated support team is available 24 hours a day, 7 days a week, ensuring help is always within reach when you need it.
+                                        </p>
+                                    </div>
+                                </motion.div>
+                            </div>
+
                         </div>
-
-                        {/* FOUR CARDS - 2 LEFT, 2 RIGHT */}
-                        <div className={styles.cardsContainer}>
-                            {/* LEFT COLUMN */}
-                            <motion.div
-                                className={styles.cardColumn}
-                                style={{
-                                    x: leftCardX,
-                                    opacity: leftCardOpacity,
-                                    pointerEvents: leftCardOpacity.get() > 0.1 ? 'auto' : 'none',
-                                    willChange: "transform, opacity"
-                                }}
-                            >
-                                <div className={styles.glassCard}>
-                                    <img src={LowSpeed} alt="LowSpeed" />
-                                    <h3>Low Spreads</h3>
-                                    <p>
-                                        Trade with tight, competitive spreads across major Forex pairs, indices, commodities, and crypto—designed to reduce trading costs and improve efficiency.
-                                    </p>
-                                </div>
-                                <div className={styles.glassCard}>
-                                    <img src={LowSpeed} alt="LowSpeed" />
-                                    <h3>Global Access</h3>
-                                    <p>
-                                        Access a wide range of global financial markets from a single platform, with deep liquidity and reliable pricing.
-                                    </p>
-                                </div>
-                            </motion.div>
-
-                            {/* RIGHT COLUMN */}
-                            <motion.div
-                                className={styles.cardColumn}
-                                style={{
-                                    x: rightCardX,
-                                    opacity: rightCardOpacity,
-                                    pointerEvents: rightCardOpacity.get() > 0.1 ? 'auto' : 'none',
-                                    willChange: "transform, opacity"
-                                }}
-                            >
-                                <div className={styles.glassCard}>
-                                    <img src={LowSpeed} alt="LowSpeed" />
-                                    <h3>Fast Execution</h3>
-                                    <p>
-                                        Experience low-latency order execution powered by institutional-grade infrastructure, helping minimize slippage in fast-moving markets.
-                                    </p>
-                                </div>
-                                <div className={styles.glassCard}>
-                                    <img src={LowSpeed} alt="LowSpeed" />
-                                    <h3>24/7 Support</h3>
-                                    <p>
-                                        Our dedicated support team is available 24 hours a day, 7 days a week, ensuring help is always within reach when you need it.
-                                    </p>
-                                </div>
-                            </motion.div>
-                        </div>
-
                     </div>
-                </div>
 
-                {/* NEXT SECTION REVEAL */}
-                <motion.div
-                    className={styles.nextSectionReveal}
-                    style={{
-                        opacity: nextSectionOpacity,
-                        y: nextSectionY,
-                        pointerEvents: nextSectionOpacity.get() > 0.5 ? 'auto' : 'none',
-                        willChange: "transform, opacity"
-                    }}
-                >
-                    <div className={styles.marketsOverview}>
-                        <div className={styles.leftContentAlignment}>
-                            <div className={styles.title}>
-                                <h2>Markets <span>Overview</span></h2>
-                                <p>
-                                    Explore global financial markets from a single trading platform. Trade Forex, Crypto, ETFs, Stocks, Commodities, and Indices with fast execution, deep liquidity, and real-time market access
-                                </p>
-                            </div>
-                            <div className={styles.cardsGridWrapper}>
-                                <div className={styles.cardsGrid}>
-                                    {[...MARKET_CARDS, ...MARKET_CARDS].map((card, index) => (
-                                        <div className={styles.items} key={index}>
-                                            <img src={card.image} alt={card.title} />
-                                            <div className={styles.content}>
-                                                <div className={styles.contentSpacing}>
-                                                    <h3>
-                                                        {card.title}
-                                                    </h3>
-                                                    <p>
-                                                        {card.description}
-                                                    </p>
+                    {/* NEXT SECTION REVEAL */}
+                    <motion.div
+                        className={styles.nextSectionReveal}
+                        style={{
+                            opacity: nextSectionOpacity,
+                            y: nextSectionY,
+                            pointerEvents: nextSectionPointerEvents,
+                            willChange: "transform, opacity"
+                        }}
+                    >
+                        <div className={styles.marketsOverview}>
+                            <div className={styles.leftContentAlignment}>
+                                <div className={styles.title}>
+                                    <h2>Markets <span>Overview</span></h2>
+                                    <p>
+                                        Explore global financial markets from a single trading platform. Trade Forex, Crypto, ETFs, Stocks, Commodities, and Indices with fast execution, deep liquidity, and real-time market access
+                                    </p>
+                                </div>
+                                <div className={styles.cardsGridWrapper}>
+                                    <div className={styles.cardsGrid}>
+                                        {[...MARKET_CARDS, ...MARKET_CARDS].map((card, index) => (
+                                            <div className={styles.items} key={index}>
+                                                <img src={card.image} alt={card.title} />
+                                                <div className={styles.content}>
+                                                    <div className={styles.contentSpacing}>
+                                                        <h3>
+                                                            {card.title}
+                                                        </h3>
+                                                        <p>
+                                                            {card.description}
+                                                        </p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    ))}
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </motion.div>
+                    </motion.div>
+
+                </div>
             </div>
-        </div>
+        </>
     );
 }
