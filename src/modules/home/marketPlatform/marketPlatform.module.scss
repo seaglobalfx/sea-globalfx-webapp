@@ -13,15 +13,29 @@
     .leftAlignment {
         padding-left: max(80px, (100vw - 1240px) / 2);
 
+        :global(html[dir="rtl"]) & {
+            padding-left: 0;
+            padding-right: max(80px, (100vw - 1240px) / 2);
+        }
+
         .screenImage {
             position: absolute;
             right: 0;
             top: 50%;
             transform: translateY(-50%);
 
+            :global(html[dir="rtl"]) & {
+                right: auto;
+                left: 0;
+            }
+
             img {
                 max-width: 900px;
                 display: block;
+
+                :global(html[dir="rtl"]) & {
+                    transform: scaleX(-1);
+                }
             }
         }
 

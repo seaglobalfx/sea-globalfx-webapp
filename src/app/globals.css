@@ -103,6 +103,7 @@ a {
 .tagline-remove {
   height: 83px;
   overflow: hidden;
+  direction: ltr !important;
 }
 
 

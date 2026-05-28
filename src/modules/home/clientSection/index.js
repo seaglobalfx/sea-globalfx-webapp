@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './clientSection.module.scss';
+import { useLanguage } from '@/context/LanguageContext';
 
 const CommonProfile = '/assets/images/common-profile.png';
 
@@ -10,39 +11,6 @@ const QuoteIcon = () => (
         <path d="M0 28V14.3252C0 10.9596 0.868126 8.06532 2.60438 5.64242C4.37894 3.18182 6.91638 1.47542 10.2172 0.523232L12.5067 3.91717C9.96927 4.82222 7.96544 6.18451 6.49626 8.00404C5.02709 9.78586 4.29251 11.6882 4.29251 13.7152H12.5916V28H0ZM21.4084 28V14.3252C21.4084 10.9596 22.2765 8.06532 24.0128 5.64242C25.7873 3.18182 28.3248 1.47542 31.6256 0.523232L33.9152 3.91717C31.3777 4.82222 29.3739 6.18451 27.9047 8.00404C26.4355 9.78586 25.7009 11.6882 25.7009 13.7152H34V28H21.4084Z" fill="#D4A320" />
     </svg>
 )
-
-const REVIEWS = [
-    {
-        text: "Trading with Sea Global FX has been smooth from day one. Fast execution, stable spreads, and quick withdrawals made a huge difference in my trading experience.",
-        name: "Johnathan Doe",
-        location: "United Kingdom"
-    },
-    {
-        text: "Trading with Sea Global FX has been smooth from day one. Fast execution, stable spreads, and quick withdrawals made a huge difference in my trading experience.",
-        name: "Johnathan Doe",
-        location: "United Kingdom"
-    },
-    {
-        text: "Trading with Sea Global FX has been smooth from day one. Fast execution, stable spreads, and quick withdrawals made a huge difference in my trading experience.",
-        name: "Johnathan Doe",
-        location: "United Kingdom"
-    },
-    {
-        text: "Trading with Sea Global FX has been smooth from day one. Fast execution, stable spreads, and quick withdrawals made a huge difference in my trading experience.",
-        name: "Johnathan Doe",
-        location: "United Kingdom"
-    },
-    {
-        text: "Trading with Sea Global FX has been smooth from day one. Fast execution, stable spreads, and quick withdrawals made a huge difference in my trading experience.",
-        name: "Johnathan Doe",
-        location: "United Kingdom"
-    },
-    {
-        text: "Trading with Sea Global FX has been smooth from day one. Fast execution, stable spreads, and quick withdrawals made a huge difference in my trading experience.",
-        name: "Johnathan Doe",
-        location: "United Kingdom"
-    }
-];
 
 const ReviewCard = ({ review }) => (
     <div className={styles.card}>
@@ -70,19 +38,27 @@ const ReviewCard = ({ review }) => (
 );
 
 export default function ClientSection() {
+    const { t } = useLanguage();
+
+    const singleReview = {
+        text: t('clientSection.reviewText'),
+        name: t('clientSection.reviewName'),
+        location: t('clientSection.reviewLocation')
+    };
+
+    const translatedReviews = Array(6).fill(singleReview);
     // We duplicate the array to allow infinite seamless scrolling
-    const columnData = [...REVIEWS, ...REVIEWS, ...REVIEWS];
+    const columnData = [...translatedReviews, ...translatedReviews, ...translatedReviews];
 
     return (
         <div className={styles.clientSection}>
             <div className='container-xs'>
                 <div className={styles.title}>
                     <h2>
-                        Trusted By Traders <span> Worldwide </span>
+                        {t('clientSection.titleStart')}<span>{t('clientSection.titleSpan')}</span>
                     </h2>
                     <p>
-                        Our platform is recognized for its commitment to transparent pricing, reliable execution, and professional
-                        service. Thousands of traders choose us for our technology, support, and trading conditions.
+                        {t('clientSection.desc')}
                     </p>
                 </div>
 
@@ -91,7 +67,7 @@ export default function ClientSection() {
                     <motion.div
                         className={styles.column}
                         animate={{ y: ["0%", "-50%"] }}
-                        transition={{ ease: "linear", duration: 5, repeat: Infinity }}
+                        transition={{ ease: "linear", duration: 25, repeat: Infinity }}
                     >
                         <div className={styles.innerColumn}>
                             {columnData.map((review, idx) => (
@@ -109,7 +85,7 @@ export default function ClientSection() {
                     <motion.div
                         className={styles.column}
                         animate={{ y: ["-50%", "0%"] }}
-                        transition={{ ease: "linear", duration: 5, repeat: Infinity }}
+                        transition={{ ease: "linear", duration: 25, repeat: Infinity }}
                     >
                         <div className={styles.innerColumn}>
                             {columnData.map((review, idx) => (
@@ -127,7 +103,7 @@ export default function ClientSection() {
                     <motion.div
                         className={styles.column}
                         animate={{ y: ["0%", "-50%"] }}
-                        transition={{ ease: "linear", duration: 5, repeat: Infinity }}
+                        transition={{ ease: "linear", duration: 25, repeat: Infinity }}
                     >
                         <div className={styles.innerColumn}>
                             {columnData.map((review, idx) => (
@@ -145,7 +121,7 @@ export default function ClientSection() {
                     <motion.div
                         className={styles.column}
                         animate={{ y: ["-50%", "0%"] }}
-                        transition={{ ease: "linear", duration: 5, repeat: Infinity }}
+                        transition={{ ease: "linear", duration: 25, repeat: Infinity }}
                     >
                         <div className={styles.innerColumn}>
                             {columnData.map((review, idx) => (

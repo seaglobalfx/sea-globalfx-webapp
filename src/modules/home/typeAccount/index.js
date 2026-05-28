@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './typeAccount.module.scss';
+import { useLanguage } from '@/context/LanguageContext';
 
 const CommonIcon = '/assets/icons/common-icon.svg';
 
@@ -11,40 +12,42 @@ const ArrowIcon = () => (
     </svg>
 )
 
-const ACCOUNTS_DATA = [
-    {
-        title: "PRO",
-        description: "A straightforward account with no separate commission, designed for ease of use and cost transparency.",
-        minDeposit: "$10",
-        spread: "20 CENTS",
-        commission: "$0",
-        leverage: "50 TO 500",
-        currencies: "USD",
-        btnType: "dark"
-    },
-    {
-        title: "STANDARD",
-        description: "Built for traders who want tighter spreads and enhanced support while maintaining simple pricing.",
-        minDeposit: "$500",
-        spread: "25 CENTS",
-        commission: "$0",
-        leverage: "1000",
-        currencies: "USD",
-        btnType: "gold"
-    },
-    {
-        title: "PLUS",
-        description: "Designed for active traders who prioritize pricing efficiency and execution quality.",
-        minDeposit: "$1,000",
-        spread: "30 CENTS",
-        commission: "$0",
-        leverage: "2000",
-        currencies: "USD",
-        btnType: "dark"
-    }
-];
-
 export default function TypeAccount() {
+    const { t } = useLanguage();
+
+    const translatedAccountsData = [
+        {
+            title: t('typeAccount.cards.pro.title'),
+            description: t('typeAccount.cards.pro.desc'),
+            minDeposit: t('typeAccount.cards.pro.minDeposit'),
+            spread: t('typeAccount.cards.pro.spread'),
+            commission: t('typeAccount.cards.pro.commission'),
+            leverage: t('typeAccount.cards.pro.leverage'),
+            currencies: t('typeAccount.cards.pro.currencies'),
+            btnType: "dark"
+        },
+        {
+            title: t('typeAccount.cards.standard.title'),
+            description: t('typeAccount.cards.standard.desc'),
+            minDeposit: t('typeAccount.cards.standard.minDeposit'),
+            spread: t('typeAccount.cards.standard.spread'),
+            commission: t('typeAccount.cards.standard.commission'),
+            leverage: t('typeAccount.cards.standard.leverage'),
+            currencies: t('typeAccount.cards.standard.currencies'),
+            btnType: "gold"
+        },
+        {
+            title: t('typeAccount.cards.plus.title'),
+            description: t('typeAccount.cards.plus.desc'),
+            minDeposit: t('typeAccount.cards.plus.minDeposit'),
+            spread: t('typeAccount.cards.plus.spread'),
+            commission: t('typeAccount.cards.plus.commission'),
+            leverage: t('typeAccount.cards.plus.leverage'),
+            currencies: t('typeAccount.cards.plus.currencies'),
+            btnType: "dark"
+        }
+    ];
+
     return (
         <div className={styles.typeAccount}>
             <div className='container-xs'>
@@ -62,14 +65,13 @@ export default function TypeAccount() {
                         hidden: { opacity: 0, y: 30 },
                         visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
                     }}>
-                        Account Types
+                        {t('typeAccount.title')}
                     </motion.h2>
                     <motion.p variants={{
                         hidden: { opacity: 0, y: 30 },
                         visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
                     }}>
-                        Pick an account that matches your trading style and experience level. Our MT5 trading accounts are
-                        designed with transparent pricing, competitive spreads, and flexible conditions.
+                        {t('typeAccount.desc')}
                     </motion.p>
                 </motion.div>
 
@@ -83,7 +85,7 @@ export default function TypeAccount() {
                         hidden: {}
                     }}
                 >
-                    {ACCOUNTS_DATA.map((card, idx) => (
+                    {translatedAccountsData.map((card, idx) => (
                         <motion.div
                             className={styles.items}
                             key={idx}
@@ -105,27 +107,27 @@ export default function TypeAccount() {
                                 <div className={styles.divider}></div>
                                 <div className={styles.specs}>
                                     <div className={styles.specRow}>
-                                        <span className={styles.label}>MINIMUM DEPOSIT:</span>
+                                        <span className={styles.label}>{t('typeAccount.minDepositLabel')}</span>
                                         <span className={styles.dots}></span>
                                         <span className={styles.value}>{card.minDeposit}</span>
                                     </div>
                                     <div className={styles.specRow}>
-                                        <span className={styles.label}>SPREAD:</span>
+                                        <span className={styles.label}>{t('typeAccount.spreadLabel')}</span>
                                         <span className={styles.dots}></span>
                                         <span className={styles.value}>{card.spread}</span>
                                     </div>
                                     <div className={styles.specRow}>
-                                        <span className={styles.label}>COMMISSION:</span>
+                                        <span className={styles.label}>{t('typeAccount.commissionLabel')}</span>
                                         <span className={styles.dots}></span>
                                         <span className={styles.value}>{card.commission}</span>
                                     </div>
                                     <div className={styles.specRow}>
-                                        <span className={styles.label}>LEVERAGE:</span>
+                                        <span className={styles.label}>{t('typeAccount.leverageLabel')}</span>
                                         <span className={styles.dots}></span>
                                         <span className={styles.value}>{card.leverage}</span>
                                     </div>
                                     <div className={styles.specRow}>
-                                        <span className={styles.label}>CURRENCIES</span>
+                                        <span className={styles.label}>{t('typeAccount.currenciesLabel')}</span>
                                         <span className={styles.dots}></span>
                                         <span className={styles.value}>{card.currencies}</span>
                                     </div>
@@ -133,7 +135,7 @@ export default function TypeAccount() {
                                         <span className={styles.arrowBox}>
                                             <ArrowIcon />
                                         </span>
-                                        <span className={styles.btnText}>Open Account</span>
+                                        <span className={styles.btnText}>{t('typeAccount.openAccountBtn')}</span>
                                     </button>
                                 </div>
                             </div>

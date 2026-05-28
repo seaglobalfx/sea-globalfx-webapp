@@ -5,6 +5,7 @@ import Footer from "@/components/footer";
 import FloatingWhatsapp from "@/components/floatingWhatsapp";
 import "swiper/css";
 import ApolloClientProvider from "@/components/ApolloClientProvider";
+import { LanguageProvider } from "@/context/LanguageContext";
 import PageSchema from "@/utils/PageSchema";
 import { Toaster } from "sonner";
 export const metadata = {
@@ -142,13 +143,15 @@ export default function RootLayout({ children }) {
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
-        <ApolloClientProvider>
-          <Header />
-          {children}
-          <Footer />
-          <FloatingWhatsapp />
-          <Toaster />
-        </ApolloClientProvider>
+        <LanguageProvider>
+          <ApolloClientProvider>
+            <Header />
+            {children}
+            <Footer />
+            <FloatingWhatsapp />
+            <Toaster />
+          </ApolloClientProvider>
+        </LanguageProvider>
       </body>
     </html>
   );

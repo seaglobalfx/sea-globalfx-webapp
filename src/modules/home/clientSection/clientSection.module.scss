@@ -69,6 +69,10 @@
 
                 .quoteIcon {
                     margin-bottom: 20px;
+
+                    :global(html[dir="rtl"]) & {
+                        transform: scaleX(-1);
+                    }
                 }
 
                 p {

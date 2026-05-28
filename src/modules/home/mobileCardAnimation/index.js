@@ -3,11 +3,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './mobileCardAnimation.module.scss';
+import { useLanguage } from '@/context/LanguageContext';
 
 const AnalysisIcon = '/assets/icons/Analysis.svg';
 const ExecutionIcon = '/assets/icons/Execution.svg';
 
 const MobileCardAnimation = () => {
+    const { t } = useLanguage();
+
     return (
         <div className={styles.mobileCardAnimation}>
             <div className="container-md">
@@ -20,8 +23,8 @@ const MobileCardAnimation = () => {
                         viewport={{ once: true, margin: "-100px" }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h2>Premium Trading <span>Infrastructure</span></h2>
-                        <p>Experience institutional grade performance right at your fingertips.</p>
+                        <h2>{t('hero.mobilePremium.titleStart')}<span>{t('hero.mobilePremium.titleSpan')}</span></h2>
+                        <p>{t('hero.mobilePremium.desc')}</p>
                     </motion.div>
 
                     <div className={styles.cardsGrid}>
@@ -36,11 +39,11 @@ const MobileCardAnimation = () => {
                             <div className={styles.iconWrapper}>
                                 <img src={AnalysisIcon} alt="AnalysisIcon" />
                             </div>
-                            <div className={styles.metric}>0.0 pips</div>
-                            <div className={styles.metricLabel}>EUR/USD Spread</div>
-                            <h3>Institutional Spreads</h3>
+                            <div className={styles.metric}>{t('hero.mobilePremium.spreads.metric')}</div>
+                            <div className={styles.metricLabel}>{t('hero.mobilePremium.spreads.label')}</div>
+                            <h3>{t('hero.mobilePremium.spreads.title')}</h3>
                             <p>
-                                Access raw, institutional-grade spreads starting from 0.0 pips. We source deep liquidity directly from top-tier financial institutions to ensure the tightest pricing possible.
+                                {t('hero.mobilePremium.spreads.desc')}
                             </p>
                         </motion.div>
 
@@ -55,11 +58,11 @@ const MobileCardAnimation = () => {
                             <div className={styles.iconWrapper}>
                                 <img src={ExecutionIcon} alt="ExecutionIcon" />
                             </div>
-                            <div className={styles.metric}>&lt; 20ms</div>
-                            <div className={styles.metricLabel}>Execution Speed</div>
-                            <h3>Lightning Execution</h3>
+                            <div className={styles.metric}>{t('hero.mobilePremium.execution.metric')}</div>
+                            <div className={styles.metricLabel}>{t('hero.mobilePremium.execution.label')}</div>
+                            <h3>{t('hero.mobilePremium.execution.title')}</h3>
                             <p>
-                                Enjoy high-performance execution speeds averaging under 20 milliseconds. Our advanced fiber-optic network minimizes slippage and guarantees ultra-low latency.
+                                {t('hero.mobilePremium.execution.desc')}
                             </p>
                         </motion.div>
                     </div>

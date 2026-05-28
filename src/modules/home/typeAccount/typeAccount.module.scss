@@ -148,10 +148,14 @@
                         width: 50px;
                         height: 50px;
                         flex-shrink: 0;
+
+                        :global(html[dir="rtl"]) & {
+                            transform: scaleX(-1);
+                        }
                     }
 
                     .btnText {
-                        padding-left: 20px;
+                        padding-inline-start: 20px;
                         font-size: 16px;
                         font-weight: 600;
                         @include font-semibold;

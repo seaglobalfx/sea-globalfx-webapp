@@ -1,12 +1,16 @@
 'use client'
 import Link from 'next/link';
 import styles from './footer.module.scss';
+import { useLanguage } from '@/context/LanguageContext';
+
 const FooterLogo = '/assets/logo/footer-logo.svg';
 const FacebookIcon = '/assets/icons/facebook.svg';
 const TwitterIcon = '/assets/icons/twitter.svg';
 const InstagramIcon = '/assets/icons/instagram.svg';
 const LinkdinIcon = '/assets/icons/linkdin.svg';
+
 export default function Footer() {
+    const { t } = useLanguage();
     const scrollup = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     };
@@ -20,8 +24,7 @@ export default function Footer() {
                                 <img src={FooterLogo} alt='FooterLogo' />
                             </div>
                             <p>
-                                Sea Global – Delivering advanced trading solutions across Forex, Commodities, Indices, and Digital
-                                Assets, supported by secure infrastructure and transparent trading conditions.
+                                {t('footer.desc')}
                             </p>
                             <div className={styles.social}>
                                 <a href='https://www.facebook.com/profile.php?id=61586171626639' target='_blank'>
@@ -47,95 +50,90 @@ export default function Footer() {
                         <div className={styles.footerMenu}>
                             <div>
                                 <h3>
-                                    Company Information
+                                    {t('footer.companyInfo')}
                                 </h3>
                                 <div className={styles.line}></div>
                                 <p>
-                                    Registered Address:
-                                    1st Floor, The Sotheby Building,, Rodney Bay, Gros-Islet, Castries, Saint Lucia – 838
+                                    {t('footer.registeredAddress')}<br />
+                                    1st Floor, The Sotheby Building, Rodney Bay, Gros-Islet, Castries, Saint Lucia – 838
                                 </p>
                                 <p>
-                                    Physical Address:<br />
-                                    1st Floor, The Sotheby Building,, Rodney Bay, Gros-Islet, Castries, Saint Lucia – 838
+                                    {t('footer.physicalAddress')}<br />
+                                    1st Floor, The Sotheby Building, Rodney Bay, Gros-Islet, Castries, Saint Lucia – 838
                                 </p>
                                 <p>
-                                    Registration Number:
-                                    2025- 00352
+                                    {t('footer.registrationNumber')} 2025-00352
                                 </p>
                                 <a href='mailto:support@seaglobalfx.com'>
-                                    Email:
-                                    support@seaglobalfx.com
+                                    {t('footer.email')} support@seaglobalfx.com
                                 </a>
                                 <a href='callto:+971 58 261 9955'>
-                                    Phone: <br />
-                                    +971 58 261 9955
+                                    {t('footer.phone')} +971 58 261 9955
                                 </a>
 
                             </div>
                             <div>
-                                <h3>Quick Links</h3>
+                                <h3>{t('footer.quickLinks')}</h3>
                                 <div className={styles.line}></div>
-                                <Link href="/accounts">Accounts</Link>
-                                <Link href="/platforms">Platforms</Link>
-                                <Link href="/blog">Blogs</Link>
-                                <Link href="/about-us">About Us</Link>
-                                <Link href="/advanced-trading-solutions">Trading Solutions
-                                </Link>
+                                <Link href="/accounts">{t('nav.accounts')}</Link>
+                                <Link href="/platforms">{t('nav.platforms')}</Link>
+                                <Link href="/blog">{t('nav.blogs')}</Link>
+                                <Link href="/about-us">{t('nav.aboutUs')}</Link>
+                                <Link href="/advanced-trading-solutions">{t('nav.tradingSolutions')}</Link>
                             </div>
                             <div>
-                                <h3>Support</h3>
+                                <h3>{t('footer.support')}</h3>
                                 <div className={styles.line}></div>
-                                <Link href="/terms-and-conditions">Terms of Service</Link>
-                                <Link href="/privacy-policy">Privacy Policy</Link>
-                                <a>Telegram Group</a>
-                                <a>Refund Policy</a>
+                                <Link href="/terms-and-conditions">{t('footer.terms')}</Link>
+                                <Link href="/privacy-policy">{t('footer.privacy')}</Link>
+                                <a>{t('footer.telegram')}</a>
+                                <a>{t('footer.refund')}</a>
 
                             </div>
                         </div>
                         <div className={styles.right}>
                             <h5>
-                                Subscribe to Newsletter
+                                {t('common.newsletterTitle')}
                             </h5>
                             <p>
-                                Get Monthly insights from founders around the globe. No
-                                spam   promise.
+                                {t('common.newsletterSub')}
                             </p>
                             <div className={styles.inputRelative}>
-                                <input type='text' placeholder='Enter your Email' />
+                                <input type='text' placeholder={t('common.emailPlaceholder')} />
                                 <div className={styles.buttonAlignment}>
                                     <button>
-                                        Submit
+                                        {t('common.submit')}
                                     </button>
                                 </div>
                             </div>
                             <div className={styles.checkboxText}>
                                 <input type='checkbox' />
                                 <span>
-                                    I agree to the Privacy Policy
+                                    {t('common.newsletterAgree')}
                                 </span>
                             </div>
                         </div>
                     </div>
                     <div className={styles.textstyle}>
                         <p>
-                            Risk warning <br />
-                            Trading in Foreign Exchange and Contracts for Difference carries a high level of risk to your capital and unexpected price movements. A key risk of leveraged trading is that if a market moves against your position, you can incur additional liabilities far in excess of your initial margin deposit. Only speculate with money you can afford to lose. The products listed on this website may not be suitable for all customers; therefore, ensure you fully understand the risks involved and seek independent financial advice if necessary.
+                            {t('common.riskWarningTitle')} <br />
+                            {t('common.riskWarning')}
                         </p>
                         <p>
-                            Restricted Countries
+                            {t('common.restrictedCountriesTitle')}
                             <br />
-                            Sea Global Ltd. does not provide services to residents of the United States, Canada, North Korea, and Cuba, or any other sanctioned jurisdiction where such services would be contrary to local law or regulation.
+                            {t('common.restrictedCountries')}
                         </p>
                         <p>
-                            Disclaimer <br />
-                            Sea Global Ltd. operates solely as an execution service and does not offer advisory services. Occasionally, Sea Global Ltd. may release general market insights; however, such communications should not be interpreted as advice, an invitation, or an endorsement for any financial instrument. Sea Global Ltd. bears no liability for the application of this content or any outcomes thereof. The completeness of this information is not guaranteed, and reliance upon it is at the sole discretion and risk of the user.
+                            {t('common.disclaimerTitle')} <br />
+                            {t('common.disclaimer')}
                         </p>
                     </div>
                 </div>
             </footer>
             <div className={styles.copyright}>
                 <p>
-                    © 2025 Sea Global. All rights reserved.
+                    {t('common.copyright')}
                 </p>
             </div>
         </>

@@ -15,12 +15,12 @@
     }
 
     .left-alignment {
-        padding-left: max(20px, (100vw - 1340px) / 2);
-        padding-right: 80px;
+        padding-inline-start: max(20px, (100vw - 1340px) / 2);
+        padding-inline-end: 80px;
 
         @include respond-to("md") {
-            padding-left: 20px;
-            padding-right: 20px;
+            padding-inline-start: 20px;
+            padding-inline-end: 20px;
         }
 
         .grid {
@@ -104,7 +104,9 @@
 
                     button {
                         border: none;
-                        padding: 4px 16px 4px 4px;
+                        padding: 4px;
+                        padding-inline-start: 4px;
+                        padding-inline-end: 16px;
                         display: flex;
                         align-items: center;
                         gap: 10px;
@@ -227,6 +229,26 @@
                     }
                 }
             }
+        }
+    }
+}
+
+html[dir="rtl"] {
+    .two-button-alignment button,
+    .twoButtonalignment button,
+    button.orange,
+    button.black,
+    header button,
+    .header button,
+    .mobileHeader button {
+        padding: 4px 4px 4px 16px !important;
+        
+        // Reverse icons inside button
+        img {
+            order: 2; // place icon after text
+        }
+        span {
+            order: 1; // place text before icon
         }
     }
 }

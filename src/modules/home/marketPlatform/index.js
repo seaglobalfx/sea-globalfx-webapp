@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './marketPlatform.module.scss';
+import { useLanguage } from '@/context/LanguageContext';
 
 const ScreenImage = '/assets/images/screen-wise.png';
 const Mt4Icon = '/assets/icons/mt4.svg';
@@ -10,6 +11,8 @@ const WebIcon = '/assets/icons/web.png';
 const MobileIcon = '/assets/icons/mobile.png';
 
 export default function MarketPlatform() {
+    const { t, isRTL } = useLanguage();
+
     return (
         <div className={styles.marketPlatform}>
             <div className={styles.leftAlignment}>
@@ -27,16 +30,14 @@ export default function MarketPlatform() {
                         hidden: { opacity: 0, y: 30 },
                         visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
                     }}>
-                        One market. Multiple platforms. <span> Zero </span> compromise.
+                        {t('marketPlatform.titleStart')}<span> {t('marketPlatform.titleSpan')} </span>{t('marketPlatform.titleEnd')}
                     </motion.h2>
 
                     <motion.p variants={{
                         hidden: { opacity: 0, y: 30 },
                         visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
                     }}>
-                        Access the markets through industry-leading trading platforms built for speed, flexibility, and performance.
-                        Whether you trade manually or algorithmically, on desktop or mobile, our platforms are designed to support
-                        every trading style.
+                        {t('marketPlatform.desc')}
                     </motion.p>
 
                     <motion.div className={styles.allIconText} variants={{
@@ -44,10 +45,10 @@ export default function MarketPlatform() {
                         hidden: {}
                     }}>
                         {[
-                            { img: Mt4Icon, text: "MT4", alt: "Mt4Icon" },
-                            { img: Mt5Icon, text: "MT5", alt: "Mt5Icon" },
-                            { img: WebIcon, text: "Web \n Platform", alt: "WebIcon" },
-                            { img: MobileIcon, text: "Mobile \n App", alt: "MobileIcon" }
+                            { img: Mt4Icon, text: t('marketPlatform.mt4'), alt: "Mt4Icon" },
+                            { img: Mt5Icon, text: t('marketPlatform.mt5'), alt: "Mt5Icon" },
+                            { img: WebIcon, text: t('marketPlatform.web'), alt: "WebIcon" },
+                            { img: MobileIcon, text: t('marketPlatform.mobile'), alt: "MobileIcon" }
                         ].map((item, idx) => (
                             <motion.div key={idx} variants={{
                                 hidden: { opacity: 0, scale: 0.8, y: 20 },
@@ -70,8 +71,7 @@ export default function MarketPlatform() {
                 </motion.div>
                 <div className={styles.screenImage}>
                     <motion.div
-
-                        initial={{ opacity: 0, x: 150 }}
+                        initial={{ opacity: 0, x: isRTL ? -150 : 150 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}

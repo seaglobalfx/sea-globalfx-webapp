@@ -340,11 +340,11 @@
     width: 100%;
 
     .leftContentAlignment {
-        padding-left: max(80px, (100vw - 1240px) / 2);
+        padding-inline-start: max(80px, (100vw - 1240px) / 2);
     }
 
     .title {
-        text-align: left;
+        text-align: start;
         padding: 0 0 60px 0;
 
         h2 {
@@ -458,4 +458,19 @@
 @keyframes marquee {
     0% { transform: translateX(0%); }
     100% { transform: translateX(-50%); }
+}
+
+@keyframes marqueeRtl {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(50%); }
+}
+
+:global(html[dir="rtl"]) {
+    .cardsGrid {
+        animation: marqueeRtl 25s linear infinite;
+
+        &:hover {
+            animation-play-state: paused;
+        }
+    }
 }

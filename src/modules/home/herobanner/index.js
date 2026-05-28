@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 import styles from './herobanner.module.scss';
 import MobileAnimation from './mobileAnimation';
 
+import { useLanguage } from '@/context/LanguageContext';
+
 const HeroImage = '/assets/images/hero-coin.gif';
 const UserIcon = '/assets/icons/user.svg';
 const DemoIcon = '/assets/icons/demo.svg';
@@ -39,6 +41,7 @@ const imageAnim = {
 };
 
 export default function Herobanner() {
+    const { t } = useLanguage();
     return (
         <div className='container-md'>
             <div className={styles.herobanner}>
@@ -47,25 +50,24 @@ export default function Herobanner() {
 
                         {/* LEFT CONTENT */}
                         <motion.div
-                            className={styles.griditems}
-                            variants={container}
-                            initial="hidden"
-                            animate="visible"
+                             className={styles.griditems}
+                             variants={container}
+                             initial="hidden"
+                             animate="visible"
                         >
                             <div>
                                 <motion.div className={styles.tagline} variants={fadeUp}>
                                     <button>
-                                        Low spreads • Fast execution • Regulated
+                                        {t('hero.tagline')}
                                     </button>
                                 </motion.div>
 
                                 <motion.h1 variants={fadeUp}>
-                                    Institutional-Grade Trading for <span> Global </span> Markets
+                                    {t('hero.titleStart')}<span>{t('hero.titleSpan')}</span>{t('hero.titleEnd')}
                                 </motion.h1>
 
                                 <motion.p variants={fadeUp}>
-                                    Experience tight spreads with high-speed execution. Trade in a secure, fully
-                                    regulated trading environment.
+                                    {t('hero.desc')}
                                 </motion.p>
 
                                 <motion.div
@@ -75,13 +77,13 @@ export default function Herobanner() {
                                     <a href='https://client.seaglobalfx.com/?tab=register' target='_blank'>
                                         <motion.button className={styles.orange} variants={fadeUp}>
                                             <img src={UserIcon} alt='UserIcon' />
-                                            Open Account
+                                            {t('hero.openAccount')}
                                         </motion.button>
                                     </a>
                                     <a target='_blank' href='https://client.seaglobalfx.com/'>
                                         <motion.button className={styles.black} variants={fadeUp}>
                                             <img src={DemoIcon} alt='DemoIcon' />
-                                            Try Demo
+                                            {t('hero.tryDemo')}
                                         </motion.button>
                                     </a>
                                 </motion.div>

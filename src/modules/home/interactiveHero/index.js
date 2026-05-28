@@ -6,6 +6,7 @@ import styles from './interactiveHero.module.scss';
 import Herobanner from '../herobanner';
 import MobileCardAnimation from '../mobileCardAnimation';
 import MobileAnimation from '../herobanner/mobileAnimation';
+import { useLanguage } from '@/context/LanguageContext';
 
 const UserIcon = '/assets/icons/user.svg';
 const DemoIcon = '/assets/icons/demo.svg';
@@ -14,41 +15,42 @@ const ExecutionIcon = '/assets/icons/Execution.svg';
 const LowSpeed = '/assets/icons/low-speed.svg';
 const SupportIcon = '/assets/icons/Support.svg';
 
-const MARKET_CARDS = [
-    {
-        title: "FOREX",
-        description: "Access major, minor, and selected exotic currency pairs with deep liquidity and competitive spreads.",
-        image: "/assets/images/forex-card.png"
-    },
-    {
-        title: "Indices",
-        description: "Trade leading global indices representing major economies, with broader market exposure.",
-        image: "/assets/images/indices-card.png"
-    },
-    {
-        title: "Commodities",
-        description: "Speculate on key commodities, enabling portfolio diversification and inflation-hedging strategies.",
-        image: "/assets/images/commodities-card.png"
-    },
-    {
-        title: "Stocks",
-        description: "Trade shares of well-known global companies, gaining exposure to equity markets across sectors.",
-        image: "/assets/images/stocks-card.png"
-    },
-    {
-        title: "Crypto",
-        description: "Participate in the digital asset market with cryptocurrencies, available for trading in real-time.",
-        image: "/assets/images/crypto-card.png"
-    },
-    {
-        title: "ETFs",
-        description: "Gain diversified exposure through Exchange-Traded Funds, combining multiple assets.",
-        image: "/assets/images/etfs-card.png"
-    }
-];
-
 export default function InteractiveHero() {
     const [isDesktop, setIsDesktop] = useState(true);
+    const { t, locale, isRTL } = useLanguage();
+
+    const translatedMarketCards = [
+        {
+            title: t('hero.marketsOverview.cards.forex.title'),
+            description: t('hero.marketsOverview.cards.forex.desc'),
+            image: "/assets/images/forex-card.png"
+        },
+        {
+            title: t('hero.marketsOverview.cards.indices.title'),
+            description: t('hero.marketsOverview.cards.indices.desc'),
+            image: "/assets/images/indices-card.png"
+        },
+        {
+            title: t('hero.marketsOverview.cards.commodities.title'),
+            description: t('hero.marketsOverview.cards.commodities.desc'),
+            image: "/assets/images/commodities-card.png"
+        },
+        {
+            title: t('hero.marketsOverview.cards.stocks.title'),
+            description: t('hero.marketsOverview.cards.stocks.desc'),
+            image: "/assets/images/stocks-card.png"
+        },
+        {
+            title: t('hero.marketsOverview.cards.crypto.title'),
+            description: t('hero.marketsOverview.cards.crypto.desc'),
+            image: "/assets/images/crypto-card.png"
+        },
+        {
+            title: t('hero.marketsOverview.cards.etfs.title'),
+            description: t('hero.marketsOverview.cards.etfs.desc'),
+            image: "/assets/images/etfs-card.png"
+        }
+    ];
 
     useEffect(() => {
         const handleResize = () => setIsDesktop(window.innerWidth >= 1024);
@@ -77,18 +79,38 @@ export default function InteractiveHero() {
 
     // 4. Mobile Phone Animation (Positioning, Scale & Opacity)
     // Starts aligned with the right side of the hero, then shifts to exact center
-    const phoneX = useTransform(scrollYProgress, [0, 0.35], ["22vw", "0vw"]);
+    const phoneX = useTransform(scrollYProgress, (progress) => {
+        const startX = isRTL ? -22 : 22;
+        if (progress <= 0) return `${startX}vw`;
+        if (progress >= 0.35) return "0vw";
+        const currentX = startX * (1 - progress / 0.35);
+        return `${currentX}vw`;
+    });
     const phoneY = useTransform(scrollYProgress, [0, 0.35], ["0dvh", "0dvh"]);
     const phoneScale = useTransform(scrollYProgress, [0, 0.35, 0.7, 0.95], [0.95, 1.25, 1.25, 10]);
     const phoneOpacity = useTransform(scrollYProgress, [0, 0.7, 0.85], [1, 1, 0.95]);
 
     // 5. Card Entrance animations (Slide in from Left & Right)
     // Left card
-    const leftCardX = useTransform(scrollYProgress, [0.38, 0.65], ["-120%", "0%"]);
+    const leftCardX = useTransform(scrollYProgress, (progress) => {
+        const startX = isRTL ? 120 : -120;
+        if (progress <= 0.38) return `${startX}%`;
+        if (progress >= 0.65) return "0%";
+        const ratio = (progress - 0.38) / (0.65 - 0.38);
+        const currentX = startX * (1 - ratio);
+        return `${currentX}%`;
+    });
     const leftCardOpacity = useTransform(scrollYProgress, [0.38, 0.52, 0.68, 0.78], [0, 1, 1, 0]);
 
     // Right card
-    const rightCardX = useTransform(scrollYProgress, [0.38, 0.65], ["120%", "0%"]);
+    const rightCardX = useTransform(scrollYProgress, (progress) => {
+        const startX = isRTL ? -120 : 120;
+        if (progress <= 0.38) return `${startX}%`;
+        if (progress >= 0.65) return "0%";
+        const ratio = (progress - 0.38) / (0.65 - 0.38);
+        const currentX = startX * (1 - ratio);
+        return `${currentX}%`;
+    });
     const rightCardOpacity = useTransform(scrollYProgress, [0.38, 0.52, 0.68, 0.78], [0, 1, 1, 0]);
 
     // 6. Next Section Reveal
@@ -134,30 +156,29 @@ export default function InteractiveHero() {
                                 <div className={styles.leftCol}>
                                     <div className={styles.tagline}>
                                         <button>
-                                            Low spreads • Fast execution • Regulated
+                                            {t('hero.tagline')}
                                         </button>
                                     </div>
 
                                     <h1>
-                                        Institutional-Grade Trading for <span> Global </span> Markets
+                                        {t('hero.titleStart')}<span>{t('hero.titleSpan')}</span>{t('hero.titleEnd')}
                                     </h1>
 
                                     <p>
-                                        Experience tight spreads with high-speed execution. Trade in a secure, fully
-                                        regulated trading environment.
+                                        {t('hero.desc')}
                                     </p>
 
                                     <div className={styles.twoButtonalignment}>
                                         <a href='https://client.seaglobalfx.com/?tab=register' target='_blank'>
                                             <button className={styles.orange}>
                                                 <img src={UserIcon} alt='UserIcon' />
-                                                Open Account
+                                                {t('hero.openAccount')}
                                             </button>
                                         </a>
                                         <a target='_blank' href='https://client.seaglobalfx.com/'>
                                             <button className={styles.black}>
                                                 <img src={DemoIcon} alt='DemoIcon' />
-                                                Try Demo
+                                                {t('hero.tryDemo')}
                                             </button>
                                         </a>
                                     </div>
@@ -176,7 +197,7 @@ export default function InteractiveHero() {
                                                 /5
                                             </h5>
                                             <h6>
-                                                Rating
+                                                {t('hero.rating')}
                                             </h6>
                                         </div>
                                         <div>
@@ -193,7 +214,7 @@ export default function InteractiveHero() {
 
                                             </h5>
                                             <h6>
-                                                Countries
+                                                {t('hero.countries')}
                                             </h6>
                                         </div>
                                         <div>
@@ -209,7 +230,7 @@ export default function InteractiveHero() {
                                                 M +
                                             </h5>
                                             <h6>
-                                                Total Trades
+                                                {t('hero.totalTrades')}
                                             </h6>
                                         </div>
                                         <div>
@@ -225,7 +246,7 @@ export default function InteractiveHero() {
                                                 MS
                                             </h5>
                                             <h6>
-                                                Execution
+                                                {t('hero.execution')}
                                             </h6>
                                         </div>
                                     </div>
@@ -262,16 +283,16 @@ export default function InteractiveHero() {
                                 >
                                     <div className={styles.glassCard}>
                                         <img src={LowSpeed} alt="LowSpeed" />
-                                        <h3>Low Spreads</h3>
+                                        <h3>{t('hero.features.lowSpreadsTitle')}</h3>
                                         <p>
-                                            Trade with tight, competitive spreads across major Forex pairs, indices, commodities, and crypto—designed to reduce trading costs and improve efficiency.
+                                            {t('hero.features.lowSpreadsDesc')}
                                         </p>
                                     </div>
                                     <div className={styles.glassCard}>
                                         <img src={LowSpeed} alt="LowSpeed" />
-                                        <h3>Global Access</h3>
+                                        <h3>{t('hero.features.globalAccessTitle')}</h3>
                                         <p>
-                                            Access a wide range of global financial markets from a single platform, with deep liquidity and reliable pricing.
+                                            {t('hero.features.globalAccessDesc')}
                                         </p>
                                     </div>
                                 </motion.div>
@@ -288,16 +309,16 @@ export default function InteractiveHero() {
                                 >
                                     <div className={styles.glassCard}>
                                         <img src={LowSpeed} alt="LowSpeed" />
-                                        <h3>Fast Execution</h3>
+                                        <h3>{t('hero.features.fastExecutionTitle')}</h3>
                                         <p>
-                                            Experience low-latency order execution powered by institutional-grade infrastructure, helping minimize slippage in fast-moving markets.
+                                            {t('hero.features.fastExecutionDesc')}
                                         </p>
                                     </div>
                                     <div className={styles.glassCard}>
                                         <img src={LowSpeed} alt="LowSpeed" />
-                                        <h3>24/7 Support</h3>
+                                        <h3>{t('hero.features.supportTitle')}</h3>
                                         <p>
-                                            Our dedicated support team is available 24 hours a day, 7 days a week, ensuring help is always within reach when you need it.
+                                            {t('hero.features.supportDesc')}
                                         </p>
                                     </div>
                                 </motion.div>
@@ -319,14 +340,14 @@ export default function InteractiveHero() {
                         <div className={styles.marketsOverview}>
                             <div className={styles.leftContentAlignment}>
                                 <div className={styles.title}>
-                                    <h2>Markets <span>Overview</span></h2>
+                                    <h2>{t('hero.marketsOverview.titleStart')}<span>{t('hero.marketsOverview.titleSpan')}</span></h2>
                                     <p>
-                                        Explore global financial markets from a single trading platform. Trade Forex, Crypto, ETFs, Stocks, Commodities, and Indices with fast execution, deep liquidity, and real-time market access
+                                        {t('hero.marketsOverview.desc')}
                                     </p>
                                 </div>
                                 <div className={styles.cardsGridWrapper}>
                                     <div className={styles.cardsGrid}>
-                                        {[...MARKET_CARDS, ...MARKET_CARDS].map((card, index) => (
+                                        {[...translatedMarketCards, ...translatedMarketCards].map((card, index) => (
                                             <div className={styles.items} key={index}>
                                                 <img src={card.image} alt={card.title} />
                                                 <div className={styles.content}>
