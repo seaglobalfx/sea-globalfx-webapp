@@ -104,3 +104,12 @@ a {
   height: 83px;
   overflow: hidden;
 }
+
+
+.bottom-alignment {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+}
