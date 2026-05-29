@@ -43,6 +43,7 @@ const imageAnim = {
 export default function Herobanner() {
     const { t } = useLanguage();
     return (
+        <div className={styles.spacingRemove}>
         <div className='container-md'>
             <div className={styles.herobanner}>
                 <div className={styles.leftAlignment}>
@@ -50,10 +51,10 @@ export default function Herobanner() {
 
                         {/* LEFT CONTENT */}
                         <motion.div
-                             className={styles.griditems}
-                             variants={container}
-                             initial="hidden"
-                             animate="visible"
+                            className={styles.griditems}
+                            variants={container}
+                            initial="hidden"
+                            animate="visible"
                         >
                             <div>
                                 <motion.div className={styles.tagline} variants={fadeUp}>
@@ -104,6 +105,7 @@ export default function Herobanner() {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     );
 }

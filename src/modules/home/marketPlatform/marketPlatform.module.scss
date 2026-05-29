@@ -10,12 +10,24 @@
     position: relative;
     padding: 225px 0;
 
+    @include respond-to("sm") {
+        padding: 60px 0 0 0;
+    }
+
     .leftAlignment {
         padding-left: max(80px, (100vw - 1240px) / 2);
+
+        @include respond-to("md") {
+            padding: 0 20px;
+        }
 
         :global(html[dir="rtl"]) & {
             padding-left: 0;
             padding-right: max(80px, (100vw - 1240px) / 2);
+
+            @include respond-to("md") {
+                padding: 0 20px;
+            }
         }
 
         .screenImage {
@@ -23,6 +35,12 @@
             right: 0;
             top: 50%;
             transform: translateY(-50%);
+
+            @include respond-to("md") {
+                position: inherit;
+                top: 0;
+                transform: none;
+            }
 
             :global(html[dir="rtl"]) & {
                 right: auto;
@@ -33,6 +51,11 @@
                 max-width: 900px;
                 display: block;
 
+                @include respond-to("md") {
+                    max-width: 100%;
+                    width: 100%;
+                }
+
                 :global(html[dir="rtl"]) & {
                     transform: scaleX(-1);
                 }
@@ -42,6 +65,11 @@
         .content {
             max-width: 600px;
 
+            @include respond-to("md") {
+                max-width: 100%;
+                padding: 0 0 60px 0;
+            }
+
             .allIconText {
                 display: flex;
                 gap: 40px;
@@ -50,6 +78,13 @@
                     display: flex;
                     justify-content: center;
                     padding: 0 0 16px 0;
+
+                    img {
+                        @include respond-to("sm") {
+                            display: block;
+                            max-width: 40px;
+                        }
+                    }
                 }
 
                 span {
@@ -61,6 +96,10 @@
                     font-weight: 500;
                     line-height: 105%;
                     @include font-medium;
+
+                    @include respond-to("sm") {
+                        font-size: 14px;
+                    }
                 }
             }
 
@@ -72,6 +111,11 @@
                 line-height: 105%;
                 @include font-normal;
                 margin: 0 0 24px 0;
+
+                @include respond-to("sm") {
+                    font-size: 16px;
+                    line-height: 24px;
+                }
             }
 
             h2 {
@@ -83,6 +127,11 @@
                 line-height: 105%;
                 text-transform: capitalize;
                 @include heading-semibold;
+
+                @include respond-to("sm") {
+                    font-size: 30px;
+                    line-height: 40px;
+                }
 
                 span {
                     background: linear-gradient(90deg, #DAA71D 0%, #AE7708 100%);

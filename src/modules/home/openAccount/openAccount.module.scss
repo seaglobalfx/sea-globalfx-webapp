@@ -5,10 +5,19 @@
 .openAccount {
     padding: 120px 0;
 
+    @include respond-to("sm") {
+        padding: 60px 0;
+    }
+
     .grid {
         display: grid;
         grid-template-columns: 595px 1fr;
         gap: 30px;
+
+        @include respond-to("md") {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
 
         .card {
             padding: 32px;
@@ -59,6 +68,11 @@
                 font-weight: 400;
                 line-height: 105%;
                 margin: 0 0 16px 0;
+
+                @include respond-to("sm") {
+                    font-size: 16px;
+                    line-height: 24px;
+                }
             }
 
             .image {
@@ -77,6 +91,12 @@
                 text-transform: capitalize;
                 @include heading-semibold;
                 margin: 0 0 16px 0;
+
+                @include respond-to("sm") {
+                    font-size: 30px;
+                    line-height: 40px;
+                    margin: 0 0 10px 0;
+                }
 
                 span {
                     background: linear-gradient(90deg, #DAA71D 0%, #AE7708 100%);

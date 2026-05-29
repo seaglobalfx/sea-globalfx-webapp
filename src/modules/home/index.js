@@ -11,6 +11,8 @@ import OpenAccount from './openAccount'
 import MarketPlatform from './marketPlatform'
 import TypeAccount from './typeAccount'
 import ClientSection from './clientSection'
+import Herobanner from './herobanner'
+import MobileViewSection from './mobileViewSection'
 
 export default function HomePage() {
 
@@ -20,6 +22,8 @@ export default function HomePage() {
             {/* <WhySeaGlobal /> */}
             {/* <OverviewSection /> */}
             {/* <MarketOverview /> */}
+            <Herobanner />
+            <MobileViewSection />
             <MarketPlatform />
             <TypeAccount />
             <ClientSection />

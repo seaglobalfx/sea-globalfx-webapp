@@ -15,6 +15,9 @@
         padding: 120px 0 0 0;
     }
 
+    @include respond-to("sm") {
+        padding: 120px 0 60px 0;
+    }
 
     .grid {
         display: grid;
@@ -31,10 +34,20 @@
             grid-template-columns: 1fr;
         }
 
-      
+        @include respond-to("sm") {
+            gap: 40px;
+        }
+
+
 
 
         .griditems {
+            &:first-child {
+                @include respond-to("sm") {
+                    padding: 0 20px;
+                }
+            }
+
             .mainRelative {}
 
             p {
@@ -56,11 +69,6 @@
                 display: flex;
                 align-items: center;
                 gap: 16px;
-
-                @include respond-to("sm") {
-                    justify-content: center;
-                }
-
 
                 button {
                     border: none;
@@ -175,6 +183,20 @@
                     }
                 }
             }
+        }
+    }
+}
+
+.spacingRemove {
+    display: none;
+
+    @include respond-to("md") {
+        display: block;
+    }
+
+    :global(.container-md) {
+        @include respond-to("sm") {
+            padding: 0;
         }
     }
 }

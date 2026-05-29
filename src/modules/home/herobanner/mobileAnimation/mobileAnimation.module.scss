@@ -19,6 +19,10 @@
         z-index: 9;
         display: block;
 
+        @include respond-to("sm") {
+            left: 20px;
+        }
+
         img {
             display: block;
             width: 100%;
@@ -32,6 +36,10 @@
         max-width: 212px;
         z-index: 9;
         display: block;
+
+        @include respond-to("sm") {
+            right: 20px;
+        }
 
         img {
             display: block;

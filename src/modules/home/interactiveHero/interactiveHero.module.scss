@@ -4,13 +4,15 @@
 
 .mobileOnly {
     display: none;
+
     @media (max-width: 1023px) {
-        display: block;
+        display: none;
     }
 }
 
 .desktopOnly {
     display: none;
+
     @media (min-width: 1024px) {
         display: block;
     }
@@ -456,13 +458,23 @@
 }
 
 @keyframes marquee {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(-50%); }
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 @keyframes marqueeRtl {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(50%); }
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(50%);
+    }
 }
 
 :global(html[dir="rtl"]) {
