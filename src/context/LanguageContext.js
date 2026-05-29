@@ -1,6 +1,8 @@
 'use client';
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import moment from 'moment';
+import 'moment/locale/ar';
 import { translations } from '@/translations';
 
 const LanguageContext = createContext(null);
@@ -27,6 +29,9 @@ export function LanguageProvider({ children }) {
     const dir = locale === 'ar' ? 'rtl' : 'ltr';
     document.documentElement.dir = dir;
     document.documentElement.lang = locale;
+
+    // Keep moment's global locale in sync (used by components without explicit locale)
+    moment.locale(locale === 'ar' ? 'ar' : 'en');
   }, [locale, mounted]);
 
   const changeLanguage = (lang) => {

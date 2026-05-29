@@ -1,12 +1,13 @@
-'use client'
+'use client';
+
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/context/LanguageContext';
 
 const HeroImage = '/assets/images/company-banner.png';
 const UserIcon = '/assets/icons/user.svg';
 const DemoIcon = '/assets/icons/demo.svg';
 
-/* Animations */
 const fadeUp = {
     hidden: { opacity: 0, y: 30 },
     visible: {
@@ -33,14 +34,13 @@ const imageAnim = {
     }
 };
 
-
 export default function CompanyBanner() {
+    const { t } = useLanguage();
+
     return (
         <div className='common-banner'>
             <div className='left-alignment'>
                 <div className='grid'>
-
-                    {/* LEFT CONTENT */}
                     <div className='grid-items'>
                         <motion.div
                             variants={stagger}
@@ -51,8 +51,8 @@ export default function CompanyBanner() {
                                 className='tag-line'
                                 variants={fadeUp}
                             >
-                                <button>
-                                    We’re Here to Help
+                                <button type="button">
+                                    {t('companyBanner.tagLine')}
                                 </button>
                             </motion.div>
 
@@ -60,35 +60,34 @@ export default function CompanyBanner() {
                                 className="full-width"
                                 variants={fadeUp}
                             >
-                                A Trusted Global Trading  <span> Partner </span>
+                                {t('companyBanner.titleLine1')}
+                                <span>{t('companyBanner.titleSpan')}</span>
                             </motion.h1>
 
                             <motion.p variants={fadeUp}>
-                                Sea Global FX is a global trading
-                                broker focused on delivering a transparent, secure, and professionally managed trading environment.
+                                {t('companyBanner.desc')}
                             </motion.p>
 
                             <motion.div
                                 className='two-button-alignment'
                                 variants={fadeUp}
                             >
-                                <a href='https://client.seaglobalfx.com/?tab=register' target='_blank'>
-                                    <button className='orange'>
-                                        <img src={UserIcon} alt='UserIcon' />
-                                        Open Account
+                                <a href='https://client.seaglobalfx.com/?tab=register' target='_blank' rel='noreferrer'>
+                                    <button type="button" className='orange'>
+                                        <img src={UserIcon} alt='' />
+                                        {t('hero.openAccount')}
                                     </button>
                                 </a>
-                                <a target='_blank' href='https://client.seaglobalfx.com/'>
-                                    <button className='black'>
-                                        <img src={DemoIcon} alt='DemoIcon' />
-                                        Try Demo
+                                <a target='_blank' rel='noreferrer' href='https://client.seaglobalfx.com/'>
+                                    <button type="button" className='black'>
+                                        <img src={DemoIcon} alt='' />
+                                        {t('hero.tryDemo')}
                                     </button>
                                 </a>
                             </motion.div>
                         </motion.div>
                     </div>
 
-                    {/* RIGHT IMAGE */}
                     <div className='grid-items'>
                         <motion.div
                             className='image'
@@ -96,12 +95,11 @@ export default function CompanyBanner() {
                             initial="hidden"
                             animate="visible"
                         >
-                            <img src={HeroImage} alt='HeroImage' />
+                            <img src={HeroImage} alt='' />
                         </motion.div>
                     </div>
-
                 </div>
             </div>
         </div>
-    )
+    );
 }

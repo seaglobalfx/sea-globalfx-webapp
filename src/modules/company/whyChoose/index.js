@@ -3,11 +3,14 @@
 import React from 'react';
 import styles from './whyChoose.module.scss';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/context/LanguageContext';
 
-const DisclosuresIcon = '/assets/icons/disclosures.png';
-const SecureIcon = '/assets/icons/Secure.png';
-const TransparentIcon = '/assets/icons/Transparent.png';
-const ProfessionalIcon = '/assets/icons/Professional.png';
+const icons = [
+    '/assets/icons/disclosures.png',
+    '/assets/icons/Secure.png',
+    '/assets/icons/Transparent.png',
+    '/assets/icons/Professional.png',
+];
 const UserIcon = '/assets/icons/user-light.svg';
 
 const containerVariants = {
@@ -33,6 +36,9 @@ const itemVariants = {
 };
 
 export default function WhyChoose() {
+    const { t } = useLanguage();
+    const items = t('companyWhyChoose.items');
+
     return (
         <motion.div
             className={styles.whyChooseAlignment}
@@ -44,39 +50,31 @@ export default function WhyChoose() {
             <div className="container-xs">
                 <motion.div className={styles.title} variants={itemVariants}>
                     <h2>
-                        Why Choose <span> Sea Global FX? </span>
+                        {t('companyWhyChoose.titleStart')}
+                        <span>{t('companyWhyChoose.titleSpan')}</span>
                     </h2>
-                    <p>
-                        Trade with confidence through Sea Global, a broker committed to global standards,
-                        robust compliance, and professional-grade trading infrastructure. Every aspect of
-                        our service is designed to protect clients, ensure fairness, and deliver a reliable
-                        trading environment.
-                    </p>
+                    <p>{t('companyWhyChoose.desc')}</p>
                 </motion.div>
 
                 <motion.div className={styles.grid} variants={containerVariants}>
-                    {[
-                        { id: 1, text: 'Clear regulatory disclosures', icon: DisclosuresIcon },
-                        { id: 2, text: 'Secure handling of client funds and data', icon: SecureIcon },
-                        { id: 3, text: 'Transparent trading conditions and pricing', icon: TransparentIcon },
-                        { id: 4, text: 'Professional tools and infrastructure', icon: ProfessionalIcon },
-                    ].map((item) => (
-                        <motion.div
-                            key={item.id}
-                            className={styles.griditems}
-                            variants={itemVariants}
-                            whileHover={{ scale: 1.03 }}
-                            transition={{ type: 'spring', stiffness: 200, damping: 15 }}
-                        >
-                            <div>
-                                <div className={styles.counter}>{item.id}</div>
-                                <h3>{item.text}</h3>
-                            </div>
-                            <div className={styles.iconRight}>
-                                <img src={item.icon} alt={item.text} />
-                            </div>
-                        </motion.div>
-                    ))}
+                    {Array.isArray(items) &&
+                        items.map((text, index) => (
+                            <motion.div
+                                key={index}
+                                className={styles.griditems}
+                                variants={itemVariants}
+                                whileHover={{ scale: 1.03 }}
+                                transition={{ type: 'spring', stiffness: 200, damping: 15 }}
+                            >
+                                <div>
+                                    <div className={styles.counter}>{index + 1}</div>
+                                    <h3>{text}</h3>
+                                </div>
+                                <div className={styles.iconRight}>
+                                    <img src={icons[index]} alt="" />
+                                </div>
+                            </motion.div>
+                        ))}
                 </motion.div>
 
                 <motion.div
@@ -90,9 +88,9 @@ export default function WhyChoose() {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <button>
-                            <img src={UserIcon} alt="UserIcon" />
-                            Open Account
+                        <button type="button">
+                            <img src={UserIcon} alt="" />
+                            {t('hero.openAccount')}
                         </button>
                     </a>
                 </motion.div>

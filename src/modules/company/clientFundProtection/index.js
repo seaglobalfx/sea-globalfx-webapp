@@ -1,12 +1,18 @@
-'use client'
-import React from 'react'
-import styles from './clientFundProtection.module.scss'
-import { motion } from 'framer-motion'
+'use client';
 
-const LayerBlack = '/assets/images/layer-black.png'
-const LockImage = '/assets/images/lock.png'
+import React from 'react';
+import styles from './clientFundProtection.module.scss';
+import { motion } from 'framer-motion';
+import { useLanguage } from '@/context/LanguageContext';
+
+const LayerBlack = '/assets/images/layer-black.png';
+const LockImage = '/assets/images/lock.png';
 
 export default function ClientFundProtection() {
+    const { t, isRTL } = useLanguage();
+    const introParagraphs = t('clientFundProtection.introParagraphs');
+    const boxes = t('clientFundProtection.boxes');
+
     return (
         <motion.div
             className={styles.clientFundProtection}
@@ -22,13 +28,11 @@ export default function ClientFundProtection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, ease: 'easeOut' }}
             >
-                <img src={LayerBlack} alt="LayerBlack" />
+                <img src={LayerBlack} alt="" />
             </motion.div>
 
             <div className="container-sm">
                 <div className={styles.grid}>
-
-                    {/* Image */}
                     <motion.div
                         className={styles.griditems}
                         initial={{ opacity: 0, scale: 0.9 }}
@@ -37,31 +41,28 @@ export default function ClientFundProtection() {
                         transition={{ duration: 0.7, ease: 'easeOut' }}
                     >
                         <div className={styles.image}>
-                            <img src={LockImage} alt="LockImage" />
+                            <img src={LockImage} alt="" />
                         </div>
                     </motion.div>
 
-                    {/* Text */}
                     <motion.div
                         className={styles.griditems}
-                        initial={{ opacity: 0, x: 60 }}
+                        initial={{ opacity: 0, x: isRTL ? -60 : 60 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, ease: 'easeOut' }}
                     >
                         <div className={styles.text}>
                             <h2>
-                                Client Fund <span> Protection</span>
+                                {t('clientFundProtection.titleStart')}
+                                <span>{t('clientFundProtection.titleSpan')}</span>
                             </h2>
-                            <p>
-                                Protecting client funds is a core priority at Sea Global. Our fund-handling framework is designed to promote
-                            </p>
-                            <p>
-                                security, transparency, and responsible risk management across all regulated entities.
-                            </p>
+                            {Array.isArray(introParagraphs) &&
+                                introParagraphs.map((text, index) => (
+                                    <p key={index}>{text}</p>
+                                ))}
                         </div>
 
-                        {/* Boxes */}
                         <motion.div
                             className={styles.boxGrid}
                             initial="hidden"
@@ -71,43 +72,30 @@ export default function ClientFundProtection() {
                                 hidden: {},
                                 visible: {
                                     transition: {
-                                        staggerChildren: 0.2
-                                    }
-                                }
+                                        staggerChildren: 0.2,
+                                    },
+                                },
                             }}
                         >
-                            {[
-                                {
-                                    title: 'Segregated Client Accounts',
-                                    desc: 'Client funds are held separately from company operating funds in accordance with applicable regulatory requirements.'
-                                },
-                                {
-                                    title: 'Funds Held with Tier-1 Banks',
-                                    desc: 'Client funds are maintained with reputable, well-capitalized financial institutions to support fund security and stability.'
-                                },
-                                {
-                                    title: 'Strict Internal Risk Controls',
-                                    desc: 'Robust internal policies and monitoring systems are in place to manage financial, operational, and counterparty risk.'
-                                }
-                            ].map((item, index) => (
-                                <motion.div
-                                    key={index}
-                                    className={styles.items}
-                                    variants={{
-                                        hidden: { opacity: 0, y: 30 },
-                                        visible: { opacity: 1, y: 0 }
-                                    }}
-                                    transition={{ duration: 0.6, ease: 'easeOut' }}
-                                >
-                                    <h3>{item.title}</h3>
-                                    <p>{item.desc}</p>
-                                </motion.div>
-                            ))}
+                            {Array.isArray(boxes) &&
+                                boxes.map((item, index) => (
+                                    <motion.div
+                                        key={index}
+                                        className={styles.items}
+                                        variants={{
+                                            hidden: { opacity: 0, y: 30 },
+                                            visible: { opacity: 1, y: 0 },
+                                        }}
+                                        transition={{ duration: 0.6, ease: 'easeOut' }}
+                                    >
+                                        <h3>{item.title}</h3>
+                                        <p>{item.desc}</p>
+                                    </motion.div>
+                                ))}
                         </motion.div>
-
                     </motion.div>
                 </div>
             </div>
         </motion.div>
-    )
+    );
 }

@@ -3,39 +3,34 @@
 @use '../../../scss/font/font.scss' as *;
 
 .officeandRegistration {
-    padding: 100px 0 0 0;
-    position: relative;
+    padding: 80px 0;
+    overflow: hidden;
 
     @include respond-to("sm") {
-        padding: 60px 0 0 0;
+        padding: 60px 0;
     }
 
-    .rightImage {
-        position: absolute;
-        bottom: 0;
-        right: 0;
+    .grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 52%);
+        gap: 24px 48px;
+        align-items: center;
 
-        @include respond-to("sm") {
-            position: inherit;
+        @include respond-to("lg") {
+            grid-template-columns: minmax(0, 1fr) minmax(240px, 48%);
+            gap: 24px 32px;
         }
 
-        img {
-            max-width: 760px;
-            display: block;
-
-            @include respond-to("sm") {
-                max-width: 100%;
-                width: 100%;
-            }
+        @include respond-to("md") {
+            grid-template-columns: 1fr;
+            gap: 40px;
         }
     }
 
-    .text {
-        max-width: 560px;
-
-        @include respond-to("sm") {
-            max-width: 100%;
-        }
+    .content {
+        position: relative;
+        z-index: 1;
+        min-width: 0;
 
         h2 {
             font-size: 40px;
@@ -48,10 +43,12 @@
             font-weight: 500;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            max-width: 560px;
 
             @include respond-to("sm") {
                 @include heading-30;
-                margin: 0 0 40px 0;
+                margin: 0 0 32px 0;
+                max-width: 100%;
             }
 
             span {
@@ -63,52 +60,97 @@
         }
 
         .outlineImage {
+            position: absolute;
+            z-index: -1;
+            inset-inline-end: -8%;
+            bottom: -12%;
+            pointer-events: none;
+            opacity: 0.35;
+
+            @include respond-to("md") {
+                inset-inline-end: 0;
+                bottom: -8%;
+                opacity: 0.25;
+            }
+
+            @include respond-to("sm") {
+                display: none;
+            }
+
             img {
                 display: block;
-
-                @include respond-to("sm") {
-                    display: none;
-                }
+                width: min(420px, 90vw);
+                max-width: 100%;
             }
         }
+    }
 
-        .allTextAlignment {
-            padding: 0 0 40px 0;
+    .addresses {
+        position: relative;
+        padding-block-end: 16px;
+    }
 
-            .text {
-                padding: 0 0 27px 0;
+    .addressBlock {
+        padding-block-end: 27px;
 
-                @include respond-to("sm") {
-                    padding: 0 0 16px 0;
-                }
+        @include respond-to("sm") {
+            padding-block-end: 16px;
+        }
 
-                &:last-child {
-                    padding: 0;
-                }
+        &:last-child {
+            padding-block-end: 0;
+        }
 
-                h3 {
-                    color: var(--Dark-Body, #747474);
-                    font-size: 24px;
-                    font-style: normal;
-                    font-weight: 600;
-                    line-height: 100%;
-                    @include font-semibold;
-                    margin: 0 0 16px 0;
-                }
+        h3 {
+            color: var(--Dark-Body, #747474);
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 100%;
+            @include font-semibold;
+            margin: 0 0 16px 0;
+        }
 
-                p {
-                    color: var(--Dark-Body, #747474);
-                    font-size: 20px;
-                    font-style: normal;
-                    font-weight: 400;
-                    line-height: 100%;
-                    max-width: 450px;
-                    @include font-normal;
+        p {
+            color: var(--Dark-Body, #747474);
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 140%;
+            max-width: 450px;
+            margin: 0;
+            @include font-normal;
 
-                    @include respond-to("sm") {
-                        @include font16;
-                    }
-                }
+            @include respond-to("sm") {
+                @include font16;
+                max-width: 100%;
+            }
+        }
+    }
+
+    .buildingImage {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        min-width: 0;
+
+        img {
+            width: 100%;
+            max-width: 560px;
+            display: block;
+            height: auto;
+
+            @include respond-to("md") {
+                max-width: 420px;
+                margin-inline: auto;
+            }
+
+            @include respond-to("sm") {
+                max-width: 100%;
+            }
+
+            :global(html[dir="rtl"]) & {
+                transform: scaleX(-1);
             }
         }
     }

@@ -75,6 +75,10 @@
                         @include respond-to("sm") {
                             max-width: 100%;
                         }
+
+                        html[dir="rtl"] & {
+                            transform: scaleX(-1);
+                        }
                     }
                 }
 
@@ -237,18 +241,17 @@ html[dir="rtl"] {
     .two-button-alignment button,
     .twoButtonalignment button,
     button.orange,
-    button.black,
-    header button,
-    .header button,
-    .mobileHeader button {
-        padding: 4px 4px 4px 16px !important;
-        
-        // Reverse icons inside button
+    button.black {
+        padding-block: 4px !important;
+        padding-inline-start: 4px !important;
+        padding-inline-end: 16px !important;
+
         img {
-            order: 2; // place icon after text
+            order: 2;
         }
+
         span {
-            order: 1; // place text before icon
+            order: 1;
         }
     }
 }

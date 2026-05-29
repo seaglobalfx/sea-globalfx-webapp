@@ -869,5 +869,156 @@ export const en = {
       "Custom IB referral links",
       "Dedicated partner manager"
     ]
+  },
+  readyPartners: {
+    titleLine1: "Ready to Become a",
+    titleSpan: "Sea Global FX",
+    titleEnd: "Partner?",
+    desc: "Join our growing global partner network and start building a sustainable forex partnership today."
+  },
+  companyBanner: {
+    tagLine: "We're Here to Help",
+    titleLine1: "A Trusted Global Trading ",
+    titleSpan: "Partner",
+    desc: "Sea Global FX is a global trading broker focused on delivering a transparent, secure, and professionally managed trading environment."
+  },
+  aboutSeaGlobalFx: {
+    titleStart: "About ",
+    titleSpan: "Sea Global FX",
+    paragraphs: [
+      "Sea Global FX is a global trading broker focused on delivering a transparent, secure, and professionally managed trading environment.",
+      "We are committed to maintaining clear operational standards, robust infrastructure, and reliable client support. Our approach is built on trust, responsibility, and long-term relationships with traders across global markets.",
+      "Every feature, process, and service at Sea Global FX is designed to support fair trading conditions and help clients trade with clarity and confidence."
+    ]
+  },
+  missionVision: {
+    vision: {
+      titleStart: "Our ",
+      titleSpan: "Vision",
+      desc: "To build a transparent and secure trading ecosystem where traders operate with confidence, clarity, and trust."
+    },
+    mission: {
+      titleStart: "Our ",
+      titleSpan: "Mission",
+      desc: "Our mission is to provide traders with reliable infrastructure, secure fund handling, professional tools, and responsive support — while maintaining high operational discipline and global best practices."
+    }
+  },
+  companyWhyChoose: {
+    titleStart: "Why Choose ",
+    titleSpan: "Sea Global FX?",
+    desc: "Trade with confidence through Sea Global, a broker committed to global standards, robust compliance, and professional-grade trading infrastructure. Every aspect of our service is designed to protect clients, ensure fairness, and deliver a reliable trading environment.",
+    items: [
+      "Clear regulatory disclosures",
+      "Secure handling of client funds and data",
+      "Transparent trading conditions and pricing",
+      "Professional tools and infrastructure"
+    ]
+  },
+  clientFundProtection: {
+    titleStart: "Client Fund ",
+    titleSpan: "Protection",
+    introParagraphs: [
+      "Protecting client funds is a core priority at Sea Global. Our fund-handling framework is designed to promote",
+      "security, transparency, and responsible risk management across all regulated entities."
+    ],
+    boxes: [
+      {
+        title: "Segregated Client Accounts",
+        desc: "Client funds are held separately from company operating funds in accordance with applicable regulatory requirements."
+      },
+      {
+        title: "Funds Held with Tier-1 Banks",
+        desc: "Client funds are maintained with reputable, well-capitalized financial institutions to support fund security and stability."
+      },
+      {
+        title: "Strict Internal Risk Controls",
+        desc: "Robust internal policies and monitoring systems are in place to manage financial, operational, and counterparty risk."
+      }
+    ]
+  },
+  reliableFunding: {
+    titleStart: "Reliable Funding & ",
+    titleSpan: "Withdrawals",
+    desc: "Sea Global is committed to providing a smooth, secure, and transparent funding experience, ensuring clients can deposit and withdraw funds efficiently and with confidence.",
+    cards: [
+      {
+        title: "Wide Range of Global Payment Methods",
+        desc: "Access multiple deposit and withdrawal options, including cards, bank transfers, and other regionally supported payment solutions."
+      },
+      {
+        title: "Instant Deposits",
+        desc: "Most deposit methods are processed instantly, allowing traders to fund accounts and access markets without unnecessary delays."
+      },
+      {
+        title: "Fast & Transparent Withdrawals",
+        desc: "Withdrawal requests are processed promptly, with clear timelines and no hidden charges under normal conditions."
+      },
+      {
+        title: "Secure Payment Processing",
+        desc: "All transactions are handled through encrypted, secure payment systems to protect client information."
+      }
+    ]
+  },
+  contactBanner: {
+    tagLine: "We're Here to Help",
+    titleLine1: "We're here to support",
+    titleLine2: "you at ",
+    titleSpan: "every",
+    titleEnd: " step",
+    desc: "At Sea Global FX, open communication and reliable support are part of how we work. Whether you have a question about your account, need platform assistance, or want to explore partnership opportunities, our team is here to help."
+  },
+  officeAndRegistration: {
+    titleStart: "Office and Registration ",
+    titleSpan: "Details",
+    registeredAddress: "Registered Address",
+    physicalAddress: "Physical Address",
+    address: "1st Floor, The Sotheby Building, Rodney Bay, Gros-Islet, Castries, Saint Lucia – 838"
+  },
+  waysToReach: {
+    titleStart: "Ways To Reach ",
+    titleSpan: "Us",
+    email: "support@seaglobalfx.com",
+    phone: "+971 58 261 9955",
+    hoursLine1: "Monday to Friday – 24 Hours",
+    hoursLine2: "(Excluding public holidays)"
+  },
+  getInTouch: {
+    titleStart: "Get in ",
+    titleSpan: "Touch",
+    formTitle: "Let's Connect",
+    placeholders: {
+      name: "Your Name",
+      email: "Email Address",
+      message: "Message"
+    },
+    agreeBefore: "You agree to our friendly ",
+    agreeAfter: "",
+    privacyLink: "Privacy policy.",
+    sendMessage: "Send Message",
+    sending: "Sending...",
+    categories: [
+      "General Enquiries",
+      "Technical Support",
+      "Complaints",
+      "Partnerships / IB"
+    ],
+    errors: {
+      name: "Name is required",
+      email: "Email is required",
+      emailInvalid: "Enter a valid email address",
+      message: "Message is required",
+      agree: "You must accept the privacy policy"
+    },
+    toastSuccess: "Thanks for reaching out! Your message has been sent.",
+    toastError: "Failed to send message. Please try again.",
+    toastErrorGeneric: "Something went wrong. Please try again later."
+  },
+  latestBlogs: {
+    titleStart: "Latest ",
+    titleSpan: "Blogs",
+    allCategories: "All Categories"
+  },
+  blog: {
+    by: "By"
   }
 };

@@ -167,11 +167,9 @@ export default function Header() {
                             </div>
                             <div className={styles.button}>
                                 <a href='https://client.seaglobalfx.com/' target='_blank'>
-                                    <button>
-                                        <img src={ShareIcon} alt='ShareIcon' />
-                                        <span>
-                                            {t('common.login')}
-                                        </span>
+                                    <button type="button" className={styles.loginBtn}>
+                                        <img src={ShareIcon} alt="" />
+                                        <span>{t('common.login')}</span>
                                     </button>
                                 </a>
                             </div>

@@ -5,13 +5,15 @@ import classNames from "classnames";
 import { GetAllCategories } from "@/graphql/query/getAllCategory";
 import { GetAllBlogs } from "@/graphql/query/getAllBlogs";
 import Link from "next/link";
-import moment from "moment";
 import { IMAGE_URL } from "@/utils/config";
 import { useQuery } from "@apollo/client";
 import { useParams } from "next/navigation";
+import { useLanguage } from "@/context/LanguageContext";
+import { formatDate } from "@/utils/formatDate";
 const DownIcon = "/assets/icons/down-xs.svg";
 const BlogImage = "/assets/images/blog-img.png";
 export default function BlogList() {
+  const { locale } = useLanguage();
   const [dropdown, setDropdown] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("all");
   const params = useParams();
@@ -100,7 +102,7 @@ export default function BlogList() {
                       <h3>{blog.title}</h3>
                       <div className={styles.textAlignment}>
                         <span>{blog.author?.name}</span>
-                        <span>. {moment(blog.publishedAt).format("D MMMM YYYY")}</span>
+                        <span>. {formatDate(blog.publishedAt, locale, "D MMMM YYYY")}</span>
                       </div>
                     </div>
                   </div>

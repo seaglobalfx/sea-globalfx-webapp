@@ -249,7 +249,7 @@
                 }
 
                 a {
-
+                    display: inline-flex;
                     background: transparent;
                     -webkit-text-fill-color: inherit;
                     -webkit-background-clip: initial;
@@ -257,7 +257,7 @@
                 }
             }
 
-            .button button {
+            .button button.loginBtn {
                 color: #000;
                 @include font-medium;
                 font-size: 16px;
@@ -267,14 +267,22 @@
                 border-radius: 48px;
                 border: none;
                 position: relative;
-                display: flex;
+                display: inline-flex;
                 align-items: center;
                 gap: 10px;
                 background: rgba(0, 0, 0, 0.10);
                 line-height: normal;
-                padding: 4px;
-                padding-inline-start: 4px;
-                padding-inline-end: 16px;
+                padding-block: 4px;
+                padding-inline: 4px 16px;
+                white-space: nowrap;
+                overflow: hidden;
+
+                img,
+                span {
+                    display: block;
+                    flex-shrink: 0;
+                    transition: 0.3s ease-in-out;
+                }
 
                 &:hover {
                     span {
@@ -286,14 +294,9 @@
                     }
                 }
 
-                span,
-                img {
-                    transition: .3s ease-in-out;
-                    display: block;
-                }
-
                 :global(html[dir="rtl"]) & {
-                    direction: ltr;
+                    flex-direction: row-reverse;
+                    padding-inline: 16px 4px;
 
                     img {
                         transform: scaleX(-1);
@@ -301,11 +304,11 @@
 
                     &:hover {
                         span {
-                            transform: translateX(-42px);
+                            transform: translateX(100%);
                         }
 
                         img {
-                            transform: scaleX(-1) translateX(-312%);
+                            transform: translateX(-150%) scaleX(-1);
                         }
                     }
                 }
