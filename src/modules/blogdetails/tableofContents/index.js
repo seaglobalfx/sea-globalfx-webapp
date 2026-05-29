@@ -4,8 +4,10 @@ import { useEffect, useState } from "react";
 
 import React from "react";
 import styles from "./tableofContents.module.scss";
+import { useLanguage } from "@/context/LanguageContext";
 export default function TableofContents({ blogDetail }) {
   const [activeContent, setActiveContent] = useState("");
+  const { t } = useLanguage();
 
   const collectHeadings = () => {
     const newHeadings = [];
@@ -66,7 +68,7 @@ export default function TableofContents({ blogDetail }) {
           <div className={styles.griditems}>
             <div className={styles.box}>
               <div className={styles.boxHeader}>
-                <h2>Table of Contents</h2>
+                <h2>{t("blog.tableOfContents")}</h2>
               </div>
               <div className={styles.list}>
                 <ol>

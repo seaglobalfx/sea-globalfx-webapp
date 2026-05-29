@@ -1018,7 +1018,19 @@ export const ar = {
     titleSpan: "المدونات",
     allCategories: "جميع الفئات"
   },
+  educationSection: {
+    titleStart: "التعليم و",
+    titleEnd: " أدوات التداول",
+    desc: "طوّر معرفتك بالتداول وحسّن قراراتك من خلال مركزنا التعليمي وأدوات التداول الاحترافية المصممة لدعم المتداولين في كل مرحلة من رحلتهم.",
+    cards: {
+      knowMarkets: "اعرف أسواقك",
+      tradingCalculators: "حاسبات التداول",
+      marketAnalysis: "تحليل السوق",
+      economicCalendar: "التقويم الاقتصادي"
+    }
+  },
   blog: {
-    by: "بواسطة"
+    by: "بواسطة",
+    tableOfContents: "جدول المحتويات"
   }
 };

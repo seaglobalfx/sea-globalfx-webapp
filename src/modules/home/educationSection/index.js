@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import styles from './educationSection.module.scss';
 import Marquee from 'react-fast-marquee';
 import classNames from 'classnames';
+import { useLanguage } from '@/context/LanguageContext';
 
 const RotateArrow = '/assets/icons/rotate-arrow.svg';
 const MarketIcon = '/assets/icons/market.svg';
@@ -34,6 +35,8 @@ const scrollDown = {
 };
 
 export default function EducationSection() {
+    const { t } = useLanguage();
+
     return (
         <div className={styles.educationSection}>
             <div className={styles.grid}>
@@ -42,12 +45,11 @@ export default function EducationSection() {
                 <div className={styles.griditems}>
                     <div className={styles.text}>
                         <h2>
-                            <span>Education &</span>
-                            Trading Tools
+                            <span>{t('educationSection.titleStart')}</span>
+                            {t('educationSection.titleEnd')}
                         </h2>
                         <p>
-                            Enhance your trading knowledge and decision-making with our education hub and professional trading
-                            tools, designed to support traders at every stage of their journey.
+                            {t('educationSection.desc')}
                         </p>
                     </div>
                     <div className={styles.mobileShow}>
@@ -55,7 +57,7 @@ export default function EducationSection() {
                             <motion.div
                                 className={styles.box}
                             >
-                                <h3>Know Your Markets</h3>
+                                <h3>{t('educationSection.cards.knowMarkets')}</h3>
 
                                 <div className={styles.icon}>
                                     <img src={RotateArrow} alt="RotateArrow" />
@@ -69,7 +71,7 @@ export default function EducationSection() {
                                 className={styles.box}
 
                             >
-                                <h3>Trading Calculators</h3>
+                                <h3>{t('educationSection.cards.tradingCalculators')}</h3>
 
                                 <div className={styles.icon}>
                                     <img src={RotateArrow} alt="RotateArrow" />
@@ -82,7 +84,7 @@ export default function EducationSection() {
                             <motion.div
                                 className={styles.box}
                             >
-                                <h3>Market Analysis</h3>
+                                <h3>{t('educationSection.cards.marketAnalysis')}</h3>
 
                                 <div className={styles.icon}>
                                     <img src={RotateArrow} alt="RotateArrow" />
@@ -95,8 +97,7 @@ export default function EducationSection() {
                             <motion.div
                                 className={styles.box}
                             >
-                                <h3>Economic
-                                    Calendar</h3>
+                                <h3>{t('educationSection.cards.economicCalendar')}</h3>
 
                                 <div className={styles.icon}>
                                     <img src={RotateArrow} alt="RotateArrow" />
@@ -126,7 +127,7 @@ export default function EducationSection() {
                             <motion.div
                                 className={styles.box}
                             >
-                                <h3>Know Your Markets</h3>
+                                <h3>{t('educationSection.cards.knowMarkets')}</h3>
 
                                 <div className={styles.icon}>
                                     <img src={RotateArrow} alt="RotateArrow" />
@@ -140,7 +141,7 @@ export default function EducationSection() {
                                 className={styles.box}
 
                             >
-                                <h3>Trading Calculators</h3>
+                                <h3>{t('educationSection.cards.tradingCalculators')}</h3>
 
                                 <div className={styles.icon}>
                                     <img src={RotateArrow} alt="RotateArrow" />
@@ -162,7 +163,7 @@ export default function EducationSection() {
                             <motion.div
                                 className={styles.box}
                             >
-                                <h3>Market Analysis</h3>
+                                <h3>{t('educationSection.cards.marketAnalysis')}</h3>
 
                                 <div className={styles.icon}>
                                     <img src={RotateArrow} alt="RotateArrow" />
@@ -175,8 +176,7 @@ export default function EducationSection() {
                             <motion.div
                                 className={styles.box}
                             >
-                                <h3>Economic
-                                    Calendar</h3>
+                                <h3>{t('educationSection.cards.economicCalendar')}</h3>
 
                                 <div className={styles.icon}>
                                     <img src={RotateArrow} alt="RotateArrow" />

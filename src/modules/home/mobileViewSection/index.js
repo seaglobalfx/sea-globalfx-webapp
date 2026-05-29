@@ -5,7 +5,7 @@ import { useLanguage } from '@/context/LanguageContext';
 const LowSpeed = '/assets/icons/low-speed.svg';
 
 export default function MobileViewSection() {
-    const { t, locale, isRTL } = useLanguage();
+    const { t, isRTL } = useLanguage();
     const translatedMarketCards = [
         {
             title: t('hero.marketsOverview.cards.forex.title'),
@@ -49,11 +49,10 @@ export default function MobileViewSection() {
                                     <div className={styles.cardItems}>
                                         <img src={LowSpeed} alt="LowSpeed" />
                                         <h3>
-                                            Low Spreads
+                                            {t('hero.features.lowSpreadsTitle')}
                                         </h3>
                                         <p>
-                                            Trade with tight, competitive spreads across major Forex pairs, indices, commodities, and
-                                            crypto—designed to reduce trading costs and improve efficiency.
+                                            {t('hero.features.lowSpreadsDesc')}
                                         </p>
                                     </div>
                                 )
@@ -63,14 +62,13 @@ export default function MobileViewSection() {
 
                 </div>
             </div>
-            <div className={styles.mobileMarket}>
+            <div className={styles.mobileMarket} dir={isRTL ? 'rtl' : 'ltr'}>
                 <div className={styles.title}>
                     <h2>
-                        Markets <span> Overview </span>
+                        {t('hero.marketsOverview.titleStart')}<span>{t('hero.marketsOverview.titleSpan')}</span>
                     </h2>
                     <p>
-                        Explore global financial markets from a single trading platform. Trade Forex, Crypto, ETFs, Stocks, Commodities, and Indices with fast execution, deep liquidity, and real-
-                        time market access
+                        {t('hero.marketsOverview.desc')}
                     </p>
                 </div>
                 <div className={styles.cardsGridWrapper}>

@@ -243,4 +243,65 @@
         }
     }
 
+    &.rtl {
+        .leftlayer {
+            left: auto;
+            right: 0;
+
+            img {
+                transform: scaleX(-1);
+            }
+        }
+
+        .rightLayer {
+            right: auto;
+            left: 0;
+
+            img {
+                transform: scaleX(-1);
+            }
+        }
+
+        .box {
+            .boxBody {
+                .content {
+                    p {
+                        text-align: right;
+                    }
+
+                    ul {
+                        padding: 0 20px 0 0;
+                    }
+
+                    li {
+                        text-align: right;
+                        line-height: 1.4;
+                    }
+                }
+
+                .buttongrid {
+                    .left {
+                        left: auto;
+                        right: 0;
+                        transform: translateY(-50%) scaleX(-1);
+                    }
+
+                    .right {
+                        right: auto;
+                        left: 0;
+                        transform: translateY(-50%) scaleX(-1);
+                    }
+
+                    button {
+                        flex-direction: row-reverse;
+                        padding: 4px 4px 4px 16px;
+                    }
+
+                    button img {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+    }
 }

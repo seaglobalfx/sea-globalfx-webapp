@@ -10,12 +10,12 @@ const LeftLayer = '/assets/images/left-layer.png';
 const RightLayer = '/assets/images/right-layer.svg';
 
 export default function OurForexPartner() {
-    const { t } = useLanguage();
+    const { t, isRTL } = useLanguage();
     const suitableItems = t('ourForexPartner.suitableItems');
     const benefitItems = t('ourForexPartner.benefitItems');
 
     return (
-        <div className={styles.ourForexPartner}>
+        <div className={`${styles.ourForexPartner} ${isRTL ? styles.rtl : ''}`} dir={isRTL ? 'rtl' : 'ltr'}>
             <div className={styles.leftlayer}>
                 <img src={LeftLayer} alt='LeftLayer' />
             </div>

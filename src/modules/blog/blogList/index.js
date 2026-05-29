@@ -13,7 +13,7 @@ import { formatDate } from "@/utils/formatDate";
 const DownIcon = "/assets/icons/down-xs.svg";
 const BlogImage = "/assets/images/blog-img.png";
 export default function BlogList() {
-  const { locale } = useLanguage();
+  const { locale, t } = useLanguage();
   const [dropdown, setDropdown] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("all");
   const params = useParams();
@@ -51,12 +51,12 @@ export default function BlogList() {
         <div className={styles.headerAlignment}>
           <div className={styles.text}>
             <h2>
-              Latest <span>Blogs</span>
+              {t("latestBlogs.titleStart")} <span>{t("latestBlogs.titleSpan")}</span>
             </h2>
           </div>
           <div className={styles.button}>
             <button onClick={() => setDropdown(!dropdown)}>
-              {selectedCategory === "all" ? "All Categories" : selectedCategory}
+              {selectedCategory === "all" ? t("latestBlogs.allCategories") : selectedCategory}
               <img className={classNames(dropdown ? styles.rotate : "")} src={DownIcon} alt="DownIcon" />
             </button>
             <div className={classNames(styles.dropdown, dropdown ? styles.show : styles.hide)}>
@@ -68,7 +68,7 @@ export default function BlogList() {
                       setDropdown(false);
                     }}
                   >
-                    All Categories
+                    {t("latestBlogs.allCategories")}
                   </span>
                 )}
                 {data?.categories?.map((category) => (

@@ -1018,7 +1018,19 @@ export const en = {
     titleSpan: "Blogs",
     allCategories: "All Categories"
   },
+  educationSection: {
+    titleStart: "Education & ",
+    titleEnd: "Trading Tools",
+    desc: "Enhance your trading knowledge and decision-making with our education hub and professional trading tools, designed to support traders at every stage of their journey.",
+    cards: {
+      knowMarkets: "Know Your Markets",
+      tradingCalculators: "Trading Calculators",
+      marketAnalysis: "Market Analysis",
+      economicCalendar: "Economic Calendar"
+    }
+  },
   blog: {
-    by: "By"
+    by: "By",
+    tableOfContents: "Table of Contents"
   }
 };

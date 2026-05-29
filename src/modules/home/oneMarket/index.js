@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './oneMarket.module.scss';
+import { useLanguage } from '@/context/LanguageContext';
 
 const Mt4Icon = '/assets/icons/mt4.svg';
 const Mt5Icon = '/assets/icons/mt5.png';
@@ -41,8 +42,10 @@ const stagger = {
 };
 
 export default function OneMarket() {
+    const { t, isRTL } = useLanguage();
+
     return (
-        <div className={styles.oneMarketAlignment}>
+        <div className={`${styles.oneMarketAlignment} ${isRTL ? styles.rtl : ''}`} dir={isRTL ? 'rtl' : 'ltr'}>
 
             {/* Floating Images */}
             <motion.div
@@ -85,7 +88,7 @@ export default function OneMarket() {
                     whileInView="visible"
                     viewport={{ once: true }}
                 >
-                    One market. <br />Multiple platforms.<br /> <span>Zero</span> compromise.
+                    {t('marketPlatform.titleStart')}<br />{t('marketPlatform.titleSpan')} {t('marketPlatform.titleEnd')}
                 </motion.h2>
 
                 <motion.p
@@ -94,9 +97,7 @@ export default function OneMarket() {
                     whileInView="visible"
                     viewport={{ once: true }}
                 >
-                    Access the markets through industry-leading trading platforms built for speed, flexibility, and performance.
-                    Whether you trade manually or algorithmically, on desktop or mobile, our platforms are designed to support
-                    every trading style.
+                    {t('marketPlatform.desc')}
                 </motion.p>
 
                 {/* Icons */}
@@ -113,10 +114,10 @@ export default function OneMarket() {
                                 <img src={icon} alt='platform-icon' />
                             </div>
                             <span>
-                                {index === 0 && 'MT4'}
-                                {index === 1 && 'MT5'}
-                                {index === 2 && <>Web <br /> Platform</>}
-                                {index === 3 && <>Mobile <br /> App</>}
+                                {index === 0 && t('marketPlatform.mt4')}
+                                {index === 1 && t('marketPlatform.mt5')}
+                                {index === 2 && <>{t('marketPlatform.web')}</>}
+                                {index === 3 && <>{t('marketPlatform.mobile')}</>}
                             </span>
                         </motion.div>
                     ))}
