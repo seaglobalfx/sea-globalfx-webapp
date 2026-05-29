@@ -2,6 +2,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styles from '../../forexMarket/textContent/textContent.module.scss';
+import { useLanguage } from '@/context/LanguageContext';
+
 /* Animations */
 const fadeUp = {
     hidden: { opacity: 0, y: 25 },
@@ -21,6 +23,8 @@ const staggerContainer = {
 };
 
 export default function IndicesTextContent() {
+    const { t } = useLanguage();
+
     return (
         <div className={styles.textContent}>
             <div className='container-xs'>
@@ -32,30 +36,32 @@ export default function IndicesTextContent() {
                     viewport={{ once: true }}
                 >
                     <motion.div className={styles.items} variants={fadeUp}>
-                        <h3>Trading Hours</h3>
-                        <h4>Monday To Friday (Server Time)</h4>
+                        <h3>{t('textContent.tradingHours')}</h3>
+                        <h4>{t('textContent.mondayToFridayServer')}</h4>
                         <p>
-                            Index trading hours may vary by instrument, underlying exchange schedules, public holidays, and daylight
-                            saving changes.
+                            {t('textContent.indices.tradingHoursDesc')}
                         </p>
                     </motion.div>
 
                     <motion.div className={styles.items} variants={fadeUp}>
-                        <h3>Contract Specs</h3>
+                        <h3>{t('textContent.contractSpecs')}</h3>
                         <p>
-                            Each index instrument has clearly defined contract specifications to ensure transparent and consistent trading
-                            conditions. Full details are available within the trading platform and individual instrument specification pages.
+                            {t('textContent.indices.contractSpecsDesc')}
                         </p>
                     </motion.div>
 
                     <motion.div className={styles.items} variants={fadeUp}>
-                        <h3>What Traders Should Know</h3>
+                        <h3>{t('textContent.whatTradersShouldKnow')}</h3>
                         <ul>
-                            <li>Margin requirements may increase during periods of high volatility
+                            <li>
+                                {t('textContent.commonTradersShouldKnow1')}
                             </li>
-                            <li>Swap rates differ by instrument and may change based on market conditions
+                            <li>
+                                {t('textContent.commonTradersShouldKnow2')}
                             </li>
-                            <li>Tick size determines the minimum price movement for each instrument</li>
+                            <li>
+                                {t('textContent.commonTradersShouldKnow3')}
+                            </li>
                         </ul>
                     </motion.div>
                 </motion.div>

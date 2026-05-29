@@ -24,10 +24,10 @@
 
         .items {
             padding: 20px 20px 30px 20px;
-            border-right: 1px solid #CDCDCD;
+            border-inline-end: 1px solid #CDCDCD;
 
             @include respond-to("sm") {
-                border-right: none;
+                border-inline-end: none;
                 border-bottom: 1px solid #CDCDCD;
                 padding: 24px 0;
             }
@@ -67,7 +67,8 @@
 
             ul {
                 margin: 0;
-                padding: 0 0 0 20px;
+                padding: 0;
+                padding-inline-start: 20px;
 
                 li {
                     color: var(--Dark-Body, #747474);

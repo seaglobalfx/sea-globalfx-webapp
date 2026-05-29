@@ -2,6 +2,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styles from '../../forexMarket/textContent/textContent.module.scss';
+import { useLanguage } from '@/context/LanguageContext';
+
 /* Animations */
 const fadeUp = {
     hidden: { opacity: 0, y: 25 },
@@ -22,6 +24,8 @@ const staggerContainer = {
 
 
 export default function CryptoTextContent() {
+    const { t } = useLanguage();
+
     return (
         <div className={styles.textContent}>
             <div className='container-xs'>
@@ -33,30 +37,32 @@ export default function CryptoTextContent() {
                     viewport={{ once: true }}
                 >
                     <motion.div className={styles.items} variants={fadeUp}>
-                        <h3>Trading Hours</h3>
-                        <h4>24/7</h4>
+                        <h3>{t('textContent.tradingHours')}</h3>
+                        <h4>{t('textContent.twentyFourSeven')}</h4>
                         <p>
-                            Cryptocurrency markets operate continuously, allowing traders to access the market without interruption. Trade
-                            cryptocurrencies 24 hours a day, 7 days a week, including weekends and public holidays.
+                            {t('textContent.crypto.tradingHoursDesc')}
                         </p>
                     </motion.div>
 
                     <motion.div className={styles.items} variants={fadeUp}>
-                        <h3>Contract Specs</h3>
+                        <h3>{t('textContent.contractSpecs')}</h3>
                         <p>
-                            Each cryptocurrency instrument has defined contract specifications to provide transparency and consistent
-                            trading conditions. Full details are available within the trading platform and instrument specification pages.
+                            {t('textContent.crypto.contractSpecsDesc')}
                         </p>
                     </motion.div>
 
                     <motion.div className={styles.items} variants={fadeUp}>
-                        <h3>What Traders Should Know</h3>
+                        <h3>{t('textContent.whatTradersShouldKnow')}</h3>
                         <ul>
-                            <li>Margin requirements may increase during periods of high market volatility
+                            <li>
+                                {t('textContent.crypto.tradersShouldKnow1')}
                             </li>
-                            <li>Swap or financing fees may apply and can vary by instrument and market conditions
+                            <li>
+                                {t('textContent.crypto.tradersShouldKnow2')}
                             </li>
-                            <li>Tick size determines the minimum price movement for each cryptocurrency instrument</li>
+                            <li>
+                                {t('textContent.crypto.tradersShouldKnow3')}
+                            </li>
                         </ul>
                     </motion.div>
                 </motion.div>

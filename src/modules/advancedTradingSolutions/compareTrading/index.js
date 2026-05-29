@@ -1,13 +1,18 @@
+'use client'
 import React from 'react'
 import styles from './compareTrading.module.scss';
 import classNames from 'classnames';
+import { useLanguage } from '@/context/LanguageContext';
+
 export default function CompareTrading() {
+    const { t } = useLanguage();
+
     return (
         <div className={styles.compareTrading}>
             <div className='container-xs'>
                 <div className={styles.title}>
                     <h2>
-                        Compare Trading <span> Solutions </span>
+                        {t('compareTrading.titleStart')}<span>{t('compareTrading.titleSpan')}</span>
                     </h2>
                 </div>
                 <div className={styles.grid}>
@@ -15,46 +20,22 @@ export default function CompareTrading() {
                         <div className={styles.allListalignment}>
                             <div className={styles.list}>
                                 <span>
-                                    Solution
+                                    {t('compareTrading.headers.solution')}
                                 </span>
                             </div>
                             <div className={styles.list}>
                                 <span>
-                                    Control
+                                    {t('compareTrading.headers.control')}
                                 </span>
                             </div>
                             <div className={styles.list}>
                                 <span>
-                                    Experience
+                                    {t('compareTrading.headers.experience1')}
                                 </span>
                             </div>
                             <div className={styles.list}>
                                 <span>
-                                    Experience
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={classNames(styles.griditems, styles.secBox)}>
-                        <div className={styles.header}>
-                            <h3>
-                                PAMM Trading
-                            </h3>
-                        </div>
-                        <div className={styles.allListalignment}>
-                            <div className={styles.list}>
-                                <span>
-                                    Low
-                                </span>
-                            </div>
-                            <div className={styles.list}>
-                                <span>
-                                    None
-                                </span>
-                            </div>
-                            <div className={styles.list}>
-                                <span>
-                                    Passive
+                                    {t('compareTrading.headers.experience2')}
                                 </span>
                             </div>
                         </div>
@@ -62,23 +43,23 @@ export default function CompareTrading() {
                     <div className={classNames(styles.griditems, styles.secBox)}>
                         <div className={styles.header}>
                             <h3>
-                                MAM Trading
+                                {t('compareTrading.headers.pamm')}
                             </h3>
                         </div>
                         <div className={styles.allListalignment}>
                             <div className={styles.list}>
                                 <span>
-                                    High
+                                    {t('compareTrading.pamm.control')}
                                 </span>
                             </div>
                             <div className={styles.list}>
                                 <span>
-                                    Advanced
+                                    {t('compareTrading.pamm.experience')}
                                 </span>
                             </div>
                             <div className={styles.list}>
                                 <span>
-                                    Managers
+                                    {t('compareTrading.pamm.role')}
                                 </span>
                             </div>
                         </div>
@@ -86,23 +67,47 @@ export default function CompareTrading() {
                     <div className={classNames(styles.griditems, styles.secBox)}>
                         <div className={styles.header}>
                             <h3>
-                                Copy Trading
+                                {t('compareTrading.headers.mam')}
                             </h3>
                         </div>
                         <div className={styles.allListalignment}>
                             <div className={styles.list}>
                                 <span>
-                                    Medium
+                                    {t('compareTrading.mam.control')}
                                 </span>
                             </div>
                             <div className={styles.list}>
                                 <span>
-                                    Beginner
+                                    {t('compareTrading.mam.experience')}
                                 </span>
                             </div>
                             <div className={styles.list}>
                                 <span>
-                                    Learners
+                                    {t('compareTrading.mam.role')}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={classNames(styles.griditems, styles.secBox)}>
+                        <div className={styles.header}>
+                            <h3>
+                                {t('compareTrading.headers.copy')}
+                            </h3>
+                        </div>
+                        <div className={styles.allListalignment}>
+                            <div className={styles.list}>
+                                <span>
+                                    {t('compareTrading.copy.control')}
+                                </span>
+                            </div>
+                            <div className={styles.list}>
+                                <span>
+                                    {t('compareTrading.copy.experience')}
+                                </span>
+                            </div>
+                            <div className={styles.list}>
+                                <span>
+                                    {t('compareTrading.copy.role')}
                                 </span>
                             </div>
                         </div>

@@ -2,6 +2,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import styles from './howCopyTrading.module.scss';
+import { useLanguage } from '@/context/LanguageContext';
 
 const SystemIcon = '/assets/icons/icon1.png';
 const KycIcon = '/assets/icons/icon2.png';
@@ -33,6 +34,8 @@ const itemVariants = {
     },
 };
 export default function HowCopyTrading() {
+    const { t } = useLanguage();
+
     return (
         <div className={styles.howCopyTrading}>
             <div className='container-xs'>
@@ -44,7 +47,7 @@ export default function HowCopyTrading() {
                     viewport={{ once: true }}
                 >
                     <h2>
-                        How Copy Trading <span>Works</span>
+                        {t('howCopyTrading.titleStart')}<span>{t('howCopyTrading.titleSpan')}</span>
                     </h2>
 
                 </motion.div>
@@ -78,7 +81,7 @@ export default function HowCopyTrading() {
                         className={styles.griditems} variants={itemVariants}>
                         <div>
                             <div className={styles.counter}>1</div>
-                            <h3>Select a trader</h3>
+                            <h3>{t('howCopyTrading.step1')}</h3>
                         </div>
 
                         <div className={styles.iconRight}>
@@ -108,7 +111,7 @@ export default function HowCopyTrading() {
                         className={styles.griditems} variants={itemVariants}>
                         <div>
                             <div className={styles.counter}>2</div>
-                            <h3>Set allocation</h3>
+                            <h3>{t('howCopyTrading.step2')}</h3>
                         </div>
                         <div className={styles.iconRight}>
                             <img src={KycIcon} alt='KycIcon' />
@@ -137,7 +140,7 @@ export default function HowCopyTrading() {
                         className={styles.griditems} variants={itemVariants}>
                         <div>
                             <div className={styles.counter}>3</div>
-                            <h3>Trades are copied automatically</h3>
+                            <h3>{t('howCopyTrading.step3')}</h3>
                         </div>
                         <div className={styles.iconRight}>
                             <img src={FundIcon} alt='FundIcon' />
@@ -166,7 +169,7 @@ export default function HowCopyTrading() {
                         className={styles.griditems} variants={itemVariants}>
                         <div>
                             <div className={styles.counter}>4</div>
-                            <h3>Monitor performance anytime</h3>
+                            <h3>{t('howCopyTrading.step4')}</h3>
                         </div>
                         <div className={styles.iconRight}>
                             <img src={TradingIcon} alt='TradingIcon' />
@@ -177,7 +180,7 @@ export default function HowCopyTrading() {
                     <a href='https://client.seaglobalfx.com/?tab=register' target='_blank'>
                         <button>
                             <img src={UserIcon} alt='UserIcon' />
-                            Open Account
+                            {t('howCopyTrading.openAccount')}
                         </button>
                     </a>
                 </div>

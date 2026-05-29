@@ -1,6 +1,7 @@
 'use client'
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/context/LanguageContext';
 
 const HeroImage = '/assets/images/platforms-banner.png';
 const UserIcon = '/assets/icons/user.svg';
@@ -34,6 +35,8 @@ const imageAnim = {
 };
 
 export default function PlatformsBanner() {
+    const { t } = useLanguage();
+
     return (
         <div className='common-banner'>
             <div className='left-alignment'>
@@ -51,7 +54,7 @@ export default function PlatformsBanner() {
                                 variants={fadeUp}
                             >
                                 <button>
-                                    Desktop • Web • Mobile
+                                    {t('platformsBanner.tagline')}
                                 </button>
                             </motion.div>
 
@@ -59,11 +62,11 @@ export default function PlatformsBanner() {
                                 className="full-width"
                                 variants={fadeUp}
                             >
-                                Trade Your Way with Powerful,  Flexible Trading <span>Platforms</span>
+                                {t('platformsBanner.titleStart')}<span>{t('platformsBanner.titleSpan')}</span>
                             </motion.h1>
 
                             <motion.p variants={fadeUp}>
-                                Trade your way with Sea Global’s powerful and flexible trading platforms, designed to support different trading styles, experience levels, and market strategies—whether you trade from desktop, web, or mobile.
+                                {t('platformsBanner.desc')}
                             </motion.p>
 
                             <motion.div
@@ -73,13 +76,13 @@ export default function PlatformsBanner() {
                                 <a href='https://client.seaglobalfx.com/?tab=register' target='_blank'>
                                     <button className='orange'>
                                         <img src={UserIcon} alt='UserIcon' />
-                                        Open Account
+                                        {t('platformsBanner.openAccount')}
                                     </button>
                                 </a>
                                 <a target='_blank' href='https://client.seaglobalfx.com/'>
                                     <button className='black'>
                                         <img src={DemoIcon} alt='DemoIcon' />
-                                        Try Demo
+                                        {t('platformsBanner.tryDemo')}
                                     </button>
                                 </a>
                             </motion.div>

@@ -1,6 +1,7 @@
 'use client'
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/context/LanguageContext';
 
 const HeroImage = '/assets/images/tradeAndAchieveHerobanner.png';
 const UserIcon = '/assets/icons/user.svg';
@@ -35,6 +36,7 @@ const imageAnim = {
 
 
 export default function TradeAndAchieveHerobanner() {
+    const { t } = useLanguage();
     return (
         <div>
             <div className='common-banner'>
@@ -53,19 +55,16 @@ export default function TradeAndAchieveHerobanner() {
                                     variants={fadeUp}
                                 >
                                     <button>
-                                        Seaglobal FX IB Partners Program
+                                        {t('tradeAndAchieveHerobanner.tagLine')}
                                     </button>
                                 </motion.div>
 
                                 <motion.h2 variants={fadeUp}>
-                                    Trade to Win 2026 – Volume-Based Trading <span> Rewards Campaign </span>
+                                    {t('tradeAndAchieveHerobanner.titleStart')}<span>{t('tradeAndAchieveHerobanner.titleSpan')}</span>
                                 </motion.h2>
 
                                 <motion.p variants={fadeUp}>
-                                    Trade the trends that move the markets.
-                                    Accumulate volume.
-                                    Unlock milestone rewards.
-
+                                    {t('tradeAndAchieveHerobanner.desc')}
                                 </motion.p>
 
                                 <motion.div
@@ -75,13 +74,13 @@ export default function TradeAndAchieveHerobanner() {
                                     <a href='https://client.seaglobalfx.com/?tab=register' target='_blank'>
                                         <button className='orange'>
                                             <img src={UserIcon} alt='UserIcon' />
-                                            Get Started Now
+                                            {t('tradeAndAchieveHerobanner.getStarted')}
                                         </button>
                                     </a>
                                     <a target='_blank' href='https://client.seaglobalfx.com/'>
                                         <button className='black'>
                                             <img src={DemoIcon} alt='DemoIcon' />
-                                            View Milestones
+                                            {t('tradeAndAchieveHerobanner.viewMilestones')}
                                         </button>
                                     </a>
                                 </motion.div>

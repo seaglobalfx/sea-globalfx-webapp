@@ -2,11 +2,14 @@
 import React from 'react'
 import styles from './mamTrading.module.scss'
 import { motion } from 'framer-motion'
+import { useLanguage } from '@/context/LanguageContext'
 
 const PammImage = '/assets/images/mam-trading.png'
 const LayerBlackImage = '/assets/images/layer-black.png'
 
 export default function MamTrading() {
+    const { t, isRTL } = useLanguage();
+
     return (
         <div className={styles.mamTrading}>
             <div className={styles.layerBlack}>
@@ -23,20 +26,19 @@ export default function MamTrading() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, ease: 'easeOut' }}
                         >
-                            <h2>MAM Trading</h2>
-                            <h3>(Multi-Account Manager)</h3>
+                            <h2>{t('mamTrading.title')}</h2>
+                            <h3>{t('mamTrading.subtitle')}</h3>
                             <p>
-                                MAM trading enables professional traders or money managers to place trades across multiple client accounts simultaneously. Each account can have customized risk settings,
-                                allowing tailored exposure while maintaining execution efficiency
+                                {t('mamTrading.desc')}
                             </p>
                         </motion.div>
 
                         <div className={styles.cardGrid}>
                             {[
-                                'Individual account ownership with centralized management',
-                                'Custom risk allocation per client',
-                                'Faster execution across multiple accounts',
-                                'Ideal structure for professional fund managers',
+                                t('mamTrading.cards.individual'),
+                                t('mamTrading.cards.custom'),
+                                t('mamTrading.cards.faster'),
+                                t('mamTrading.cards.ideal'),
                             ].map((text, index) => (
                                 <motion.div
                                     key={index}
@@ -60,7 +62,7 @@ export default function MamTrading() {
                     <div className={styles.griditems}>
                         <motion.div
                             className={styles.image}
-                            animate={{ x: [0, -14, 0] }}
+                            animate={{ x: isRTL ? [0, 14, 0] : [0, -14, 0] }}
                             transition={{
                                 duration: 4,
                                 repeat: Infinity,

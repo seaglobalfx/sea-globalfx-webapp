@@ -2,11 +2,14 @@
 import React from 'react'
 import styles from './pammTrading.module.scss'
 import { motion } from 'framer-motion'
+import { useLanguage } from '@/context/LanguageContext'
 
 const PammImage = '/assets/images/pamm.png'
 const LayerBlackImage = '/assets/images/layer-black.png'
 
 export default function PammTrading() {
+    const { t, isRTL } = useLanguage();
+
     return (
         <div className={styles.pammTrading}>
             <div className={styles.layerBlack}>
@@ -20,7 +23,7 @@ export default function PammTrading() {
                     <div className={styles.griditems}>
                         <motion.div
                             className={styles.image}
-                            animate={{ x: [0, -12, 0] }}
+                            animate={{ x: isRTL ? [0, 12, 0] : [0, -12, 0] }}
                             transition={{
                                 duration: 4,
                                 repeat: Infinity,
@@ -40,23 +43,22 @@ export default function PammTrading() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, ease: 'easeOut' }}
                         >
-                            <h2>PAMM Trading</h2>
+                            <h2>{t('pammTrading.title')}</h2>
                             <h3>
-                                (Percentage Allocation <span> Management </span> Module)
+                                {t('pammTrading.subtitleStart')}<span>{t('pammTrading.subtitleSpan')}</span>{t('pammTrading.subtitleEnd')}
                             </h3>
                             <p>
-                                PAMM trading allows investors to allocate their funds to experienced and verified traders who manage trades on a pooled account. Each investor retains ownership of their capital while participating in the trader’s performance. Profits and losses are distributed fairly based on
-                                each investor’s contribution
+                                {t('pammTrading.desc')}
                             </p>
                         </motion.div>
 
                         {/* CARDS */}
                         <div className={styles.cardGrid}>
                             {[
-                                'Hands-free trading managed by professionals',
-                                'Transparent performance history and statistics',
-                                'No technical trading knowledge required',
-                                'Investors maintain full control over funds',
+                                t('pammTrading.cards.professional'),
+                                t('pammTrading.cards.history'),
+                                t('pammTrading.cards.knowledge'),
+                                t('pammTrading.cards.control'),
                             ].map((text, index) => (
                                 <motion.div
                                     key={index}

@@ -2,11 +2,14 @@
 import React from 'react'
 import styles from './copyTrading.module.scss'
 import { motion } from 'framer-motion'
+import { useLanguage } from '@/context/LanguageContext'
 
 const PammImage = '/assets/images/pamm.png'
 const LayerBlackImage = '/assets/images/layer-black.png'
 
 export default function CopyTrading() {
+    const { t, isRTL } = useLanguage();
+
     return (
         <div className={styles.pammTrading}>
             <div className={styles.layerBlack}>
@@ -20,7 +23,7 @@ export default function CopyTrading() {
                     <div className={styles.griditems}>
                         <motion.div
                             className={styles.image}
-                            animate={{ x: [0, -12, 0] }}
+                            animate={{ x: isRTL ? [0, 12, 0] : [0, -12, 0] }}
                             transition={{
                                 duration: 4,
                                 repeat: Infinity,
@@ -41,21 +44,20 @@ export default function CopyTrading() {
                             transition={{ duration: 0.6, ease: 'easeOut' }}
                         >
                             <h2>
-                                Copy <span>Trading </span>
+                                {t('copyTrading.titleStart')}<span>{t('copyTrading.titleSpan')}</span>
                             </h2>
                             <p>
-                                Copy trading allows users to automatically mirror the trades of selected professional traders in real time. You can analyze trader performance, choose strategies that align with your goals, and copy
-                                trades while retaining full control of your account.
+                                {t('copyTrading.desc')}
                             </p>
                         </motion.div>
 
                         {/* CARDS */}
                         <div className={styles.cardGrid}>
                             {[
-                                'Beginner-friendly and easy to start',
-                                'Learn by following experienced traders',
-                                'Real-time trade execution',
-                                'Ability to stop or modify copying anytime',
+                                t('copyTrading.cards.beginner'),
+                                t('copyTrading.cards.learn'),
+                                t('copyTrading.cards.realtime'),
+                                t('copyTrading.cards.stop'),
                             ].map((text, index) => (
                                 <motion.div
                                     key={index}

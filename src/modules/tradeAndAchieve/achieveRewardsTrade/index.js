@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './achieveRewardsTrade.module.scss';
+import { useLanguage } from '@/context/LanguageContext';
 
 const LayerBlackImage = '/assets/images/layer-black.png';
 const VecIcon = '/assets/images/vec.png';
@@ -14,18 +15,12 @@ const Smartphone = '/assets/images/Smartphone.png';
 const Sports = '/assets/images/Sports.png';
 const SUV = '/assets/images/SUV.png';
 
-const rewardsArr = [
-    { image: GiftPack, title: "50 LOTS", subtitle: "Gift Pack" },
-    { image: Headphones, title: "100 LOTS", subtitle: "Headphones" },
-    { image: Watch, title: "250 LOTS", subtitle: "Smart watch" },
-    { image: Tablet, title: "500 LOTS", subtitle: "Tablet" },
-    { image: Gaming, title: "1,000 LOTS", subtitle: "Gaming Console" },
-    { image: Smartphone, title: "2,000 LOTS", subtitle: "Smartphone" },
-    { image: Sports, title: "5,000 LOTS", subtitle: "Sports Bike" },
-    { image: SUV, title: "10,000 LOTS", subtitle: "SUV" },
-];
+const rewardImages = [GiftPack, Headphones, Watch, Tablet, Gaming, Smartphone, Sports, SUV];
 
 export default function AchieveRewardsTrade() {
+    const { t } = useLanguage();
+    const rewards = t('achieveRewardsTrade.rewards');
+
     return (
         <div className={styles.achieveRewardsTrade}>
             <div className={styles.layerBlack}>
@@ -34,15 +29,14 @@ export default function AchieveRewardsTrade() {
             <div className='container-xs9'>
                 <div className={styles.title}>
                     <h2>
-                        Win Rewards with <span> Every</span> Trade
+                        {t('achieveRewardsTrade.titleStart')}<span>{t('achieveRewardsTrade.titleSpan')}</span>{t('achieveRewardsTrade.titleEnd')}
                     </h2>
                     <p>
-                        Sea Global FX rewards trading performance. Trade eligible instruments. Accumulate closed lot volume. Unlock
-                        milestone achievements.
+                        {t('achieveRewardsTrade.desc')}
                     </p>
                 </div>
                 <div className={styles.grid}>
-                    {rewardsArr.map((item, index) => (
+                    {rewards.map((item, index) => (
                         <motion.div
                             className={styles.items}
                             key={index}
@@ -60,7 +54,7 @@ export default function AchieveRewardsTrade() {
                                 <img src={VecIcon} alt='VecIcon' />
                             </div>
                             <div className={styles.image}>
-                                <img src={item.image} alt={item.subtitle} />
+                                <img src={rewardImages[index]} alt={item.subtitle} />
                             </div>
                             <div className={styles.bottom}>
                                 <div>
@@ -75,4 +69,3 @@ export default function AchieveRewardsTrade() {
         </div>
     );
 }
-

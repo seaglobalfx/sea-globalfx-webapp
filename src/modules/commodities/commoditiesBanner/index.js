@@ -1,6 +1,7 @@
 'use client'
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/context/LanguageContext';
 
 const HeroImage = '/assets/images/commodities-banner.png';
 const UserIcon = '/assets/icons/user.svg';
@@ -34,6 +35,8 @@ const imageAnim = {
 };
 
 export default function CommoditiesBanner() {
+    const { t } = useLanguage();
+
     return (
         <div className='common-banner'>
             <div className='left-alignment'>
@@ -51,7 +54,7 @@ export default function CommoditiesBanner() {
                                 variants={fadeUp}
                             >
                                 <button>
-                                    Gold & oil • Market-driven pricing • Portfolio diversification
+                                    {t('commoditiesBanner.tagline')}
                                 </button>
                             </motion.div>
 
@@ -59,12 +62,11 @@ export default function CommoditiesBanner() {
                                 className="full-width"
                                 variants={fadeUp}
                             >
-                                Trade Metals and Energy Markets <span>Worldwide</span>
+                                {t('commoditiesBanner.titleStart')}<span>{t('commoditiesBanner.titleSpan')}</span>
                             </motion.h2>
 
                             <motion.p variants={fadeUp}>
-                                Access global commodities markets through Sea Global’s secure trading infrastructure, offering
-                                transparent pricing, fast execution, and reliable liquidity across market conditions.
+                                {t('commoditiesBanner.desc')}
                             </motion.p>
 
                             <motion.div
@@ -74,13 +76,13 @@ export default function CommoditiesBanner() {
                                 <a href='https://client.seaglobalfx.com/?tab=register' target='_blank'>
                                     <button className='orange'>
                                         <img src={UserIcon} alt='UserIcon' />
-                                        Open Account
+                                        {t('hero.openAccount')}
                                     </button>
                                 </a>
                                 <a target='_blank' href='https://client.seaglobalfx.com/'>
                                     <button className='black'>
                                         <img src={DemoIcon} alt='DemoIcon' />
-                                        Try Demo
+                                        {t('hero.tryDemo')}
                                     </button>
                                 </a>
                             </motion.div>

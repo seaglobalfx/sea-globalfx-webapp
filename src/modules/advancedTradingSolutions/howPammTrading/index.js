@@ -2,6 +2,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import styles from './howPammTrading.module.scss';
+import { useLanguage } from '@/context/LanguageContext';
 
 const SystemIcon = '/assets/icons/manager.png';
 const KycIcon = '/assets/icons/Allocate.png';
@@ -33,6 +34,8 @@ const itemVariants = {
     },
 };
 export default function HowPammTrading() {
+    const { t } = useLanguage();
+
     return (
         <div className={styles.howPammTrading}>
             <div className='container-xs'>
@@ -44,7 +47,7 @@ export default function HowPammTrading() {
                     viewport={{ once: true }}
                 >
                     <h2>
-                        How PAMM Trading <span>Works</span>
+                        {t('howPammTrading.titleStart')}<span>{t('howPammTrading.titleSpan')}</span>
                     </h2>
 
                 </motion.div>
@@ -78,7 +81,7 @@ export default function HowPammTrading() {
                         className={styles.griditems} variants={itemVariants}>
                         <div>
                             <div className={styles.counter}>1</div>
-                            <h3>You choose a PAMM manager</h3>
+                            <h3>{t('howPammTrading.step1')}</h3>
                         </div>
 
                         <div className={styles.iconRight}>
@@ -108,7 +111,7 @@ export default function HowPammTrading() {
                         className={styles.griditems} variants={itemVariants}>
                         <div>
                             <div className={styles.counter}>2</div>
-                            <h3>Allocate funds</h3>
+                            <h3>{t('howPammTrading.step2')}</h3>
                         </div>
                         <div className={styles.iconRight}>
                             <img src={KycIcon} alt='KycIcon' />
@@ -137,7 +140,7 @@ export default function HowPammTrading() {
                         className={styles.griditems} variants={itemVariants}>
                         <div>
                             <div className={styles.counter}>3</div>
-                            <h3>Trades are executed by the manager</h3>
+                            <h3>{t('howPammTrading.step3')}</h3>
                         </div>
                         <div className={styles.iconRight}>
                             <img src={FundIcon} alt='FundIcon' />
@@ -166,7 +169,7 @@ export default function HowPammTrading() {
                         className={styles.griditems} variants={itemVariants}>
                         <div>
                             <div className={styles.counter}>4</div>
-                            <h3>Results are shared proportionally</h3>
+                            <h3>{t('howPammTrading.step4')}</h3>
                         </div>
                         <div className={styles.iconRight}>
                             <img src={TradingIcon} alt='TradingIcon' />
@@ -177,7 +180,7 @@ export default function HowPammTrading() {
                     <a href='https://client.seaglobalfx.com/?tab=register' target='_blank'>
                         <button>
                             <img src={UserIcon} alt='UserIcon' />
-                            Open Account
+                            {t('howPammTrading.openAccount')}
                         </button>
                     </a>
                 </div>

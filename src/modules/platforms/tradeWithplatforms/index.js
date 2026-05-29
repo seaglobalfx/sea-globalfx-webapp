@@ -4,6 +4,8 @@ import styles from './tradeWithplatforms.module.scss';
 import StartTrading from '@/modules/forexMarket/startTrading';
 import { motion } from 'framer-motion';
 import StartTradingplatforms from '../startTradingplatforms';
+import { useLanguage } from '@/context/LanguageContext';
+
 const Mt4Icon = '/assets/icons/mt4.svg';
 const Mt5Icon = '/assets/icons/mt5.png';
 const WebIcon = '/assets/icons/web.png';
@@ -40,6 +42,8 @@ const stagger = {
     },
 };
 export default function TradeWithplatforms() {
+    const { t } = useLanguage();
+
     return (
         <div className={styles.tradeAccount}>
             <motion.div
@@ -82,7 +86,7 @@ export default function TradeWithplatforms() {
                     whileInView="visible"
                     viewport={{ once: true }}
                 >
-                    <span>Trade </span> this Market on
+                    <span>{t('tradeAccount.titleStart')}</span>{t('tradeAccount.titleEnd')}
                 </motion.h2>
 
                 <motion.p
@@ -91,8 +95,7 @@ export default function TradeWithplatforms() {
                     whileInView="visible"
                     viewport={{ once: true }}
                 >
-                    Access this market using Sea Global’s supported trading platforms, built for speed, stability, and flexibility
-                    across desktop, web, and mobile environments.
+                    {t('tradeAccount.desc')}
                 </motion.p>
 
                 {/* Icons */}
@@ -109,10 +112,16 @@ export default function TradeWithplatforms() {
                                 <img src={icon} alt='platform-icon' />
                             </div>
                             <span>
-                                {index === 0 && 'MT4'}
-                                {index === 1 && 'MT5'}
-                                {index === 2 && <>Web <br /> Platform</>}
-                                {index === 3 && <>Mobile <br /> App</>}
+                                {(() => {
+                                    const text = t(index === 0 ? 'marketPlatform.mt4' : index === 1 ? 'marketPlatform.mt5' : index === 2 ? 'marketPlatform.web' : 'marketPlatform.mobile');
+                                    const lines = text.split('\n');
+                                    return lines.map((line, i) => (
+                                        <React.Fragment key={i}>
+                                            {line}
+                                            {i < lines.length - 1 && <br />}
+                                        </React.Fragment>
+                                    ));
+                                })()}
                             </span>
                         </motion.div>
                     ))}

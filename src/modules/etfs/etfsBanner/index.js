@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/context/LanguageContext';
 
 const HeroImage = '/assets/images/etfs-banner.png';
 const UserIcon = '/assets/icons/user.svg';
@@ -27,6 +28,8 @@ const imageAnim = {
 };
 
 export default function EtfsBanner() {
+    const { t } = useLanguage();
+
     return (
         <div className='common-banner'>
             <div className='left-alignment'>
@@ -42,17 +45,16 @@ export default function EtfsBanner() {
                         >
                             <div className='tag-line'>
                                 <button>
-                                    Tight spreads • Fast execution • Deep liquidity
+                                    {t('etfsBanner.tagline')}
                                 </button>
                             </div>
 
                             <h2 className="">
-                                Gain diversified exposure through a single instrument
+                                {t('etfsBanner.title')}
                             </h2>
 
                             <p>
-                                Access global Forex markets through Sea Global’s secure trading infrastructure, offering
-                                transparent pricing, fast execution, and reliable liquidity across market conditions.
+                                {t('etfsBanner.desc')}
                             </p>
 
                             <div className='two-button-alignment'>
@@ -63,7 +65,7 @@ export default function EtfsBanner() {
                                         whileTap={{ scale: 0.97 }}
                                     >
                                         <img src={UserIcon} alt='UserIcon' />
-                                        Open Account
+                                        {t('hero.openAccount')}
                                     </motion.button>
                                 </a>
                                 <a target='_blank' href='https://client.seaglobalfx.com/'>
@@ -73,7 +75,7 @@ export default function EtfsBanner() {
                                         whileTap={{ scale: 0.97 }}
                                     >
                                         <img src={DemoIcon} alt='DemoIcon' />
-                                        Try Demo
+                                        {t('hero.tryDemo')}
                                     </motion.button>
                                 </a>
                             </div>

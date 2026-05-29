@@ -263,5 +263,611 @@ export const en = {
     stocks: "Trade a carefully selected range of global Stock CFDs, offering liquidity, transparency, and access to leading publicly listed companies. Sea Global provides exposure to major equities across key global markets, supporting a wide range of trading and investment strategies.",
     crypto: "Trade a carefully selected range of cryptocurrencies, offering market accessibility, transparency, and global participation. Sea Global provides access to widely traded digital assets designed to support a variety of trading strategies.",
     etfs: "Trade a carefully selected range of instruments within this market, offering liquidity, transparency, and global exposure. Sea Global provides access to popular and actively traded instruments designed to support diverse trading strategies."
+  },
+  textContent: {
+    tradingHours: "Trading Hours",
+    mondayToFriday: "Monday To Friday",
+    mondayToFridayServer: "Monday To Friday (Server Time)",
+    twentyFourSeven: "24/7",
+    contractSpecs: "Contract Specs",
+    whatTradersShouldKnow: "What Traders Should Know",
+    commonTradersShouldKnow1: "Margin requirements may increase during periods of high volatility",
+    commonTradersShouldKnow2: "Swap rates differ by instrument and may change based on market conditions",
+    commonTradersShouldKnow3: "Tick size determines the minimum price movement for each instrument",
+    forex: {
+      tradingHoursDesc: "Market opening and closing times may vary by instrument, public holidays, and daylight saving changes.",
+      contractSpecsDesc1: "Each instrument has defined contract specifications to ensure transparency and consistent trading conditions.",
+      contractSpecsDesc2: "Full details are available within the trading platform and instrument specification pages."
+    },
+    indices: {
+      tradingHoursDesc: "Index trading hours may vary by instrument, underlying exchange schedules, public holidays, and daylight saving changes.",
+      contractSpecsDesc: "Each index instrument has clearly defined contract specifications to ensure transparent and consistent trading conditions. Full details are available within the trading platform and individual instrument specification pages."
+    },
+    commodities: {
+      tradingHoursDesc: "Market opening and closing times may vary by commodity, underlying exchange, public holidays, and daylight saving changes.",
+      contractSpecsDesc: "Each commodity instrument has defined contract specifications to ensure transparency and consistent trading conditions. Full details are available within the trading platform and instrument specification pages."
+    },
+    stocks: {
+      tradingHoursDesc: "Market opening and closing times may vary by instrument, public holidays, and daylight saving changes.",
+      contractSpecsDesc1: "Each instrument has defined contract specifications to ensure transparency and consistent trading conditions.",
+      contractSpecsDesc2: "Full details are available within the trading platform and instrument specification pages."
+    },
+    crypto: {
+      tradingHoursDesc: "Cryptocurrency markets operate continuously, allowing traders to access the market without interruption. Trade cryptocurrencies 24 hours a day, 7 days a week, including weekends and public holidays.",
+      contractSpecsDesc: "Each cryptocurrency instrument has defined contract specifications to provide transparency and consistent trading conditions. Full details are available within the trading platform and instrument specification pages.",
+      tradersShouldKnow1: "Margin requirements may increase during periods of high market volatility",
+      tradersShouldKnow2: "Swap or financing fees may apply and can vary by instrument and market conditions",
+      tradersShouldKnow3: "Tick size determines the minimum price movement for each cryptocurrency instrument"
+    },
+    etfs: {
+      tradingHoursDesc: "Market opening and closing times may vary by instrument, public holidays, and daylight saving changes.",
+      contractSpecsDesc1: "Each instrument has defined contract specifications to ensure transparency and consistent trading conditions.",
+      contractSpecsDesc2: "Full details are available within the trading platform and instrument specification pages."
+    }
+  },
+  tradeAccount: {
+    titleStart: "Trade ",
+    titleEnd: "this Market on",
+    desc: "Access this market using Sea Global’s supported trading platforms, built for speed, stability, and flexibility across desktop, web, and mobile environments.",
+    startTradingTitleStart: "Start Trading ",
+    startTradingTitleEnd: " Today",
+    startTradingDesc: "Trade {market} market with Sea Global’s professional trading infrastructure, competitive pricing, and reliable execution—designed to support traders at every level."
+  },
+  indicesMarketBanner: {
+    tagline: "Major indices • Efficient execution • Transparent pricing",
+    titleStart: "Trade Global Stock Markets with ",
+    titleSpan: " Broad ",
+    titleEnd: " Exposure",
+    desc: "Access global Indices markets through Sea Global’s secure trading infrastructure, offering transparent pricing, fast execution, and reliable liquidity across market conditions."
+  },
+  commoditiesBanner: {
+    tagline: "Gold & oil • Market-driven pricing • Portfolio diversification",
+    titleStart: "Trade Metals and Energy Markets ",
+    titleSpan: "Worldwide",
+    desc: "Access global commodities markets through Sea Global’s secure trading infrastructure, offering transparent pricing, fast execution, and reliable liquidity across market conditions."
+  },
+  stocksBanner: {
+    tagline: "Tight spreads • Fast execution • Deep liquidity",
+    titleStart: "Trade global shares without owning the ",
+    titleSpan: "underlying",
+    titleEnd: " asset",
+    desc: "Access global stock markets through Sea Global’s secure trading infrastructure, offering transparent pricing, fast execution, and reliable liquidity across market conditions."
+  },
+  cryptoBanner: {
+    tagline: "Tight spreads • Fast execution • Deep liquidity",
+    titleStart: "Trade Digital Assets Across Global ",
+    titleSpan: "Crypto",
+    titleEnd: " Markets",
+    desc: "Access global crypto markets through Sea Global’s secure trading infrastructure, offering transparent pricing, fast execution, and reliable liquidity across market conditions."
+  },
+  etfsBanner: {
+    tagline: "Tight spreads • Fast execution • Deep liquidity",
+    title: "Gain diversified exposure through a single instrument",
+    desc: "Access global Forex markets through Sea Global’s secure trading infrastructure, offering transparent pricing, fast execution, and reliable liquidity across market conditions."
+  },
+  whyTradeIndices: {
+    title: "Why Trade Indices with ",
+    titleSpan: " Sea Global",
+    desc: "Global stock indices reflect the performance of leading economies and sectors, offering traders exposure to broad market movements through a single instrument. Trading the Indices Trading Market with Sea Global provides access to major global indices, fast execution, and the flexibility to trade during key market sessions worldwide. By following overall market performance rather than individual stocks, traders can take advantage of global economic trends, volatility, and macro-driven opportunities with greater efficiency.",
+    cards: {
+      exposure: {
+        title: "Broad Market Exposure",
+        desc: "Indices allow you to trade the overall performance of a country or region’s stock market without the need to analyze individual shares."
+      },
+      access: {
+        title: "Global Market Access",
+        desc: "Trade major global indices across US, European, and Asian sessions, aligning your strategy with international market activity."
+      },
+      volatility: {
+        title: "High Volatility Opportunities",
+        desc: "Index markets often experience strong price movements driven by economic data, earnings reports etc."
+      },
+      major: {
+        title: "Major Global Indices",
+        desc: "Access a wide range of leading indices, including major US, European, and Asian benchmarks representing top global economies."
+      },
+      risk: {
+        title: "Risk Management Tools",
+        desc: "Utilize advanced order types and platform features to manage risk, set stop losses, and protect your capital in fast-moving markets."
+      },
+      execution: {
+        title: "Fast & Reliable Execution",
+        desc: "Sea Global’s optimized trading infrastructure delivers low-latency execution, helping reduce slippage during periods of high market volatility."
+      }
+    }
+  },
+  whyTradeCommodities: {
+    title: "Commodities ",
+    titleSpan: " Trading Market ",
+    desc: "Commodities are essential assets that drive the global economy, offering traders opportunities based on supply, demand, and macroeconomic trends. Trading the Commodities Trading Market with Sea Global provides access to key global markets, reliable execution, and the flexibility to trade across different market conditions. From energy products to metals and agricultural assets, commodities allow traders to respond to global events, inflation trends, and shifts in economic activity while diversifying across multiple sectors.",
+    cards: {
+      supplyDemand: {
+        title: "Exposure to Global Supply & Demand",
+        desc: "Commodities allow you to trade price movements driven by real-world factors such as production levels, weather conditions, and geopolitical developments."
+      },
+      opportunities: {
+        title: "Diverse Market Opportunities",
+        desc: "Trade a wide range of commodities across energy, metals, and agricultural markets, enabling diversification across different sectors of the global economy."
+      },
+      volatility: {
+        title: "High Volatility Potential",
+        desc: "Commodity markets often experience sharp price movements, creating opportunities for both short-term traders and longer-term positioning strategies."
+      },
+      major: {
+        title: "Major Global Commodities",
+        desc: "Access popular commodities including energy products, precious and industrial metals, and key agricultural assets traded on global markets."
+      },
+      risk: {
+        title: "Risk Management Tools",
+        desc: "Utilize advanced order types and platform tools to manage exposure, apply stop losses, and control risk in fast-moving commodity markets."
+      },
+      execution: {
+        title: "Fast Execution",
+        desc: "Sea Global’s optimized trading infrastructure ensures low-latency execution, helping minimize slippage during periods of increased market volatility."
+      }
+    }
+  },
+  whyTradeStocks: {
+    title: "Stocks ",
+    titleSpan: "Trading Market",
+    desc: "Stocks CFDs allow traders to speculate on the price movements of individual company shares without owning the underlying assets. Trading the Stocks Trading Market with Sea Global provides access to leading global companies, efficient execution, and the flexibility to trade both rising and falling markets. By using CFDs, traders can respond to company earnings, economic data, and market news while gaining exposure to major global equities across multiple sectors and regions.",
+    cards: {
+      companies: {
+        title: "Trade Global Companies",
+        desc: "Gain access to a wide range of shares from major global exchanges, allows you to trade well-known companies across industries and regions."
+      },
+      flexible: {
+        title: "Flexible Trading Opportunities",
+        desc: "Stocks CFDs enable you to trade both long and short, giving you opportunities in both bullish and bearish market conditions."
+      },
+      volatility: {
+        title: "Market-Driven Volatility",
+        desc: "Share prices are influenced by earnings reports, economic data, and company-specific news, creating frequent trading opportunities."
+      },
+      major: {
+        title: "Major Global Stocks",
+        desc: "Trade CFDs on leading global companies from US, European, and Asian markets, representing key sectors of the global economy."
+      },
+      risk: {
+        title: "Risk Management Tools",
+        desc: "Utilize advanced order types and platform features to manage exposure, set stop losses, and control risk when trading individual stocks."
+      },
+      execution: {
+        title: "Fast & Reliable Execution",
+        desc: "Sea Global’s optimized trading infrastructure delivers low-latency execution, helping reduce slippage during periods of high market activity."
+      }
+    }
+  },
+  whyTradeCrypto: {
+    title: "Crypto ",
+    titleSpan: "Trading Market",
+    desc: "Cryptocurrencies represent a rapidly evolving digital asset class driven by technology, innovation, and global adoption. Trading the Crypto Trading Market with Sea Global provides access to leading digital assets, efficient execution, and the flexibility to trade in dynamic, fast-moving market conditions. With 24/7 availability and high volatility, crypto trading allows market participants to respond quickly to price movements influenced by market sentiment, adoption trends, and macroeconomic developments.",
+    cards: {
+      exposure: {
+        title: "Exposure to Digital Assets Market",
+        desc: "Cryptocurrencies allow you to trade price movements of blockchain-based assets influenced by innovation, adoption, and market demand."
+      },
+      access: {
+        title: "24/7 Market Access",
+        desc: "Trade cryptocurrency markets around the clock, enabling continuous participation without the limitations of traditional market hours."
+      },
+      volatility: {
+        title: "High Volatility Opportunities",
+        desc: "Crypto markets are known for strong price fluctuations, creating frequent opportunities for both short-term trading and longer-term strategies."
+      },
+      major: {
+        title: "Major Cryptocurrencies",
+        desc: "Access a selection of leading digital assets, including widely traded cryptocurrencies representing the broader crypto market."
+      },
+      risk: {
+        title: "Risk Management Tools",
+        desc: "Utilize advanced order types and platform features to manage exposure, set stop losses, and control risk in volatile crypto markets."
+      },
+      execution: {
+        title: "Fast & Reliable Execution",
+        desc: "Sea Global’s optimized trading infrastructure delivers low-latency execution, helping reduce slippage during periods of high market activity."
+      }
+    }
+  },
+  whyTradeEtfs: {
+    title: "ETF ",
+    titleSpan: "Trading Market",
+    desc: "Exchange-Traded Funds (ETFs) provide diversified exposure to a wide range of markets, sectors, and asset classes through a single instrument. Trading the ETF Trading Market with Sea Global gives you access to global markets, efficient execution, and the flexibility to trade both rising and falling market conditions. By combining diversification with transparency and liquidity, ETFs allow traders to participate in international economic trends while managing exposure across multiple asset classes.",
+    cards: {
+      diversification: {
+        title: "Built-In Diversification",
+        desc: "ETFs allow you to gain exposure to baskets of assets, helping reduce concentration risk compared to trading individual instruments."
+      },
+      access: {
+        title: "Broad Market Access",
+        desc: "Trade ETFs covering major global markets, regions, and industries, enabling participation in international economic trends from one platform."
+      },
+      flexible: {
+        title: "Flexible Trading Strategies",
+        desc: "ETFs support a variety of trading approaches, from short-term trading to longer-term investment strategies, with the ability to enter and exit positions during market hours."
+      },
+      range: {
+        title: "Wide Range of ETFs",
+        desc: "Access a diverse selection of ETFs representing equities, indices, commodities, sectors, and thematic investments across global markets."
+      },
+      risk: {
+        title: "Risk Management Tools",
+        desc: "Utilize advanced order types and platform tools to manage risk, set stop losses, and control exposure effectively in changing market conditions."
+      },
+      execution: {
+        title: "Fast & Reliable Execution",
+        desc: "Sea Global’s optimized trading infrastructure delivers low-latency execution, helping ensure efficient order placement during active market periods."
+      }
+    }
+  },
+  accountsBanner: {
+    tagline: "Transparent pricing • Flexible conditions",
+    titleStart: "Find the Best Account for Your ",
+    titleSpan: "Goals",
+    desc: "Choose an account that matches your experience level, trading strategy, and cost preferences. Sea Global offers clearly defined account types with transparent pricing and flexible trading conditions, so you can select what’s right for you with confidence.",
+    openAccount: "Open Account",
+    tryDemo: "Try Demo"
+  },
+  accountTypes: {
+    title: "Account ",
+    titleSpan: "Types",
+    desc: "Pick an account that matches your trading style and experience level. Our MT5 trading accounts are designed with transparent pricing, competitive spreads, and flexible conditions.",
+    labels: {
+      minDeposit: "Minimum Deposit:",
+      commission: "Commission:",
+      spread: "Spread:",
+      leverage: "Leverage:",
+      currencies: "Currencies"
+    },
+    openAccountBtn: "Open Account",
+    cards: {
+      pro: {
+        title: "Pro",
+        desc: "A straightforward account with no separate commission, designed for ease of use and cost transparency.",
+        deposit: "$1,000",
+        spread: "From 20 Cents",
+        leverage: "50 to 500"
+      },
+      standard: {
+        title: "Standard",
+        desc: "Built for traders who want tighter spreads and enhanced support while maintaining simple pricing.",
+        deposit: "$500",
+        spread: "25 Cents",
+        leverage: "1000"
+      },
+      plus: {
+        title: "Plus",
+        desc: "Designed for active traders who prioritize pricing efficiency and execution quality. For cost-focused traders using raw pricing",
+        deposit: "$100",
+        spread: "From 30 Cents",
+        leverage: "50-500"
+      }
+    }
+  },
+  whyChoose: {
+    title: "Open Your Account in 4 ",
+    titleSpan: "Easy Steps",
+    desc: "Sea Global FX provides a secure and transparent environment designed to support both investors and traders at every level",
+    openAccount: "Open Account",
+    cards: {
+      regulated: "Regulated-style risk management practices",
+      infrastructure: "Advanced trading infrastructure and tools",
+      reporting: "Transparent performance reporting",
+      access: "Access to skilled and vetted traders",
+      support: "Dedicated client support and guidance"
+    }
+  },
+  easySteps: {
+    title: "Open Your Account in 4 ",
+    titleSpan: "Easy Steps",
+    desc: "Start trading with confidence through a fast, secure, and fully guided onboarding process—designed to get you from signup to your first trade with minimal friction.",
+    openAccount: "Open Account",
+    cards: {
+      step1: {
+        title: "SignUp",
+        desc: "Create your account in minutes"
+      },
+      step2: {
+        title: "KYC Verification",
+        desc: "Fast & secure identity verification"
+      },
+      step3: {
+        title: "Fund Account",
+        desc: "Add funds securely to start trading"
+      },
+      step4: {
+        title: "Start Trading",
+        desc: "Access global markets instantly"
+      }
+    }
+  },
+  platformsBanner: {
+    tagline: "Desktop • Web • Mobile",
+    titleStart: "Trade Your Way with Powerful, Flexible Trading ",
+    titleSpan: "Platforms",
+    desc: "Trade your way with Sea Global’s powerful and flexible trading platforms, designed to support different trading styles, experience levels, and market strategies—whether you trade from desktop, web, or mobile.",
+    openAccount: "Open Account",
+    tryDemo: "Try Demo"
+  },
+  professionalTrading: {
+    title: "Professional Trading ",
+    titleSpan: "Tools",
+    desc: "Sea Global provides a suite of professional-grade trading tools designed to support informed decision-making, precise execution, and effective risk management across global markets.",
+    cards: {
+      charting: {
+        title: "Advanced Charting & Indicators",
+        desc: "Access interactive charts with multiple timeframes, technical indicators, and drawing tools to analyze market movements in detail."
+      },
+      analysis: {
+        title: "Technical Analysis & Market Insights",
+        desc: "Benefit from regularly updated market analysis covering key price levels, trends, and macroeconomic factors across asset classes."
+      },
+      central: {
+        title: "Trading Central & Research Tools",
+        desc: "Utilize integrated third-party research tools such as Trading Central to access technical setups, forecasts, and analytical insights."
+      },
+      risk: {
+        title: "Risk Management Features",
+        desc: "Apply risk controls including stop-loss, take-profit, and advanced order types to help manage exposure and protect trading capital."
+      }
+    }
+  },
+  platformsHighlights: {
+    title: "Platform ",
+    titleSpan: "Highlights",
+    cards: {
+      charting: {
+        title: "Advanced Charting & Indicators",
+        desc: "Analyze markets using multiple chart types, timeframes, and a wide range of technical indicators for informed decision-making."
+      },
+      automated: {
+        title: "Automated Trading (EAs / Scripts)",
+        desc: "Deploy automated strategies and custom scripts to execute trades systematically and reduce emotional bias."
+      },
+      execution: {
+        title: "Real-Time Execution",
+        desc: "Trade with live pricing and fast order execution designed to perform reliably during active and volatile market conditions"
+      },
+      customizable: {
+        title: "Customizable Interface",
+        desc: "Personalize layouts, charts, and tools to match your trading style and workflow"
+      }
+    }
+  },
+  startTradingPlatforms: {
+    titleStart: "Start Trading on a ",
+    titleSpan: "Platform ",
+    titleEnd: " That Fits You",
+    desc: "Choose the trading platform that matches your experience level and strategy, and access global markets with Sea Global’s reliable trading infrastructure.",
+    openAccount: "Open Account",
+    tryDemo: "Try Demo"
+  },
+  advancedTradingSolutionsBanner: {
+    tagline: "We’re Here to Help",
+    titleStart: "Smart Trading Solutions for Every ",
+    titleSpan: "Strategy ",
+    desc: "Choose how you trade or invest with professional-grade solutions built for control, transparency, and growth.",
+    openAccount: "Open Account",
+    tryDemo: "Try Demo"
+  },
+  pammTrading: {
+    title: "PAMM Trading",
+    subtitleStart: "(Percentage Allocation ",
+    subtitleSpan: " Management ",
+    subtitleEnd: " Module)",
+    desc: "PAMM trading allows investors to allocate their funds to experienced and verified traders who manage trades on a pooled account. Each investor retains ownership of their capital while participating in the trader’s performance. Profits and losses are distributed fairly based on each investor’s contribution",
+    cards: {
+      professional: "Hands-free trading managed by professionals",
+      history: "Transparent performance history and statistics",
+      knowledge: "No technical trading knowledge required",
+      control: "Investors maintain full control over funds"
+    }
+  },
+  howPammTrading: {
+    titleStart: "How PAMM Trading ",
+    titleSpan: "Works",
+    step1: "You choose a PAMM manager",
+    step2: "Allocate funds",
+    step3: "Trades are executed by the manager",
+    step4: "Results are shared proportionally",
+    openAccount: "Open Account"
+  },
+  mamTrading: {
+    title: "MAM Trading",
+    subtitle: "(Multi-Account Manager)",
+    desc: "MAM trading enables professional traders or money managers to place trades across multiple client accounts simultaneously. Each account can have customized risk settings, allowing tailored exposure while maintaining execution efficiency",
+    cards: {
+      individual: "Individual account ownership with centralized management",
+      custom: "Custom risk allocation per client",
+      faster: "Faster execution across multiple accounts",
+      ideal: "Ideal structure for professional fund managers"
+    }
+  },
+  howMamTrading: {
+    titleStart: "How MAM Trading ",
+    titleSpan: "Works",
+    step1: "Manager places a single trade",
+    step2: "Trade is replicated across linked accounts",
+    step3: "Risk is adjusted per account",
+    openAccount: "Open Account"
+  },
+  copyTrading: {
+    titleStart: "Copy ",
+    titleSpan: "Trading",
+    desc: "Copy trading allows users to automatically mirror the trades of selected professional traders in real time. You can analyze trader performance, choose strategies that align with your goals, and copy trades while retaining full control of your account.",
+    cards: {
+      beginner: "Beginner-friendly and easy to start",
+      learn: "Learn by following experienced traders",
+      realtime: "Real-time trade execution",
+      stop: "Ability to stop or modify copying anytime"
+    }
+  },
+  howCopyTrading: {
+    titleStart: "How Copy Trading ",
+    titleSpan: "Works",
+    step1: "Select a trader",
+    step2: "Set allocation",
+    step3: "Trades are copied automatically",
+    step4: "Monitor performance anytime",
+    openAccount: "Open Account"
+  },
+  compareTrading: {
+    titleStart: "Compare Trading ",
+    titleSpan: " Solutions ",
+    headers: {
+      solution: "Solution",
+      control: "Control",
+      experience1: "Experience",
+      experience2: "Experience",
+      pamm: "PAMM Trading",
+      mam: "MAM Trading",
+      copy: "Copy Trading"
+    },
+    pamm: {
+      control: "Low",
+      experience: "None",
+      role: "Passive"
+    },
+    mam: {
+      control: "High",
+      experience: "Advanced",
+      role: "Managers"
+    },
+    copy: {
+      control: "Medium",
+      experience: "Beginner",
+      role: "Learners"
+    }
+  },
+  smarterToday: {
+    titleStart: "Start Trading ",
+    titleSpan: "Smarter",
+    titleEnd: " Today",
+    desc: "Whether you’re investing passively or trading actively, Sea Global FX has a solution designed for your goals.",
+    openAccount: "Open Account",
+    tryDemo: "Try Demo"
+  },
+  tradeAndAchieveHerobanner: {
+    tagLine: "Seaglobal FX IB Partners Program",
+    titleStart: "Trade to Win 2026 – Volume-Based Trading ",
+    titleSpan: "Rewards Campaign",
+    desc: "Trade the trends that move the markets. Accumulate volume. Unlock milestone rewards.",
+    getStarted: "Get Started Now",
+    viewMilestones: "View Milestones"
+  },
+  achieveRewardsTrade: {
+    titleStart: "Win Rewards with ",
+    titleSpan: "Every",
+    titleEnd: " Trade",
+    desc: "Sea Global FX rewards trading performance. Trade eligible instruments. Accumulate closed lot volume. Unlock milestone achievements.",
+    rewards: [
+      { title: "50 LOTS", subtitle: "Gift Pack" },
+      { title: "100 LOTS", subtitle: "Headphones" },
+      { title: "250 LOTS", subtitle: "Smart watch" },
+      { title: "500 LOTS", subtitle: "Tablet" },
+      { title: "1,000 LOTS", subtitle: "Gaming Console" },
+      { title: "2,000 LOTS", subtitle: "Smartphone" },
+      { title: "5,000 LOTS", subtitle: "Sports Bike" },
+      { title: "10,000 LOTS", subtitle: "SUV" }
+    ]
+  },
+  howItWorks: {
+    titleStart: "How It ",
+    titleSpan: "Works",
+    openAccount: "Open Account",
+    steps: [
+      { title: "Open Your Live Account", desc: "Register and activate your trading account." },
+      { title: "Trade Eligible Instruments", desc: "Forex & CFD instruments qualify." },
+      { title: "Close Trades", desc: "Only closed trades count toward lot volume." },
+      { title: "Unlock Your Reward", desc: "Complete required lots and submit your claim." }
+    ]
+  },
+  tradeAndAchieveList: {
+    features: [
+      { title: "Volume-Based", desc: "Rewards tied to a lot of volume." },
+      { title: "All Clients Eligible", desc: "New and existing traders." },
+      { title: "No Limits", desc: "Progress without restriction." },
+      { title: "Closed Trades Only", desc: "Volume from completed trades." },
+      { title: "Transparent Conditions", desc: "Clear pricing. Fast execution." },
+      { title: "Performance Focused", desc: "Built for active traders." }
+    ],
+    termsTitle: "Eligibility & Terms",
+    terms: [
+      "Sea Global FX is offering the \u201cTrade to Win 2026\u201d campaign until 31 March 2026. The campaign may be extended at the sole discretion of Sea Global FX. Participation is open to both new and existing registered clients who hold a live trading account with Sea Global FX.",
+      "Clients may join the campaign by opening and funding a live trading account. By registering, opening an account, or participating in this campaign, clients acknowledge that they have read, understood, and agreed to these Terms & Conditions as well as the Sea Global FX Client Agreement available on the official website.",
+      "Participation in the campaign requires trading through a live account only. Only eligible instruments qualify under this offer, and only closed trades will count toward lot volume accumulation. Lot volume must be completed within the campaign period. The calculation of trading volume is based on closed trades and is measured monthly, from the first calendar day to the last calendar day of each month.",
+      "Clients may claim rewards once they achieve the required milestone lot volume. Each milestone corresponds to a specific reward. Prizes may include items such as a gift pack, headphones, smart watch, tablet, gaming console, smartphone, sports bike, or SUV. If a particular reward becomes unavailable, Sea Global FX reserves the right to substitute it with an alternative item of equal or higher value. In cases where physical shipment is not possible, Sea Global FX may provide a cash equivalent in USD matching the reward\u2019s value.",
+      "Each traded lot is calculated as 1.0 standard lot for milestone qualification. Clients must complete the full required lot volume to qualify for a reward; partial completion does not qualify. Each milestone can be achieved once per client, and progression to higher milestones requires additional qualifying lot volume. Clients must verify their identity and address before prize delivery.",
+      "Any misuse, manipulation, or abuse of the campaign is strictly prohibited. This includes, but is not limited to, hedging abuse, arbitrage exploitation, artificial volume generation, coordinated trading across accounts, or any strategy designed solely to exploit the campaign structure. If Sea Global FX determines that a client has abused or attempted to abuse the offer, it reserves the right to void rewards, deduct reward values from trading accounts, suspend or terminate accounts, cancel profits derived from abusive conduct, or take any other appropriate action. All decisions made by Sea Global FX in such matters are final.",
+      "Participation in this campaign does not eliminate the risks associated with trading. Forex and CFD trading involves significant risk and may result in loss of capital. Sea Global FX shall not be held liable for trading losses, technical issues beyond its control, or any indirect or consequential damages arising from participation in the campaign.",
+      "Sea Global FX reserves the right to amend, suspend, or terminate the campaign at any time without prior notice. Any updates or changes will be published on the official website."
+    ]
+  },
+  startTrade: {
+    titleLine1: "Start Trading.",
+    titleLine2Start: "Start ",
+    titleSpan: "Winning.",
+    desc: "Choose the trading platform that matches your experience level and strategy, and access global markets with Sea Global's reliable trading infrastructure.",
+    openAccount: "Open Live Account"
+  },
+  partnersBanner: {
+    tagLine: "Seaglobal FX IB Partners Program",
+    titleLine1: "Grow Your Forex",
+    titleSpan: "Business",
+    titleEnd: "With Us",
+    desc: "Build long-term revenue by partnering with Seaglobal FX, a global forex broker focused on transparency, advanced trading technology, and partner success.",
+    becomePartner: "Become a Partner"
+  },
+  whyPartner: {
+    titleStart: "Why Partner With ",
+    titleSpan: "Sea Global FX?",
+    items: [
+      "Competitive IB Commissions",
+      "Transparent Reporting",
+      "Global Client Reach",
+      "Dedicated Partner Support"
+    ]
+  },
+  ourForexPartner: {
+    titleStart: "Our Forex Partner ",
+    titleSpan: "Program",
+    boxTitle: "Introducing Broker (IB) Program",
+    suitableFor: "Suitable for:",
+    suitableItems: [
+      "Trading educators",
+      "Signal providers",
+      "Trading communities",
+      "Professional marketers with trader audiences"
+    ],
+    keyBenefits: "Key Benefits:",
+    benefitItems: [
+      "Earn commissions based on client trading activity",
+      "Flexible rebate structures",
+      "Dedicated IB account manager",
+      "Long-term partnership model"
+    ],
+    openAccount: "Open Account"
+  },
+  programWorks: {
+    titleStart: "How the Sea Global FX IB Program ",
+    titleSpan: "Works",
+    openAccount: "Open Account",
+    steps: [
+      { title: "Register as a Partner", desc: "Complete the online IB registration form." },
+      { title: "Refer Clients", desc: "Share your unique IB referral link or code." },
+      { title: "Clients Start Trading", desc: "Referred clients trade forex and CFDs on Seaglobal FX." },
+      { title: "Earn Commissions", desc: "Receive commissions based on client trading activity and rebate structure." }
+    ]
+  },
+  partnerTools: {
+    titleStart: "Partner ",
+    titleSpan: "Tools",
+    titleEnd: " & Dedicated Support",
+    items: [
+      "Advanced performance analytics",
+      "Real-time commission tracking",
+      "Custom IB referral links",
+      "Dedicated partner manager"
+    ]
   }
 };
