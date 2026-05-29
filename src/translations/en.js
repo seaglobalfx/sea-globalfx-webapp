@@ -172,9 +172,98 @@ export const en = {
     titleStart: "Trusted By Traders ",
     titleSpan: "Worldwide",
     desc: "Our platform is recognized for its commitment to transparent pricing, reliable execution, and professional service. Thousands of traders choose us for our technology, support, and trading conditions.",
-    reviewText: "Trading with Sea Global FX has been smooth from day one. Fast execution, stable spreads, and quick withdrawals made a huge difference in my trading experience.",
-    reviewName: "Johnathan Doe",
-    reviewLocation: "United Kingdom"
+    reviews: [
+      {
+        text: "The platform feels clean, professional, and easy to navigate. Execution has been smooth during active market sessions, and the overall experience has been straightforward from account setup to trading.",
+        name: "Daniel H.",
+        location: "United Kingdom"
+      },
+      {
+        text: "What stood out to me was the support team. Every query I had was handled quickly and professionally. It's refreshing to deal with a platform that focuses on user experience.",
+        name: "Ahmed K.",
+        location: "United Arab Emirates"
+      },
+      {
+        text: "Funding my account was simple, and withdrawals have been processed without complications. The platform is easy to understand, even for traders who are still building experience.",
+        name: "Rohan M.",
+        location: "India"
+      },
+      {
+        text: "I use multiple platforms regularly, and Sea Global FX offers a reliable trading environment with stable execution and a user-friendly interface. Everything feels well organized.",
+        name: "Kevin T.",
+        location: "Singapore"
+      },
+      {
+        text: "I appreciate how accessible everything is. The platform layout is clear, market access is straightforward, and the educational content has been helpful for understanding market concepts.",
+        name: "Ana C.",
+        location: "Brazil"
+      },
+      {
+        text: "The execution speed and platform stability have been consistent for me. I also like having access to different markets from a single trading environment.",
+        name: "Lukas W.",
+        location: "Germany"
+      },
+      {
+        text: "The registration process was simple, and the onboarding experience felt smooth. The support team was responsive whenever I needed assistance.",
+        name: "Mahmoud A.",
+        location: "Egypt"
+      },
+      {
+        text: "I value transparency and simplicity, and that's what I experienced here. The platform is easy to use and provides access to the tools I need without unnecessary complexity.",
+        name: "Sophie R.",
+        location: "France"
+      },
+      {
+        text: "Trading conditions have been straightforward, and the overall platform experience has been reliable. It's been easy to manage my account and stay connected to the markets.",
+        name: "Marco L.",
+        location: "Italy"
+      },
+      {
+        text: "The mobile trading experience has been excellent. Being able to monitor markets and manage positions on the go has made trading much more convenient.",
+        name: "Jason N.",
+        location: "South Africa"
+      },
+      {
+        text: "I was looking for a platform that offered access to multiple markets with a simple interface. Sea Global FX delivered exactly that.",
+        name: "Emre Y.",
+        location: "Türkiye"
+      },
+      {
+        text: "The platform performance has been stable, and I appreciate the focus on functionality and ease of use. Everything works efficiently.",
+        name: "Takumi S.",
+        location: "Japan"
+      },
+      {
+        text: "La plataforma es fácil de usar y el proceso de depósito fue rápido. La experiencia general ha sido clara, sencilla y profesional.",
+        name: "Carlos M.",
+        location: "Spain"
+      },
+      {
+        text: "J'apprécie la simplicité de la plateforme et la rapidité du support. Tout le processus a été fluide dès le départ.",
+        name: "Marie L.",
+        location: "France"
+      },
+      {
+        text: "Die Plattform ist übersichtlich, stabil und einfach zu bedienen. Der gesamte Ablauf wirkt professionell und gut organisiert.",
+        name: "Leon K.",
+        location: "Germany"
+      },
+      {
+        text: "Mera overall experience kaafi smooth raha hai. Platform use karna easy hai aur support team bhi kaafi responsive hai.",
+        name: "Arjun S.",
+        location: "India"
+      },
+      {
+        text: "المنصة سهلة الاستخدام وعملية الإيداع والسحب كانت سلسة. كما أن فريق الدعم متعاون وسريع الاستجابة.",
+        name: "Khalid A.",
+        location: "United Arab Emirates"
+      },
+      {
+        text: "Платформа работает стабильно, а процесс торговли понятен и удобен. Хороший опыт использования.",
+        name: "Dmitry V.",
+        location: "Russia"
+      }
+    ]
   },
   openAccount: {
     titleStart: "Open Your Account in 4 ",

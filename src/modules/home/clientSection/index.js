@@ -37,18 +37,23 @@ const ReviewCard = ({ review }) => (
     </div>
 );
 
+const COLUMN_COUNT = 4;
+
+function getColumnReviews(reviews, columnIndex) {
+    return reviews.filter((_, index) => index % COLUMN_COUNT === columnIndex);
+}
+
+function buildMarqueeData(reviews) {
+    return [...reviews, ...reviews];
+}
+
 export default function ClientSection() {
     const { t } = useLanguage();
 
-    const singleReview = {
-        text: t('clientSection.reviewText'),
-        name: t('clientSection.reviewName'),
-        location: t('clientSection.reviewLocation')
-    };
-
-    const translatedReviews = Array(6).fill(singleReview);
-    // We duplicate the array to allow infinite seamless scrolling
-    const columnData = [...translatedReviews, ...translatedReviews, ...translatedReviews];
+    const reviews = t('clientSection.reviews');
+    const columnDataSets = Array.from({ length: COLUMN_COUNT }, (_, columnIndex) =>
+        buildMarqueeData(getColumnReviews(reviews, columnIndex))
+    );
 
     return (
         <div className={styles.clientSection}>
@@ -70,12 +75,12 @@ export default function ClientSection() {
                         transition={{ ease: "linear", duration: 25, repeat: Infinity }}
                     >
                         <div className={styles.innerColumn}>
-                            {columnData.map((review, idx) => (
+                            {columnDataSets[0].map((review, idx) => (
                                 <ReviewCard key={`col1-a-${idx}`} review={review} />
                             ))}
                         </div>
                         <div className={styles.innerColumn}>
-                            {columnData.map((review, idx) => (
+                            {columnDataSets[0].map((review, idx) => (
                                 <ReviewCard key={`col1-b-${idx}`} review={review} />
                             ))}
                         </div>
@@ -88,12 +93,12 @@ export default function ClientSection() {
                         transition={{ ease: "linear", duration: 25, repeat: Infinity }}
                     >
                         <div className={styles.innerColumn}>
-                            {columnData.map((review, idx) => (
+                            {columnDataSets[1].map((review, idx) => (
                                 <ReviewCard key={`col2-a-${idx}`} review={review} />
                             ))}
                         </div>
                         <div className={styles.innerColumn}>
-                            {columnData.map((review, idx) => (
+                            {columnDataSets[1].map((review, idx) => (
                                 <ReviewCard key={`col2-b-${idx}`} review={review} />
                             ))}
                         </div>
@@ -106,12 +111,12 @@ export default function ClientSection() {
                         transition={{ ease: "linear", duration: 25, repeat: Infinity }}
                     >
                         <div className={styles.innerColumn}>
-                            {columnData.map((review, idx) => (
+                            {columnDataSets[2].map((review, idx) => (
                                 <ReviewCard key={`col3-a-${idx}`} review={review} />
                             ))}
                         </div>
                         <div className={styles.innerColumn}>
-                            {columnData.map((review, idx) => (
+                            {columnDataSets[2].map((review, idx) => (
                                 <ReviewCard key={`col3-b-${idx}`} review={review} />
                             ))}
                         </div>
@@ -124,12 +129,12 @@ export default function ClientSection() {
                         transition={{ ease: "linear", duration: 25, repeat: Infinity }}
                     >
                         <div className={styles.innerColumn}>
-                            {columnData.map((review, idx) => (
+                            {columnDataSets[3].map((review, idx) => (
                                 <ReviewCard key={`col4-a-${idx}`} review={review} />
                             ))}
                         </div>
                         <div className={styles.innerColumn}>
-                            {columnData.map((review, idx) => (
+                            {columnDataSets[3].map((review, idx) => (
                                 <ReviewCard key={`col4-b-${idx}`} review={review} />
                             ))}
                         </div>
