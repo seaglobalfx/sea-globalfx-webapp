@@ -124,7 +124,7 @@
                     .left {
                         position: absolute;
                         top: 55%;
-                        left: 0;
+                        inset-inline-start: 0;
                         transform: translateY(-50%);
 
                         svg {
@@ -135,13 +135,17 @@
                             @include respond-to("sm") {
                                 max-width: 140px;
                             }
+                        }
+
+                        :global([dir="rtl"]) & {
+                            transform: translateY(-50%) scaleX(-1);
                         }
                     }
 
                     .right {
                         position: absolute;
                         top: 55%;
-                        right: 0;
+                        inset-inline-end: 0;
                         transform: translateY(-50%);
 
                         svg {
@@ -153,11 +157,17 @@
                                 max-width: 140px;
                             }
                         }
+
+                        :global([dir="rtl"]) & {
+                            transform: translateY(-50%) scaleX(-1);
+                        }
                     }
 
                     button {
                         border: none;
-                        padding: 4px 16px 4px 4px;
+                        padding-block: 4px;
+                        padding-inline-start: 4px;
+                        padding-inline-end: 16px;
                         color: #252525;
                         justify-content: center;
                         cursor: pointer;
@@ -171,6 +181,12 @@
                         font-weight: 600;
                         line-height: normal;
                         @include font-semibold;
+
+                        img {
+                            :global([dir="rtl"]) & {
+                                transform: scaleX(-1);
+                            }
+                        }
                     }
                 }
 
@@ -215,7 +231,7 @@
                             span {
                                 display: block;
                                 color: var(--Black-Body, #fff);
-                                text-align: right;
+                                text-align: end;
                                 font-size: 20px;
                                 font-style: normal;
                                 font-weight: 600;

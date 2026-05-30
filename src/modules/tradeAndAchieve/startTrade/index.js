@@ -1,30 +1,31 @@
+'use client'
 import React from 'react'
 import styles from './startTrade.module.scss';
-import classNames from 'classnames';
+import { useLanguage } from '@/context/LanguageContext';
+
 const EarthImage = '/assets/images/start-trade.png';
 const UserIcon = '/assets/icons/user.svg';
-const DemoIcon = '/assets/icons/demo.svg';
+
 export default function StartTrade() {
+    const { t } = useLanguage();
     return (
         <div className={styles.startTrading}>
             <div className='container-xs'>
                 <div className={styles.box}>
                     <div className={styles.grid}>
                         <div className={styles.griditems}>
-                            <h3 >
-                                Start Trading. <br />
-                                Start   <span> Winning.</span>
+                            <h3>
+                                {t('startTrade.titleLine1')} <br />
+                                {t('startTrade.titleLine2Start')}<span>{t('startTrade.titleSpan')}</span>
                             </h3>
                             <h6>
-                                Choose the trading platform that matches your experience level and strategy, and access global markets with Sea Global’s reliable trading infrastructure.
+                                {t('startTrade.desc')}
                             </h6>
-                            <div
-                                className={styles.twoButtonalignment}
-                            >
+                            <div className={styles.twoButtonalignment}>
                                 <a href='https://client.seaglobalfx.com/?tab=register' target='_blank'>
-                                    <button className={styles.orange} >
+                                    <button className={styles.orange}>
                                         <img src={UserIcon} alt='UserIcon' />
-                                        Open Live Account
+                                        {t('startTrade.openAccount')}
                                     </button>
                                 </a>
                             </div>
@@ -37,6 +38,6 @@ export default function StartTrade() {
                     </div>
                 </div>
             </div>
-        </div >
+        </div>
     )
 }

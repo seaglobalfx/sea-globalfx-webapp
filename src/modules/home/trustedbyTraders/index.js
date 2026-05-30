@@ -10,6 +10,7 @@ import 'swiper/css/navigation';
 import { Autoplay, EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from 'next/image';
+import { useLanguage } from '@/context/LanguageContext';
 const QuoteIcon = '/assets/icons/quote.svg';
 const Meena = '/assets/images/meena.webp';
 const Kevin = '/assets/images/Kevin.webp';
@@ -104,16 +105,16 @@ const testimonials = [
 ];
 
 export default function TrustedbyTraders() {
+    const { t } = useLanguage();
+
     return (
         <div className={styles.trustedbyTraders}>
             <div className={styles.title}>
                 <h2>
-                    Trusted by Traders <span>Worldwide</span>
+                    {t('clientSection.titleStart')} <span>{t('clientSection.titleSpan')}</span>
                 </h2>
                 <p>
-                    Our platform is recognized for its commitment to transparent pricing,
-                    reliable execution, and professional
-                    service. Thousands of traders choose us for our technology, support, and trading conditions.
+                    {t('clientSection.desc')}
                 </p>
             </div>
             <Swiper

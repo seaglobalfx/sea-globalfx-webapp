@@ -2,6 +2,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import styles from './easySteps.module.scss';
+import { useLanguage } from '@/context/LanguageContext';
 
 const SystemIcon = '/assets/icons/system.png';
 const KycIcon = '/assets/icons/kyc.png';
@@ -34,6 +35,8 @@ const itemVariants = {
 };
 
 export default function EasySteps() {
+    const { t } = useLanguage();
+
     return (
         <div className={styles.easySteps}>
             <div className='container-xs'>
@@ -45,11 +48,10 @@ export default function EasySteps() {
                     viewport={{ once: true }}
                 >
                     <h2>
-                        Open Your Account in 4 <span>Easy Steps</span>
+                        {t('easySteps.title')}<span>{t('easySteps.titleSpan')}</span>
                     </h2>
                     <p>
-                        Start trading with confidence through a fast, secure, and fully guided onboarding process—designed to get
-                        you from signup to your first trade with minimal friction.
+                        {t('easySteps.desc')}
                     </p>
                 </motion.div>
 
@@ -81,8 +83,8 @@ export default function EasySteps() {
                         }}
                         className={styles.griditems} variants={itemVariants}>
                         <div className={styles.counter}>1</div>
-                        <h3>SignUp</h3>
-                        <p>Create your account in minutes</p>
+                        <h3>{t('easySteps.cards.step1.title')}</h3>
+                        <p>{t('easySteps.cards.step1.desc')}</p>
                         <div className={styles.iconRight}>
                             <img src={SystemIcon} alt='SystemIcon' />
                         </div>
@@ -109,8 +111,8 @@ export default function EasySteps() {
                         }}
                         className={styles.griditems} variants={itemVariants}>
                         <div className={styles.counter}>2</div>
-                        <h3>KYC Verification</h3>
-                        <p>Fast & secure identity verification</p>
+                        <h3>{t('easySteps.cards.step2.title')}</h3>
+                        <p>{t('easySteps.cards.step2.desc')}</p>
                         <div className={styles.iconRight}>
                             <img src={KycIcon} alt='KycIcon' />
                         </div>
@@ -137,8 +139,8 @@ export default function EasySteps() {
                         }}
                         className={styles.griditems} variants={itemVariants}>
                         <div className={styles.counter}>3</div>
-                        <h3>Fund Account</h3>
-                        <p>Add funds securely to start trading</p>
+                        <h3>{t('easySteps.cards.step3.title')}</h3>
+                        <p>{t('easySteps.cards.step3.desc')}</p>
                         <div className={styles.iconRight}>
                             <img src={FundIcon} alt='FundIcon' />
                         </div>
@@ -165,8 +167,8 @@ export default function EasySteps() {
                         }}
                         className={styles.griditems} variants={itemVariants}>
                         <div className={styles.counter}>4</div>
-                        <h3>Start Trading</h3>
-                        <p>Access global markets instantly</p>
+                        <h3>{t('easySteps.cards.step4.title')}</h3>
+                        <p>{t('easySteps.cards.step4.desc')}</p>
                         <div className={styles.iconRight}>
                             <img src={TradingIcon} alt='TradingIcon' />
                         </div>
@@ -176,7 +178,7 @@ export default function EasySteps() {
                     <a href='https://client.seaglobalfx.com/?tab=register' target='_blank'>
                         <button>
                             <img src={UserIcon} alt='UserIcon' />
-                            Open Account
+                            {t('easySteps.openAccount')}
                         </button>
                     </a>
                 </div>

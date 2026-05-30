@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "../../forexMarket/whyTradeForex/whyTradeForex.module.scss";
+import { useLanguage } from "@/context/LanguageContext";
 
 const LiquidityIcon = "/assets/icons/Liquidity.svg";
 const AccessIcon = "/assets/icons/Access.svg";
@@ -38,6 +39,8 @@ const cardAnim = {
 };
 
 export default function TradeIndicesMarket() {
+  const { t } = useLanguage();
+
   return (
     <div className={styles.whyTradeForex}>
       <div className="container-xs">
@@ -45,16 +48,12 @@ export default function TradeIndicesMarket() {
           {/* LEFT CONTENT */}
           <div className={styles.griditems}>
             <motion.h1 variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-              Why Trade Indices with <span> Sea Global</span>
+              {t('whyTradeIndices.title')}<span>{t('whyTradeIndices.titleSpan')}</span>
             </motion.h1>
 
             <motion.div className={styles.text} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
               <p>
-                Global stock indices reflect the performance of leading economies and sectors, offering traders exposure to broad market movements
-                through a single instrument. Trading the Indices Trading Market with Sea Global provides access to major global indices, fast
-                execution, and the flexibility to trade during key market sessions worldwide. By following overall market performance rather than
-                individual stocks, traders can take advantage of global economic trends, volatility, and macro-driven opportunities with greater
-                efficiency.
+                {t('whyTradeIndices.desc')}
               </p>
             </motion.div>
           </div>
@@ -65,10 +64,9 @@ export default function TradeIndicesMarket() {
               <motion.div className={styles.items} variants={cardAnim}>
                 <div className={styles.content}>
                   <img src={LiquidityIcon} alt="LiquidityIcon" />
-                  <h3>Broad Market Exposure</h3>
+                  <h3>{t('whyTradeIndices.cards.exposure.title')}</h3>
                   <p>
-                    Indices allow you to trade the overall performance of a country or region’s stock market without the need to analyze individual
-                    shares.
+                    {t('whyTradeIndices.cards.exposure.desc')}
                   </p>
                 </div>
                 <div className={styles.line}></div>
@@ -77,9 +75,9 @@ export default function TradeIndicesMarket() {
               <motion.div className={styles.items} variants={cardAnim}>
                 <div className={styles.content}>
                   <img src={AccessIcon} alt="AccessIcon" />
-                  <h3>Global Market Access</h3>
+                  <h3>{t('whyTradeIndices.cards.access.title')}</h3>
                   <p>
-                    Trade major global indices across US, European, and Asian sessions, aligning your strategy with international market activity.
+                    {t('whyTradeIndices.cards.access.desc')}
                   </p>
                 </div>
                 <div className={styles.line}></div>
@@ -88,8 +86,8 @@ export default function TradeIndicesMarket() {
               <motion.div className={styles.items} variants={cardAnim}>
                 <div className={styles.content}>
                   <img src={VolatilityIcon} alt="VolatilityIcon" />
-                  <h3>High Volatility Opportunities</h3>
-                  <p>Index markets often experience strong price movements driven by economic data, earnings reports etc.</p>
+                  <h3>{t('whyTradeIndices.cards.volatility.title')}</h3>
+                  <p>{t('whyTradeIndices.cards.volatility.desc')}</p>
                 </div>
                 <div className={styles.line}></div>
               </motion.div>
@@ -97,18 +95,17 @@ export default function TradeIndicesMarket() {
               <motion.div className={styles.items} variants={cardAnim}>
                 <div className={styles.content}>
                   <img src={MinorIcon} alt="MinorIcon" />
-                  <h3>Major Global Indices</h3>
-                  <p>Access a wide range of leading indices, including major US, European, and Asian benchmarks representing top global economies.</p>
+                  <h3>{t('whyTradeIndices.cards.major.title')}</h3>
+                  <p>{t('whyTradeIndices.cards.major.desc')}</p>
                 </div>
               </motion.div>
 
               <motion.div className={styles.items} variants={cardAnim}>
                 <div className={styles.content}>
                   <img src={RiskIcon} alt="RiskIcon" />
-                  <h3>Risk Management Tools</h3>
+                  <h3>{t('whyTradeIndices.cards.risk.title')}</h3>
                   <p>
-                    Utilize advanced order types and platform features to manage risk, set stop losses, and protect your capital in fast-moving
-                    markets.
+                    {t('whyTradeIndices.cards.risk.desc')}
                   </p>
                 </div>
               </motion.div>
@@ -116,10 +113,9 @@ export default function TradeIndicesMarket() {
               <motion.div className={styles.items} variants={cardAnim}>
                 <div className={styles.content}>
                   <img src={ExecutionIcon} alt="ExecutionIcon" />
-                  <h3>Fast & Reliable Execution</h3>
+                  <h3>{t('whyTradeIndices.cards.execution.title')}</h3>
                   <p>
-                    Sea Global’s optimized trading infrastructure delivers low-latency execution, helping reduce slippage during periods of high
-                    market volatility.
+                    {t('whyTradeIndices.cards.execution.desc')}
                   </p>
                 </div>
               </motion.div>

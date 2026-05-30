@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "../../forexMarket/whyTradeForex/whyTradeForex.module.scss";
+import { useLanguage } from "@/context/LanguageContext";
 
 const LiquidityIcon = "/assets/icons/Liquidity.svg";
 const AccessIcon = "/assets/icons/Access.svg";
@@ -31,6 +32,8 @@ const stagger = {
 };
 
 export default function CryptoTrade() {
+  const { t } = useLanguage();
+
   return (
     <div className={styles.whyTradeForex}>
       <div className="container-xs">
@@ -38,15 +41,12 @@ export default function CryptoTrade() {
           {/* LEFT CONTENT */}
           <motion.div className={styles.griditems} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
             <h1>
-              Crypto <span>Trading Market</span>
+              {t("whyTradeCrypto.title")}<span>{t("whyTradeCrypto.titleSpan")}</span>
             </h1>
 
             <div className={styles.text}>
               <p>
-                Cryptocurrencies represent a rapidly evolving digital asset class driven by technology, innovation, and global adoption. Trading the
-                Crypto Trading Market with Sea Global provides access to leading digital assets, efficient execution, and the flexibility to trade in
-                dynamic, fast-moving market conditions. With 24/7 availability and high volatility, crypto trading allows market participants to
-                respond quickly to price movements influenced by market sentiment, adoption trends, and macroeconomic developments.
+                {t("whyTradeCrypto.desc")}
               </p>
             </div>
           </motion.div>
@@ -57,43 +57,43 @@ export default function CryptoTrade() {
               {[
                 {
                   icon: LiquidityIcon,
-                  title: "Exposure to Digital Assets Market",
-                  text: "Cryptocurrencies allow you to trade price movements of blockchain-based assets influenced by innovation, adoption, and market demand.",
+                  title: t("whyTradeCrypto.cards.exposure.title"),
+                  text: t("whyTradeCrypto.cards.exposure.desc"),
                 },
                 {
                   icon: AccessIcon,
-                  title: "24/7 Market Access",
-                  text: "Trade cryptocurrency markets around the clock, enabling continuous participation without the limitations of traditional market hours.",
+                  title: t("whyTradeCrypto.cards.access.title"),
+                  text: t("whyTradeCrypto.cards.access.desc"),
                 },
                 {
                   icon: VolatilityIcon,
-                  title: "High Volatility Opportunities",
-                  text: "Crypto markets are known for strong price fluctuations, creating frequent opportunities for both short-term trading and longer-term strategies.",
+                  title: t("whyTradeCrypto.cards.volatility.title"),
+                  text: t("whyTradeCrypto.cards.volatility.desc"),
                 },
                 {
                   icon: MinorIcon,
-                  title: "Major Cryptocurrencies",
-                  text: "Access a selection of leading digital assets, including widely traded cryptocurrencies representing the broader crypto market.",
+                  title: t("whyTradeCrypto.cards.major.title"),
+                  text: t("whyTradeCrypto.cards.major.desc"),
                 },
                 {
                   icon: RiskIcon,
-                  title: "Risk Management Tools",
-                  text: "Utilize advanced order types and platform features to manage exposure, set stop losses, and control risk in volatile crypto markets.",
+                  title: t("whyTradeCrypto.cards.risk.title"),
+                  text: t("whyTradeCrypto.cards.risk.desc"),
                 },
                 {
                   icon: ExecutionIcon,
-                  title: "Fast & Reliable Execution",
-                  text: "Sea Global’s optimized trading infrastructure delivers low-latency execution, helping reduce slippage during periods of high market activity.",
+                  title: t("whyTradeCrypto.cards.execution.title"),
+                  text: t("whyTradeCrypto.cards.execution.desc"),
                 },
               ].map((item, index) => (
                 <motion.div key={index} className={styles.items} variants={fadeUp}>
                   <div className={styles.content}>
-                    <img src={item.icon} alt={item.title} />
-                    <h3>{item.title}</h3>
-                    <p>{item.text}</p>
+                     <img src={item.icon} alt={item.title} />
+                     <h3>{item.title}</h3>
+                     <p>{item.text}</p>
                   </div>
 
-                  {index < 2 && <div className={styles.line}></div>}
+                  {index < 3 && <div className={styles.line}></div>}
                 </motion.div>
               ))}
             </div>

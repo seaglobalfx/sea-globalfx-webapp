@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "../../forexMarket/whyTradeForex/whyTradeForex.module.scss";
+import { useLanguage } from "@/context/LanguageContext";
 
 const LiquidityIcon = "/assets/icons/Liquidity.svg";
 const AccessIcon = "/assets/icons/Access.svg";
@@ -38,6 +39,8 @@ const cardAnim = {
 };
 
 export default function CommoditiesTrade() {
+  const { t } = useLanguage();
+
   return (
     <div className={styles.whyTradeForex}>
       <div className="container-xs">
@@ -45,16 +48,12 @@ export default function CommoditiesTrade() {
           {/* LEFT CONTENT */}
           <div className={styles.griditems}>
             <motion.h1 variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-              Commodities <span> Trading Market </span>
+              {t('whyTradeCommodities.title')}<span> {t('whyTradeCommodities.titleSpan')} </span>
             </motion.h1>
 
             <motion.div className={styles.text} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
               <p>
-                Commodities are essential assets that drive the global economy, offering traders opportunities based on supply, demand, and
-                macroeconomic trends. Trading the Commodities Trading Market with Sea Global provides access to key global markets, reliable
-                execution, and the flexibility to trade across different market conditions. From energy products to metals and agricultural assets,
-                commodities allow traders to respond to global events, inflation trends, and shifts in economic activity while diversifying across
-                multiple sectors.
+                {t('whyTradeCommodities.desc')}
               </p>
             </motion.div>
           </div>
@@ -65,10 +64,9 @@ export default function CommoditiesTrade() {
               <motion.div className={styles.items} variants={cardAnim}>
                 <div className={styles.content}>
                   <img src={LiquidityIcon} alt="LiquidityIcon" />
-                  <h3>Exposure to Global Supply & Demand</h3>
+                  <h3>{t('whyTradeCommodities.cards.supplyDemand.title')}</h3>
                   <p>
-                    Commodities allow you to trade price movements driven by real-world factors such as production levels, weather conditions, and
-                    geopolitical developments.
+                    {t('whyTradeCommodities.cards.supplyDemand.desc')}
                   </p>
                 </div>
                 <div className={styles.line}></div>
@@ -77,10 +75,9 @@ export default function CommoditiesTrade() {
               <motion.div className={styles.items} variants={cardAnim}>
                 <div className={styles.content}>
                   <img src={AccessIcon} alt="AccessIcon" />
-                  <h3>Diverse Market Opportunities</h3>
+                  <h3>{t('whyTradeCommodities.cards.opportunities.title')}</h3>
                   <p>
-                    Trade a wide range of commodities across energy, metals, and agricultural markets, enabling diversification across different
-                    sectors of the global economy.
+                    {t('whyTradeCommodities.cards.opportunities.desc')}
                   </p>
                 </div>
                 <div className={styles.line}></div>
@@ -89,10 +86,9 @@ export default function CommoditiesTrade() {
               <motion.div className={styles.items} variants={cardAnim}>
                 <div className={styles.content}>
                   <img src={VolatilityIcon} alt="VolatilityIcon" />
-                  <h3>High Volatility Potential</h3>
+                  <h3>{t('whyTradeCommodities.cards.volatility.title')}</h3>
                   <p>
-                    Commodity markets often experience sharp price movements, creating opportunities for both short-term traders and longer-term
-                    positioning strategies.
+                    {t('whyTradeCommodities.cards.volatility.desc')}
                   </p>
                 </div>
                 <div className={styles.line}></div>
@@ -101,10 +97,9 @@ export default function CommoditiesTrade() {
               <motion.div className={styles.items} variants={cardAnim}>
                 <div className={styles.content}>
                   <img src={MinorIcon} alt="MinorIcon" />
-                  <h3>Major Global Commodities</h3>
+                  <h3>{t('whyTradeCommodities.cards.major.title')}</h3>
                   <p>
-                    Access popular commodities including energy products, precious and industrial metals, and key agricultural assets traded on global
-                    markets.
+                    {t('whyTradeCommodities.cards.major.desc')}
                   </p>
                 </div>
               </motion.div>
@@ -112,10 +107,9 @@ export default function CommoditiesTrade() {
               <motion.div className={styles.items} variants={cardAnim}>
                 <div className={styles.content}>
                   <img src={RiskIcon} alt="RiskIcon" />
-                  <h3>Risk Management Tools</h3>
+                  <h3>{t('whyTradeCommodities.cards.risk.title')}</h3>
                   <p>
-                    Utilize advanced order types and platform tools to manage exposure, apply stop losses, and control risk in fast-moving commodity
-                    markets.
+                    {t('whyTradeCommodities.cards.risk.desc')}
                   </p>
                 </div>
               </motion.div>
@@ -123,10 +117,9 @@ export default function CommoditiesTrade() {
               <motion.div className={styles.items} variants={cardAnim}>
                 <div className={styles.content}>
                   <img src={ExecutionIcon} alt="ExecutionIcon" />
-                  <h3>Fast Execution</h3>
+                  <h3>{t('whyTradeCommodities.cards.execution.title')}</h3>
                   <p>
-                    Sea Global’s optimized trading infrastructure ensures low-latency execution, helping minimize slippage during periods of increased
-                    market volatility.
+                    {t('whyTradeCommodities.cards.execution.desc')}
                   </p>
                 </div>
               </motion.div>

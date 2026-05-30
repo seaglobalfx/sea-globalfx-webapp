@@ -1,0 +1,146 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.marketPlatform {
+    background-image: url('/assets/images/platform.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    position: relative;
+    padding: 225px 0;
+    overflow: hidden;
+
+    @include respond-to("sm") {
+        padding: 60px 0 0 0;
+    }
+
+    .leftAlignment {
+        padding-left: max(80px, (100vw - 1240px) / 2);
+
+        @include respond-to("md") {
+            padding: 0 20px;
+        }
+
+        :global(html[dir="rtl"]) & {
+            padding-left: 0;
+            padding-right: max(80px, (100vw - 1240px) / 2);
+
+            @include respond-to("md") {
+                padding: 0 20px;
+            }
+        }
+
+        .screenImage {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+
+            @include respond-to("md") {
+                position: inherit;
+                top: 0;
+                transform: none;
+            }
+
+            :global(html[dir="rtl"]) & {
+                right: auto;
+                left: 0;
+            }
+
+            img {
+                max-width: 900px;
+                display: block;
+
+                @include respond-to("md") {
+                    max-width: 100%;
+                    width: 100%;
+                }
+
+                :global(html[dir="rtl"]) & {
+                    transform: scaleX(-1);
+                }
+            }
+        }
+
+        .content {
+            max-width: 600px;
+
+            @include respond-to("md") {
+                max-width: 100%;
+                padding: 0 0 60px 0;
+            }
+
+            .allIconText {
+                display: flex;
+                gap: 40px;
+
+                .iconCenter {
+                    display: flex;
+                    justify-content: center;
+                    padding: 0 0 16px 0;
+
+                    img {
+                        @include respond-to("sm") {
+                            display: block;
+                            max-width: 40px;
+                        }
+                    }
+                }
+
+                span {
+                    display: block;
+                    color: #828282;
+                    text-align: center;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 105%;
+                    @include font-medium;
+
+                    @include respond-to("sm") {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            p {
+                color: #555;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 105%;
+                @include font-normal;
+                margin: 0 0 24px 0;
+
+                @include respond-to("sm") {
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+            }
+
+            h2 {
+                color: #252525;
+                font-size: 48px;
+                font-style: normal;
+                max-width: 423px;
+                font-weight: 600;
+                line-height: 105%;
+                text-transform: capitalize;
+                @include heading-semibold;
+
+                @include respond-to("sm") {
+                    font-size: 30px;
+                    line-height: 40px;
+                }
+
+                span {
+                    background: linear-gradient(90deg, #DAA71D 0%, #AE7708 100%);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+            }
+        }
+    }
+}

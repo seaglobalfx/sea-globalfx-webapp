@@ -161,4 +161,22 @@
             }
         }
     }
+
+    &.rtl {
+        .starImage {
+            left: auto;
+            right: 0;
+            transform: scaleX(-1);
+        }
+
+        .mobileImage {
+            left: auto;
+            right: 4%;
+        }
+
+        .thinkpadImage {
+            right: auto;
+            left: 0;
+        }
+    }
 }

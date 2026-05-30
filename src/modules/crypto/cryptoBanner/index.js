@@ -1,8 +1,8 @@
-
 'use client';
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/context/LanguageContext';
 
 const HeroImage = '/assets/images/crypto-banner.png';
 const UserIcon = '/assets/icons/user.svg';
@@ -28,6 +28,8 @@ const imageAnim = {
 };
 
 export default function CryptoBanner() {
+    const { t } = useLanguage();
+
     return (
         <div className='common-banner'>
             <div className='left-alignment'>
@@ -44,7 +46,7 @@ export default function CryptoBanner() {
                                 viewport={{ once: true }}
                             >
                                 <button>
-                                    Tight spreads • Fast execution • Deep liquidity
+                                    {t('cryptoBanner.tagline')}
                                 </button>
                             </motion.div>
 
@@ -54,8 +56,8 @@ export default function CryptoBanner() {
                                 whileInView="visible"
                                 viewport={{ once: true }}
                             >
-                                Trade Digital Assets <br />
-                                Across Global <span>Crypto</span> Markets
+                                {t('cryptoBanner.titleStart')} <br />
+                                {t('cryptoBanner.titleSpan')} {t('cryptoBanner.titleEnd')}
                             </motion.h2>
 
                             <motion.p
@@ -64,8 +66,7 @@ export default function CryptoBanner() {
                                 whileInView="visible"
                                 viewport={{ once: true }}
                             >
-                                Access global crypto markets through Sea Global’s secure trading infrastructure, offering
-                                transparent pricing, fast execution, and reliable liquidity across market conditions.
+                                {t('cryptoBanner.desc')}
                             </motion.p>
 
                             <motion.div
@@ -82,7 +83,7 @@ export default function CryptoBanner() {
                                         whileTap={{ scale: 0.97 }}
                                     >
                                         <img src={UserIcon} alt='UserIcon' />
-                                        Open Account
+                                        {t('hero.openAccount')}
                                     </motion.button>
                                 </a>
                                 <a target='_blank' href='https://client.seaglobalfx.com/'>
@@ -92,7 +93,7 @@ export default function CryptoBanner() {
                                         whileTap={{ scale: 0.97 }}
                                     >
                                         <img src={DemoIcon} alt='DemoIcon' />
-                                        Try Demo
+                                        {t('hero.tryDemo')}
                                     </motion.button>
                                 </a>
                             </motion.div>

@@ -8,6 +8,8 @@ const LogoWhite = '/assets/logo/footer-logo.svg';
 const ShareIcon = '/assets/icons/share.svg';
 import { useEffect, useState } from 'react';
 import classNames from 'classnames';
+import { useLanguage } from '@/context/LanguageContext';
+
 const dropdownVariants = {
     hidden: {
         opacity: 0,
@@ -28,6 +30,8 @@ export default function Header() {
     const [open, setOpen] = useState(false);
     const [dropdown, setDropdown] = useState(false);
     const [headerOpen, setHeaderOpen] = useState(false);
+    const [langOpen, setLangOpen] = useState(false);
+    const { locale, changeLanguage, t } = useLanguage();
 
     const pathname = usePathname();
     useEffect(() => {
@@ -53,7 +57,7 @@ export default function Header() {
                                     onMouseLeave={() => setOpen(false)}
                                 >
                                     <a className={styles.menuSpacing} aria-label="Markets">
-                                        Markets
+                                        {t('nav.markets')}
                                     </a>
 
                                     <motion.div
@@ -63,16 +67,16 @@ export default function Header() {
                                         animate={open ? 'visible' : 'hidden'}
                                     >
                                         <div className={styles.dropdownSpacing}>
-                                            <Link className={pathname === "/forex-market" ? styles.active : ""} href="/forex-market" onClick={() => setOpen(false)}>Forex</Link>
-                                            <Link className={pathname === "/indices-market" ? styles.active : ""} href="/indices-market" onClick={() => setOpen(false)}>Indices</Link>
-                                            <Link className={pathname === "/commodities" ? styles.active : ""} href="/commodities" onClick={() => setOpen(false)}>Commodities</Link>
-                                            <Link className={pathname === "/stocks" ? styles.active : ""} href="/stocks" onClick={() => setOpen(false)}>Stocks</Link>
-                                            <Link className={pathname === "/crypto" ? styles.active : ""} href="/crypto" onClick={() => setOpen(false)}>Crypto</Link>
-                                            <Link className={pathname === "/etfs" ? styles.active : ""} href="/etfs" onClick={() => setOpen(false)}>ETFs</Link>
+                                            <Link className={pathname === "/forex-market" ? styles.active : ""} href="/forex-market" onClick={() => setOpen(false)}>{t('nav.forex')}</Link>
+                                            <Link className={pathname === "/indices-market" ? styles.active : ""} href="/indices-market" onClick={() => setOpen(false)}>{t('nav.indices')}</Link>
+                                            <Link className={pathname === "/commodities" ? styles.active : ""} href="/commodities" onClick={() => setOpen(false)}>{t('nav.commodities')}</Link>
+                                            <Link className={pathname === "/stocks" ? styles.active : ""} href="/stocks" onClick={() => setOpen(false)}>{t('nav.stocks')}</Link>
+                                            <Link className={pathname === "/crypto" ? styles.active : ""} href="/crypto" onClick={() => setOpen(false)}>{t('nav.crypto')}</Link>
+                                            <Link className={pathname === "/etfs" ? styles.active : ""} href="/etfs" onClick={() => setOpen(false)}>{t('nav.etfs')}</Link>
                                         </div>
                                     </motion.div>
                                 </div>
-                                <Link className={pathname === "/accounts" ? styles.active : ""} href="/accounts" aria-label='Accounts'>Accounts</Link>
+                                <Link className={pathname === "/accounts" ? styles.active : ""} href="/accounts" aria-label='Accounts'>{t('nav.accounts')}</Link>
                                 {/* <Link href="/platforms" className={classNames(styles.menuSpacing, pathname === "/platforms" ? styles.active : "")} aria-label='Platforms'>Platforms</Link> */}
                                 <div
                                     className={styles.dropdownMenu}
@@ -80,7 +84,7 @@ export default function Header() {
                                     onMouseLeave={() => setOpen(false)}
                                 >
                                     <a className={styles.menuSpacing} aria-label="Trade">
-                                        Trade
+                                        {t('nav.trade')}
                                     </a>
 
                                     <motion.div
@@ -90,21 +94,21 @@ export default function Header() {
                                         animate={open ? 'visible' : 'hidden'}
                                     >
                                         <div className={styles.dropdownSpacing}>
-                                            <Link className={pathname === "/platforms" ? styles.active : ""} href="/platforms" onClick={() => setOpen(false)}>Platforms</Link>
-                                            <Link className={pathname === "/advanced-trading-solutions" ? styles.active : ""} href="/advanced-trading-solutions" onClick={() => setOpen(false)}>Trading Solutions</Link>
-                                            <Link className={pathname === "/trade-to-win" ? styles.active : ""} href="/trade-to-win" onClick={() => setOpen(false)}>Trade and Achieve</Link>
+                                            <Link className={pathname === "/platforms" ? styles.active : ""} href="/platforms" onClick={() => setOpen(false)}>{t('nav.platforms')}</Link>
+                                            <Link className={pathname === "/advanced-trading-solutions" ? styles.active : ""} href="/advanced-trading-solutions" onClick={() => setOpen(false)}>{t('nav.tradingSolutions')}</Link>
+                                            <Link className={pathname === "/trade-to-win" ? styles.active : ""} href="/trade-to-win" onClick={() => setOpen(false)}>{t('nav.tradeAndAchieve')}</Link>
 
                                         </div>
                                     </motion.div>
                                 </div>
-                                <Link href="/partners" className={classNames(styles.menuSpacing, pathname === "/partners" ? styles.active : "")} aria-label='partners'>Partners</Link>
+                                <Link href="/partners" className={classNames(styles.menuSpacing, pathname === "/partners" ? styles.active : "")} aria-label='partners'>{t('nav.partners')}</Link>
                                 <div
                                     className={styles.dropdownMenu}
                                     onMouseEnter={() => setOpen(true)}
                                     onMouseLeave={() => setOpen(false)}
                                 >
                                     <a className={styles.menuSpacing} aria-label="Company">
-                                        Company
+                                        {t('nav.company')}
                                     </a>
 
                                     <motion.div
@@ -114,23 +118,58 @@ export default function Header() {
                                         animate={open ? 'visible' : 'hidden'}
                                     >
                                         <div className={styles.dropdownSpacing}>
-                                            <Link className={pathname === "/about-us" ? styles.active : ""} href="/about-us" onClick={() => setOpen(false)}>About Us</Link>
-                                            <Link className={pathname === "/contact-us" ? styles.active : ""} href="/contact-us" onClick={() => setOpen(false)}>Contact Us</Link>
+                                            <Link className={pathname === "/about-us" ? styles.active : ""} href="/about-us" onClick={() => setOpen(false)}>{t('nav.aboutUs')}</Link>
+                                            <Link className={pathname === "/contact-us" ? styles.active : ""} href="/contact-us" onClick={() => setOpen(false)}>{t('nav.contactUs')}</Link>
 
                                         </div>
                                     </motion.div>
                                 </div>
-                                <Link href="/blog" className={classNames(styles.menuSpacing, pathname === "/blog" ? styles.active : "")} aria-label='partners'>Blogs</Link>
+                                <Link href="/blog" className={classNames(styles.menuSpacing, pathname === "/blog" ? styles.active : "")} aria-label='partners'>{t('nav.blogs')}</Link>
 
-                                <Link href="/contact-us" className={classNames(styles.menuSpacing, pathname === "/contact-us" ? styles.active : "")} aria-label='contact-us'>Contact Us</Link>
+                                <Link href="/contact-us" className={classNames(styles.menuSpacing, pathname === "/contact-us" ? styles.active : "")} aria-label='contact-us'>{t('nav.contactUs')}</Link>
+
+                                <div className={styles.langSwitcher}>
+                                    <div
+                                        className={styles.langDropdown}
+                                        onMouseEnter={() => setLangOpen(true)}
+                                        onMouseLeave={() => setLangOpen(false)}
+                                    >
+                                        <button className={styles.langBtn}>
+                                            <span>{locale === 'en' ? 'English' : 'العربية'}</span>
+                                            <svg className={styles.arrow} width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                            </svg>
+                                        </button>
+
+                                        <motion.div
+                                            className={styles.langMenu}
+                                            variants={dropdownVariants}
+                                            initial="hidden"
+                                            animate={langOpen ? 'visible' : 'hidden'}
+                                        >
+                                            <div className={styles.langMenuInner}>
+                                                <button
+                                                    className={classNames(styles.langItem, locale === 'en' ? styles.active : '')}
+                                                    onClick={() => { changeLanguage('en'); setLangOpen(false); }}
+                                                >
+                                                    English
+                                                </button>
+                                                <button
+                                                    className={classNames(styles.langItem, locale === 'ar' ? styles.active : '')}
+                                                    onClick={() => { changeLanguage('ar'); setLangOpen(false); }}
+                                                >
+                                                    العربية
+                                                </button>
+                                            </div>
+                                        </motion.div>
+                                    </div>
+                                </div>
                             </div>
                             <div className={styles.button}>
                                 <a href='https://client.seaglobalfx.com/' target='_blank'>
-                                    <button>
-                                        <img src={ShareIcon} alt='ShareIcon' />
-                                        <span>
-                                            Login
-                                        </span>
+                                    <button type="button" className={styles.loginBtn}>
+                                        <img src={ShareIcon} alt="" />
+                                        <span>{t('common.login')}</span>
                                     </button>
                                 </a>
                             </div>
@@ -145,7 +184,7 @@ export default function Header() {
             <div className={classNames(styles.mobileHeader, headerOpen ? styles.show : styles.hide)}>
                 <div className={styles.smallHeader}>
                     <div className={styles.logo}>
-                        <Link href="/" >
+                        <Link href="/" onClick={() => setHeaderOpen(false)}>
                             <img src={LogoWhite} alt='LogoWhite' />
                         </Link>
                     </div>
@@ -163,7 +202,7 @@ export default function Header() {
                     </div> */}
                     <div className={styles.menuIconAlignment}>
                         <a>
-                            Markets
+                            {t('nav.markets')}
                         </a>
                         <div className={classNames(styles.icon, dropdown ? styles.rotate : "")} onClick={() => setDropdown(!dropdown)}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
@@ -173,57 +212,78 @@ export default function Header() {
                     </div>
                     <div className={classNames(styles.submenu, dropdown ? styles.show : styles.hide)}>
                         <div className={styles.space}>
-                            <Link className={pathname === "/forex-market" ? styles.active : ""} href="/forex-market" onClick={() => setHeaderOpen(false)}>Forex</Link>
-                            <Link className={pathname === "/indices-market" ? styles.active : ""} href="/indices-market" onClick={() => setHeaderOpen(false)}>Indices</Link>
-                            <Link className={pathname === "/commodities" ? styles.active : ""} href="/commodities" onClick={() => setHeaderOpen(false)}>Commodities</Link>
-                            <Link className={pathname === "/stocks" ? styles.active : ""} href="/stocks" onClick={() => setHeaderOpen(false)}>Stocks</Link>
-                            <Link className={pathname === "/crypto" ? styles.active : ""} href="/crypto" onClick={() => setHeaderOpen(false)}>Crypto</Link>
-                            <Link className={pathname === "/etfs" ? styles.active : ""} href="/etfs" onClick={() => setHeaderOpen(false)}>ETFs</Link>
+                            <Link className={pathname === "/forex-market" ? styles.active : ""} href="/forex-market" onClick={() => setHeaderOpen(false)}>{t('nav.forex')}</Link>
+                            <Link className={pathname === "/indices-market" ? styles.active : ""} href="/indices-market" onClick={() => setHeaderOpen(false)}>{t('nav.indices')}</Link>
+                            <Link className={pathname === "/commodities" ? styles.active : ""} href="/commodities" onClick={() => setHeaderOpen(false)}>{t('nav.commodities')}</Link>
+                            <Link className={pathname === "/stocks" ? styles.active : ""} href="/stocks" onClick={() => setHeaderOpen(false)}>{t('nav.stocks')}</Link>
+                            <Link className={pathname === "/crypto" ? styles.active : ""} href="/crypto" onClick={() => setHeaderOpen(false)}>{t('nav.crypto')}</Link>
+                            <Link className={pathname === "/etfs" ? styles.active : ""} href="/etfs" onClick={() => setHeaderOpen(false)}>{t('nav.etfs')}</Link>
                         </div>
                     </div>
                     <div className={styles.menuIconAlignment} onClick={() => setHeaderOpen(false)}>
                         <Link href="/accounts">
-                            Accounts
+                            {t('nav.accounts')}
                         </Link>
                     </div>
                     <div className={styles.menuIconAlignment} onClick={() => setHeaderOpen(false)}>
                         <Link href="/platforms">
-                            Platforms
+                            {t('nav.platforms')}
                         </Link>
                     </div>
 
                     <div className={styles.menuIconAlignment} onClick={() => setHeaderOpen(false)}>
                         <Link href="/blog">
-                            Blogs
+                            {t('nav.blogs')}
                         </Link>
                     </div>
                     <div className={styles.menuIconAlignment} onClick={() => setHeaderOpen(false)}>
                         <Link href="/partners">
-                            Partners
+                            {t('nav.partners')}
                         </Link>
                     </div>
                     <div className={styles.menuIconAlignment} onClick={() => setHeaderOpen(false)}>
                         <Link href="/about-us">
-                            About Us
+                            {t('nav.aboutUs')}
                         </Link>
                     </div>
                     <div className={styles.menuIconAlignment} onClick={() => setHeaderOpen(false)}>
                         <Link href="/advanced-trading-solutions">
-                            Trading Solutions
+                            {t('nav.tradingSolutions')}
                         </Link>
                     </div>
                     <div className={styles.menuIconAlignment} onClick={() => setHeaderOpen(false)}>
-                        <Link className={pathname === "/trade-to-win" ? styles.active : ""} href="/trade-to-win" onClick={() => setOpen(false)}>Trade and Achieve</Link>
+                        <Link className={pathname === "/trade-to-win" ? styles.active : ""} href="/trade-to-win" onClick={() => setHeaderOpen(false)}>{t('nav.tradeAndAchieve')}</Link>
                     </div>
                     <div className={styles.menuIconAlignment} onClick={() => setHeaderOpen(false)}>
                         <Link href="/contact-us">
-                            Contact Us
+                            {t('nav.contactUs')}
                         </Link>
                     </div>
+
                 </div>
                 <div className={styles.headerFooter} onClick={() => setHeaderOpen(false)}>
+                    <div className={styles.mobileLangSwitcher}>
+                        <button
+                            className={classNames(styles.mobileLangBtn, locale === 'en' ? styles.active : '')}
+                            onClick={() => {
+                                changeLanguage('en');
+                                setHeaderOpen(false);
+                            }}
+                        >
+                            English
+                        </button>
+                        <button
+                            className={classNames(styles.mobileLangBtn, locale === 'ar' ? styles.active : '')}
+                            onClick={() => {
+                                changeLanguage('ar');
+                                setHeaderOpen(false);
+                            }}
+                        >
+                            العربية
+                        </button>
+                    </div>
                     <a href='https://client.seaglobalfx.com/' target='_blank'>
-                        Login
+                        {t('common.login')}
                     </a>
                 </div>
 

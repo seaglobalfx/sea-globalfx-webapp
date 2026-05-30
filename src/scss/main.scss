@@ -15,12 +15,12 @@
     }
 
     .left-alignment {
-        padding-left: max(20px, (100vw - 1340px) / 2);
-        padding-right: 80px;
+        padding-inline-start: max(20px, (100vw - 1340px) / 2);
+        padding-inline-end: 80px;
 
         @include respond-to("md") {
-            padding-left: 20px;
-            padding-right: 20px;
+            padding-inline-start: 20px;
+            padding-inline-end: 20px;
         }
 
         .grid {
@@ -75,6 +75,10 @@
                         @include respond-to("sm") {
                             max-width: 100%;
                         }
+
+                        html[dir="rtl"] & {
+                            transform: scaleX(-1);
+                        }
                     }
                 }
 
@@ -104,7 +108,9 @@
 
                     button {
                         border: none;
-                        padding: 4px 16px 4px 4px;
+                        padding: 4px;
+                        padding-inline-start: 4px;
+                        padding-inline-end: 16px;
                         display: flex;
                         align-items: center;
                         gap: 10px;
@@ -227,6 +233,25 @@
                     }
                 }
             }
+        }
+    }
+}
+
+html[dir="rtl"] {
+    .two-button-alignment button,
+    .twoButtonalignment button,
+    button.orange,
+    button.black {
+        padding-block: 4px !important;
+        padding-inline-start: 4px !important;
+        padding-inline-end: 16px !important;
+
+        img {
+            order: 2;
+        }
+
+        span {
+            order: 1;
         }
     }
 }

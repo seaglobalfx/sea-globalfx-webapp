@@ -37,6 +37,10 @@
                 @include respond-to("sm") {
                     max-width: 90%;
                 }
+
+                :global(html[dir="rtl"]) & {
+                    transform: scaleX(-1);
+                }
             }
         }
 

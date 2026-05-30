@@ -8,6 +8,7 @@ import StocksDataTable from '@/modules/stocks/stocksDataTable';
 import CryptoDataTable from '@/modules/crypto/cryptoDataTable';
 import EtfsDataTable from '@/modules/etfs/etfsDataTable';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/context/LanguageContext';
 
 const fadeUp = {
     hidden: { opacity: 0, y: 20 },
@@ -26,6 +27,23 @@ const stagger = {
 
 
 export default function AvailableInstruments({ details, title }) {
+    const { t } = useLanguage();
+
+    const getTranslationKey = (titleVal) => {
+        switch (titleVal) {
+            case 'forex-market': return 'availableInstruments.forex';
+            case 'indices-market': return 'availableInstruments.indices';
+            case 'commodities': return 'availableInstruments.commodities';
+            case 'stocks': return 'availableInstruments.stocks';
+            case 'crypto': return 'availableInstruments.crypto';
+            case 'etfs': return 'availableInstruments.etfs';
+            default: return '';
+        }
+    };
+
+    const descKey = getTranslationKey(title);
+    const translatedDetails = descKey ? t(descKey) : details;
+
     function scriptlod() {
         console.log("apslapslalspa", title)
         switch (title) {
@@ -71,11 +89,11 @@ export default function AvailableInstruments({ details, title }) {
                     viewport={{ once: true }}
                 >
                     <motion.h2 variants={fadeUp}>
-                        Available <span>Instruments</span>
+                        {t('availableInstruments.titleStart')}<span>{t('availableInstruments.titleSpan')}</span>
                     </motion.h2>
 
                     <motion.p variants={fadeUp}>
-                        {details}
+                        {translatedDetails}
                     </motion.p>
                 </motion.div>
                 {scriptlod()}

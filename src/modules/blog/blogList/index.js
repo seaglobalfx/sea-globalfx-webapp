@@ -5,13 +5,15 @@ import classNames from "classnames";
 import { GetAllCategories } from "@/graphql/query/getAllCategory";
 import { GetAllBlogs } from "@/graphql/query/getAllBlogs";
 import Link from "next/link";
-import moment from "moment";
 import { IMAGE_URL } from "@/utils/config";
 import { useQuery } from "@apollo/client";
 import { useParams } from "next/navigation";
+import { useLanguage } from "@/context/LanguageContext";
+import { formatDate } from "@/utils/formatDate";
 const DownIcon = "/assets/icons/down-xs.svg";
 const BlogImage = "/assets/images/blog-img.png";
 export default function BlogList() {
+  const { locale, t } = useLanguage();
   const [dropdown, setDropdown] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("all");
   const params = useParams();
@@ -49,12 +51,12 @@ export default function BlogList() {
         <div className={styles.headerAlignment}>
           <div className={styles.text}>
             <h2>
-              Latest <span>Blogs</span>
+              {t("latestBlogs.titleStart")} <span>{t("latestBlogs.titleSpan")}</span>
             </h2>
           </div>
           <div className={styles.button}>
             <button onClick={() => setDropdown(!dropdown)}>
-              {selectedCategory === "all" ? "All Categories" : selectedCategory}
+              {selectedCategory === "all" ? t("latestBlogs.allCategories") : selectedCategory}
               <img className={classNames(dropdown ? styles.rotate : "")} src={DownIcon} alt="DownIcon" />
             </button>
             <div className={classNames(styles.dropdown, dropdown ? styles.show : styles.hide)}>
@@ -66,7 +68,7 @@ export default function BlogList() {
                       setDropdown(false);
                     }}
                   >
-                    All Categories
+                    {t("latestBlogs.allCategories")}
                   </span>
                 )}
                 {data?.categories?.map((category) => (
@@ -100,7 +102,7 @@ export default function BlogList() {
                       <h3>{blog.title}</h3>
                       <div className={styles.textAlignment}>
                         <span>{blog.author?.name}</span>
-                        <span>. {moment(blog.publishedAt).format("D MMMM YYYY")}</span>
+                        <span>. {formatDate(blog.publishedAt, locale, "D MMMM YYYY")}</span>
                       </div>
                     </div>
                   </div>

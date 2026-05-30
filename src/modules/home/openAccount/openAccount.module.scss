@@ -1,0 +1,112 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.openAccount {
+    padding: 120px 0;
+
+    @include respond-to("sm") {
+        padding: 60px 0;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 595px 1fr;
+        gap: 30px;
+
+        @include respond-to("md") {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .card {
+            padding: 32px;
+            border: 1px solid var(--Stroke-Main, #B5B5B5);
+            background: #F4F4F4;
+            margin: 0 0 24px 0;
+
+            &:last-child {
+                margin: 0;
+            }
+
+            img {
+                display: block;
+
+            }
+
+            h3 {
+                margin: 24px 0 8px 0;
+                color: var(--Text-Main, #171C18);
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 100%;
+                letter-spacing: -0.24px;
+                @include font-semibold;
+            }
+
+            p {
+                color: #565656;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 100%;
+                letter-spacing: -0.2px;
+                @include font-normal;
+            }
+        }
+
+        .stickySection {
+            position: sticky;
+            top: 120px;
+
+            p {
+                @include font-normal;
+                color: var(--Dark-Body, #747474);
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 105%;
+                margin: 0 0 16px 0;
+
+                @include respond-to("sm") {
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+            }
+
+            .image {
+                img {
+                    display: block;
+                    width: 100%;
+                }
+            }
+
+            h2 {
+                color: #252525;
+                font-size: 48px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 105%;
+                text-transform: capitalize;
+                @include heading-semibold;
+                margin: 0 0 16px 0;
+
+                @include respond-to("sm") {
+                    font-size: 30px;
+                    line-height: 40px;
+                    margin: 0 0 10px 0;
+                }
+
+                span {
+                    background: linear-gradient(90deg, #DAA71D 0%, #AE7708 100%);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+            }
+
+
+        }
+    }
+}

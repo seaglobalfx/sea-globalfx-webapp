@@ -54,7 +54,7 @@
 
                 .items:nth-child(3),
                 .items:last-child {
-                    border-right: none;
+                    border-inline-end: none;
                 }
 
                 .items {
@@ -69,10 +69,10 @@
                         }
                     }
 
-                    border-right: 1px solid #747474;
+                    border-inline-end: 1px solid #747474;
 
                     @include respond-to("sm") {
-                        border-right: none;
+                        border-inline-end: none;
                     }
 
                     .line {

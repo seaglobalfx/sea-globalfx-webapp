@@ -1,27 +1,28 @@
-'use client'
+'use client';
+
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/context/LanguageContext';
 
 const HeroImage = '/assets/images/contact-banner.png';
 const UserIcon = '/assets/icons/user.svg';
 const DemoIcon = '/assets/icons/demo.svg';
 
-/* Animations */
 const fadeUp = {
     hidden: { opacity: 0, y: 30 },
     visible: {
         opacity: 1,
         y: 0,
-        transition: { duration: 0.6, ease: 'easeOut' }
-    }
+        transition: { duration: 0.6, ease: 'easeOut' },
+    },
 };
 
 const stagger = {
     visible: {
         transition: {
-            staggerChildren: 0.15
-        }
-    }
+            staggerChildren: 0.15,
+        },
+    },
 };
 
 const imageAnim = {
@@ -29,18 +30,17 @@ const imageAnim = {
     visible: {
         opacity: 1,
         scale: 1,
-        transition: { duration: 0.8, ease: 'easeOut' }
-    }
+        transition: { duration: 0.8, ease: 'easeOut' },
+    },
 };
 
-
 export default function ContactBanner() {
+    const { t } = useLanguage();
+
     return (
         <div className='common-banner'>
             <div className='left-alignment'>
                 <div className='grid'>
-
-                    {/* LEFT CONTENT */}
                     <div className='grid-items'>
                         <motion.div
                             variants={stagger}
@@ -51,8 +51,8 @@ export default function ContactBanner() {
                                 className='tag-line'
                                 variants={fadeUp}
                             >
-                                <button>
-                                    We’re Here to Help
+                                <button type="button">
+                                    {t('contactBanner.tagLine')}
                                 </button>
                             </motion.div>
 
@@ -60,35 +60,36 @@ export default function ContactBanner() {
                                 className="full-width"
                                 variants={fadeUp}
                             >
-                                We’re here to support <br /> you at <span> every </span> step
+                                {t('contactBanner.titleLine1')} <br />
+                                {t('contactBanner.titleLine2')}
+                                <span>{t('contactBanner.titleSpan')}</span>
+                                {t('contactBanner.titleEnd')}
                             </motion.h1>
 
                             <motion.p variants={fadeUp}>
-                                At Paradise Global Markets, open communication and reliable support are part of how we work. Whether you have a question about your account, need platform assistance, or
-                                want to explore partnership opportunities, our team is here to help.
+                                {t('contactBanner.desc')}
                             </motion.p>
 
                             <motion.div
                                 className='two-button-alignment'
                                 variants={fadeUp}
                             >
-                                <a href='https://client.seaglobalfx.com/?tab=register' target='_blank'>
-                                    <button className='orange'>
-                                        <img src={UserIcon} alt='UserIcon' />
-                                        Open Account
+                                <a href='https://client.seaglobalfx.com/?tab=register' target='_blank' rel='noreferrer'>
+                                    <button type="button" className='orange'>
+                                        <img src={UserIcon} alt='' />
+                                        {t('hero.openAccount')}
                                     </button>
                                 </a>
-                                <a target='_blank' href='https://client.seaglobalfx.com/'>
-                                    <button className='black'>
-                                        <img src={DemoIcon} alt='DemoIcon' />
-                                        Try Demo
+                                <a target='_blank' rel='noreferrer' href='https://client.seaglobalfx.com/'>
+                                    <button type="button" className='black'>
+                                        <img src={DemoIcon} alt='' />
+                                        {t('hero.tryDemo')}
                                     </button>
                                 </a>
                             </motion.div>
                         </motion.div>
                     </div>
 
-                    {/* RIGHT IMAGE */}
                     <div className='grid-items'>
                         <motion.div
                             className='image'
@@ -96,12 +97,11 @@ export default function ContactBanner() {
                             initial="hidden"
                             animate="visible"
                         >
-                            <img src={HeroImage} alt='HeroImage' />
+                            <img src={HeroImage} alt='' />
                         </motion.div>
                     </div>
-
                 </div>
             </div>
         </div>
-    )
+    );
 }

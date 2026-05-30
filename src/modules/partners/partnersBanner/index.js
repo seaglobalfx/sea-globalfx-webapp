@@ -1,10 +1,10 @@
 'use client'
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/context/LanguageContext';
 
 const HeroImage = '/assets/images/Partners.png';
 const UserIcon = '/assets/icons/user.svg';
-const DemoIcon = '/assets/icons/demo.svg';
 
 /* Animations */
 const fadeUp = {
@@ -35,6 +35,7 @@ const imageAnim = {
 
 
 export default function PartnersBanner() {
+    const { t } = useLanguage();
     return (
         <div className='common-banner'>
             <div className='left-alignment'>
@@ -52,7 +53,7 @@ export default function PartnersBanner() {
                                 variants={fadeUp}
                             >
                                 <button>
-                                    Seaglobal FX IB Partners Program
+                                    {t('partnersBanner.tagLine')}
                                 </button>
                             </motion.div>
 
@@ -60,13 +61,12 @@ export default function PartnersBanner() {
                                 className="full-width"
                                 variants={fadeUp}
                             >
-                                Grow Your Forex <br />
-                                <span> Business </span> With Us
+                                {t('partnersBanner.titleLine1')} <br />
+                                <span>{t('partnersBanner.titleSpan')}</span> {t('partnersBanner.titleEnd')}
                             </motion.h1>
 
                             <motion.p variants={fadeUp}>
-                                Build long-term revenue by partnering with Seaglobal FX, a global forex broker
-                                focused on transparency, advanced trading technology, and partner success.
+                                {t('partnersBanner.desc')}
                             </motion.p>
 
                             <motion.div
@@ -76,7 +76,7 @@ export default function PartnersBanner() {
                                 <a href='https://client.seaglobalfx.com/?tab=register' target='_blank'>
                                     <button className='orange'>
                                         <img src={UserIcon} alt='UserIcon' />
-                                        Become a Partner
+                                        {t('partnersBanner.becomePartner')}
                                     </button>
                                 </a>
                             </motion.div>

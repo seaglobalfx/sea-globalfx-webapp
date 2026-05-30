@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "../../forexMarket/whyTradeForex/whyTradeForex.module.scss";
+import { useLanguage } from "@/context/LanguageContext";
 
 const LiquidityIcon = "/assets/icons/Liquidity.svg";
 const AccessIcon = "/assets/icons/Access.svg";
@@ -38,6 +39,8 @@ const cardAnim = {
 };
 
 export default function StocksTrade() {
+  const { t } = useLanguage();
+
   return (
     <div className={styles.whyTradeForex}>
       <div className="container-xs">
@@ -45,15 +48,12 @@ export default function StocksTrade() {
           {/* LEFT CONTENT */}
           <div className={styles.griditems}>
             <motion.h1 variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-              Stocks <span>Trading Market</span>
+              {t('whyTradeStocks.title')}<span>{t('whyTradeStocks.titleSpan')}</span>
             </motion.h1>
 
             <motion.div className={styles.text} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
               <p>
-                Stocks CFDs allow traders to speculate on the price movements of individual company shares without owning the underlying assets.
-                Trading the Stocks Trading Market with Sea Global provides access to leading global companies, efficient execution, and the
-                flexibility to trade both rising and falling markets. By using CFDs, traders can respond to company earnings, economic data, and
-                market news while gaining exposure to major global equities across multiple sectors and regions.
+                {t('whyTradeStocks.desc')}
               </p>
             </motion.div>
           </div>
@@ -64,10 +64,9 @@ export default function StocksTrade() {
               <motion.div className={styles.items} variants={cardAnim}>
                 <div className={styles.content}>
                   <img src={LiquidityIcon} alt="LiquidityIcon" />
-                  <h3>Trade Global Companies</h3>
+                  <h3>{t('whyTradeStocks.cards.companies.title')}</h3>
                   <p>
-                    Gain access to a wide range of shares from major global exchanges, allows you to trade well-known companies across industries and
-                    regions.
+                    {t('whyTradeStocks.cards.companies.desc')}
                   </p>
                 </div>
                 <div className={styles.line}></div>
@@ -76,8 +75,8 @@ export default function StocksTrade() {
               <motion.div className={styles.items} variants={cardAnim}>
                 <div className={styles.content}>
                   <img src={AccessIcon} alt="AccessIcon" />
-                  <h3>Flexible Trading Opportunities</h3>
-                  <p>Stocks CFDs enable you to trade both long and short, giving you opportunities in both bullish and bearish market conditions.</p>
+                  <h3>{t('whyTradeStocks.cards.flexible.title')}</h3>
+                  <p>{t('whyTradeStocks.cards.flexible.desc')}</p>
                 </div>
                 <div className={styles.line}></div>
               </motion.div>
@@ -85,10 +84,9 @@ export default function StocksTrade() {
               <motion.div className={styles.items} variants={cardAnim}>
                 <div className={styles.content}>
                   <img src={VolatilityIcon} alt="VolatilityIcon" />
-                  <h3>Market-Driven Volatility</h3>
+                  <h3>{t('whyTradeStocks.cards.volatility.title')}</h3>
                   <p>
-                    Share prices are influenced by earnings reports, economic data, and company-specific news, creating frequent trading
-                    opportunities.
+                    {t('whyTradeStocks.cards.volatility.desc')}
                   </p>
                 </div>
                 <div className={styles.line}></div>
@@ -97,18 +95,17 @@ export default function StocksTrade() {
               <motion.div className={styles.items} variants={cardAnim}>
                 <div className={styles.content}>
                   <img src={MinorIcon} alt="MinorIcon" />
-                  <h3>Major Global Stocks</h3>
-                  <p>Trade CFDs on leading global companies from US, European, and Asian markets, representing key sectors of the global economy.</p>
+                  <h3>{t('whyTradeStocks.cards.major.title')}</h3>
+                  <p>{t('whyTradeStocks.cards.major.desc')}</p>
                 </div>
               </motion.div>
 
               <motion.div className={styles.items} variants={cardAnim}>
                 <div className={styles.content}>
                   <img src={RiskIcon} alt="RiskIcon" />
-                  <h3>Risk Management Tools</h3>
+                  <h3>{t('whyTradeStocks.cards.risk.title')}</h3>
                   <p>
-                    Utilize advanced order types and platform features to manage exposure, set stop losses, and control risk when trading individual
-                    stocks.
+                    {t('whyTradeStocks.cards.risk.desc')}
                   </p>
                 </div>
               </motion.div>
@@ -116,10 +113,9 @@ export default function StocksTrade() {
               <motion.div className={styles.items} variants={cardAnim}>
                 <div className={styles.content}>
                   <img src={ExecutionIcon} alt="ExecutionIcon" />
-                  <h3>Fast & Reliable Execution</h3>
+                  <h3>{t('whyTradeStocks.cards.execution.title')}</h3>
                   <p>
-                    Sea Global’s optimized trading infrastructure delivers low-latency execution, helping reduce slippage during periods of high
-                    market activity.
+                    {t('whyTradeStocks.cards.execution.desc')}
                   </p>
                 </div>
               </motion.div>

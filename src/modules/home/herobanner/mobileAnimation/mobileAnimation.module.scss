@@ -1,0 +1,101 @@
+@use '../../../../scss/main.scss' as *;
+@use '../../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../../scss/font/font.scss' as *;
+
+.mobileAnimation {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    .leftside {
+        position: absolute;
+        bottom: 15%;
+        left: -50%;
+        max-width: 212px;
+        z-index: 9;
+        display: block;
+
+        @include respond-to("sm") {
+            left: 20px;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    .rightside {
+        position: absolute;
+        top: 17%;
+        right: -50%;
+        max-width: 212px;
+        z-index: 9;
+        display: block;
+
+        @include respond-to("sm") {
+            right: 20px;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+
+
+
+    .mobileFramer {
+        position: relative;
+        width: 273px;
+        height: 563px;
+        margin: 0 auto;
+
+        img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: contain;
+            pointer-events: none;
+        }
+
+        .screenContent {
+            position: absolute;
+            top: 11px;
+            left: 11px;
+            width: 251px; // calc(273px - 22px) = 251px
+            height: 541px; // calc(563px - 22px) = 541px
+            border-radius: 34px;
+            overflow: hidden;
+            background-color: #0b0c10; // Dark sleek canvas background for the chart
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+
+            .dynamicIsland {
+                position: absolute;
+                top: 12px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 76px;
+                height: 18px;
+                background-color: #000;
+                border-radius: 9px;
+                z-index: 10;
+                box-shadow: inset 0px 0.5px 1px rgba(255, 255, 255, 0.15);
+            }
+
+            .lottiePlayer {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+}

@@ -2,10 +2,32 @@
 import React from 'react'
 import styles from './professionalTrading.module.scss'
 import { motion } from 'framer-motion'
+import { useLanguage } from '@/context/LanguageContext'
 
 const ChartImage = '/assets/images/chart-line.png'
 
 export default function ProfessionalTrading() {
+    const { t } = useLanguage();
+
+    const cardsData = [
+        {
+            title: t('professionalTrading.cards.charting.title'),
+            desc: t('professionalTrading.cards.charting.desc'),
+        },
+        {
+            title: t('professionalTrading.cards.analysis.title'),
+            desc: t('professionalTrading.cards.analysis.desc'),
+        },
+        {
+            title: t('professionalTrading.cards.central.title'),
+            desc: t('professionalTrading.cards.central.desc'),
+        },
+        {
+            title: t('professionalTrading.cards.risk.title'),
+            desc: t('professionalTrading.cards.risk.desc'),
+        },
+    ];
+
     return (
         <motion.div
             className={styles.professionalTrading}
@@ -52,11 +74,10 @@ export default function ProfessionalTrading() {
                     >
                         <div className={styles.text}>
                             <h2>
-                                Professional Trading <span> Tools </span>
+                                {t('professionalTrading.title')}<span> {t('professionalTrading.titleSpan')} </span>
                             </h2>
                             <p>
-                                Sea Global provides a suite of professional-grade trading tools designed to support informed
-                                decision-making, precise execution, and effective risk management across global markets.
+                                {t('professionalTrading.desc')}
                             </p>
                         </div>
 
@@ -75,24 +96,7 @@ export default function ProfessionalTrading() {
                                 },
                             }}
                         >
-                            {[
-                                {
-                                    title: 'Advanced Charting & Indicators',
-                                    desc: 'Access interactive charts with multiple timeframes, technical indicators, and drawing tools to analyze market movements in detail.',
-                                },
-                                {
-                                    title: 'Technical Analysis & Market Insights',
-                                    desc: 'Benefit from regularly updated market analysis covering key price levels, trends, and macroeconomic factors across asset classes.',
-                                },
-                                {
-                                    title: 'Trading Central & Research Tools',
-                                    desc: 'Utilize integrated third-party research tools such as Trading Central to access technical setups, forecasts, and analytical insights.',
-                                },
-                                {
-                                    title: 'Risk Management Features',
-                                    desc: 'Apply risk controls including stop-loss, take-profit, and advanced order types to help manage exposure and protect trading capital.',
-                                },
-                            ].map((item, index) => (
+                            {cardsData.map((item, index) => (
                                 <motion.div
                                     key={index}
                                     className={styles.cardGridItems}

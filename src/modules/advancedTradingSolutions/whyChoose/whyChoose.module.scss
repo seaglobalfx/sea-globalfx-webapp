@@ -166,7 +166,9 @@
         button {
             border: none;
             cursor: pointer;
-            padding: 4px 16px 4px 4px;
+            padding-block: 4px;
+            padding-inline-start: 4px;
+            padding-inline-end: 16px;
             display: flex;
             align-items: center;
             gap: 10px;

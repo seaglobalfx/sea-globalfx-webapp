@@ -1,0 +1,140 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.mobileCardAnimation {
+    background-image: url('/assets/images/layer-black1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    padding: 100px 0;
+    overflow: hidden;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 60px;
+    }
+
+    .header {
+        text-align: center;
+        max-width: 600px;
+
+        h2 {
+            font-size: 38px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 16px;
+            @include heading-semibold;
+
+            span {
+                display: block;
+                background: linear-gradient(90deg, #DAA71D 0%, #AE7708 100%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            @include respond-to("sm") {
+                font-size: 30px;
+            }
+        }
+
+        p {
+            color: #aaa;
+            font-size: 16px;
+            font-weight: 300;
+            @include font-normal;
+        }
+    }
+
+    .cardsGrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        width: 100%;
+        max-width: 900px;
+
+        @include respond-to("md") {
+            grid-template-columns: 1fr;
+            gap: 30px;
+            padding: 0 10px;
+        }
+    }
+
+    .glassCard {
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        padding: 40px 30px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        transition: border-color 0.3s ease;
+
+        &:hover {
+            border-color: rgba(218, 167, 29, 0.3);
+        }
+
+        .iconWrapper {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(218, 167, 29, 0.1) 0%, rgba(174, 119, 8, 0.1) 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            border: 1px solid rgba(218, 167, 29, 0.2);
+
+            img {
+                width: 32px;
+                height: 32px;
+                object-fit: contain;
+            }
+        }
+
+        h3 {
+            color: #fff;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            background: linear-gradient(90deg, #fff 0%, #ccc 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            @include heading-semibold;
+        }
+
+        p {
+            color: #aaa;
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 300;
+            @include font-normal;
+        }
+
+        .metric {
+            font-size: 40px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #DAA71D 0%, #AE7708 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
+            @include heading-semibold;
+        }
+
+        .metricLabel {
+            color: #777;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            @include font-semibold;
+        }
+    }
+}

@@ -31,7 +31,8 @@
             margin: 0 0 8px 0;
 
             @include respond-to("sm") {
-                @include heading-30;
+                font-size: 30px;
+                line-height: 40px;
             }
 
             span {

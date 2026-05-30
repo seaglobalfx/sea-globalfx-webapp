@@ -2,6 +2,8 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import styles from './whyChoose.module.scss';
+import { useLanguage } from '@/context/LanguageContext';
+
 const LayerBlackImage = '/assets/images/layer-black.png';
 const SystemIcon = '/assets/icons/icon01.png';
 const KycIcon = '/assets/icons/icon02.png';
@@ -35,6 +37,8 @@ const itemVariants = {
 };
 
 export default function WhyChoose() {
+    const { t } = useLanguage();
+
     return (
         <div className={styles.whyChooseSectionAlignment}>
             <div className={styles.layerBlack}>
@@ -49,11 +53,10 @@ export default function WhyChoose() {
                     viewport={{ once: true }}
                 >
                     <h2>
-                        Open Your Account in 4 <span>Easy Steps</span>
+                        {t('whyChoose.title')}<span>{t('whyChoose.titleSpan')}</span>
                     </h2>
                     <p>
-                        Sea Global FX provides a secure and transparent environment designed to support both
-                        investors and traders at every level
+                        {t('whyChoose.desc')}
                     </p>
                 </motion.div>
 
@@ -87,7 +90,7 @@ export default function WhyChoose() {
                         <div>
                             <div className={styles.counter}>1</div>
                             <h3>
-                                Regulated-style risk management practices
+                                {t('whyChoose.cards.regulated')}
                             </h3>
                         </div>
                         <div className={styles.iconRight}>
@@ -117,7 +120,7 @@ export default function WhyChoose() {
                         className={styles.griditems} variants={itemVariants}>
                         <div>
                             <div className={styles.counter}>2</div>
-                            <h3>Advanced trading infrastructure and tools</h3>
+                            <h3>{t('whyChoose.cards.infrastructure')}</h3>
                         </div>
                         <div className={styles.iconRight}>
                             <img src={KycIcon} alt='KycIcon' />
@@ -146,7 +149,7 @@ export default function WhyChoose() {
                         className={styles.griditems} variants={itemVariants}>
                         <div>
                             <div className={styles.counter}>3</div>
-                            <h3>Transparent performance reporting</h3>
+                            <h3>{t('whyChoose.cards.reporting')}</h3>
                         </div>
                         <div className={styles.iconRight}>
                             <img src={FundIcon} alt='FundIcon' />
@@ -175,7 +178,7 @@ export default function WhyChoose() {
                         className={styles.griditems} variants={itemVariants}>
                         <div>
                             <div className={styles.counter}>4</div>
-                            <h3>Access to skilled and vetted traders</h3>
+                            <h3>{t('whyChoose.cards.access')}</h3>
                         </div>
                         <div className={styles.iconRight}>
                             <img src={TradingIcon} alt='TradingIcon' />
@@ -203,7 +206,7 @@ export default function WhyChoose() {
                         className={styles.griditems} variants={itemVariants}>
                         <div>
                             <div className={styles.counter}>5</div>
-                            <h3>Dedicated client support and guidance</h3>
+                            <h3>{t('whyChoose.cards.support')}</h3>
                         </div>
                         <div className={styles.iconRight}>
                             <img src={CallIcon} alt='CallIcon' />
@@ -214,7 +217,7 @@ export default function WhyChoose() {
                     <a href='https://client.seaglobalfx.com/?tab=register' target='_blank'>
                         <button>
                             <img src={UserIcon} alt='UserIcon' />
-                            Open Account
+                            {t('whyChoose.openAccount')}
                         </button>
                     </a>
                 </div>

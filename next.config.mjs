@@ -3,6 +3,11 @@ const nextConfig = {
   /* config options here */
   reactStrictMode: false,
   images: { unoptimized: true },
+  compiler: {
+    styledComponents: true,
+  },
+  
+
 };
 
 export default nextConfig;

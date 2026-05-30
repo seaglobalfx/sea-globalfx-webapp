@@ -1,6 +1,8 @@
+'use client'
 import React from 'react'
 import styles from './featuredSection.module.scss';
 import Marquee from 'react-fast-marquee';
+import { useLanguage } from '@/context/LanguageContext';
 const Logoipsum = '/assets/icons/logoipsum.svg';
 const Logoipsum1 = '/assets/icons/logoipsum1.svg';
 const Yahoo = '/assets/icons/Yahoo.svg';
@@ -18,21 +20,21 @@ const ManilaLogo = '/assets/images/manila-logo-main.png';
 const DigitalJournal = '/assets/images/Digital-Journal.webp';
 const FconImage = '/assets/images/fcon.svg';
 export default function FeaturedSection() {
+    const { t } = useLanguage();
     return (
         <div className={styles.featuredSection}>
             <div className={styles.flexbox}>
                 <div className={styles.items}>
                     <div className={styles.text}>
                         <h2>
-                            Featured in <br /> <span> Global </span> Media
+                            {t('featuredSection.titleStart')}<br /> <span> {t('featuredSection.titleSpan')} </span>{t('featuredSection.titleEnd')}
                         </h2>
                         <p>
-                            Our brand and market insights have been featured across leading financial and industry media outlets,
-                            reinforcing our reputation as a trusted market participant.
+                            {t('featuredSection.desc')}
                         </p>
                     </div>
                 </div>
-                <div className={styles.items}>
+                <div className={styles.items} dir='ltr'>
                     <Marquee speed={30}>
                         <a target='_blank' aria-label='https://www.streetinsider.com/' href="https://www.streetinsider.com/">
                             <div className={styles.lightbox}>

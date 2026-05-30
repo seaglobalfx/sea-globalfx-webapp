@@ -1,0 +1,8 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.overviewSection {
+    height: 100dvh;
+    background-color: red;
+}

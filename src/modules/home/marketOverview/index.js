@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './marketOverview.module.scss';
 import Link from 'next/link';
+import { useLanguage } from '@/context/LanguageContext';
 
 const ForexImage = '/assets/images/forex.png';
 const IndicesImage = '/assets/images/Indices.png';
@@ -42,6 +43,8 @@ const scaleFade = {
 };
 
 export default function MarketOverview() {
+    const { t } = useLanguage();
+
     return (
         <div className={styles.marketOverview}>
             <div className='container-xs'>
@@ -55,18 +58,18 @@ export default function MarketOverview() {
                     {/* Title */}
                     <motion.div className={styles.items} variants={fadeUp}>
                         <h2>
-                            <span>Markets</span> Overview
+                            <span>{t('hero.marketsOverview.titleStart')}</span> {t('hero.marketsOverview.titleSpan')}
                         </h2>
                     </motion.div>
 
                     {/* Cards */}
                     {[
-                        { img: ForexImage, link: '/forex-market', title: 'Forex', text: 'Access major, minor, and selected exotic currency pairs with deep liquidity and competitive spreads.' },
-                        { img: IndicesImage, link: '/indices-market', title: 'Indices', text: 'Trade leading global indices representing major economies, with broader market exposure.' },
-                        { img: CommoditiesImage, link: '/commodities', title: 'Commodities', text: 'Speculate on key commodities, enabling portfolio diversification and inflation-hedging strategies.' },
-                        { img: StocksImage, link: '/stocks', title: 'Stocks', text: 'Trade shares of well-known global companies, gaining exposure to equity markets across sectors.' },
-                        { img: CryptoImage, link: '/crypto', title: 'Crypto', text: 'Participate in the digital asset market with cryptocurrencies, available for trading in real-time.' },
-                        { img: ETFsImage, link: '/crypto', title: 'ETFs', text: 'Gain diversified exposure through Exchange-Traded Funds, combining multiple assets.' },
+                        { img: ForexImage, link: '/forex-market', title: t('hero.marketsOverview.cards.forex.title'), text: t('hero.marketsOverview.cards.forex.desc') },
+                        { img: IndicesImage, link: '/indices-market', title: t('hero.marketsOverview.cards.indices.title'), text: t('hero.marketsOverview.cards.indices.desc') },
+                        { img: CommoditiesImage, link: '/commodities', title: t('hero.marketsOverview.cards.commodities.title'), text: t('hero.marketsOverview.cards.commodities.desc') },
+                        { img: StocksImage, link: '/stocks', title: t('hero.marketsOverview.cards.stocks.title'), text: t('hero.marketsOverview.cards.stocks.desc') },
+                        { img: CryptoImage, link: '/crypto', title: t('hero.marketsOverview.cards.crypto.title'), text: t('hero.marketsOverview.cards.crypto.desc') },
+                        { img: ETFsImage, link: '/crypto', title: t('hero.marketsOverview.cards.etfs.title'), text: t('hero.marketsOverview.cards.etfs.desc') },
                     ].map((item, index) => (
                         <motion.div className={styles.griditems}
                             onMouseMove={(e) => {

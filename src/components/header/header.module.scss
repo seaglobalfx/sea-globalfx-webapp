@@ -33,7 +33,7 @@
 
             .dropdown {
                 position: absolute;
-                left: -50%;
+                inset-inline-start: -50%;
                 width: 145px;
                 top: 40px;
                 background-color: #fff;
@@ -119,6 +119,103 @@
                 @include respond-to("md") {
                     display: none;
                 }
+
+                .langSwitcher {
+                    display: flex;
+                    align-items: center;
+                    margin-inline-start: 8px;
+
+                    .langDropdown {
+                        position: relative;
+
+                        .langBtn {
+                            background: rgba(0, 0, 0, 0.05);
+                            border: 1px solid rgba(0, 0, 0, 0.1);
+                            border-radius: 20px;
+                            padding: 6px 12px;
+                            font-size: 14px;
+                            font-weight: 500;
+                            cursor: pointer;
+                            color: #353535;
+                            display: flex;
+                            align-items: center;
+                            gap: 6px;
+                            transition: all 0.3s ease;
+                            @include font-medium;
+
+                            .arrow {
+                                transition: transform 0.2s ease;
+                                display: block;
+
+                                path {
+                                    stroke: #353535;
+                                }
+                            }
+
+                            &:hover {
+                                background: rgba(0, 0, 0, 0.08);
+                            }
+                        }
+
+                        .langMenu {
+                            position: absolute;
+                            inset-inline-start: 0;
+                            width: 120px;
+                            top: 36px;
+                            background-color: #fff;
+                            border-radius: 12px;
+                            max-height: 0px;
+                            overflow: hidden;
+                            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+                            z-index: 100;
+                            transition: max-height 0.3s ease-in-out;
+
+                            .langMenuInner {
+                                padding: 8px;
+                                display: flex;
+                                flex-direction: column;
+                                gap: 4px;
+
+                                .langItem {
+                                    background: transparent;
+                                    border: none;
+                                    padding: 8px 12px;
+                                    font-size: 14px;
+                                    font-weight: 500;
+                                    cursor: pointer;
+                                    color: #353535;
+                                    border-radius: 8px;
+                                    text-align: start;
+                                    width: 100%;
+                                    transition: all 0.2s ease;
+                                    @include font-medium;
+
+                                    &:hover {
+                                        background: rgba(0, 0, 0, 0.05);
+                                    }
+
+                                    &.active {
+                                        background: var(--Primary, linear-gradient(90deg, #E8BC33 10%, #B07A09 100%));
+                                        color: #fff;
+                                    }
+                                }
+                            }
+                        }
+
+                        &:hover {
+                            .langMenu {
+                                max-height: 200px;
+                                overflow: visible;
+                            }
+
+                            .langBtn {
+                                .arrow {
+                                    transform: rotate(180deg);
+                                }
+                            }
+                        }
+                    }
+                }
             }
 
             a {
@@ -152,15 +249,16 @@
                 }
 
                 a {
-
+                    display: inline-flex;
                     background: transparent;
+                    overflow: hidden;
                     -webkit-text-fill-color: inherit;
                     -webkit-background-clip: initial;
                     background-clip: inherit;
                 }
             }
 
-            button {
+            .button button.loginBtn {
                 color: #000;
                 @include font-medium;
                 font-size: 16px;
@@ -170,12 +268,22 @@
                 border-radius: 48px;
                 border: none;
                 position: relative;
-                display: flex;
+                display: inline-flex;
                 align-items: center;
                 gap: 10px;
                 background: rgba(0, 0, 0, 0.10);
                 line-height: normal;
-                padding: 4px 16px 4px 4px;
+                padding-block: 4px;
+                padding-inline: 4px 16px;
+                white-space: nowrap;
+                overflow: hidden;
+
+                img,
+                span {
+                    display: block;
+                    flex-shrink: 0;
+                    transition: 0.3s ease-in-out;
+                }
 
                 &:hover {
                     span {
@@ -187,10 +295,20 @@
                     }
                 }
 
-                span,
-                img {
-                    transition: .3s ease-in-out;
-                    display: block;
+                :global(html[dir="rtl"]) & {
+                    img {
+                        transform: scaleX(-1);
+                    }
+
+                    &:hover {
+                        span {
+                            transform: translateX(48%);
+                        }
+
+                        img {
+                            transform: translateX(-240%) scaleX(-1);
+                        }
+                    }
                 }
 
 
@@ -253,6 +371,33 @@
         padding: 20px;
         border-top: 1px solid #5b5b5b;
 
+        .mobileLangSwitcher {
+            padding: 0 0 20px 0;
+            display: flex;
+            gap: 12px;
+
+            .mobileLangBtn {
+                flex: 1;
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 20px;
+                padding: 10px 20px;
+                font-size: 16px;
+                font-weight: 500;
+                cursor: pointer;
+                color: #fff;
+                text-align: center;
+                transition: all 0.3s ease;
+                @include font-medium;
+
+                &.active {
+                    background: var(--Primary, linear-gradient(90deg, #E8BC33 10%, #B07A09 100%));
+                    color: #fff;
+                    border-color: transparent;
+                }
+            }
+        }
+
         a {
             background: var(--Primary, linear-gradient(90deg, #E8BC33 10%, #B07A09 100%));
             display: block;
@@ -277,8 +422,10 @@
 
     .headerBody {
         padding: 40px 20px;
-        height: calc(100dvh - 160px);
+        height: calc(100dvh - 222px);
         overflow: auto;
+
+
 
         .submenu {
             .space {

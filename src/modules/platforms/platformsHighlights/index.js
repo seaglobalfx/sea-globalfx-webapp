@@ -1,7 +1,33 @@
+"use client";
+
 import React from 'react'
 import styles from './platformsHighlights.module.scss';
+import { useLanguage } from '@/context/LanguageContext';
+
 const IpadImage = '/assets/images/ipad.png';
+
 export default function PlatformsHighlights() {
+    const { t } = useLanguage();
+
+    const highlightsData = [
+        {
+            title: t('platformsHighlights.cards.charting.title'),
+            desc: t('platformsHighlights.cards.charting.desc'),
+        },
+        {
+            title: t('platformsHighlights.cards.automated.title'),
+            desc: t('platformsHighlights.cards.automated.desc'),
+        },
+        {
+            title: t('platformsHighlights.cards.execution.title'),
+            desc: t('platformsHighlights.cards.execution.desc'),
+        },
+        {
+            title: t('platformsHighlights.cards.customizable.title'),
+            desc: t('platformsHighlights.cards.customizable.desc'),
+        },
+    ];
+
     return (
         <div className={styles.platformsHighlights}>
             <div className='container-xs'>
@@ -13,44 +39,15 @@ export default function PlatformsHighlights() {
                     </div>
                     <div className={styles.griditems}>
                         <h2>
-                            Platform  <span>
-                                Highlights
-                            </span>
+                            {t('platformsHighlights.title')}<span>{t('platformsHighlights.titleSpan')}</span>
                         </h2>
                         <div className={styles.boxGrid}>
-                            <div className={styles.items}>
-                                <h3>
-                                    Advanced Charting & Indicators
-                                </h3>
-                                <p>
-                                    Analyze markets using multiple chart types, timeframes, and a wide
-                                    range of technical indicators for informed decision-making.
-                                </p>
-                            </div>
-                            <div className={styles.items}>
-                                <h3>
-                                    Automated Trading (EAs / Scripts)
-                                </h3>
-                                <p>
-                                    Deploy automated strategies and custom scripts to execute trades systematically and reduce emotional bias.
-                                </p>
-                            </div>
-                            <div className={styles.items}>
-                                <h3>
-                                    Real-Time Execution
-                                </h3>
-                                <p>
-                                    Trade with live pricing and fast order execution designed to perform reliably during active and volatile market conditions
-                                </p>
-                            </div>
-                            <div className={styles.items}>
-                                <h3>
-                                    Customizable Interface
-                                </h3>
-                                <p>
-                                    Personalize layouts, charts, and tools to match your trading style and workflow
-                                </p>
-                            </div>
+                            {highlightsData.map((item, index) => (
+                                <div key={index} className={styles.items}>
+                                    <h3>{item.title}</h3>
+                                    <p>{item.desc}</p>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/context/LanguageContext';
 
 const HeroImage = '/assets/images/etfs-banner.png';
 const UserIcon = '/assets/icons/user.svg';
@@ -28,6 +29,8 @@ const imageAnim = {
 
 
 export default function AccountsBanner() {
+  const { t } = useLanguage();
+
   return (
     <div className='common-banner'>
       <div className='left-alignment'>
@@ -43,18 +46,16 @@ export default function AccountsBanner() {
             >
               <div className='tag-line'>
                 <button>
-                  Transparent pricing • Flexible conditions
+                  {t('accountsBanner.tagline')}
                 </button>
               </div>
 
               <h1 className="full-width-xl">
-                Find the Best Account for Your <span>Goals</span>
+                {t('accountsBanner.titleStart')}<span>{t('accountsBanner.titleSpan')}</span>
               </h1>
 
               <p>
-                Choose an account that matches your experience level, trading strategy, and cost preferences. Sea Global
-                offers clearly defined account types with transparent pricing and flexible trading conditions, so you can select
-                what’s right for you with confidence.
+                {t('accountsBanner.desc')}
               </p>
 
               <div className='two-button-alignment'>
@@ -65,7 +66,7 @@ export default function AccountsBanner() {
                     whileTap={{ scale: 0.97 }}
                   >
                     <img src={UserIcon} alt='UserIcon' />
-                    Open Account
+                    {t('accountsBanner.openAccount')}
                   </motion.button>
                 </a>
                 <a target='_blank' href='https://client.seaglobalfx.com/'>
@@ -75,7 +76,7 @@ export default function AccountsBanner() {
                     whileTap={{ scale: 0.97 }}
                   >
                     <img src={DemoIcon} alt='DemoIcon' />
-                    Try Demo
+                    {t('accountsBanner.tryDemo')}
                   </motion.button>
                 </a>
               </div>

@@ -2,6 +2,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import styles from './howMamTrading.module.scss';
+import { useLanguage } from '@/context/LanguageContext';
 
 const SystemIcon = '/assets/icons/single.png';
 const KycIcon = '/assets/icons/replicated.png';
@@ -32,6 +33,8 @@ const itemVariants = {
     },
 };
 export default function HowMamTrading() {
+    const { t } = useLanguage();
+
     return (
         <div className={styles.howPammTrading}>
             <div className='container-xs7'>
@@ -43,7 +46,7 @@ export default function HowMamTrading() {
                     viewport={{ once: true }}
                 >
                     <h2>
-                        How MAM Trading <span>Works</span>
+                        {t('howMamTrading.titleStart')}<span>{t('howMamTrading.titleSpan')}</span>
                     </h2>
 
                 </motion.div>
@@ -77,7 +80,7 @@ export default function HowMamTrading() {
                         className={styles.griditems} variants={itemVariants}>
                         <div>
                             <div className={styles.counter}>1</div>
-                            <h3>Manager places a single trade</h3>
+                            <h3>{t('howMamTrading.step1')}</h3>
                         </div>
 
                         <div className={styles.iconRight}>
@@ -107,7 +110,7 @@ export default function HowMamTrading() {
                         className={styles.griditems} variants={itemVariants}>
                         <div>
                             <div className={styles.counter}>2</div>
-                            <h3>Trade is replicated across linked accounts</h3>
+                            <h3>{t('howMamTrading.step2')}</h3>
                         </div>
                         <div className={styles.iconRight}>
                             <img src={KycIcon} alt='KycIcon' />
@@ -136,7 +139,7 @@ export default function HowMamTrading() {
                         className={styles.griditems} variants={itemVariants}>
                         <div>
                             <div className={styles.counter}>3</div>
-                            <h3>Risk is adjusted per account</h3>
+                            <h3>{t('howMamTrading.step3')}</h3>
                         </div>
                         <div className={styles.iconRight}>
                             <img src={FundIcon} alt='FundIcon' />
@@ -147,7 +150,7 @@ export default function HowMamTrading() {
                     <a href='https://client.seaglobalfx.com/?tab=register' target='_blank'>
                         <button>
                             <img src={UserIcon} alt='UserIcon' />
-                            Open Account
+                            {t('howMamTrading.openAccount')}
                         </button>
                     </a>
                 </div>

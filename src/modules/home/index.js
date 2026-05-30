@@ -1,29 +1,37 @@
 import React from 'react'
-import Herobanner from './herobanner'
+import InteractiveHero from './interactiveHero'
 import Faq from './faq'
 import EasySteps from './easySteps'
 import AccountType from './accountType'
 import WhySeaGlobal from './whySeaGlobal'
 import OneMarket from './oneMarket'
 import MarketOverview from './marketOverview'
+import OverviewSection from './overviewSection'
+import OpenAccount from './openAccount'
+import MarketPlatform from './marketPlatform'
+import TypeAccount from './typeAccount'
+import ClientSection from './clientSection'
+import Herobanner from './herobanner'
+import MobileViewSection from './mobileViewSection'
 
 export default function HomePage() {
 
     return (
         <div>
+            <InteractiveHero />
+            {/* <WhySeaGlobal /> */}
+            {/* <OverviewSection /> */}
+            {/* <MarketOverview /> */}
             <Herobanner />
-            <div className='tagline-remove'>
-                <tv-ticker-tape
-                    symbols="FX:EURUSD,BITSTAMP:BTCUSD,BITSTAMP:ETHUSD,CMCMARKETS:GOLD,OANDA:EURUSD,OANDA:GBPUSD,OANDA:USDJPY,OANDA:GBPJPY,OANDA:AUDUSD,OANDA:USDCAD"
-                    theme="dark"
-                />
-            </div>
-            <WhySeaGlobal />
-            <OneMarket />
-            <MarketOverview />
+            <MobileViewSection />
+            <MarketPlatform />
+            <TypeAccount />
+            <ClientSection />
+            <OpenAccount />
             <AccountType />
-            <EasySteps />
+
             <Faq />
         </div>
     )
 }
+

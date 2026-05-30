@@ -1,10 +1,16 @@
+'use client'
 import React from 'react'
 import styles from './partnerTools.module.scss';
 import CheckIcon from '@/icons/checkIcon';
-const LayerBlack = '/assets/images/layer-black.png'
-const ToolsImage = '/assets/images/tools.png'
+import { useLanguage } from '@/context/LanguageContext';
+
+const LayerBlack = '/assets/images/layer-black.png';
+const ToolsImage = '/assets/images/tools.png';
 
 export default function PartnerTools() {
+    const { t } = useLanguage();
+    const items = t('partnerTools.items');
+
     return (
         <div className={styles.partnerTools}>
             <div className={styles.blacklayer}>
@@ -20,33 +26,15 @@ export default function PartnerTools() {
                     <div className={styles.griditems}>
                         <div className={styles.text}>
                             <h2>
-                                Partner <span> Tools </span> & Dedicated Support
+                                {t('partnerTools.titleStart')}<span>{t('partnerTools.titleSpan')}</span>{t('partnerTools.titleEnd')}
                             </h2>
                             <div className={styles.boxGrid}>
-                                <div className={styles.items}>
-                                    <CheckIcon />
-                                    <p>
-                                        Advanced performance analytics
-                                    </p>
-                                </div>
-                                <div className={styles.items}>
-                                    <CheckIcon />
-                                    <p>
-                                        Real-time commission tracking
-                                    </p>
-                                </div>
-                                <div className={styles.items}>
-                                    <CheckIcon />
-                                    <p>
-                                        Custom IB referral links
-                                    </p>
-                                </div>
-                                <div className={styles.items}>
-                                    <CheckIcon />
-                                    <p>
-                                        Dedicated partner manager
-                                    </p>
-                                </div>
+                                {items.map((item, index) => (
+                                    <div key={index} className={styles.items}>
+                                        <CheckIcon />
+                                        <p>{item}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
