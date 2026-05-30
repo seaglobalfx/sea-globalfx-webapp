@@ -251,6 +251,7 @@
                 a {
                     display: inline-flex;
                     background: transparent;
+                    overflow: hidden;
                     -webkit-text-fill-color: inherit;
                     -webkit-background-clip: initial;
                     background-clip: inherit;
@@ -295,20 +296,17 @@
                 }
 
                 :global(html[dir="rtl"]) & {
-                    flex-direction: row-reverse;
-                    padding-inline: 16px 4px;
-
                     img {
                         transform: scaleX(-1);
                     }
 
                     &:hover {
                         span {
-                            transform: translateX(100%);
+                            transform: translateX(48%);
                         }
 
                         img {
-                            transform: translateX(-150%) scaleX(-1);
+                            transform: translateX(-240%) scaleX(-1);
                         }
                     }
                 }
