@@ -146,7 +146,7 @@
                             .arrow {
                                 transition: transform 0.2s ease;
                                 display: block;
-                                
+
                                 path {
                                     stroke: #353535;
                                 }
@@ -373,35 +373,8 @@
         padding: 20px;
         border-top: 1px solid #5b5b5b;
 
-        a {
-            background: var(--Primary, linear-gradient(90deg, #E8BC33 10%, #B07A09 100%));
-            display: block;
-            border: none;
-            padding: 16px;
-            justify-content: center;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            border-radius: 48px;
-            color: #FFF;
-            font-size: 16px;
-            font-style: normal;
-            cursor: pointer;
-            font-weight: 600;
-            line-height: normal;
-            @include font-semibold;
-            transition: .3s ease-in-out;
-        }
-
-    }
-
-    .headerBody {
-        padding: 40px 20px;
-        height: calc(100dvh - 160px);
-        overflow: auto;
-
         .mobileLangSwitcher {
-            padding: 0 0 40px 0;
+            padding: 0 0 20px 0;
             display: flex;
             gap: 12px;
 
@@ -426,6 +399,35 @@
                 }
             }
         }
+
+        a {
+            background: var(--Primary, linear-gradient(90deg, #E8BC33 10%, #B07A09 100%));
+            display: block;
+            border: none;
+            padding: 16px;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-radius: 48px;
+            color: #FFF;
+            font-size: 16px;
+            font-style: normal;
+            cursor: pointer;
+            font-weight: 600;
+            line-height: normal;
+            @include font-semibold;
+            transition: .3s ease-in-out;
+        }
+
+    }
+
+    .headerBody {
+        padding: 40px 20px;
+        height: calc(100dvh - 222px);
+        overflow: auto;
+
+
 
         .submenu {
             .space {

@@ -9,6 +9,7 @@
     width: 100%;
     position: relative;
     padding: 225px 0;
+    overflow: hidden;
 
     @include respond-to("sm") {
         padding: 60px 0 0 0;

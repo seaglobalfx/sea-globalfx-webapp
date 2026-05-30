@@ -129,7 +129,7 @@ export default function Header() {
                                 <Link href="/contact-us" className={classNames(styles.menuSpacing, pathname === "/contact-us" ? styles.active : "")} aria-label='contact-us'>{t('nav.contactUs')}</Link>
 
                                 <div className={styles.langSwitcher}>
-                                    <div 
+                                    <div
                                         className={styles.langDropdown}
                                         onMouseEnter={() => setLangOpen(true)}
                                         onMouseLeave={() => setLangOpen(false)}
@@ -137,25 +137,25 @@ export default function Header() {
                                         <button className={styles.langBtn}>
                                             <span>{locale === 'en' ? 'English' : 'العربية'}</span>
                                             <svg className={styles.arrow} width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                                <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                                             </svg>
                                         </button>
-                                        
-                                        <motion.div 
+
+                                        <motion.div
                                             className={styles.langMenu}
                                             variants={dropdownVariants}
                                             initial="hidden"
                                             animate={langOpen ? 'visible' : 'hidden'}
                                         >
                                             <div className={styles.langMenuInner}>
-                                                <button 
-                                                    className={classNames(styles.langItem, locale === 'en' ? styles.active : '')} 
+                                                <button
+                                                    className={classNames(styles.langItem, locale === 'en' ? styles.active : '')}
                                                     onClick={() => { changeLanguage('en'); setLangOpen(false); }}
                                                 >
                                                     English
                                                 </button>
-                                                <button 
-                                                    className={classNames(styles.langItem, locale === 'ar' ? styles.active : '')} 
+                                                <button
+                                                    className={classNames(styles.langItem, locale === 'ar' ? styles.active : '')}
                                                     onClick={() => { changeLanguage('ar'); setLangOpen(false); }}
                                                 >
                                                     العربية
@@ -184,7 +184,7 @@ export default function Header() {
             <div className={classNames(styles.mobileHeader, headerOpen ? styles.show : styles.hide)}>
                 <div className={styles.smallHeader}>
                     <div className={styles.logo}>
-                        <Link href="/" >
+                        <Link href="/" onClick={() => setHeaderOpen(false)}>
                             <img src={LogoWhite} alt='LogoWhite' />
                         </Link>
                     </div>
@@ -259,8 +259,11 @@ export default function Header() {
                             {t('nav.contactUs')}
                         </Link>
                     </div>
+
+                </div>
+                <div className={styles.headerFooter} onClick={() => setHeaderOpen(false)}>
                     <div className={styles.mobileLangSwitcher}>
-                        <button 
+                        <button
                             className={classNames(styles.mobileLangBtn, locale === 'en' ? styles.active : '')}
                             onClick={() => {
                                 changeLanguage('en');
@@ -269,7 +272,7 @@ export default function Header() {
                         >
                             English
                         </button>
-                        <button 
+                        <button
                             className={classNames(styles.mobileLangBtn, locale === 'ar' ? styles.active : '')}
                             onClick={() => {
                                 changeLanguage('ar');
@@ -279,8 +282,6 @@ export default function Header() {
                             العربية
                         </button>
                     </div>
-                </div>
-                <div className={styles.headerFooter} onClick={() => setHeaderOpen(false)}>
                     <a href='https://client.seaglobalfx.com/' target='_blank'>
                         {t('common.login')}
                     </a>
