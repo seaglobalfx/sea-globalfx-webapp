@@ -62,15 +62,15 @@ export default function WaysToReach() {
         </a>
       ),
     },
-    {
-      key: 'phone',
-      icon: CallIcon,
-      content: (
-        <a href="tel:+971582619955" className={styles.ltrContent} dir="ltr">
-          {t('waysToReach.phone')}
-        </a>
-      ),
-    },
+    // {
+    //   key: 'phone',
+    //   icon: CallIcon,
+    //   content: (
+    //     <a href="tel:+971582619955" className={styles.ltrContent} dir="ltr">
+    //       {t('waysToReach.phone')}
+    //     </a>
+    //   ),
+    // },
     {
       key: 'hours',
       icon: ClockIcon,

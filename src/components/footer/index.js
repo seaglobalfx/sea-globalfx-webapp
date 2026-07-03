@@ -67,9 +67,9 @@ export default function Footer() {
                                 <a href='mailto:support@seaglobalfx.com'>
                                     {t('footer.email')} support@seaglobalfx.com
                                 </a>
-                                <a href='callto:+971 58 261 9955'>
+                                {/* <a href='callto:+971 58 261 9955'>
                                     {t('footer.phone')} +971 58 261 9955
-                                </a>
+                                </a> */}
 
                             </div>
                             <div>

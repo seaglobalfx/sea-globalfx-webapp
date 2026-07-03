@@ -10,7 +10,7 @@ export const en = {
     riskWarningTitle: "Risk warning",
     riskWarning: "Trading in Foreign Exchange and Contracts for Difference carries a high level of risk to your capital and unexpected price movements. A key risk of leveraged trading is that if a market moves against your position, you can incur additional liabilities far in excess of your initial margin deposit. Only speculate with money you can afford to lose. The products listed on this website may not be suitable for all customers; therefore, ensure you fully understand the risks involved and seek independent financial advice if necessary.",
     restrictedCountriesTitle: "Restricted Countries",
-    restrictedCountries: "Sea Global Ltd. does not provide services to residents of the United States, Canada, North Korea, and Cuba, or any other sanctioned jurisdiction where such services would be contrary to local law or regulation.",
+    restrictedCountries: "Sea Global Ltd. does not provide services to residents of the United States,United Arab Emirates, Canada, North Korea, and Cuba, or any other sanctioned jurisdiction where such services would be contrary to local law or regulation.",
     disclaimerTitle: "Disclaimer",
     disclaimer: "Sea Global Ltd. operates solely as an execution service and does not offer advisory services. Occasionally, Sea Global Ltd. may release general market insights; however, such communications should not be interpreted as advice, an invitation, or an endorsement for any financial instrument. Sea Global Ltd. bears no liability for the application of this content or any outcomes thereof. The completeness of this information is not guaranteed, and reliance upon it is at the sole discretion and risk of the user."
   },
