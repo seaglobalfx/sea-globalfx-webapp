@@ -148,7 +148,7 @@ export default function RootLayout({ children }) {
             <Header />
             {children}
             <Footer />
-            <FloatingWhatsapp />
+            {/* <FloatingWhatsapp /> */}
             <Toaster />
           </ApolloClientProvider>
         </LanguageProvider>
