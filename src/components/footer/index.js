@@ -8,6 +8,9 @@ const FacebookIcon = '/assets/icons/facebook.svg';
 const TwitterIcon = '/assets/icons/twitter.svg';
 const InstagramIcon = '/assets/icons/instagram.svg';
 const LinkdinIcon = '/assets/icons/linkdin.svg';
+const TelegramIcon = '/assets/icons/telegram.svg';
+const WhatsaapIcon = '/assets/icons/whatsaap.svg';
+const YoutubeIcon = '/assets/icons/youtube.svg';
 
 export default function Footer() {
     const { t } = useLanguage();
@@ -27,9 +30,19 @@ export default function Footer() {
                                 {t('footer.desc')}
                             </p>
                             <div className={styles.social}>
+                                <a target='_blank' href='https://www.instagram.com/seaglobalfxofficial/ '>
+                                    <div className={styles.round}>
+                                        <img src={InstagramIcon} alt='InstagramIcon' />
+                                    </div>
+                                </a>
                                 <a href='https://www.facebook.com/profile.php?id=61586171626639 ' target='_blank'>
                                     <div className={styles.round}>
                                         <img src={FacebookIcon} alt='FacebookIcon' />
+                                    </div>
+                                </a>
+                                <a href='https://www.youtube.com/@seaglobalfx ' target='_blank'>
+                                    <div className={styles.round}>
+                                        <img src={YoutubeIcon} alt='YoutubeIcon' />
                                     </div>
                                 </a>
                                 <a href='https://x.com/seaglobalfx ' target='_blank'>
@@ -37,11 +50,18 @@ export default function Footer() {
                                         <img src={TwitterIcon} alt='TwitterIcon' />
                                     </div>
                                 </a>
-                                <a target='_blank' href='https://www.instagram.com/seaglobalfxofficial/ '>
+
+                                <a href='https://whatsapp.com/channel/0029VbCDjIJ4o7qTaPYo0O2n ' target='_blank'>
                                     <div className={styles.round}>
-                                        <img src={InstagramIcon} alt='InstagramIcon' />
+                                        <img src={WhatsaapIcon} alt='WhatsaapIcon' />
                                     </div>
                                 </a>
+                                <a href='https://t.me/seaglobalfx ' target='_blank'>
+                                    <div className={styles.round}>
+                                        <img src={TelegramIcon} alt='TelegramIcon' />
+                                    </div>
+                                </a>
+
                                 {/* <div className={styles.round}>
                                     <img src={LinkdinIcon} alt='LinkdinIcon' />
                                 </div> */}
