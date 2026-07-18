@@ -27,17 +27,17 @@ export default function Footer() {
                                 {t('footer.desc')}
                             </p>
                             <div className={styles.social}>
-                                <a href='https://www.facebook.com/profile.php?id=61586171626639' target='_blank'>
+                                <a href='https://www.facebook.com/profile.php?id=61586171626639 ' target='_blank'>
                                     <div className={styles.round}>
                                         <img src={FacebookIcon} alt='FacebookIcon' />
                                     </div>
                                 </a>
-                                <a href='https://x.com/seaglobalfx' target='_blank'>
+                                <a href='https://x.com/seaglobalfx ' target='_blank'>
                                     <div className={styles.round}>
                                         <img src={TwitterIcon} alt='TwitterIcon' />
                                     </div>
                                 </a>
-                                <a target='_blank' href='https://www.instagram.com/seaglobalfxofficial/'>
+                                <a target='_blank' href='https://www.instagram.com/seaglobalfxofficial/ '>
                                     <div className={styles.round}>
                                         <img src={InstagramIcon} alt='InstagramIcon' />
                                     </div>
