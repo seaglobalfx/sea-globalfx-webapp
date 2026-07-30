@@ -25,13 +25,13 @@ export default function Readypartners() {
                                 {t('readyPartners.desc')}
                             </h6>
                             <div className={styles.twoButtonalignment}>
-                                <a href='https://client.seaglobalfx.com/?tab=register' target='_blank' rel='noreferrer'>
+                                <a href='https://trade.seaglobalfx.co/register/' target='_blank' rel='noreferrer'>
                                     <button type='button' className={styles.orange}>
                                         <img src={UserIcon} alt='' />
                                         {t('hero.openAccount')}
                                     </button>
                                 </a>
-                                <a target='_blank' rel='noreferrer' href='https://client.seaglobalfx.com/'>
+                                <a target='_blank' rel='noreferrer' href='https://trade.seaglobalfx.co/login/'>
                                     <button type='button' className={styles.black}>
                                         <img src={DemoIcon} alt='' />
                                         {t('hero.tryDemo')}

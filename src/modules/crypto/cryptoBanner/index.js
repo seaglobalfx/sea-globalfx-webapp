@@ -76,7 +76,7 @@ export default function CryptoBanner() {
                                 whileInView="visible"
                                 viewport={{ once: true }}
                             >
-                                <a href='https://client.seaglobalfx.com/?tab=register' target='_blank'>
+                                <a href='https://trade.seaglobalfx.co/register/' target='_blank'>
                                     <motion.button
                                         className='orange'
                                         whileHover={{ scale: 1.05 }}
@@ -86,7 +86,7 @@ export default function CryptoBanner() {
                                         {t('hero.openAccount')}
                                     </motion.button>
                                 </a>
-                                <a target='_blank' href='https://client.seaglobalfx.com/'>
+                                <a target='_blank' href='https://trade.seaglobalfx.co/login/'>
                                     <motion.button
                                         className='black'
                                         whileHover={{ scale: 1.05 }}

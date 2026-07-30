@@ -84,7 +84,7 @@ export default function WhyChoose() {
                     whileTap={{ scale: 0.95 }}
                 >
                     <a
-                        href="https://client.seaglobalfx.com/?tab=register"
+                        href="https://trade.seaglobalfx.co/register/"
                         target="_blank"
                         rel="noopener noreferrer"
                     >

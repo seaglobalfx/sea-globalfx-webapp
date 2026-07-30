@@ -61,7 +61,7 @@ export default function OurForexPartner() {
                             <div className={styles.right}>
                                 <RightRound />
                             </div>
-                            <a href='https://client.seaglobalfx.com/?tab=register' target='_blank'>
+                            <a href='https://trade.seaglobalfx.co/register/' target='_blank'>
                                 <button>
                                     <img src={BlackArrow} alt='Arrow' />
                                     {t('ourForexPartner.openAccount')}

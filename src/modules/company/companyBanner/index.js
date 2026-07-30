@@ -72,13 +72,13 @@ export default function CompanyBanner() {
                                 className='two-button-alignment'
                                 variants={fadeUp}
                             >
-                                <a href='https://client.seaglobalfx.com/?tab=register' target='_blank' rel='noreferrer'>
+                                <a href='https://trade.seaglobalfx.co/register/' target='_blank' rel='noreferrer'>
                                     <button type="button" className='orange'>
                                         <img src={UserIcon} alt='' />
                                         {t('hero.openAccount')}
                                     </button>
                                 </a>
-                                <a target='_blank' rel='noreferrer' href='https://client.seaglobalfx.com/'>
+                                <a target='_blank' rel='noreferrer' href='https://trade.seaglobalfx.co/login/'>
                                     <button type="button" className='black'>
                                         <img src={DemoIcon} alt='' />
                                         {t('hero.tryDemo')}

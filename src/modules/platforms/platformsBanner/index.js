@@ -73,13 +73,13 @@ export default function PlatformsBanner() {
                                 className='two-button-alignment'
                                 variants={fadeUp}
                             >
-                                <a href='https://client.seaglobalfx.com/?tab=register' target='_blank'>
+                                <a href='https://trade.seaglobalfx.co/register/' target='_blank'>
                                     <button className='orange'>
                                         <img src={UserIcon} alt='UserIcon' />
                                         {t('platformsBanner.openAccount')}
                                     </button>
                                 </a>
-                                <a target='_blank' href='https://client.seaglobalfx.com/'>
+                                <a target='_blank' href='https://trade.seaglobalfx.co/login/'>
                                     <button className='black'>
                                         <img src={DemoIcon} alt='DemoIcon' />
                                         {t('platformsBanner.tryDemo')}

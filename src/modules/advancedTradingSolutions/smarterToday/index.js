@@ -23,13 +23,13 @@ export default function SmarterToday() {
                             <div
                                 className={styles.twoButtonalignment}
                             >
-                                <a href='https://client.seaglobalfx.com/?tab=register' target='_blank'>
+                                <a href='https://trade.seaglobalfx.co/register/' target='_blank'>
                                     <button className={styles.orange} >
                                         <img src={UserIcon} alt='UserIcon' />
                                         {t('smarterToday.openAccount')}
                                     </button>
                                 </a>
-                                <a target='_blank' href='https://client.seaglobalfx.com/'>
+                                <a target='_blank' href='https://trade.seaglobalfx.co/login/'>
                                     <button className={styles.black} >
                                         <img src={DemoIcon} alt='DemoIcon' />
                                         {t('smarterToday.tryDemo')}

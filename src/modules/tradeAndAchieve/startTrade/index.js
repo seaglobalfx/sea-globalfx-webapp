@@ -22,7 +22,7 @@ export default function StartTrade() {
                                 {t('startTrade.desc')}
                             </h6>
                             <div className={styles.twoButtonalignment}>
-                                <a href='https://client.seaglobalfx.com/?tab=register' target='_blank'>
+                                <a href='https://trade.seaglobalfx.co/register/' target='_blank'>
                                     <button className={styles.orange}>
                                         <img src={UserIcon} alt='UserIcon' />
                                         {t('startTrade.openAccount')}

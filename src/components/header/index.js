@@ -166,7 +166,7 @@ export default function Header() {
                                 </div>
                             </div>
                             <div className={styles.button}>
-                                <a href='https://client.seaglobalfx.com/' target='_blank'>
+                                <a href='https://trade.seaglobalfx.co/login/' target='_blank'>
                                     <button type="button" className={styles.loginBtn}>
                                         <img src={ShareIcon} alt="" />
                                         <span>{t('common.login')}</span>
@@ -282,7 +282,7 @@ export default function Header() {
                             العربية
                         </button>
                     </div>
-                    <a href='https://client.seaglobalfx.com/' target='_blank'>
+                    <a href='https://trade.seaglobalfx.co/login/' target='_blank'>
                         {t('common.login')}
                     </a>
                 </div>

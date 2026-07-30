@@ -56,50 +56,50 @@ export default function AdvancedTradingSolutionsBanner() {
                                     {t('advancedTradingSolutionsBanner.tagline')}
                                 </button>
                             </motion.div>
- 
-                             <motion.h1
-                                 className="full-width"
-                                 variants={fadeUp}
-                             >
-                                 {t('advancedTradingSolutionsBanner.titleStart')}<span>{t('advancedTradingSolutionsBanner.titleSpan')}</span>
-                             </motion.h1>
- 
-                             <motion.p variants={fadeUp}>
-                                 {t('advancedTradingSolutionsBanner.desc')}
-                             </motion.p>
- 
-                             <motion.div
-                                 className='two-button-alignment'
-                                 variants={fadeUp}
-                             >
-                                 <a href='https://client.seaglobalfx.com/?tab=register' target='_blank'>
-                                     <button className='orange'>
-                                         <img src={UserIcon} alt='UserIcon' />
-                                         {t('advancedTradingSolutionsBanner.openAccount')}
-                                     </button>
-                                 </a>
-                                 <a target='_blank' href='https://client.seaglobalfx.com/'>
-                                     <button className='black'>
-                                         <img src={DemoIcon} alt='DemoIcon' />
-                                         {t('advancedTradingSolutionsBanner.tryDemo')}
-                                     </button>
-                                 </a>
-                             </motion.div>
-                         </motion.div>
-                     </div>
-                     <div className='grid-items'>
-                         <motion.div
-                             className='image'
-                             variants={imageAnim}
-                             initial="hidden"
-                             animate="visible"
-                         >
-                             <img src={HeroImage} alt='HeroImage' />
-                         </motion.div>
-                     </div>
- 
-                 </div>
-             </div>
-         </div>
-     )
- }
+
+                            <motion.h1
+                                className="full-width"
+                                variants={fadeUp}
+                            >
+                                {t('advancedTradingSolutionsBanner.titleStart')}<span>{t('advancedTradingSolutionsBanner.titleSpan')}</span>
+                            </motion.h1>
+
+                            <motion.p variants={fadeUp}>
+                                {t('advancedTradingSolutionsBanner.desc')}
+                            </motion.p>
+
+                            <motion.div
+                                className='two-button-alignment'
+                                variants={fadeUp}
+                            >
+                                <a href='https://trade.seaglobalfx.co/register/' target='_blank'>
+                                    <button className='orange'>
+                                        <img src={UserIcon} alt='UserIcon' />
+                                        {t('advancedTradingSolutionsBanner.openAccount')}
+                                    </button>
+                                </a>
+                                <a target='_blank' href='https://trade.seaglobalfx.co/login/'>
+                                    <button className='black'>
+                                        <img src={DemoIcon} alt='DemoIcon' />
+                                        {t('advancedTradingSolutionsBanner.tryDemo')}
+                                    </button>
+                                </a>
+                            </motion.div>
+                        </motion.div>
+                    </div>
+                    <div className='grid-items'>
+                        <motion.div
+                            className='image'
+                            variants={imageAnim}
+                            initial="hidden"
+                            animate="visible"
+                        >
+                            <img src={HeroImage} alt='HeroImage' />
+                        </motion.div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    )
+}

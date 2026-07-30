@@ -177,7 +177,7 @@ export default function HowPammTrading() {
                     </motion.div>
                 </motion.div>
                 <div className={styles.buttonCenter}>
-                    <a href='https://client.seaglobalfx.com/?tab=register' target='_blank'>
+                    <a href='https://trade.seaglobalfx.co/register/' target='_blank'>
                         <button>
                             <img src={UserIcon} alt='UserIcon' />
                             {t('howPammTrading.openAccount')}

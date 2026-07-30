@@ -78,13 +78,13 @@ export default function Herobanner() {
                                         className={styles.twoButtonalignment}
                                         variants={container}
                                     >
-                                        <a href='https://client.seaglobalfx.com/?tab=register' target='_blank'>
+                                        <a href='https://trade.seaglobalfx.co/register/' target='_blank'>
                                             <motion.button className={styles.orange} variants={fadeUp}>
                                                 <img src={UserIcon} alt='UserIcon' />
                                                 {t('hero.openAccount')}
                                             </motion.button>
                                         </a>
-                                        <a target='_blank' href='https://client.seaglobalfx.com/'>
+                                        <a target='_blank' href='https://trade.seaglobalfx.co/login/'>
                                             <motion.button className={styles.black} variants={fadeUp}>
                                                 <img src={DemoIcon} alt='DemoIcon' />
                                                 {t('hero.tryDemo')}

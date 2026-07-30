@@ -159,7 +159,7 @@ export default function AccountType() {
                 <motion.div className={styles.right} >
                   <RightRound />
                 </motion.div>
-                <a href='https://client.seaglobalfx.com/?tab=register' target='_blank'>
+                <a href='https://trade.seaglobalfx.co/register/' target='_blank'>
                   <motion.button  >
                     <img src={item.arrow} alt='Arrow' />
                     Open Account
